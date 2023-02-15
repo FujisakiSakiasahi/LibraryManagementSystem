@@ -26,6 +26,13 @@ create table Member (
     PRIMARY KEY (memberId)
 )
 
+create table Genre (
+    bookId INT NOT NULL,
+    genre VARCHAR(10) NOT NULL, 
+
+    PRIMARY KEY (bookId,genre)
+)
+
 create table Borrowed (
     bookId INT NOT NULL,
     memberId INT NOT NULL,
