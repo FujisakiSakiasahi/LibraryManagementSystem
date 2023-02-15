@@ -3,14 +3,16 @@ create table Book (
         CHECK (bookId > 0),
     bookName VARCHAR(50) NOT NULL,
     authorName VARCHAR(50) NOT NULL,
+    bookImage VARCHAR(100),
     bookDescription VARCHAR(150),
     publisherName VARCHAR(50) NOT NULL,
-    publishYear INT NOT NULL,
+    pubDate DATE NOT NULL,
     rating INT
         CHECK (rating BETWEEN 1 AND 5),
-    pubDate DATE NOT NULL,
     lan VARCHAR(10) NOT NULL,
     isbn INT(13),
+    available BOOLEAN NOT NULL,
+    shelfid INT NOT NULL,
 
     PRIMARY KEY (bookId)
 )
