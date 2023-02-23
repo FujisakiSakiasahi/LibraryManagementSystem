@@ -9,7 +9,7 @@ create table Book (
     pubDate DATE NOT NULL,
     rating INT
         CHECK (rating BETWEEN 1 AND 5),
-    lan VARCHAR(10) NOT NULL,
+    lang VARCHAR(10) NOT NULL,
     isbn INT(13),
     available BOOLEAN NOT NULL,
     shelfid INT NOT NULL,
@@ -36,12 +36,14 @@ create table Genre (
 )
 
 create table Borrowed (
+    borrowId INT NOT NULL,
     bookId INT NOT NULL,
     memberId INT NOT NULL,
     dateBorrowed DATE NOT NULL,
-    returned BOOLEAN NOT NULL,
+    expectDate DATE NOT NULL,
+    returnDate DATE,
 
-    PRIMARY KEY (bookId,memberId),
+    PRIMARY KEY (borrowId),
     FOREIGN KEY (bookId) REFERENCES Book (BookId),
     FOREIGN KEY (memberId) REFERENCES Member (memberId)
 )
@@ -49,6 +51,7 @@ create table Borrowed (
 create table Ratings (
     bookId INT NOT NULL,
     memberId INT NOT NULL,
+    comment VARCHAR(150),
     rating INT NOT NULL
         CHECK (rating BETWEEN 1 AND 5),
 
