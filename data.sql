@@ -4,7 +4,7 @@ create table Book (
     bookName VARCHAR(50) NOT NULL,
     authorName VARCHAR(50) NOT NULL,
     bookImage VARCHAR(100),
-    bookDescription VARCHAR(150),
+    bookDescription VARCHAR(1000),
     publisherName VARCHAR(50) NOT NULL,
     pubDate DATE NOT NULL,
     rating INT
