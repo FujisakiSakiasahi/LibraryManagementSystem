@@ -10,7 +10,7 @@ create table Book (
     rating INT
         CHECK (rating BETWEEN 1 AND 5),
     lang VARCHAR(10) NOT NULL,
-    isbn INT(13),
+    isbn INT(13) NOT NULL,
     available BOOLEAN NOT NULL,
     shelfid INT NOT NULL,
 
