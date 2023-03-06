@@ -10,8 +10,8 @@ create table Book (
     rating INT
         CHECK (rating BETWEEN 1 AND 5),
     lang VARCHAR(10) NOT NULL,
-    isbn INT(13) NOT NULL,
-    available BOOLEAN NOT NULL,
+    isbn INT NOT NULL,
+    available BIT NOT NULL,
     shelfid INT NOT NULL,
 
     PRIMARY KEY (bookId)
@@ -23,7 +23,7 @@ create table Member (
     memberNo INT NOT NULL,
     memberEmail VARCHAR (30) NOT NULL
         CHECK (memberEmail LIKE '%_@__%.__%'),
-    newsletter BOOLEAN NOT NULL,
+    newsletter BIT NOT NULL,
 
     PRIMARY KEY (memberId)
 )
@@ -57,5 +57,5 @@ create table Ratings (
 
     PRIMARY KEY (bookId,memberId),
     FOREIGN KEY (bookId) REFERENCES Book (BookId),
-    FOREIGN KEY (memberId) REFERENCS Member (memberId)
+    FOREIGN KEY (memberId) REFERENCES Member (memberId)
 )
