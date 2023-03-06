@@ -67,17 +67,21 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="CSS\HomePageContent.css" />
+    <Content Include="CSS\HomePageHeaderFooter.css" />
+    <Content Include="images\HamiShu_Blue_BG.png" />
+    <Content Include="images\unknown.png" />
     <Content Include="Web.config" />
-    <Content Include="WebForm1.aspx" />
+    <Content Include="HomePage.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="WebForm1.aspx.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="HomePage.aspx.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="WebForm1.aspx.designer.cs">
-      <DependentUpon>WebForm1.aspx</DependentUpon>
+    <Compile Include="HomePage.aspx.designer.cs">
+      <DependentUpon>HomePage.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
