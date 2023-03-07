@@ -31,31 +31,3 @@
     float: right;
 
 }
-
-.footer {
-    background: #252525;
-    height: 500px;
-}
-
-,footer-container {
-    display:flex;
-}
-
-.footer-item {
-    width: 200px;
-    margin: 10px;
-    border: 3px solid #333;
-    background-color: #dfdfdf;
-}
-
-.footer-item-1 {
-    min-height: 100px;
-}
-
-.footer-item-2 {
-    min-height: 200px;
-}
-
-.footer-item-3 {
-    min-height: 300px;
-}

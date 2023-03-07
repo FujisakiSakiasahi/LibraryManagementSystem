@@ -1,0 +1,53 @@
+﻿
+
+.banner-container {
+    margin: 25px;
+}
+
+.banner {
+    
+    height: 100px;
+    width: 80%;
+    margin: auto;
+    background: blue;
+    border-radius: 100px;
+}
+
+.search-bar-container {
+    margin: 25px;
+}
+
+.list-container {
+    height: 1000px;
+    margin: 25px;
+}
+.list {
+    height: 900px;
+    width: 70%;
+    background: pink;
+    margin: auto;
+    display: flex;
+}
+
+.list-item {
+    margin: auto;
+    margin-top: 25px;
+    width: 90%;
+    background: #f0f0f0;
+    height: 30%;
+    text-align: left;
+}
+
+.list-item label{
+    margin: 100px
+}
+
+.list-item-content {
+    overflow: hidden;
+    background: white;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 95%;
+    height: 70%;
+}
