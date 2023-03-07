@@ -103,8 +103,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="CSS\HomePageContent.css" />
-    <Content Include="CSS\HomePageHeaderFooter.css" />
+    <Content Include="CSS\HomePage\Content.css" />
+    <Content Include="CSS\HomePage\Footer.css" />
+    <Content Include="CSS\HomePage\Header.css" />
     <Content Include="images\HamiShu_Blue_BG.png" />
     <Content Include="images\unknown.png" />
     <Content Include="Web.config" />
