@@ -24,6 +24,7 @@ create table Member (
     memberEmail VARCHAR (30) NOT NULL
         CHECK (memberEmail LIKE '%_@__%.__%'),
     newsletter BIT NOT NULL,
+    librarian BIT NOT NULL,
 
     PRIMARY KEY (memberId)
 )
@@ -57,5 +58,14 @@ create table Ratings (
 
     PRIMARY KEY (bookId,memberId),
     FOREIGN KEY (bookId) REFERENCES Book (BookId),
+    FOREIGN KEY (memberId) REFERENCES Member (memberId)
+)
+
+create table Notification (
+    notifId INT NOT NULL,
+    memberId INT NOT NULL,
+    msg VARCHAR(100),
+
+    PRIMARY KEY (notifId),
     FOREIGN KEY (memberId) REFERENCES Member (memberId)
 )
