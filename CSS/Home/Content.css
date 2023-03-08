@@ -10,7 +10,7 @@
     width: 80%;
     margin: auto;
     background: blue;
-    border-radius: 100px;
+    border-radius: 20px;
 }
 
 .search-bar-container {
@@ -18,36 +18,35 @@
 }
 
 .list-container {
-    height: 1000px;
     margin: 25px;
 }
 .list {
-    height: 900px;
-    width: 70%;
+    width: 65%;
     background: pink;
     margin: auto;
-    display: flex;
+    padding: 20px;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .list-item {
     margin: auto;
     margin-top: 25px;
+    margin-bottom: 25px;
     width: 90%;
     background: #f0f0f0;
-    height: 30%;
+    height: 200px;
     text-align: left;
-}
-
-.list-item label{
-    margin: 100px
+    border-radius: 20px;
+    display: flow-root;
 }
 
 .list-item-content {
-    overflow: hidden;
     background: white;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
-    width: 95%;
-    height: 70%;
+    width: 97%;
+    height: 80%;
+    border-radius: 20px;
 }

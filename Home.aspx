@@ -1,18 +1,22 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="HomePage.aspx.cs" Inherits="LibraryManagementSystem.WebForm1" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="LibraryManagementSystem.WebForm1" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="CSS/HomePage/Header.css"/>
-    <link rel="stylesheet" href="CSS/HomePage/Content.css" />
-    <link rel="stylesheet" href="CSS/HomePage/Footer.css" />
+    <link rel="stylesheet" href="CSS/Home/Header.css"/>
+    <link rel="stylesheet" href="CSS/Home/Content.css" />
+    <link rel="stylesheet" href="CSS/Home/Footer.css" />
+    <link rel="stylesheet" href="CSS/Home/Text.css" />
 
     <style type="text/css">
         #Text1 {
             height: 38px;
             width: 856px;
+            border: 0;
+            border-radius: 10px;
+            font-size: 20px;
         }
     </style>
 
@@ -36,24 +40,24 @@
             </div>
             <div class="search-bar-container">
                 <div class="search-bar">
-                    <input id="Text1" type="text" /></div>
+                    <input id="Text1" type="text" placeholder="Search for books here..." /></div>
                 </div>
             <div class="list-container">
                 <div class="list">
                     <div class="list-item list-item-1">
-                        <asp:Label ID="Label2" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="Label2" runat="server" Text="Label" CssClass="labels"></asp:Label>
                         <div class="list-item-content list-item-content-1">
 
                         </div>
                     </div>
                     <div class="list-item list-item-2">
-                        <asp:Label ID="Label3" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="Label3" runat="server" Text="Label" CssClass="labels"></asp:Label>
                         <div class="list-item-content list-item-content-2">
 
                         </div>
                     </div>
                     <div class="list-item list-item-3">
-                        <asp:Label ID="Label4" runat="server" Text="Label"></asp:Label>
+                        <asp:Label ID="Label4" runat="server" Text="Label" CssClass="labels"></asp:Label>
                         <div class="list-item-content list-item-content-3">
 
                         </div>
