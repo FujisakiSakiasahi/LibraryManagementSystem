@@ -17,6 +17,7 @@
             border: 0;
             border-radius: 10px;
             font-size: 20px;
+            padding: 10px;
         }
     </style>
 
@@ -45,7 +46,9 @@
             <div class="list-container">
                 <div class="list">
                     <div class="list-item list-item-1">
-                        <asp:Label ID="Label2" runat="server" Text="Label" CssClass="labels"></asp:Label>
+                        <div class="label-container">
+                            <asp:Label ID="Label2" runat="server" Text="Label" CssClass="labels"></asp:Label>
+                        </div>
                         <div class="list-item-content list-item-content-1">
 
                         </div>

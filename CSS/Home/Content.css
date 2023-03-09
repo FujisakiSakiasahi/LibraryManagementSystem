@@ -41,6 +41,10 @@
     display: flow-root;
 }
 
+.label-container {
+    margin-left: 10px;
+}
+
 .list-item-content {
     background: white;
     margin: auto;

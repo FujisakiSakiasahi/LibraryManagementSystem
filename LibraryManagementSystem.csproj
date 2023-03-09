@@ -71,7 +71,10 @@
     <Content Include="CSS\Home\Footer.css" />
     <Content Include="CSS\Home\Header.css" />
     <Content Include="CSS\Home\Text.css" />
+    <Content Include="CSS\Login\Content.css" />
+    <Content Include="CSS\Login\Textbox.css" />
     <Content Include="images\HamiShu_Blue_BG.png" />
+    <Content Include="images\HamiShu_Logo_WhiteBG.png" />
     <Content Include="images\unknown.png" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
