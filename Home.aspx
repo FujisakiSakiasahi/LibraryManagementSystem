@@ -30,7 +30,9 @@
               <asp:Image ID="Image1" runat="server" ImageUrl="~/images/HamiShu_Blue_BG.png" Width="208px" />
           </div>
           <div class="header-login">
-              <asp:Label ID="Label1" runat="server" Text="Login / Sign Up"></asp:Label>
+              <a href="Login.aspx">
+                  <asp:Label ID="Label1" runat="server" Text="Login / Sign Up"></asp:Label>
+              </a>
           </div>
        </div>
         <div class="content">
