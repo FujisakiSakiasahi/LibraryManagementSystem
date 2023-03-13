@@ -39,7 +39,7 @@ namespace LibraryManagementSystem
         protected void Search(String searchStatement, String filter) 
         {
             String searchQuery = "SELECT * FROM Book WHERE " + filter + "=" + searchStatement + ";";
-            Datatable result = runQuery(searchQuery);
+            DataTable result = runQuery(searchQuery);
 
 
             //set the returning datatable to the required space
@@ -57,15 +57,15 @@ namespace LibraryManagementSystem
 
         protected void SetBookRecommendation(String genre){
             //get a list of book from the database
-            String query = new String();
+            String query;
             if(genre == "random"){//random genre
-                query = "SELECT DISTINCT genre FROM Genre;"
+                query = "SELECT DISTINCT genre FROM Genre;";
                 DataTable genreListData = runQuery(query);
                 int genreCount = genreListData.Rows.Count;
                 
                 String[] genreList = new String[genreCount];
                 for(int i = 0 ; i < genreCount ; i++){
-                    genreList[i] = genreListData.Rows[i].Item;
+                    genreList[i] = genreListData.Rows[i].ToString();
                 }
 
                 //randomly select one genre
@@ -73,11 +73,11 @@ namespace LibraryManagementSystem
                 int genreIndexChosen = rnd.Next(genreCount);
 
                 //set query
-                String query = "SELECT bookName, authorName, bookImage FROM Book WHERE bookId IN (SELECT bookId FROM genre WHERE genre='"+genreList[genreIndexChosen]+"';);";
+                query = "SELECT bookName, authorName, bookImage FROM Book WHERE bookId IN (SELECT bookId FROM genre WHERE genre='"+genreList[genreIndexChosen]+"';);";
             }else{//specific genre
-                String query = "SELECT bookName, authorName, bookImage FROM Book WHERE bookId IN(SELECT bookId FROM genre WHERE genre='"+genre+"';)";
+                query = "SELECT bookName, authorName, bookImage FROM Book WHERE bookId IN(SELECT bookId FROM genre WHERE genre='"+genre+"';)";
             }
-            Datatable result = runQuery(query);
+            DataTable result = runQuery(query);
 
             //set the books to the page here
         }
