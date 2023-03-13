@@ -118,6 +118,8 @@
     <Content Include="login_code.aspx" />
     <Content Include="librarian_page_code.aspx" />
     <Content Include="HomePage.aspx" />
+    <Content Include="Home.aspx" />
+    <Content Include="AboutUs.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Login.aspx.cs">
@@ -157,6 +159,13 @@
       <DependentUpon>HomePage.aspx</DependentUpon>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUs.aspx.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
