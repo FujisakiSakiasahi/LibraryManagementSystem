@@ -18,7 +18,26 @@ namespace LibraryManagementSystem
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            checkLoginState();
+        }
+
+        protected void checkLoginState() {
+            if (Session["loginState"].ToString() == "true")
+            {
+                userLoginState = true;
+            }
+            else { 
+                userLoginState = false;
+            }
+        }
+
+        protected void setCookie(String cookieName, String cookieValue) {
+            HttpContext.Current.Response.Cookies.Add(new HttpCookie(cookieName, cookieValue));
+        }
+
+        protected void login() {
+            if (true)
+                Session["loginState"] = "true";
         }
 
         //for the use of getting data from database by running SQL query
