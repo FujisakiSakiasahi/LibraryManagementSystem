@@ -11,14 +11,18 @@ namespace LibraryManagementSystem
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        private SqlConnection connection = new SqlConnection("Server=localhost\\SQLEXPRESS ; Database=LibrarylDb ; Integrated Security = TRUE");
+        private SqlConnection connection = new SqlConnection("Server=localhost\\SQLEXPRESS ; Database=LibraryDb ; Integrated Security = TRUE");
         //private SqlConnection connection = new SqlConnection("Server=localhost\\SQLEXPRESS ; Database=LibrarylDb ; Integrated Security = TRUE");
 
         public bool userLoginState = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            checkLoginState();
+            if (Session["loginState"] != null) {
+                checkLoginState();
+            }else { Session["loginState"] = "false"; }
+            
+            test.InnerHtml = userLoginState.ToString();
         }
 
         protected void checkLoginState() {
@@ -33,11 +37,6 @@ namespace LibraryManagementSystem
 
         protected void setCookie(String cookieName, String cookieValue) {
             HttpContext.Current.Response.Cookies.Add(new HttpCookie(cookieName, cookieValue));
-        }
-
-        protected void login() {
-            if (true)
-                Session["loginState"] = "true";
         }
 
         //for the use of getting data from database by running SQL query
