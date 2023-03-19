@@ -1,7 +1,10 @@
 ﻿.labels {
     font-weight: bolder;
+    color: white;
 }
 
 text {
     background: black;
+    color: white;
+    font-size: 20px;
 }
