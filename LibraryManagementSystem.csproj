@@ -103,12 +103,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="AboutUs.aspx" />
     <Content Include="CSS\Home\Content.css" />
-    <Content Include="CSS\Home\Footer.css" />
-    <Content Include="CSS\Home\Header.css" />
+    <Content Include="CSS\Footer.css" />
+    <Content Include="CSS\Header.css" />
     <Content Include="CSS\Home\Text.css" />
     <Content Include="CSS\Login\Content.css" />
     <Content Include="CSS\Login\Textbox.css" />
+    <Content Include="Description.aspx" />
     <Content Include="images\HamiShu_Blue_BG.png" />
     <Content Include="images\HamiShu_Logo_WhiteBG.png" />
     <Content Include="images\unknown.png" />
@@ -119,9 +121,22 @@
     <Content Include="librarian_page_code.aspx" />
     <Content Include="HomePage.aspx" />
     <Content Include="Home.aspx" />
-    <Content Include="AboutUs.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AboutUs.aspx.cs">
+      <SubType>ASPXCodeBehind</SubType>
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AboutUs.aspx.designer.cs">
+      <DependentUpon>AboutUs.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Description.aspx.cs">
+      <DependentUpon>Description.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Description.aspx.designer.cs">
+      <DependentUpon>Description.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -159,13 +174,6 @@
       <DependentUpon>HomePage.aspx</DependentUpon>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AboutUs.aspx.cs">
-      <DependentUpon>AboutUs.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AboutUs.aspx.designer.cs">
-      <DependentUpon>AboutUs.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

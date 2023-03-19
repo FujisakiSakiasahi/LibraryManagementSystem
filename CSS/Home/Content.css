@@ -34,8 +34,8 @@
     margin-top: 25px;
     margin-bottom: 25px;
     width: 90%;
+    padding: 10px;
     background: #f0f0f0;
-    height: 200px;
     text-align: left;
     border-radius: 20px;
     display: flow-root;
@@ -46,11 +46,16 @@
 }
 
 .list-item-content {
+    display: flex;
+    justify-content: space-between;
     background: white;
     margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     width: 97%;
-    height: 80%;
     border-radius: 20px;
+}
+
+.list-item-content-images {
+    margin: 10px;
 }

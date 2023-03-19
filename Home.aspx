@@ -5,9 +5,9 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="CSS/Home/Header.css"/>
+    <link rel="stylesheet" href="CSS/Header.css"/>
     <link rel="stylesheet" href="CSS/Home/Content.css" />
-    <link rel="stylesheet" href="CSS/Home/Footer.css" />
+    <link rel="stylesheet" href="CSS/Footer.css" />
     <link rel="stylesheet" href="CSS/Home/Text.css" />
 
     <style type="text/css">
@@ -53,17 +53,32 @@
                         </div>
                         <div class="list-item-content list-item-content-1">
 
+                            <asp:ImageButton ID="ImageButton1" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton2" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton3" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton4" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
+
                         </div>
                     </div>
                     <div class="list-item list-item-2">
                         <asp:Label ID="Label3" runat="server" Text="Label" CssClass="labels"></asp:Label>
                         <div class="list-item-content list-item-content-2">
 
+                            <asp:ImageButton ID="ImageButton5" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton6" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton7" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton8" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
+
                         </div>
                     </div>
                     <div class="list-item list-item-3">
                         <asp:Label ID="Label4" runat="server" Text="Label" CssClass="labels"></asp:Label>
                         <div class="list-item-content list-item-content-3">
+
+                            <asp:ImageButton ID="ImageButton9" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton10" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton11" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton12" runat="server" CssClass="list-item-content-images" Height="100px" ImageUrl="~/images/unknown.png" />
 
                         </div>
                     </div>
