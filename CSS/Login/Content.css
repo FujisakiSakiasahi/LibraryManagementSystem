@@ -1,5 +1,8 @@
 ﻿body {
     background-color: whitesmoke;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .login-container {
@@ -7,6 +10,7 @@
     height: 500px;
     width: 500px;
     margin: 0 auto;
+
 }
 
 .image-container {
@@ -31,17 +35,20 @@
 .button-container {
     background: blue;
     display: flex;
-    height : min-content;
+    height: min-content;
     width: 90%;
     justify-content: center;
-    align-items: end;
     margin: 0 auto;
+    align-items: space-between;
 }
 
 
 .buttons {
+    width: 90%;
     background: red;
     margin: 10px;
+    display: flex;
+    align-items: space-between;
 }
 
 .button-forgotpassword {
