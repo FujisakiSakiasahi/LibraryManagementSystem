@@ -1,16 +1,18 @@
-﻿
+﻿body {
+    font-family: Arial, Helvetica, sans-serif;
+}
 
 .banner-container {
     margin: 25px;
 }
 
 .banner {
-    
     height: 100px;
     width: 80%;
     margin: auto;
-    background: blue;
+    background: #2F557F;
     border-radius: 20px;
+    overflow: hidden;
 }
 
 .search-bar-container {
@@ -22,7 +24,7 @@
 }
 .list {
     width: 65%;
-    background: pink;
+    background: white;
     margin: auto;
     padding: 20px;
     border-radius: 20px;
@@ -35,14 +37,15 @@
     margin-bottom: 25px;
     width: 90%;
     padding: 10px;
-    background: #f0f0f0;
+    background: #2F557F;
     text-align: left;
     border-radius: 20px;
     display: flow-root;
+    text-align: center;
 }
 
 .label-container {
-    margin-left: 10px;
+    text-align: center;
 }
 
 .list-item-content {
@@ -58,4 +61,17 @@
 
 .list-item-content-images {
     margin: 10px;
+}
+
+.advanced-search-button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #404040;
+    margin: 10px;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
