@@ -33,9 +33,10 @@
     float: right;
 }
 
-.link {
+.link a:visited {
     text-decoration: none;
     color: white;
 }
+
 
 

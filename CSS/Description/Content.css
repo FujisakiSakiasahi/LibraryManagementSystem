@@ -1,11 +1,12 @@
 ﻿.content {
     background-color: whitesmoke;
+    
 }
 
 
 .description {
     color: black;
-    margin: auto;
+    margin:0 auto;
     width: 90%;
     background-color: white;
     margin: 25px;
