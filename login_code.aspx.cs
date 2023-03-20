@@ -74,7 +74,16 @@ namespace LibraryManagementSystem
             else {
                 Session["loginState"] = "true";
                 Session["memberId"] = returnedData.Rows[0][0];
-                Response.Redirect("homepage_code.aspx");
+
+                if (returnedData.Rows[0][1].ToString() == "0")
+                {
+                    Response.Redirect("homepage_code.aspx");
+                }
+                else if (returnedData.Rows[0][1].ToString() == "1") 
+                {
+                    Response.Redirect("librarian_page_code.aspx");
+                }
+                
             }
         }
     }

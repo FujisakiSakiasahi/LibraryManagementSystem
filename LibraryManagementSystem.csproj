@@ -70,6 +70,7 @@
     <Content Include="Web.config" />
     <Content Include="homepage_code.aspx" />
     <Content Include="login_code.aspx" />
+    <Content Include="librarian_page_code.aspx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -86,6 +87,13 @@
     </Compile>
     <Compile Include="login_code.aspx.designer.cs">
       <DependentUpon>login_code.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="librarian_page_code.aspx.cs">
+      <DependentUpon>librarian_page_code.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="librarian_page_code.aspx.designer.cs">
+      <DependentUpon>librarian_page_code.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
