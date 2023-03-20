@@ -1,0 +1,16 @@
+﻿.content {
+    background-color: whitesmoke;
+}
+
+
+.description {
+    color: black;
+    margin: auto;
+    width: 90%;
+    background-color: white;
+    margin: 25px;
+}
+
+.temp-img {
+    margin: 10px;
+}

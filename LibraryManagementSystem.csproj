@@ -68,6 +68,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
+    <Content Include="CSS\Description\Content.css" />
     <Content Include="CSS\Home\Content.css" />
     <Content Include="CSS\Footer.css" />
     <Content Include="CSS\Header.css" />
@@ -75,6 +76,7 @@
     <Content Include="CSS\Login\Content.css" />
     <Content Include="CSS\Login\Textbox.css" />
     <Content Include="Description.aspx" />
+    <Content Include="images\book.jpg" />
     <Content Include="images\HamiShu_Blue_BG.png" />
     <Content Include="images\HamiShu_Logo_WhiteBG.png" />
     <Content Include="images\unknown.png" />
