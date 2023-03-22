@@ -5,22 +5,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="CSS/Home/Header.css"/>
-    <link rel="stylesheet" href="CSS/Home/Content.css" />
-    <link rel="stylesheet" href="CSS/Home/Footer.css" />
-    <link rel="stylesheet" href="CSS/Home/Text.css" />
-
-    <style type="text/css">
-        #Text1 {
-            height: 38px;
-            width: 856px;
-            border: 0;
-            border-radius: 10px;
-            font-size: 20px;
-            padding: 10px;
-        }
-    </style>
-
+    <link rel="stylesheet" href="CSS/Header.css"/>
+    <link rel="stylesheet" href="CSS/Footer.css" />
 </head>
 <body>
     <form id="form1" runat="server">
