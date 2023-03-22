@@ -22,7 +22,7 @@ create table Member (
     memberName VARCHAR(50) NOT NULL,
     memberNo INT NOT NULL,
     memberEmail VARCHAR (30) NOT NULL
-        CHECK (memberEmail LIKE '%_@__%.__%'),\
+        CHECK (memberEmail LIKE '%_@__%.__%'),
     memberPasswd VARCHAR (50) NOT NULL,
     newsletter BIT NOT NULL,
     librarian BIT NOT NULL,
