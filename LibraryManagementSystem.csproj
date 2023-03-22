@@ -108,12 +108,14 @@
     <Content Include="CSS\Footer.css" />
     <Content Include="CSS\Header.css" />
     <Content Include="CSS\Home\Text.css" />
+    <Content Include="CSS\Librarian\Content.css" />
     <Content Include="CSS\Login\Content.css" />
     <Content Include="CSS\Login\Textbox.css" />
     <Content Include="Description.aspx" />
     <Content Include="images\HamiShu_Blue_BG.png" />
     <Content Include="images\HamiShu_Logo_WhiteBG.png" />
     <Content Include="images\unknown.png" />
+    <Content Include="Librarian.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Web.config" />
     <Content Include="homepage_code.aspx" />
@@ -136,6 +138,13 @@
     </Compile>
     <Compile Include="Description.aspx.designer.cs">
       <DependentUpon>Description.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Librarian.aspx.cs">
+      <DependentUpon>Librarian.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Librarian.aspx.designer.cs">
+      <DependentUpon>Librarian.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

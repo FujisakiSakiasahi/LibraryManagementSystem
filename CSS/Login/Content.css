@@ -33,7 +33,7 @@
 }
 
 .button-container {
-    background: blue;
+    background: white;
     display: flex;
     height: min-content;
     width: 90%;
@@ -45,10 +45,9 @@
 
 .buttons {
     width: 90%;
-    background: red;
+    background: white;
     margin: 10px;
-    display: flex;
-    align-items: space-between;
+    text-align: center;
 }
 
 .button-forgotpassword {

@@ -1,0 +1,25 @@
+﻿.content {
+    display: flex;
+    height: 1000px;
+}
+
+.navigation-buttons-container {
+    width: 10%;
+    background : blue;
+}
+
+.multiview {
+    width: 90%;
+    background: red;
+}
+
+.nav-buttons {
+    width: 80%;
+    padding: 10px;
+    margin: 5px;
+    font-size: 20px;
+    font-weight: bolder;
+    border: none;
+    background: white;
+    border-radius: 10px;
+}
