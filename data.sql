@@ -32,7 +32,7 @@ create table Member (
 
 create table Genre (
     bookId INT NOT NULL,
-    genre VARCHAR(10) NOT NULL, 
+    genre VARCHAR(15) NOT NULL, 
 
     PRIMARY KEY (bookId,genre)
 )
