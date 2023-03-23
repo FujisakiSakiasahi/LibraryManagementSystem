@@ -24,15 +24,27 @@
         <div class="content">
             <div class="navigation-buttons-container">
 
-                <asp:Button ID="Button1" runat="server" Text="Button" CssClass="nav-buttons" />
+                <asp:Button ID="Button1" runat="server" Text="Button" CssClass="nav-buttons" OnClick="Button1_Click" />
                 <asp:Button ID="Button2" runat="server" Text="Button" CssClass="nav-buttons" />
                 <asp:Button ID="Button3" runat="server" Text="Button" CssClass="nav-buttons" />
-                <asp:Button ID="Button4" runat="server" Text="Button" CssClass="nav-buttons" />
+                <asp:Button ID="Button4" runat="server" Text="Button" CssClass="nav-buttons" OnClick="Button4_Click" />
 
             </div>
             <div class="multiview">
 
                 <asp:MultiView ID="MultiView1" runat="server">
+                    <asp:View ID="View1" runat="server">
+                        <input id="Text1" type="text" />
+                        <asp:Button ID="Button5" runat="server" Text="Button" />
+                    </asp:View>
+                    <asp:View ID="View2" runat="server">
+                    </asp:View>
+                    <asp:View ID="View3" runat="server">`
+                    </asp:View>
+                    <asp:View ID="View4" runat="server">
+                    </asp:View>
+                    <asp:View ID="View5" runat="server">
+                    </asp:View>
                 </asp:MultiView>
 
             </div>
