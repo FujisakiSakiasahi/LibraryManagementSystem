@@ -24,15 +24,17 @@
         <div class="content">
             <div class="navigation-buttons-container">
 
-                <asp:Button ID="Button1" runat="server" Text="Button" CssClass="nav-buttons" OnClick="Button1_Click" />
-                <asp:Button ID="Button2" runat="server" Text="Button" CssClass="nav-buttons" />
-                <asp:Button ID="Button3" runat="server" Text="Button" CssClass="nav-buttons" />
-                <asp:Button ID="Button4" runat="server" Text="Button" CssClass="nav-buttons" OnClick="Button4_Click" />
+                <asp:Button ID="Button1" runat="server" Text="Books" CssClass="nav-buttons" OnClick="Button1_Click" />
+                <asp:Button ID="Button2" runat="server" Text="User" CssClass="nav-buttons" />
+                <asp:Button ID="Button3" runat="server" Text="Check In" CssClass="nav-buttons" />
+                <asp:Button ID="Button4" runat="server" Text="Check Out" CssClass="nav-buttons" OnClick="Button4_Click" />
+                <asp:Button ID="Button6" runat="server" Text="Notification" CssClass="nav-buttons" />
+
 
             </div>
             <div class="multiview">
 
-                <asp:MultiView ID="MultiView1" runat="server">
+                <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
                     <asp:View ID="View1" runat="server">
                         <input id="Text1" type="text" />
                         <asp:Button ID="Button5" runat="server" Text="Button" />
@@ -44,6 +46,9 @@
                     <asp:View ID="View4" runat="server">
                     </asp:View>
                     <asp:View ID="View5" runat="server">
+                    </asp:View>
+                    <asp:View ID="View6" runat="server">
+
                     </asp:View>
                 </asp:MultiView>
 
