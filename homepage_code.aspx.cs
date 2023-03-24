@@ -11,53 +11,24 @@ namespace LibraryManagementSystem
 {
     public partial class WebForm1 : System.Web.UI.Page
     {
-        private SqlConnection connection = new SqlConnection("Server=localhost\\SQLEXPRESS ; Database=LibraryDb ; Integrated Security = TRUE");
-        //private SqlConnection connection = new SqlConnection("Server=localhost\\SQLEXPRESS ; Database=LibrarylDb ; Integrated Security = TRUE");
-
-        public bool userLoginState = false;
+        private SessionHandler sessionHandler = new SessionHandler();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["loginState"] != null) {
-                checkLoginState();
-            }else { Session["loginState"] = "false"; }
-            
-            test.InnerHtml = userLoginState.ToString();
-        }
-
-        protected void checkLoginState() {
-            if (Session["loginState"].ToString() == "true")
+            if (Session["loginState"] != null)
             {
-                userLoginState = true;
+                sessionHandler.CheckLoginState();
             }
-            else { 
-                userLoginState = false;
-            }
-        }
-
-        protected void setCookie(String cookieName, String cookieValue) {
-            HttpContext.Current.Response.Cookies.Add(new HttpCookie(cookieName, cookieValue));
-        }
-
-        //for the use of getting data from database by running SQL query
-        protected DataTable runQuery(String query) 
-        {
-            DataTable returningData = new DataTable();
-
-            connection.Open();
-
-            SqlDataAdapter da = new SqlDataAdapter(new SqlCommand(query, connection));
-            da.Fill(returningData);
-
-            connection.Close();
-
-            return returningData;
+            else { Session["loginState"] = "false"; }
+            
+            
+            test.InnerHtml = sessionHandler.GetLoginState().ToString();
         }
 
         protected void Search(String searchStatement, String filter) 
         {
             String searchQuery = "SELECT * FROM Book WHERE " + filter + "=" + searchStatement + ";";
-            DataTable result = runQuery(searchQuery);
+            DataTable result = sessionHandler.runQuery(searchQuery);
 
 
             //set the returning datatable to the required space
@@ -78,7 +49,7 @@ namespace LibraryManagementSystem
             String query;
             if(genre == "random"){//random genre
                 query = "SELECT DISTINCT genre FROM Genre;";
-                DataTable genreListData = runQuery(query);
+                DataTable genreListData = sessionHandler.runQuery(query);
                 int genreCount = genreListData.Rows.Count;
                 
                 String[] genreList = new String[genreCount];
@@ -95,7 +66,7 @@ namespace LibraryManagementSystem
             }else{//specific genre
                 query = "SELECT bookName, authorName, bookImage FROM Book WHERE bookId IN(SELECT bookId FROM genre WHERE genre='"+genre+"';)";
             }
-            DataTable result = runQuery(query);
+            DataTable result = sessionHandler.runQuery(query);
 
             //set the books to the page here
         }

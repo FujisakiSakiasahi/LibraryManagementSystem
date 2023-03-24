@@ -73,6 +73,7 @@
     <Content Include="librarian_page_code.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="SessionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="homepage_code.aspx.cs">
       <DependentUpon>homepage_code.aspx</DependentUpon>

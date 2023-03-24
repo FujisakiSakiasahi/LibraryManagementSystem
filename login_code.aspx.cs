@@ -11,39 +11,13 @@ namespace LibraryManagementSystem
 {
     public partial class WebForm2 : System.Web.UI.Page
     {
-        private SqlConnection connection = new SqlConnection("Server=localhost\\SQLEXPRESS ; Database=LibraryDb ; Integrated Security = TRUE");
+        private SessionHandler sessionHandler = new SessionHandler();
 
-        protected DataTable runQuery(String query)
-        {
-            DataTable returningData = new DataTable();
-
-            connection.Open();
-
-            SqlDataAdapter da = new SqlDataAdapter(new SqlCommand(query, connection));
-            da.Fill(returningData);
-
-            connection.Close();
-
-            return returningData;
-        }
-
-        public bool userLoginState = false;
-        protected void checkLoginState()
-        {
-            if (Session["loginState"].ToString() == "true")
-            {
-                userLoginState = true;
-            }
-            else
-            {
-                userLoginState = false;
-            }
-        }
         protected void Page_Load(object sender, EventArgs e)
         {
             if (Session["loginState"] != null)
             {
-                checkLoginState();
+                sessionHandler.CheckLoginState();
             }
             else { Session["loginState"] = "false"; }
         }
@@ -65,7 +39,7 @@ namespace LibraryManagementSystem
         protected void Login(String email, String password) {
             String query;
             query = "SELECT memberId,librarian FROM Member WHERE memberEmail='"+email+"' AND memberPasswd='"+password+"' ;";
-            DataTable returnedData = runQuery(query);
+            DataTable returnedData = sessionHandler.runQuery(query);
 
             if (returnedData == null || returnedData.Rows.Count !=1)
             {
@@ -75,13 +49,16 @@ namespace LibraryManagementSystem
                 Session["loginState"] = "true";
                 Session["memberId"] = returnedData.Rows[0][0];
 
-                if (returnedData.Rows[0][1].ToString() == "0")
+                if (returnedData.Rows[0][1].ToString() == "False")
                 {
                     Response.Redirect("homepage_code.aspx");
                 }
-                else if (returnedData.Rows[0][1].ToString() == "1") 
+                else if (returnedData.Rows[0][1].ToString() == "True")
                 {
                     Response.Redirect("librarian_page_code.aspx");
+                }
+                else {
+                    Response.Write("<script>alert('Login data returning error occurs')</script>");
                 }
                 
             }
