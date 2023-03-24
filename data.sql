@@ -64,8 +64,9 @@ create table Ratings (
 
 create table Notification (
     notifId INT NOT NULL,
+    notifTitle VARCHAR(500) NOT NULL
     memberId INT NOT NULL,
-    msg VARCHAR(100),
+    msg VARCHAR(1024),
 
     PRIMARY KEY (notifId),
     FOREIGN KEY (memberId) REFERENCES Member (memberId)
