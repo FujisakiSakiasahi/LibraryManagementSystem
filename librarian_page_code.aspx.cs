@@ -22,7 +22,7 @@ namespace LibraryManagementSystem
             loadNotificationList();
         }
 
-        protected void SendNotification(String title, String content) {
+        protected void AddNewNotification(String title, String content) {
             //get the highest Id of the notification
             DataTable returnedData = sessionHandler.runQuery("SELECT MAX(notifId) FROM Notification");
             int notifId = int.Parse(returnedData.Rows[0][0].ToString());
