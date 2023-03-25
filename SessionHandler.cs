@@ -17,12 +17,11 @@ namespace LibraryManagementSystem
         {
             connection = new SqlConnection("Server=localhost\\SQLEXPRESS ; Database=LibraryDb ; Integrated Security = TRUE");
             userLoginState = false;
-
-
         }
 
         public void CheckLoginState()
         {
+            //load login state
             if (HttpContext.Current.Session["loginState"].ToString() == "true")
             {
                 userLoginState = true;
@@ -32,6 +31,7 @@ namespace LibraryManagementSystem
                 userLoginState = false;
             }
 
+            //load member id
             if (HttpContext.Current.Session["memberId"] != null)
             {
                 loginUserId = int.Parse(HttpContext.Current.Session["memberId"].ToString());
