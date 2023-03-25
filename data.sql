@@ -10,12 +10,12 @@ create table Book (
     rating INT
         CHECK (rating BETWEEN 1 AND 5),
     lang VARCHAR(10) NOT NULL,
-    isbn INT NOT NULL,
+    isbn BIGINT NOT NULL,
     available BIT NOT NULL,
     shelfid INT NOT NULL,
 
     PRIMARY KEY (bookId)
-)
+);
 
 create table Member (
     memberId INT NOT NULL,
@@ -28,14 +28,14 @@ create table Member (
     librarian BIT NOT NULL,
 
     PRIMARY KEY (memberId)
-)
+);
 
 create table Genre (
     bookId INT NOT NULL,
     genre VARCHAR(15) NOT NULL, 
 
     PRIMARY KEY (bookId,genre)
-)
+);
 
 create table Borrowed (
     borrowId INT NOT NULL,
@@ -48,7 +48,7 @@ create table Borrowed (
     PRIMARY KEY (borrowId),
     FOREIGN KEY (bookId) REFERENCES Book (BookId),
     FOREIGN KEY (memberId) REFERENCES Member (memberId)
-)
+);
 
 create table Ratings (
     bookId INT NOT NULL,
@@ -60,14 +60,14 @@ create table Ratings (
     PRIMARY KEY (bookId,memberId),
     FOREIGN KEY (bookId) REFERENCES Book (BookId),
     FOREIGN KEY (memberId) REFERENCES Member (memberId)
-)
+);
 
 create table Notification (
     notifId INT NOT NULL,
-    notifTitle VARCHAR(500) NOT NULL
+    notifTitle VARCHAR(500) NOT NULL,
     memberId INT NOT NULL,
     msg VARCHAR(1024),
 
     PRIMARY KEY (notifId),
     FOREIGN KEY (memberId) REFERENCES Member (memberId)
-)
+);

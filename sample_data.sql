@@ -54,8 +54,8 @@ VALUES
     (3, 2, 'The art style is beautiful.', 4),
     (3, 3, 'A bit slow-paced, but interesting.', 3);
 
-INSERT INTO Notification (notifId, memberId, msg)
+INSERT INTO Notification (notifId, notifTitle, memberId, msg)
 VALUES 
-    (1, 1, 'Reminder: your book is due tomorrow.'),
-    (2, 2, 'New books in the library!'),
-    (3, 3, 'Library closed on Monday for holiday.');
+    (1, "Reminder", 1, 'Reminder: your book is due tomorrow.'),
+    (2, "Reminder", 2, 'New books in the library!'),
+    (3, "Reminder", 3, 'Library closed on Monday for holiday.');
