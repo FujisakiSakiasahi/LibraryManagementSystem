@@ -22,6 +22,17 @@ namespace LibraryManagementSystem
             loadNotificationList();
         }
 
+        private float CalculateLateFee(String expectedReturnedDate, String returnedDate) {
+            float fee = 0;
+            float feeRate = 0.1f;
+            
+            //fee = (returnedDate - expectedReturnedDate) * feeRate;
+
+
+            return fee;
+        }
+
+
         protected void AddNewNotification(String title, String content) {
             //get the highest Id of the notification
             DataTable returnedData = sessionHandler.runQuery("SELECT MAX(notifId) FROM Notification");
