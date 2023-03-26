@@ -21,7 +21,31 @@ namespace LibraryManagementSystem
 
             LoadNotificationList();
         }
-        
+
+        protected void GetBookData() {
+        }
+
+        protected void AddNewBookData() {
+        }
+
+        protected void EditBookData() { 
+        }
+
+        protected void DeleteBookData() {
+        }
+
+        protected void GetUserData() { 
+        }
+
+        protected void AddNewUserData() {
+        }
+
+        protected void EditUserData() {
+        }
+
+        protected void DeleteUserData() {
+        }
+
         protected void GetUserBorrowedRecord(int userId) {
             String query = "SELECT * FROM Borrowed WHERE memberId=" + userId + ";";
             DataTable returnedData = sessionHandler.runQuery(query);
