@@ -22,6 +22,10 @@ namespace LibraryManagementSystem
             loadNotificationList();
         }
 
+        private void GetUserBorrowedRecord(String userId) {
+            String query = "SELECT * FROM Borrowed WHERE memberId=";
+        }
+
         private float CalculateLateFee(String expectedReturnedDate, String returnedDate) {
             float fee = 0;
             float feeRate = 0.1f;
