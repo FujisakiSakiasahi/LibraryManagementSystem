@@ -19,17 +19,18 @@ namespace LibraryManagementSystem
             }
             else { Session["loginState"] = "false"; };
 
-            loadNotificationList();
+            LoadNotificationList();
         }
-
-        private void GetUserBorrowedRecord(int userId) {
+        
+        protected void GetUserBorrowedRecord(int userId) {
             String query = "SELECT * FROM Borrowed WHERE memberId=" + userId + ";";
             DataTable returnedData = sessionHandler.runQuery(query);
 
             //load data into the list
+            LoadDataIntoGridView(returnedData, GridView1);
         }
 
-        private float CalculateLateFee(String expectedReturnedDate, String returnedDate) {
+        protected float CalculateLateFee(String expectedReturnedDate, String returnedDate) {
             float fee = 0;
             float feeRate = 0.1f;
             
@@ -54,17 +55,21 @@ namespace LibraryManagementSystem
                 "');";
             sessionHandler.runQuery(query);
 
-            loadNotificationList();
+            LoadNotificationList();
         }
 
         //use to load all the notification that has been made
-        protected void loadNotificationList()
+        protected void LoadNotificationList()
         {
             DataTable returnedData = sessionHandler.runQuery("SELECT * FROM Notification;");
 
             //set it into datatable
-            GridView1.DataSource = returnedData;
-            GridView1.DataBind();
+            LoadDataIntoGridView(returnedData, GridView1);
+        }
+
+        protected void LoadDataIntoGridView(DataTable dataTable, GridView gridView) {
+            gridView.DataSource = dataTable;
+            gridView.DataBind();
         }
     }
 }
