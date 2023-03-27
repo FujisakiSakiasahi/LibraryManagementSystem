@@ -22,12 +22,11 @@ namespace LibraryManagementSystem
             connection = new MySqlConnection("Server=na01-sql.pebblehost.com,3306; Database=customer_453349_hitoha ; User ID=customer_453349_hitoha ; Password=M0heuKdYvU1huSY!mgje");
 
             userLoginState = false;
-
-
         }
 
         public void CheckLoginState()
         {
+            //load login state
             if (HttpContext.Current.Session["loginState"].ToString() == "true")
             {
                 userLoginState = true;
@@ -37,6 +36,7 @@ namespace LibraryManagementSystem
                 userLoginState = false;
             }
 
+            //load member id
             if (HttpContext.Current.Session["memberId"] != null)
             {
                 loginUserId = int.Parse(HttpContext.Current.Session["memberId"].ToString());
