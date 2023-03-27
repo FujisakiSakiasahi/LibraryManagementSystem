@@ -27,6 +27,7 @@
 .view-container {
     background: white;
     margin: 25px;
+    width: 100%;
 }
 
 .labels {
