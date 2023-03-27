@@ -609,13 +609,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label26;
 
         /// <summary>
-        /// TextBox11 control.
+        /// TextBox20 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox11;
+        protected global::System.Web.UI.WebControls.TextBox TextBox20;
 
         /// <summary>
         /// Label29 control.

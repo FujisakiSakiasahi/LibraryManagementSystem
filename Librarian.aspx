@@ -43,7 +43,7 @@
                         9    : notification (maybe can add one more, to use for editing notification)
                         -->
                     <asp:View ID="View0" runat="server">
-                        <asp:TextBox ID="TextBox19" runat="server"></asp:TextBox>
+                        <asp:TextBox ID="TextBox19" runat="server" Wrap="False"></asp:TextBox>
                         <asp:Button ID="Button17" runat="server" OnClick="Button17_Click" Text="Search" />
                         <br />
                         <asp:GridView ID="GridView1" runat="server">
@@ -144,7 +144,7 @@
                                     <asp:Label ID="Label25" runat="server" Text="Description:" CssClass="labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:TextBox ID="TextBox8" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox8" runat="server" Height="208px" Width="417px"></asp:TextBox>
                                 
                                     <br />
                                     <br />
@@ -224,7 +224,7 @@
                                     <asp:Label ID="Label26" runat="server" Text="Description:" CssClass="labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:TextBox ID="TextBox11" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox20" runat="server" Height="208px" Width="417px"></asp:TextBox>
                                 
                                     <br />
                                     <br />
