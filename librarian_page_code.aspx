@@ -12,7 +12,7 @@
             <asp:Label ID="bookIdLbl" runat="server" Text="Book ID: "></asp:Label>
             <asp:Panel runat="server" DefaultButton="submitBtn">
                 <asp:TextBox ID="booKIdTxt" runat="server"></asp:TextBox>   
-                <asp:Button ID="submitBtn" runat="server" Text="Search" OnClick="Book_Load" />
+                <asp:Button ID="submitBtn" runat="server" Text="Search" OnClick="GetBookData" />
             </asp:Panel>
             <br />
         </div>
@@ -63,7 +63,7 @@
         </div>
 
         <div>
-            <asp:Button ID="EditButton" runat="server" Text="Edit" OnClick="EditButton_Click" />
+            <asp:Button ID="EditButton" runat="server" Text="Edit" OnClick="EditBookData" />
             <asp:Button ID="SaveButton" runat="server" Text="Save" OnClick="SaveButton_Click" Visible="False" />
             <asp:Button ID="CancelButton" runat="server" Text="Cancel" OnClick="CancelButton_Click" Visible="False" />
         </div>
