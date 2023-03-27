@@ -4,18 +4,23 @@ using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Web;
+using System.Web.Services.Description;
+using MySql.Data.MySqlClient;
 
 namespace LibraryManagementSystem
 {
     public class SessionHandler
     {
-        private SqlConnection connection;
+        private MySqlConnection connection;
         public bool userLoginState;
         public int loginUserId;
 
         public SessionHandler()
         {
-            connection = new SqlConnection("Server=localhost\\SQLEXPRESS ; Database=LibraryDb ; Integrated Security = TRUE");
+            //connection = new SqlConnection("Server=localhost\\SQLEXPRESS ; Database=LibraryDb ; Integrated Security = TRUE");
+
+            connection = new MySqlConnection("Server=na01-sql.pebblehost.com,3306; Database=customer_453349_hitoha ; User ID=customer_453349_hitoha ; Password=M0heuKdYvU1huSY!mgje");
+
             userLoginState = false;
 
 
@@ -46,12 +51,10 @@ namespace LibraryManagementSystem
         {
             DataTable returningData = new DataTable();
 
-            connection.Open();
 
-            SqlDataAdapter da = new SqlDataAdapter(new SqlCommand(query, connection));
+            //SqlDataAdapter da = new SqlDataAdapter(new SqlCommand(query, connection));
+            MySqlDataAdapter da = new MySqlDataAdapter(new MySqlCommand(query, connection));
             da.Fill(returningData);
-
-            connection.Close();
 
             return returningData;
         }
