@@ -73,6 +73,11 @@
                                 
                                 </div>
                                 <div class="center-container">
+                                    <asp:Label ID="Label62" runat="server" CssClass="labels" Text="Author:"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="label63" runat="server" CssClass="labels" Text="*Author*"></asp:Label>
+                                    <br />
+                                    <br />
                                     <asp:Label ID="Label61" runat="server" CssClass="labels" Text="Publisher:"></asp:Label>
 
                                     <br />
@@ -157,6 +162,12 @@
                                 
                                 </div>
                                 <div class="center-container">
+                                    <asp:Label ID="Label64" runat="server" CssClass="labels" Text="Author:"></asp:Label>
+
+                                    <br />
+                                    <asp:TextBox ID="TextBox21" runat="server"></asp:TextBox>
+                                    <br />
+                                    <br />
                                     <asp:Label ID="Label28" runat="server" CssClass="labels" Text="Publisher:"></asp:Label>
 
                                     <br />
