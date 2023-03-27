@@ -19,9 +19,21 @@ namespace LibraryManagementSystem
             MultiView1.ActiveViewIndex = 0;
         }
 
+        protected void Button2_Click(object sender, EventArgs e) {
+            MultiView1.ActiveViewIndex = 3;
+        }
+
+        protected void Button3_Click(object sender, EventArgs e) {
+            MultiView1.ActiveViewIndex = 6;
+        }
+
         protected void Button4_Click(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 4;
+            MultiView1.ActiveViewIndex = 7;
+        }
+
+        protected void Button6_Click(object sender, EventArgs e) {
+            MultiView1.ActiveViewIndex = 8;
         }
     }
 }
