@@ -139,13 +139,13 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Label5 control.
+        /// Label51 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label51;
 
         /// <summary>
         /// Image2 control.
@@ -157,13 +157,13 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Image Image2;
 
         /// <summary>
-        /// Label6 control.
+        /// Label61 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label Label61;
 
         /// <summary>
         /// label7 control.
@@ -310,15 +310,6 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Button Button9;
 
         /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-
-        /// <summary>
         /// View2 control.
         /// </summary>
         /// <remarks>
@@ -326,15 +317,6 @@ namespace LibraryManagementSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View2;
-
-        /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
         /// View3 control.
@@ -353,15 +335,6 @@ namespace LibraryManagementSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View4;
-
-        /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
         /// View5 control.
