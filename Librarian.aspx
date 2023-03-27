@@ -60,13 +60,13 @@
                                 
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label5" runat="server" Text="Image" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label51" runat="server" Text="Image" CssClass="labels"></asp:Label>
                                     <br />
                                     <asp:Image ID="Image2" runat="server" ImageUrl="~/images/book.jpg" />
                                 
                                 </div>
                                 <div class="center-container">
-                                    <asp:Label ID="Label6" runat="server" CssClass="labels" Text="Publisher:"></asp:Label>
+                                    <asp:Label ID="Label61" runat="server" CssClass="labels" Text="Publisher:"></asp:Label>
 
                                     <br />
 

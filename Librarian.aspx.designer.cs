@@ -141,13 +141,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// Label5 control.
+        /// Label51 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label5;
+        protected global::System.Web.UI.WebControls.Label Label51;
 
         /// <summary>
         /// Image2 control.
@@ -159,13 +159,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Image Image2;
 
         /// <summary>
-        /// Label6 control.
+        /// Label61 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label6;
+        protected global::System.Web.UI.WebControls.Label Label61;
 
         /// <summary>
         /// label7 control.
@@ -519,13 +519,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Button Button5;
 
         /// <summary>
-        /// Button11 control.
+        /// Label3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button11;
+        protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
         /// View3 control.
@@ -744,13 +744,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Button Button14;
 
         /// <summary>
-        /// View4 control.
+        /// Label4 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View4;
+        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
         /// View5 control.
