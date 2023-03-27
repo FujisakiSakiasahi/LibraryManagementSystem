@@ -4,7 +4,7 @@
 
 .navigation-buttons-container {
     width: 10%;
-    background : blue;
+    background: #264364;
 }
 
 .multiview {
@@ -37,21 +37,20 @@
 }
 
 .content-container {
+    margin: 25px;
     display: flex;
     justify-content:space-between;
 }
 
 .left-container {
-    background-color: red;
     width: 33%;
 }
 
 .center-container {
-    background-color: green;
     width: 33%;
 }
 
 .right-container {
-    background-color: blue;
     width: 33%;
 }
+

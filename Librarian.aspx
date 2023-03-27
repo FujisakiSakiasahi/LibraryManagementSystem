@@ -42,6 +42,13 @@
                         8    : check out (borrow book)
                         9    : notification (maybe can add one more, to use for editing notification)
                         -->
+                    <asp:View ID="View0" runat="server">
+                        <asp:TextBox ID="TextBox19" runat="server"></asp:TextBox>
+                        <asp:Button ID="Button17" runat="server" OnClick="Button17_Click" Text="Search" />
+                        <br />
+                        <asp:GridView ID="GridView1" runat="server">
+                        </asp:GridView>
+                    </asp:View>
                     <asp:View ID="View1" runat="server">
                         <div class="view-container">
                             <div class="content-container">
@@ -114,6 +121,7 @@
                                 </div>
                             </div>
                             <div class="action-buttons-container">
+                                <asp:Button ID="Button18" runat="server" OnClick="Button18_Click" Text="Back" />
                                 <asp:Button ID="Button7" runat="server" Text="Delete Book" />
                                 <asp:Button ID="Button8" runat="server" Text="Edit Book" OnClick="Button8_Click" />
                                 <asp:Button ID="Button9" runat="server" Text="Add New Book" OnClick="Button9_Click" />
