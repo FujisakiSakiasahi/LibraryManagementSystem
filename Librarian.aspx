@@ -36,18 +36,109 @@
 
                 <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
                     <asp:View ID="View1" runat="server">
-                        <input id="Text1" type="text" />
-                        <asp:Button ID="Button5" runat="server" Text="Button" />
+                        <div class="view-container">
+                            <div class="content-container">
+                                <div class="left-container">
+                                    <asp:Label ID="Label2" runat="server" CssClass="labels" Text="Title:"></asp:Label>
+
+                                    <br />
+
+                                    <asp:Label ID="label" runat="server" Text="*Title*" CssClass="labels"></asp:Label>
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label3" runat="server" Text="Description:" CssClass="labels"></asp:Label>
+                                
+                                    <br />
+                                    <asp:Label ID="Label4" runat="server" Text="*Description*" CssClass="labels"></asp:Label>
+                                
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label5" runat="server" Text="Image" CssClass="labels"></asp:Label>
+                                    <br />
+                                    <asp:Image ID="Image2" runat="server" ImageUrl="~/images/book.jpg" />
+                                
+                                </div>
+                                <div class="center-container">
+                                    <asp:Label ID="Label6" runat="server" CssClass="labels" Text="Publisher:"></asp:Label>
+
+                                    <br />
+
+                                    <asp:Label ID="label7" runat="server" Text="*Publisher*" CssClass="labels"></asp:Label>
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label8" runat="server" Text="Publish Date:" CssClass="labels"></asp:Label>
+                                
+                                    <br />
+                                    <asp:Label ID="Label9" runat="server" Text="*Publish date*" CssClass="labels"></asp:Label>
+                                
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label10" runat="server" Text="Rating:" CssClass="labels"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="Label16" runat="server" CssClass="labels" Text="*Rating*"></asp:Label>
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label17" runat="server" CssClass="labels" Text="Language:"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="Label18" runat="server" CssClass="labels" Text="*Language*"></asp:Label>
+                                    <br />
+                                
+                                </div>
+                                <div class="right-container">
+                                    <asp:Label ID="Label11" runat="server" CssClass="labels" Text="ISBN:"></asp:Label>
+
+                                    <br />
+
+                                    <asp:Label ID="label12" runat="server" Text="*ISBN*" CssClass="labels"></asp:Label>
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label13" runat="server" Text="Availability:" CssClass="labels"></asp:Label>
+                                
+                                    <br />
+                                    <asp:Label ID="Label14" runat="server" Text="*Availability*" CssClass="labels"></asp:Label>
+                                
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label15" runat="server" Text="Shelf ID:" CssClass="labels"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="Label19" runat="server" CssClass="labels" Text="*Shelf ID*"></asp:Label>
+                                    <br />
+                                
+                                </div>
+                            </div>
+                            <div class="action-buttons-container">
+                                <asp:Button ID="Button7" runat="server" Text="Delete Book" />
+                                <asp:Button ID="Button8" runat="server" Text="Edit Book" />
+                                <asp:Button ID="Button9" runat="server" Text="Add New Book" />
+                            </div>
+                            
+                        </div>
+
                     </asp:View>
                     <asp:View ID="View2" runat="server">
+                        <div class="view-container">
+
+                        </div>
                     </asp:View>
                     <asp:View ID="View3" runat="server">
+                        <div class="view-container">
+
+                        </div>
                     </asp:View>
                     <asp:View ID="View4" runat="server">
+                        <div class="view-container">
+
+                        </div>
                     </asp:View>
                     <asp:View ID="View5" runat="server">
+                        <div class="view-container">
+
+                        </div>
                     </asp:View>
                     <asp:View ID="View6" runat="server">
+                        <div class="view-container">
+
+                        </div>
 
                     </asp:View>
                 </asp:MultiView>

@@ -1,6 +1,5 @@
 ﻿.content {
     display: flex;
-    height: 1000px;
 }
 
 .navigation-buttons-container {
@@ -10,7 +9,8 @@
 
 .multiview {
     width: 90%;
-    background: red;
+    background: grey;
+    display: flex;
 }
 
 .nav-buttons {
@@ -22,4 +22,35 @@
     border: none;
     background: white;
     border-radius: 10px;
+}
+
+.view-container {
+    background: white;
+    margin: 25px;
+}
+
+.labels {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+.content-container {
+    display: flex;
+    justify-content:space-between;
+}
+
+.left-container {
+    background-color: red;
+    width: 33%;
+}
+
+.center-container {
+    background-color: green;
+    width: 33%;
+}
+
+.right-container {
+    background-color: blue;
+    width: 33%;
 }
