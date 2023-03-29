@@ -26,14 +26,28 @@
      
     <form id="form1" runat="server">
       <div class="header">
-          <div class="header-logo">
-              <asp:Image ID="Image1" runat="server" ImageUrl="~/images/HamiShu_Blue_BG.png" Width="208px" />
+          <div class="header-logo-container">
+              <div class="header-logo">
+                  <asp:Image ID="Image1" runat="server" ImageUrl="~/images/HamiShu_Blue_BG.png" Width="208px" />
+              </div>
           </div>
-          <div class="header-login">
-              <a href="Login.aspx">
-                  <asp:Label ID="Label1" runat="server" Text="Login / Sign Up"></asp:Label>
-              </a>
+
+          <div class="header-navigation-container">
+              <asp:Button ID="Button2" runat="server" Text="Button" />
+              <asp:Button ID="Button3" runat="server" Text="Button" />
+              <asp:Button ID="Button4" runat="server" Text="Button" />
+              <asp:Button ID="Button5" runat="server" Text="Button" />
           </div>
+
+          <div class="header-login-container">
+              <div class="header-login">
+                  <a href="Login.aspx" class="link">
+                      <asp:Label ID="Label1" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
+                  </a>
+              </div>
+          </div>
+
+
        </div>
         <div class="content">
             <div class="banner-container">
