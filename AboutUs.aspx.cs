@@ -9,9 +9,16 @@ namespace LibraryManagementSystem
 {
     public partial class WebForm4 : System.Web.UI.Page
     {
+
+        private SessionHandler sessionHandler = new SessionHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (Session["loginState"] != null)
+            {
+                sessionHandler.CheckLoginState();
+            }
+            else { Session["loginState"] = "false"; }
         }
+
     }
 }

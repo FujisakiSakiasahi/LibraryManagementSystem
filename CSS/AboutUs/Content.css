@@ -1,0 +1,17 @@
+﻿body {
+}
+
+.content {
+    display: flex;
+}
+
+.aboutus-container {
+    margin: 20px;
+}
+
+.labels {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+    padding: 20px;
+}
