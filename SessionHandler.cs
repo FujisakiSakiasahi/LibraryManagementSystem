@@ -51,7 +51,7 @@ namespace LibraryManagementSystem
             }
         }
 
-        public DataTable runQuery(String query)
+        public DataTable RunQuery(String query)
         {
             DataTable returningData = new DataTable();
 
@@ -72,7 +72,7 @@ namespace LibraryManagementSystem
             return userLoginState;
         }
 
-        public void setCookie(String cookieName, String cookieValue)
+        public void SetCookie(String cookieName, String cookieValue)
         {
             HttpContext.Current.Response.Cookies.Add(new HttpCookie(cookieName, cookieValue));
         }
