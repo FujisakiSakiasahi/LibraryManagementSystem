@@ -82,6 +82,10 @@
                         <asp:Label ID="Label3" runat="server" Text="Newly Acquired" CssClass="labels" ForeColor="White"></asp:Label>
                         <div class="list-item-content list-item-content-2">
 
+                            <asp:ImageButton ID="ImageButton5" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton6" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton7" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton8" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
 
                             <asp:ImageButton ID="ImageButton5" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
                             <asp:ImageButton ID="ImageButton6" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
