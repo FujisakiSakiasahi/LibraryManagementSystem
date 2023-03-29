@@ -24,12 +24,19 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
 
         /// <summary>
+<<<<<<<< HEAD:homepage_code.aspx.designer.cs
+        /// test control.
+========
         /// Image1 control.
+>>>>>>>> 93b916375e8ff24e61900e7ba6c8798fd1c35d83:AboutUs.aspx.designer.cs
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
+<<<<<<<< HEAD:homepage_code.aspx.designer.cs
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl test;
+========
         protected global::System.Web.UI.WebControls.Image Image1;
 
         /// <summary>
@@ -40,5 +47,6 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label1;
+>>>>>>>> 93b916375e8ff24e61900e7ba6c8798fd1c35d83:AboutUs.aspx.designer.cs
     }
 }

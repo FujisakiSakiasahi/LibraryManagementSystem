@@ -54,6 +54,7 @@
                 <div class="banner">
 
                     <asp:Image ID="Image2" runat="server" Height="100px" ImageUrl="~/images/HamiShu_Blue_BG.png" />
+                    <asp:Label ID="Label5" runat="server" Text="Sample banner here"></asp:Label>
 
                 </div>
             </div>
@@ -70,10 +71,10 @@
                         <asp:Label ID="Label2" runat="server" Text="Popular Books" CssClass="labels" ForeColor="White"></asp:Label>
                         <div class="list-item-content list-item-content-1">
 
-                            <asp:ImageButton ID="ImageButton1" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
-                            <asp:ImageButton ID="ImageButton2" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
-                            <asp:ImageButton ID="ImageButton3" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
-                            <asp:ImageButton ID="ImageButton4" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
+                            <asp:ImageButton ID="ImageButton1" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
+                            <asp:ImageButton ID="ImageButton2" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
+                            <asp:ImageButton ID="ImageButton3" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
+                            <asp:ImageButton ID="ImageButton4" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
 
                         </div>
                     </div>
@@ -86,16 +87,22 @@
                             <asp:ImageButton ID="ImageButton7" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
                             <asp:ImageButton ID="ImageButton8" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
 
+                            <asp:ImageButton ID="ImageButton5" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
+                            <asp:ImageButton ID="ImageButton6" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
+                            <asp:ImageButton ID="ImageButton7" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
+                            <asp:ImageButton ID="ImageButton8" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
+
                         </div>
                     </div>
                     <div class="list-item list-item-3">
                         <asp:Label ID="Label4" runat="server" Text="Most Liked" CssClass="labels" ForeColor="White"></asp:Label>
                         <div class="list-item-content list-item-content-3">
 
-                            <asp:ImageButton ID="ImageButton9" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
-                            <asp:ImageButton ID="ImageButton10" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
-                            <asp:ImageButton ID="ImageButton11" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
-                            <asp:ImageButton ID="ImageButton12" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
+
+                            <asp:ImageButton ID="ImageButton9" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
+                            <asp:ImageButton ID="ImageButton10" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
+                            <asp:ImageButton ID="ImageButton11" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
+                            <asp:ImageButton ID="ImageButton12" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
 
                         </div>
                     </div>
