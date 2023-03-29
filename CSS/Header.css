@@ -39,7 +39,12 @@
     margin: 35px;
 }
 
-.link a:visited {
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
     text-decoration: none;
     color: white;
 }
@@ -71,6 +76,18 @@
     border-left: 35px solid transparent;
     border-right: 35px solid transparent;
     border-bottom: 50px solid white;
+}
+
+.nav-buttons {
+    padding: 10px;
+    margin: 5px;
+    background-color: white;
+    border: none;
+    color: #2F557F;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    border-radius: 10px;
+    font-size: 18px;
 }
 
 .header-bookmark-animation {
