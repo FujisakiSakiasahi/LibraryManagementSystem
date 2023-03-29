@@ -5,6 +5,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Web;
 using System.Web.Services.Description;
+using System.Xml.Linq;
 using MySql.Data.MySqlClient;
 
 namespace LibraryManagementSystem
@@ -19,7 +20,10 @@ namespace LibraryManagementSystem
         {
             //connection = new SqlConnection("Server=localhost\\SQLEXPRESS ; Database=LibraryDb ; Integrated Security = TRUE");
 
-            connection = new MySqlConnection("Server=na01-sql.pebblehost.com,3306; Database=customer_453349_hitoha ; User ID=customer_453349_hitoha ; Password=M0heuKdYvU1huSY!mgje");
+            ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["myCon"];
+
+            if (settings != null)
+                connection = new MySqlConnection(settings.ConnectionString);
 
             userLoginState = false;
         }
