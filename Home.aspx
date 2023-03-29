@@ -33,10 +33,10 @@
           </div>
 
           <div class="header-navigation-container">
-              <asp:Button ID="Button2" runat="server" Text="Button" />
-              <asp:Button ID="Button3" runat="server" Text="Button" />
-              <asp:Button ID="Button4" runat="server" Text="Button" />
-              <asp:Button ID="Button5" runat="server" Text="Button" />
+              <asp:Button ID="Button2" runat="server" Text="Home" CssClass="nav-buttons" />
+              <asp:Button ID="Button3" runat="server" Text="Search" CssClass="nav-buttons" />
+              <asp:Button ID="Button4" runat="server" Text="About Us" CssClass="nav-buttons" />
+              <asp:Button ID="Button5" runat="server" Text="Temp" CssClass="nav-buttons" />
           </div>
 
           <div class="header-login-container">
@@ -108,6 +108,20 @@
         <div class="footer">
             <div class="footer-container">
                 <div class="footer-item footer-item-1">
+
+                    <asp:Image ID="Image3" runat="server" ImageUrl="~/images/HamiShu_Blue_BG.png" Width="484px" />
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink1" runat="server" NavigateUrl="~/Home.aspx" Target="_self">Home</asp:HyperLink>
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink2" runat="server">Search</asp:HyperLink>
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink3" runat="server">Temp</asp:HyperLink>
+                    <br />
+                    <br />
+                    <asp:HyperLink ID="HyperLink4" runat="server">temp</asp:HyperLink>
 
                 </div>
                 <div class="footer-item footer-item-2">
