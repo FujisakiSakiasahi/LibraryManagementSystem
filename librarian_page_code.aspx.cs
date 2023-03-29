@@ -33,7 +33,7 @@ namespace LibraryManagementSystem
             }
             String query;
             query = $"SELECT * FROM Book WHERE bookId = {booKIdTxt.Text}";
-            DataTable returnedData = sessionHandler.runQuery(query);
+            DataTable returnedData = sessionHandler.RunQuery(query);
             currentData = returnedData.Copy();
             LoadDataIntoGridView(currentData, GridView1);
 
@@ -96,7 +96,7 @@ namespace LibraryManagementSystem
 
         protected void GetUserBorrowedRecord(int userId) {
             String query = "SELECT * FROM Borrowed WHERE memberId=" + userId + ";";
-            DataTable returnedData = sessionHandler.runQuery(query);
+            DataTable returnedData = sessionHandler.RunQuery(query);
 
             //load data into the list
             LoadDataIntoGridView(returnedData, GridView1);
@@ -115,7 +115,7 @@ namespace LibraryManagementSystem
 
         protected void AddNewNotification(String title, String content) {
             //get the highest Id of the notification
-            DataTable returnedData = sessionHandler.runQuery("SELECT MAX(notifId) FROM Notification");
+            DataTable returnedData = sessionHandler.RunQuery("SELECT MAX(notifId) FROM Notification");
             int notifId = int.Parse(returnedData.Rows[0][0].ToString());
 
             String query = "INSERT INTO Notification (notifId, memberId, title, msg) VALUES (" +
@@ -125,7 +125,7 @@ namespace LibraryManagementSystem
                 ", '" + title + 
                 "', '" + content +
                 "');";
-            sessionHandler.runQuery(query);
+            sessionHandler.RunQuery(query);
 
             LoadNotificationList();
         }
@@ -133,7 +133,7 @@ namespace LibraryManagementSystem
         //use to load all the notification that has been made
         protected void LoadNotificationList()
         {
-            DataTable returnedData = sessionHandler.runQuery("SELECT * FROM Notification;");
+            DataTable returnedData = sessionHandler.RunQuery("SELECT * FROM Notification;");
 
             //set it into datatable
             LoadDataIntoGridView(returnedData, GridView1);
@@ -165,7 +165,7 @@ namespace LibraryManagementSystem
         {
             String query = $"UPDATE Book SET bookName = '{bookNameTxt.Text}', authorName = '{authorNameTxt.Text}', bookDescription = '{bookDescTxt.Text}', publisherName = '{pubNameTxt.Text}', pubDate = '{(pubDateTxt.Text)}', rating = '{ratingDrop.DataTextField}', lang = '{langTxt.Text}', isbn = '{isbnTxt.Text}', available = '{(availableChk.Checked ? 1 : 0)}' WHERE bookId = '{int.Parse(booKIdTxt.Text)}'";
 
-            sessionHandler.runQuery(query);
+            sessionHandler.RunQuery(query);
 
         }
     }

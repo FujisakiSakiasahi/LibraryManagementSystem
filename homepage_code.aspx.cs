@@ -28,7 +28,7 @@ namespace LibraryManagementSystem
         protected void Search(String searchStatement, String filter) 
         {
             String searchQuery = "SELECT * FROM Book WHERE " + filter + "=" + searchStatement + ";";
-            DataTable result = sessionHandler.runQuery(searchQuery);
+            DataTable result = sessionHandler.RunQuery(searchQuery);
 
 
             //set the returning datatable to the required space
@@ -49,7 +49,7 @@ namespace LibraryManagementSystem
             String query;
             if(genre == "random"){//random genre
                 query = "SELECT DISTINCT genre FROM Genre;";
-                DataTable genreListData = sessionHandler.runQuery(query);
+                DataTable genreListData = sessionHandler.RunQuery(query);
                 int genreCount = genreListData.Rows.Count;
                 
                 String[] genreList = new String[genreCount];
@@ -66,7 +66,7 @@ namespace LibraryManagementSystem
             }else{//specific genre
                 query = "SELECT bookName, authorName, bookImage FROM Book WHERE bookId IN(SELECT bookId FROM genre WHERE genre='"+genre+"';)";
             }
-            DataTable result = sessionHandler.runQuery(query);
+            DataTable result = sessionHandler.RunQuery(query);
 
             //set the books to the page here
         }

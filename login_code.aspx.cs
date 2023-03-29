@@ -39,7 +39,7 @@ namespace LibraryManagementSystem
         protected void Login(String email, String password) {
             String query;
             query = "SELECT memberId,librarian FROM Member WHERE memberEmail='"+email+"' AND memberPasswd='"+password+"' ;";
-            DataTable returnedData = sessionHandler.runQuery(query);
+            DataTable returnedData = sessionHandler.RunQuery(query);
 
             if (returnedData == null || returnedData.Rows.Count !=1)
             {
