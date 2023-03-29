@@ -36,18 +36,21 @@
 
                 <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
                     <!--
-                        1 - 3: manage book
+                        0 - 3: manage book
                         4 - 6: manage user
                         7    : check in (return book)
                         8    : check out (borrow book)
                         9    : notification (maybe can add one more, to use for editing notification)
                         -->
                     <asp:View ID="View0" runat="server">
-                        <asp:TextBox ID="TextBox19" runat="server" Wrap="False"></asp:TextBox>
-                        <asp:Button ID="Button17" runat="server" OnClick="Button17_Click" Text="Search" />
-                        <br />
-                        <asp:GridView ID="GridView1" runat="server">
-                        </asp:GridView>
+                        <div class="view-container">
+                            <asp:TextBox ID="TextBox19" runat="server" Wrap="False" Height="33px" Width="227px"></asp:TextBox>
+                            <asp:Button ID="Button17" runat="server" OnClick="Button17_Click" Text="Search" />
+                            <br />
+                            <asp:GridView ID="GridView1" runat="server">
+                            </asp:GridView>
+                        </div>
+                        
                     </asp:View>
                     <asp:View ID="View1" runat="server">
                         <div class="view-container">
