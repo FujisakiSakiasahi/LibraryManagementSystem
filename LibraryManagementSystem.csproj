@@ -104,6 +104,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
+    <Content Include="CSS\AboutUs\Content.css" />
     <Content Include="CSS\Home\Content.css" />
     <Content Include="CSS\Footer.css" />
     <Content Include="CSS\Header.css" />
@@ -170,9 +171,6 @@
     </Compile>
     <Compile Include="librarian_page_code.aspx.designer.cs">
       <DependentUpon>librarian_page_code.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="Home.aspx.designer.cs">
-      <DependentUpon>Home.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>
