@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -10,90 +11,159 @@ namespace LibraryManagementSystem
 {
     public partial class Librarian : System.Web.UI.Page
     {
+        protected enum SelectedPage { 
+            ManageBook,
+            ManageUser,
+            CheckIn,
+            CheckOut,
+            Notification,
+        }
+
         private SessionHandler sessionHandler = new SessionHandler();
         private DataTable currentData = new DataTable();
 
-        protected void Button1_Click(object sender, EventArgs e)
+        //button functions for Manage Book
+        protected void Button_Click_ManageBook(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 0;
+            String[] tableColumn = { "bookId", "bookName" };
+            LoadDataIntoGridView(GetAllData(SelectedPage.ManageBook).AsDataView().ToTable(true, tableColumn), GridView_BookList);
         }
 
-        protected void Button17_Click(object sender, EventArgs e)
+        protected void Button_Click_SearchBook(object sender, EventArgs e) 
         {
-            MultiView1.ActiveViewIndex = 1;
+            String[] tableColumn = { "bookId", "bookName" };
+            LoadDataIntoGridView(Search(SelectedPage.ManageBook, Textbox_SearchBook.Text).AsDataView().ToTable(true, tableColumn), GridView_BookList);
         }
 
-        protected void Button8_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 2;
-
-        }
-
-        protected void Button9_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 3;
+        protected void Button_Click_BackToManageBook(object sender, EventArgs e) {
 
         }
 
-        protected void Button5_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 1;
+        protected void Button_Click_DeleteBook(object sender, EventArgs e) {
 
         }
 
-        protected void Button12_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 1;
+        protected void Button_Click_EditBook(object sender, EventArgs e) {
 
         }
 
-        protected void Button2_Click(object sender, EventArgs e)
+        protected void Button_Click_AddNewBook(object sender, EventArgs e) {
+
+        }
+
+        protected void Button_Click_DiscardChangesBook(object sender, EventArgs e) {
+
+        }
+
+        protected void Button_Click_SaveChangesBook(object sender, EventArgs e) {
+
+        }
+
+        protected void Button_Click_AbortAddingNewBook(object sender, EventArgs e) {
+
+        }
+
+        protected void Button_Click_AddingNewBook(object sender, EventArgs e) {
+
+        }
+
+        //button functions for Manage User
+        protected void Button_Click_ManageUser(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 4;
-
         }
 
-        protected void Button3_Click(object sender, EventArgs e)
+        protected void Button_Click_SearchUser(object sender, EventArgs e) {
+            LoadDataIntoGridView(Search(SelectedPage.ManageBook, Textbox_SearchBook.Text), GridView_BookList);
+        }
+
+        //button functions for Check In
+        protected void Button_Click_CheckIn(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 7;
 
         }
 
-        protected void Button4_Click(object sender, EventArgs e)
+        protected void Button_Click_CheckOut(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 8;
 
         }
 
-        protected void Button6_Click(object sender, EventArgs e)
+        protected void Button_Click_Notification(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 9;
 
         }
 
-        protected void Button18_Click(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 0;
-        }
-
+        //functions for the actual backend function
         protected void Page_Load(object sender, EventArgs e) {
             if (Session["loginState"] != null) {
                 sessionHandler.CheckLoginState();
             } else { Session["loginState"] = "false"; };
 
-            LoadNotificationList();
+            //when the page is loaded the Multiview will be set on View 0 which is manage book page, this line of code is to load the data on the first hand
+            String[] tableColumn = { "bookId", "bookName" };
+            LoadDataIntoGridView(GetAllData(SelectedPage.ManageBook).AsDataView().ToTable(true, tableColumn), GridView_BookList);
         }
 
-        protected void GetBookData(object sender, EventArgs e) {
+        protected DataTable Search(SelectedPage page, String searchString) {
+            String query = "SELECT * FROM ";
+            switch (page) {
+                case SelectedPage.ManageBook:
+                    query += "Book WHERE ";
+
+                    if (int.TryParse(searchString, out int bookId)) {
+                        query += "bookId = " + bookId + ";";
+                    } else { 
+                        query += "bookName = '" + searchString + "';";
+                    }   
+                    break;
+                case SelectedPage.ManageUser:
+                    break;
+                case SelectedPage.CheckIn: 
+                    break;
+                case SelectedPage.CheckOut: 
+                    break;
+                case SelectedPage.Notification: 
+                    break;
+            }
+            
+            return sessionHandler.RunQuery(query);
+        }
+
+        protected DataTable GetAllData(SelectedPage page) {
+            String query = "SELECT * FROM ";
+            switch (page) {
+                case SelectedPage.ManageBook:
+                    query += "Book;";
+                    break;
+                case SelectedPage.ManageUser:
+                    query += "Member;";
+                    break;
+                case SelectedPage.CheckIn:
+                    break;
+                case SelectedPage.CheckOut:
+                    break;
+                case SelectedPage.Notification:
+                    query += "Notification;";
+                    break;
+            }
+
+            return sessionHandler.RunQuery(query);
+        }
+
+        protected void GetBookData() {
             //if (booKIdTxt == null || booKIdTxt.Equals("")) {
                 //Response.Write("<script>alert('No Book with ID Found')</script>");
                 //return;
             //}
-            String query;
+            String query ="";
             //query = $"SELECT * FROM Book WHERE bookId = {booKIdTxt.Text}";
             DataTable returnedData = sessionHandler.RunQuery(query);
             currentData = returnedData.Copy();
-            LoadDataIntoGridView(currentData, GridView1);
+            LoadDataIntoGridView(currentData, GridView_BookList);
 
             if (returnedData == null) {
                 Response.Write("<script>alert('No Book with ID Found')</script>");
@@ -117,7 +187,7 @@ namespace LibraryManagementSystem
         }
 
         protected void EditBookData(object sender, EventArgs e) {
-            LoadDataIntoGridView(this.currentData, GridView1);
+            LoadDataIntoGridView(this.currentData, GridView_BookList);
 
 //            bookNameTxt.ReadOnly = false;
 //            authorNameTxt.ReadOnly = false;
@@ -153,7 +223,7 @@ namespace LibraryManagementSystem
             DataTable returnedData = sessionHandler.RunQuery(query);
 
             //load data into the list
-            LoadDataIntoGridView(returnedData, GridView1);
+            LoadDataIntoGridView(returnedData, GridView_UserList);
         }
 
         protected float CalculateLateFee(String expectedReturnedDate, String returnedDate) {
@@ -161,7 +231,6 @@ namespace LibraryManagementSystem
             float feeRate = 0.1f;
 
             //fee = (returnedDate - expectedReturnedDate) * feeRate;
-
 
             return fee;
         }
@@ -189,7 +258,7 @@ namespace LibraryManagementSystem
             DataTable returnedData = sessionHandler.RunQuery("SELECT * FROM Notification;");
 
             //set it into datatable
-            LoadDataIntoGridView(returnedData, GridView1);
+            LoadDataIntoGridView(returnedData, GridView_UserList);
         }
 
         protected void LoadDataIntoGridView(DataTable dataTable, GridView gridView) {
