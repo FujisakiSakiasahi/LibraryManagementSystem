@@ -8,7 +8,7 @@ using System.Web.UI.WebControls;
 
 namespace LibraryManagementSystem
 {
-    public partial class librarian : System.Web.UI.Page
+    public partial class Librarian : System.Web.UI.Page
     {
         private SessionHandler sessionHandler = new SessionHandler();
         private DataTable currentData = new DataTable();

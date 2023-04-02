@@ -9,7 +9,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace LibraryManagementSystem
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Home : System.Web.UI.Page
     {
         private SessionHandler sessionHandler = new SessionHandler();
 
