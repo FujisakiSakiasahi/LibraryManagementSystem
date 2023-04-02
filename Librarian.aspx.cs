@@ -11,8 +11,22 @@ namespace LibraryManagementSystem
 {
     public partial class Librarian : System.Web.UI.Page
     {
-        protected enum SelectedPage { 
+        protected enum SelectedPage {
+            /*
+                0 - 3: manage book
+                    0: list all
+                    1: view info
+                    2: edit info
+                    3: add new
+                4 - 6: manage user
+                7    : check in (return book)
+                8    : check out (borrow book)
+                9    : notification (maybe can add one more, to use for editing notification)
+             */
             ManageBook,
+            ViewBook,
+            EditBook,
+            AddNewBook,
             ManageUser,
             CheckIn,
             CheckOut,
@@ -25,7 +39,7 @@ namespace LibraryManagementSystem
         //button functions for Manage Book
         protected void Button_Click_ManageBook(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 0;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ManageBook;
             String[] tableColumn = { "bookId", "bookName" };
             LoadDataIntoGridView(GetAllData(SelectedPage.ManageBook).AsDataView().ToTable(true, tableColumn), GridView_BookList);
         }
@@ -36,8 +50,12 @@ namespace LibraryManagementSystem
             LoadDataIntoGridView(Search(SelectedPage.ManageBook, Textbox_SearchBook.Text).AsDataView().ToTable(true, tableColumn), GridView_BookList);
         }
 
-        protected void Button_Click_BackToManageBook(object sender, EventArgs e) {
+        protected void Button_Click_ViewBook(object sender, EventArgs e) {
+            MultiView1.ActiveViewIndex = 1;
+        }
 
+        protected void Button_Click_BackToManageBook(object sender, EventArgs e) {
+            MultiView1.ActiveViewIndex = 0;
         }
 
         protected void Button_Click_DeleteBook(object sender, EventArgs e) {
@@ -45,11 +63,13 @@ namespace LibraryManagementSystem
         }
 
         protected void Button_Click_EditBook(object sender, EventArgs e) {
-
+            MultiView1.ActiveViewIndex = 2;
+            LoadBookData(SelectedPage.EditBook);
         }
 
         protected void Button_Click_AddNewBook(object sender, EventArgs e) {
-
+            MultiView1.ActiveViewIndex = 3;
+            LoadBookData(SelectedPage.AddNewBook);
         }
 
         protected void Button_Click_DiscardChangesBook(object sender, EventArgs e) {
@@ -99,13 +119,16 @@ namespace LibraryManagementSystem
 
         //functions for the actual backend function
         protected void Page_Load(object sender, EventArgs e) {
-            if (Session["loginState"] != null) {
-                sessionHandler.CheckLoginState();
-            } else { Session["loginState"] = "false"; };
+            if (!this.IsPostBack) { 
+                if (Session["loginState"] != null) {
+                    sessionHandler.CheckLoginState();
+                } else { Session["loginState"] = "false"; };
 
-            //when the page is loaded the Multiview will be set on View 0 which is manage book page, this line of code is to load the data on the first hand
-            String[] tableColumn = { "bookId", "bookName" };
-            LoadDataIntoGridView(GetAllData(SelectedPage.ManageBook).AsDataView().ToTable(true, tableColumn), GridView_BookList);
+                //when the page is loaded the Multiview will be set on View 0 which is manage book page, this line of code is to load the data on the first hand
+                String[] tableColumn = { "bookId", "bookName" };
+                LoadDataIntoGridView(GetAllData(SelectedPage.ManageBook).AsDataView().ToTable(true, tableColumn), GridView_BookList);
+            }
+            
         }
 
         protected DataTable Search(SelectedPage page, String searchString) {
@@ -152,6 +175,14 @@ namespace LibraryManagementSystem
             }
 
             return sessionHandler.RunQuery(query);
+        }
+
+        protected void LoadBookData(SelectedPage page) {
+            if (page == SelectedPage.EditBook) {
+
+            } else if (page == SelectedPage.AddNewBook) { 
+            
+            }
         }
 
         protected void GetBookData() {

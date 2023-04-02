@@ -51,7 +51,26 @@
                             <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" Width="227px"></asp:TextBox>
                             <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" />
                             <br />
-                            <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black">
+                            <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewBook">
+
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Book ID">
+                                        <ItemTemplate >
+                                            <asp:Label ID="BOOK_ID" runat="server" Text='<%# Bind("bookId")%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Book Name">
+                                        <ItemTemplate >
+                                            <asp:Label ID="BOOK_NAME" runat="server" Text='<%# Bind("bookName")%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Operation">
+                                        <ItemTemplate>
+                                            <asp:Button ID="Button_Edit" runat="server" Text="View" OnClick="Button_Click_ViewBook"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+                                
                             </asp:GridView>
                         </div> 
                     </asp:View>
