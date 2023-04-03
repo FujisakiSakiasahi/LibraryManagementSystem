@@ -195,6 +195,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View1;
 
         /// <summary>
+        /// Label_BookID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_BookID;
+
+        /// <summary>
         /// Label_TitleText1 control.
         /// </summary>
         /// <remarks>
@@ -258,13 +267,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_AuthorText1;
 
         /// <summary>
-        /// label_Author control.
+        /// Label_Author control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label_Author;
+        protected global::System.Web.UI.WebControls.Label Label_Author;
 
         /// <summary>
         /// Label_PublisherText1 control.
@@ -276,13 +285,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_PublisherText1;
 
         /// <summary>
-        /// label_Publisher control.
+        /// Label_Publisher control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label label_Publisher;
+        protected global::System.Web.UI.WebControls.Label Label_Publisher;
 
         /// <summary>
         /// Label_PublishDateText1 control.
@@ -429,6 +438,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View2;
 
         /// <summary>
+        /// Label_BookID2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_BookID2;
+
+        /// <summary>
         /// Label_TitleText2 control.
         /// </summary>
         /// <remarks>
@@ -537,13 +555,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_PublishDateText2;
 
         /// <summary>
-        /// TextBox_PublishDate2 control.
+        /// Calendar_PublishDate2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_PublishDate2;
+        protected global::System.Web.UI.WebControls.Calendar Calendar_PublishDate2;
 
         /// <summary>
         /// Label_RatingText2 control.
@@ -555,13 +573,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_RatingText2;
 
         /// <summary>
-        /// TextBox_Rating2 control.
+        /// DropDownList_Rating2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Rating2;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Rating2;
 
         /// <summary>
         /// Label_LanguageText2 control.
@@ -591,13 +609,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label LabelISBNText2;
 
         /// <summary>
-        /// TextBoxISBN2 control.
+        /// TextBox_ISBN2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBoxISBN2;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_ISBN2;
 
         /// <summary>
         /// Label_AvailabilityText2 control.
@@ -609,13 +627,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_AvailabilityText2;
 
         /// <summary>
-        /// TextBox_Availability2 control.
+        /// CheckBox_Availability2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox_Availability2;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_Availability2;
 
         /// <summary>
         /// Label_ShelfIDText2 control.
@@ -663,193 +681,220 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View3;
 
         /// <summary>
-        /// Label24 control.
+        /// Label_BookID3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label24;
+        protected global::System.Web.UI.WebControls.Label Label_BookID3;
 
         /// <summary>
-        /// TextBox10 control.
+        /// Label_Title3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox10;
+        protected global::System.Web.UI.WebControls.Label Label_Title3;
 
         /// <summary>
-        /// Label26 control.
+        /// TextBox_Title3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label26;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Title3;
 
         /// <summary>
-        /// TextBox20 control.
+        /// Label_Description3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox20;
+        protected global::System.Web.UI.WebControls.Label Label_Description3;
 
         /// <summary>
-        /// Label29 control.
+        /// TextBox_Description3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label29;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Description3;
 
         /// <summary>
-        /// Image4 control.
+        /// Label_Image3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image4;
+        protected global::System.Web.UI.WebControls.Label Label_Image3;
 
         /// <summary>
-        /// Button16 control.
+        /// Image3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button16;
+        protected global::System.Web.UI.WebControls.Image Image3;
 
         /// <summary>
-        /// Label31 control.
+        /// Button_Image3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label31;
+        protected global::System.Web.UI.WebControls.Button Button_Image3;
 
         /// <summary>
-        /// TextBox12 control.
+        /// Label_Author3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox12;
+        protected global::System.Web.UI.WebControls.Label Label_Author3;
 
         /// <summary>
-        /// Label33 control.
+        /// TextBox_Author3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label33;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Author3;
 
         /// <summary>
-        /// TextBox13 control.
+        /// Label_Publisher3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox13;
+        protected global::System.Web.UI.WebControls.Label Label_Publisher3;
 
         /// <summary>
-        /// Label35 control.
+        /// TextBox_Publisher3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label35;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Publisher3;
 
         /// <summary>
-        /// TextBox14 control.
+        /// Label_PublishDate3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox14;
+        protected global::System.Web.UI.WebControls.Label Label_PublishDate3;
 
         /// <summary>
-        /// Label37 control.
+        /// Calendar_PublishDate3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label37;
+        protected global::System.Web.UI.WebControls.Calendar Calendar_PublishDate3;
 
         /// <summary>
-        /// TextBox15 control.
+        /// Label_Rating3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox15;
+        protected global::System.Web.UI.WebControls.Label Label_Rating3;
 
         /// <summary>
-        /// Label39 control.
+        /// DropDownList_Rating3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label39;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Rating3;
 
         /// <summary>
-        /// TextBox16 control.
+        /// Label_Language3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox16;
+        protected global::System.Web.UI.WebControls.Label Label_Language3;
 
         /// <summary>
-        /// Label41 control.
+        /// TextBox_Language3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label41;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Language3;
 
         /// <summary>
-        /// TextBox17 control.
+        /// Label_ISBN3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox17;
+        protected global::System.Web.UI.WebControls.Label Label_ISBN3;
 
         /// <summary>
-        /// Label42 control.
+        /// TextBox_ISBN3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label42;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_ISBN3;
 
         /// <summary>
-        /// TextBox18 control.
+        /// Label_Availability3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox18;
+        protected global::System.Web.UI.WebControls.Label Label_Availability3;
+
+        /// <summary>
+        /// CheckBox_Availability3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_Availability3;
+
+        /// <summary>
+        /// Label_ShelfID3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_ShelfID3;
+
+        /// <summary>
+        /// TextBox_ShelfID3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_ShelfID3;
 
         /// <summary>
         /// Button12 control.
