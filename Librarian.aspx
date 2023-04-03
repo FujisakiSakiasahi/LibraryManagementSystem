@@ -51,7 +51,7 @@
                             <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" Width="227px"></asp:TextBox>
                             <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" />
                             <br />
-                            <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black" AutoGenerateColumns="False">
+                            <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewBook">
 
                                 <Columns>
                                     <asp:TemplateField HeaderText="Book ID">
@@ -66,7 +66,7 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Operation">
                                         <ItemTemplate>
-                                            <asp:Button ID="Button_Edit" runat="server" Text="View" OnClick="Button_Click_ViewBook"/>
+                                            <asp:Button ID="Button_Edit" runat="server" Text="View" CommandName="View" CommandArgument="<%# Container.DataItemIndex %>"/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
