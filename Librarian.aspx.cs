@@ -141,6 +141,12 @@ namespace LibraryManagementSystem
         protected void Button_Click_ManageUser(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 4;
+
+            String[] tableColumn = { "memberId", "memberName" };
+
+            LoadDataIntoGridView(GetAllData(SelectedPage.ManageUser).AsDataView().ToTable(true, tableColumn), GridView_UserList);
+
+
         }
 
         protected void Button_Click_SearchUser(object sender, EventArgs e) {
@@ -254,15 +260,6 @@ namespace LibraryManagementSystem
             } else if (page == SelectedPage.EditBook) { 
             
             }
-        }
-
-        protected void AddNewBookData() {
-        }
-
-        protected void EditBookData() {
-        }
-
-        protected void DeleteBookData() {
         }
 
         protected void GetUserData() {

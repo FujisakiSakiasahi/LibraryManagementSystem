@@ -372,7 +372,7 @@
                             <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" Width="227px"></asp:TextBox>
                             <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" />
                             <br />
-                            <asp:GridView ID="GridView_UserList" runat="server" AutoGenerateColumns="False">
+                            <asp:GridView ID="GridView_UserList" runat="server" ForeColor="Black" AutoGenerateColumns="False">
                                 <Columns>
                                     <asp:TemplateField HeaderText="User ID">
                                         <ItemTemplate >
