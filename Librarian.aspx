@@ -51,7 +51,7 @@
                             <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" Width="227px"></asp:TextBox>
                             <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" />
                             <br />
-                            <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewBook">
+                            <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black" AutoGenerateColumns="False">
 
                                 <Columns>
                                     <asp:TemplateField HeaderText="Book ID">

@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -52,7 +53,14 @@ namespace LibraryManagementSystem
 
         protected void Button_Click_ViewBook(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = 1;
-            LoadBookData(SelectedPage.ViewBook);
+
+            Button btn = (Button)sender;
+            GridViewRow gridViewRow = (GridViewRow)btn.NamingContainer;
+            Debug.WriteLine(gridViewRow.Cells == null);
+
+            DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Book WHERE id = {gridViewRow.Cells[0].Text}");
+
+            LoadBookData(SelectedPage.ViewBook, returned);
         }
 
         protected void Button_Click_BackToManageBook(object sender, EventArgs e) {
@@ -65,7 +73,7 @@ namespace LibraryManagementSystem
 
         protected void Button_Click_EditBook(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = 2;
-            LoadBookData(SelectedPage.EditBook);
+            /*LoadBookData(SelectedPage.EditBook);*/
         }
 
         protected void Button_Click_AddNewBook(object sender, EventArgs e) {
@@ -140,7 +148,7 @@ namespace LibraryManagementSystem
                     if (int.TryParse(searchString, out int bookId)) {
                         query += "bookId = " + bookId + ";";
                     } else { 
-                        query += "bookName = '%" + searchString + "%';";
+                        query += "bookName LIKE '%" + searchString + "%';";
                     }   
                     break;
                 case SelectedPage.ManageUser:
@@ -177,9 +185,29 @@ namespace LibraryManagementSystem
             return sessionHandler.RunQuery(query);
         }
 
-        protected void LoadBookData(SelectedPage page) {
+        protected void LoadBookData(SelectedPage page, DataTable returnedData) {
             if (page == SelectedPage.ViewBook) {
+                Label_Title.Text = returnedData.Rows[0][1].ToString();
+                label_Author.Text = returnedData.Rows[0][2].ToString();
+                Label_Description.Text = returnedData.Rows[0][4].ToString();
+                label_Publisher.Text = returnedData.Rows[0][5].ToString();
+                Label_PublishDate.Text = returnedData.Rows[0][6].ToString();
+                Label_Rating.Text = returnedData.Rows[0][7].ToString();
+                Label_Language.Text = returnedData.Rows[0][8].ToString();
+                Label_ISBN.Text = returnedData.Rows[0][9].ToString();
+                if (returnedData.Rows[0][10].ToString().Equals("1"))
+                {
+                    Label_Availability.Text = "Yes";
+                }
+                else if (returnedData.Rows[0][10].ToString().Equals("0"))
+                {
+                    Label_Availability.Text = "No";
+                }
+                else
+                {
+                    Label_Availability.Text = "N/A";
 
+                }
             } else if (page == SelectedPage.EditBook) { 
             
             }
