@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
+using System.Web.DynamicData;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -51,14 +52,12 @@ namespace LibraryManagementSystem
             LoadDataIntoGridView(Search(SelectedPage.ManageBook, Textbox_SearchBook.Text).AsDataView().ToTable(true, tableColumn), GridView_BookList);
         }
 
-        protected void Button_Click_ViewBook(object sender, EventArgs e) {
+        protected void Button_Click_ViewBook(object sender, GridViewCommandEventArgs e) {
             MultiView1.ActiveViewIndex = 1;
 
-            Button btn = (Button)sender;
-            GridViewRow gridViewRow = (GridViewRow)btn.NamingContainer;
-            Debug.WriteLine(gridViewRow.Cells == null);
+            GridViewRow gridViewRow = GridView_BookList.Rows[Convert.ToInt32(e.CommandArgument)];
 
-            DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Book WHERE id = {gridViewRow.Cells[0].Text}");
+            DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Book WHERE bookId = {(gridViewRow.FindControl("BOOK_ID") as Label).Text}");
 
             LoadBookData(SelectedPage.ViewBook, returned);
         }
@@ -195,6 +194,7 @@ namespace LibraryManagementSystem
                 Label_Rating.Text = returnedData.Rows[0][7].ToString();
                 Label_Language.Text = returnedData.Rows[0][8].ToString();
                 Label_ISBN.Text = returnedData.Rows[0][9].ToString();
+                Label_ShelfID.Text = returnedData.Rows[0][10].ToString();
                 if (returnedData.Rows[0][10].ToString().Equals("1"))
                 {
                     Label_Availability.Text = "Yes";
@@ -213,53 +213,10 @@ namespace LibraryManagementSystem
             }
         }
 
-        protected void GetBookData() {
-            //if (booKIdTxt == null || booKIdTxt.Equals("")) {
-                //Response.Write("<script>alert('No Book with ID Found')</script>");
-                //return;
-            //}
-            String query ="";
-            //query = $"SELECT * FROM Book WHERE bookId = {booKIdTxt.Text}";
-            DataTable returnedData = sessionHandler.RunQuery(query);
-            currentData = returnedData.Copy();
-            LoadDataIntoGridView(currentData, GridView_BookList);
-
-            if (returnedData == null) {
-                Response.Write("<script>alert('No Book with ID Found')</script>");
-            } else {
-                //bookNameTxt.Text = returnedData.Rows[0][1].ToString();
-                //authorNameTxt.Text = returnedData.Rows[0][2].ToString();
-                //bookDescTxt.Text = returnedData.Rows[0][4].ToString();
-                //pubNameTxt.Text = returnedData.Rows[0][5].ToString();
-                //pubDateTxt.Text = returnedData.Rows[0][6].ToString();
-                //ratingDrop.SelectedIndex = int.Parse(returnedData.Rows[0][7].ToString()) - 1;
-                //langTxt.Text = returnedData.Rows[0][8].ToString();
-                //isbnTxt.Text = returnedData.Rows[0][9].ToString();
-                if (returnedData.Rows[0][10].ToString().Equals("1")) {
-                    //availableChk.Checked = true;
-                }
-
-            }
+        protected void AddNewBookData() {
         }
 
-        protected void AddNewBookData(object sender, EventArgs e) {
-        }
-
-        protected void EditBookData(object sender, EventArgs e) {
-            LoadDataIntoGridView(this.currentData, GridView_BookList);
-
-//            bookNameTxt.ReadOnly = false;
-//            authorNameTxt.ReadOnly = false;
-//            bookDescTxt.ReadOnly = false;
-//            pubNameTxt.ReadOnly = false;
-//            pubDateTxt.ReadOnly = false;
-//            ratingDrop.Enabled = true;
-//            langTxt.ReadOnly = false;
-//            isbnTxt.ReadOnly = false;
-//            availableChk.Enabled = true;
-//            EditButton.Visible = false;
-//            SaveButton.Visible = true;
-//            CancelButton.Visible = true;
+        protected void EditBookData() {
         }
 
         protected void DeleteBookData() {
