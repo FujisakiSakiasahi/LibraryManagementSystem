@@ -304,5 +304,20 @@ namespace LibraryManagementSystem
             //sessionHandler.RunQuery(query);
 
         }
+
+        protected void Menu1_MenuItemClick(object sender, MenuEventArgs e)
+        {
+
+        }
+
+        protected void Button18_Click(object sender, EventArgs e)
+        {
+            MultiView2.ActiveViewIndex = 0;
+        }
+
+        protected void Button17_Click(object sender, EventArgs e)
+        {
+            MultiView2.ActiveViewIndex = 1;
+        }
     }
 }

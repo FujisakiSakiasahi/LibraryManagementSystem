@@ -50,6 +50,7 @@
                         <div class="view-container">
                             <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" Width="227px"></asp:TextBox>
                             <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" />
+                            <asp:Button ID="Button_AddNewBook0" runat="server" OnClick="Button_Click_AddNewBook" Text="Add New Book" />
                             <br />
                             <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewBook">
 
@@ -154,7 +155,6 @@
                                 <asp:Button ID="Button_BackToManageBook" runat="server" OnClick="Button_Click_BackToManageBook" Text="Back" />
                                 <asp:Button ID="Button_DeleteBook" runat="server" OnClick="Button_Click_DeleteBook" Text="Delete Book" />
                                 <asp:Button ID="Button_EditBook" runat="server" Text="Edit Book" OnClick="Button_Click_EditBook" />
-                                <asp:Button ID="Button_AddNewBook" runat="server" Text="Add New Book" OnClick="Button_Click_AddNewBook" />
                             </div>
                             
                         </div>
@@ -366,6 +366,46 @@
                     <asp:View ID="View9" runat="server">
                         <asp:Label ID="Label22" runat="server" Text="manage notification page"></asp:Label>
                         <div class="view-container">
+                            <asp:Button ID="Button_CreateNotification" runat="server" Text="Create Notification" OnClick="Button18_Click" />
+                            <asp:Button ID="Button_ManageNotification" runat="server" Text="Manage Notification" OnClick="Button17_Click" />
+                            <br />
+                            <asp:MultiView ID="MultiView2" runat="server" ActiveViewIndex="0">
+                                <asp:View ID="View10" runat="server">
+                                    <asp:Label ID="Label43" runat="server" CssClass="labels" Text="Create Notif"></asp:Label>
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label45" runat="server" CssClass="labels" Text="Message Title"></asp:Label>
+                                    <br />
+                                    <asp:TextBox ID="TextBox21" runat="server"></asp:TextBox>
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label46" runat="server" CssClass="labels" Text="Message Content"></asp:Label>
+                                    <asp:TextBox ID="TextBox22" runat="server"></asp:TextBox>
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label47" runat="server" CssClass="labels" Text="Temp Label"></asp:Label>
+                                    <asp:TextBox ID="TextBox23" runat="server"></asp:TextBox>
+                                    <br />
+                                    <br />
+                                    <asp:RadioButtonList ID="RadioButtonList1" runat="server">
+                                        <asp:ListItem>All Users</asp:ListItem>
+                                        <asp:ListItem>Users Only</asp:ListItem>
+                                        <asp:ListItem>Librarian Only</asp:ListItem>
+                                        <asp:ListItem>Specified User</asp:ListItem>
+                                    </asp:RadioButtonList>
+                                    <asp:Button ID="Button_SendNotification" runat="server" Text="Send Notification" />
+                                    <br />
+                                </asp:View>
+                                <asp:View ID="View11" runat="server">
+
+                                    <asp:Label ID="Label44" runat="server" CssClass="labels" Text="Manage Notif"></asp:Label>
+                                    <br />
+                                    <br />
+                                    <asp:GridView ID="GridView1" runat="server">
+                                    </asp:GridView>
+
+                                </asp:View>
+                            </asp:MultiView>
                         </div>
                     </asp:View>
 
