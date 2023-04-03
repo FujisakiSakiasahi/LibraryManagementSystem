@@ -69,9 +69,11 @@
                 <div class="list">
                     <div class="list-item list-item-1">
                         <asp:Label ID="Label2" runat="server" Text="Popular Books" CssClass="labels" ForeColor="White"></asp:Label>
-                        <div class="list-item-content list-item-content-1">
-
-                            <asp:ImageButton ID="book_item1" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
+                        <div class="list-item-content list-item-content-1" id="div_popular_book">
+                            <a href="Description.aspx?bookId=12">
+                                <asp:ImageButton ID="book_item1" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" PostBackUrl="Description.aspx?bookId=12" />
+                            </a>
+                            
                             <asp:ImageButton ID="book_item2" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
                             <asp:ImageButton ID="book_item3" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
                             <asp:ImageButton ID="book_item4" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
