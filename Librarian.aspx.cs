@@ -67,12 +67,29 @@ namespace LibraryManagementSystem
         }
 
         protected void Button_Click_DeleteBook(object sender, EventArgs e) {
+            sessionHandler.RunQuery($"DELETE FROM Book WHERE bookId = {Label_BookID.Text};");
+            MultiView1.ActiveViewIndex = 0;
+
+            String[] tableColumn = { "bookId", "bookName" };
+            LoadDataIntoGridView(GetAllData(SelectedPage.ManageBook).AsDataView().ToTable(true, tableColumn), GridView_BookList);
 
         }
 
         protected void Button_Click_EditBook(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = 2;
-            /*LoadBookData(SelectedPage.EditBook);*/
+
+            Label_BookID2.Text = Label_BookID.Text;
+            TextBox_Title2.Text = Label_Title.Text;
+            TextBox_Description2.Text = Label_Description.Text;
+            TextBox_Author2.Text = Label_Author.Text;
+            TextBox_Publisher2.Text = Label_Publisher.Text;
+            Calendar_PublishDate2.SelectedDate = Convert.ToDateTime(Label_PublishDate.Text);
+            DropDownList_Rating2.SelectedValue = Label_Rating.Text;
+            TextBox_Language2.Text = Label_Language.Text;
+            TextBox_ISBN2.Text = Label_ISBN.Text;
+            CheckBox_Availability2.Checked = Convert.ToBoolean(Label_Availability.Text);
+            TextBox_ShelfID2.Text = Label_ShelfID.Text;
+
         }
 
         protected void Button_Click_AddNewBook(object sender, EventArgs e) {
@@ -80,18 +97,43 @@ namespace LibraryManagementSystem
         }
 
         protected void Button_Click_DiscardChangesBook(object sender, EventArgs e) {
-
+            MultiView1.ActiveViewIndex = 1;
         }
 
         protected void Button_Click_SaveChangesBook(object sender, EventArgs e) {
+            String date = Calendar_PublishDate2.SelectedDate.ToString("yyyy-MM-dd");
+
+            String query = $"UPDATE Book SET bookName = '{TextBox_Title2.Text}', bookDescription = '{TextBox_Description2.Text}', authorName = '{TextBox_Author2.Text}', publisherName = '{TextBox_Publisher2.Text}', pubDate = '{date}', rating = {DropDownList_Rating2.SelectedValue}, lang = '{TextBox_Language2.Text}', isbn = {TextBox_ISBN2.Text}, available = b'{(CheckBox_Availability2.Checked ? 1 : 0)}', shelfid = '{TextBox_ShelfID2.Text}' WHERE Book.bookId = {Label_BookID2.Text};";
+
+            sessionHandler.RunQuery(query);
+
+            MultiView1.ActiveViewIndex = 1;
+
+            DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Book WHERE bookId = {Label_BookID2.Text}");
+
+            LoadBookData(SelectedPage.ViewBook, returned);
 
         }
 
         protected void Button_Click_AbortAddingNewBook(object sender, EventArgs e) {
-
+            MultiView1.ActiveViewIndex = 1;
         }
 
         protected void Button_Click_AddingNewBook(object sender, EventArgs e) {
+            MultiView1.ActiveViewIndex = 3;
+            String date = Calendar_PublishDate3.SelectedDate.ToString("yyyy-MM-dd");
+
+            int highest = int.Parse(sessionHandler.RunQuery("SELECT MAX(bookId) FROM Book").Rows[0][0].ToString());
+            Label_BookID3.Text = highest.ToString();
+
+            String query = $"INSERT INTO `Book` (`bookId`, `bookName`, `authorName`, `bookImage`, `bookDescription`, `publisherName`, `pubDate`, `rating`, `lang`, `isbn`, `available`, `shelfid`) VALUES ('{highest += 1}', '{TextBox_Title3.Text}', '{TextBox_Author3.Text}', 'placeholder.png', '{TextBox_Description3.Text}', '{TextBox_Publisher3.Text}', '{date}', '{DropDownList_Rating3.SelectedValue}', '{TextBox_Language3.Text}', '{TextBox_ISBN3.Text}', b'{(CheckBox_Availability3.Checked ? 1 : 0)}', '{TextBox_ShelfID3.Text}');";
+
+
+            sessionHandler.RunQuery(query);
+
+            MultiView1.ActiveViewIndex = 1;
+
+            LoadBookData(SelectedPage.ViewBook, sessionHandler.RunQuery($"SELECT * FROM Book WHERE bookId = {highest}"));
 
         }
 
@@ -186,10 +228,11 @@ namespace LibraryManagementSystem
 
         protected void LoadBookData(SelectedPage page, DataTable returnedData) {
             if (page == SelectedPage.ViewBook) {
+                Label_BookID.Text = returnedData.Rows[0][0].ToString();
                 Label_Title.Text = returnedData.Rows[0][1].ToString();
-                label_Author.Text = returnedData.Rows[0][2].ToString();
+                Label_Author.Text = returnedData.Rows[0][2].ToString();
                 Label_Description.Text = returnedData.Rows[0][4].ToString();
-                label_Publisher.Text = returnedData.Rows[0][5].ToString();
+                Label_Publisher.Text = returnedData.Rows[0][5].ToString();
                 Label_PublishDate.Text = returnedData.Rows[0][6].ToString();
                 Label_Rating.Text = returnedData.Rows[0][7].ToString();
                 Label_Language.Text = returnedData.Rows[0][8].ToString();
@@ -197,11 +240,11 @@ namespace LibraryManagementSystem
                 Label_ShelfID.Text = returnedData.Rows[0][10].ToString();
                 if (returnedData.Rows[0][10].ToString().Equals("1"))
                 {
-                    Label_Availability.Text = "Yes";
+                    Label_Availability.Text = "True";
                 }
                 else if (returnedData.Rows[0][10].ToString().Equals("0"))
                 {
-                    Label_Availability.Text = "No";
+                    Label_Availability.Text = "False";
                 }
                 else
                 {
