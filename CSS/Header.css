@@ -90,8 +90,16 @@ a:visited {
     font-size: 18px;
 }
 
+.nav-buttons:hover {
+    transition: 0.2s;
+    background: #d4d4d4;
+}
+
 .header-bookmark-animation {
 }
 
-
+.user-image {
+    height: 50px;
+    width: 50px;
+}
 
