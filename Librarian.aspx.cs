@@ -52,6 +52,7 @@ namespace LibraryManagementSystem
 
         protected void Button_Click_ViewBook(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = 1;
+            LoadBookData(SelectedPage.ViewBook);
         }
 
         protected void Button_Click_BackToManageBook(object sender, EventArgs e) {
@@ -69,7 +70,6 @@ namespace LibraryManagementSystem
 
         protected void Button_Click_AddNewBook(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = 3;
-            LoadBookData(SelectedPage.AddNewBook);
         }
 
         protected void Button_Click_DiscardChangesBook(object sender, EventArgs e) {
@@ -178,9 +178,9 @@ namespace LibraryManagementSystem
         }
 
         protected void LoadBookData(SelectedPage page) {
-            if (page == SelectedPage.EditBook) {
+            if (page == SelectedPage.ViewBook) {
 
-            } else if (page == SelectedPage.AddNewBook) { 
+            } else if (page == SelectedPage.EditBook) { 
             
             }
         }
