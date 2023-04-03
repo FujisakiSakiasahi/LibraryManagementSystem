@@ -42,9 +42,13 @@
                             2: edit info
                             3: add new
                         4 - 6: manage user
-                        7    : check in (return book)
-                        8    : check out (borrow book)
-                        9    : notification (maybe can add one more, to use for editing notification)
+                            4: list all
+                            5: view info
+                            6: edit info
+                            7: add new info
+                        8    : check in (return book)
+                        9    : check out (borrow book)
+                        10    : notification (maybe can add one more, to use for editing notification)
                         -->
                     <asp:View ID="View0" runat="server">
                         <div class="view-container">
@@ -331,22 +335,43 @@
                             <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" Width="227px"></asp:TextBox>
                             <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" />
                             <br />
-                            <asp:GridView ID="GridView_UserList" runat="server">
+                            <asp:GridView ID="GridView_UserList" runat="server" AutoGenerateColumns="False">
+                                <Columns>
+                                    <asp:TemplateField HeaderText="User ID">
+                                        <ItemTemplate >
+                                            <asp:Label ID="USER_ID" runat="server" Text='<%# Bind("memberId")%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Username">
+                                        <ItemTemplate >
+                                            <asp:Label ID="USER_NAME" runat="server" Text='<%# Bind("memberName")%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Operation">
+                                        <ItemTemplate>
+                                            <asp:Button ID="Button_Edit" runat="server" Text="View" CommandName="View" CommandArgument="<%# Container.DataItemIndex %>"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
                             </asp:GridView>
                         </div>
                     </asp:View>
                     <asp:View ID="View5" runat="server">
                         <div class="view-container">
-
+                            <asp:Label ID="Label_view">view user</asp:Label>
                         </div>
                     </asp:View>
                     <asp:View ID="View6" runat="server">
                         <div class="view-container">
-
+                            <asp:Label ID="Label_edit">view user</asp:Label>
                         </div>
-
                     </asp:View>
                     <asp:View ID="View7" runat="server">
+                        <div class="view-container">
+                            <asp:Label ID="Label_add">view user</asp:Label>
+                        </div>
+                    </asp:View>
+                    <asp:View ID="View8" runat="server">
                         <asp:Label ID="Label20" runat="server" Text="check in page"></asp:Label>
                         <div class="view-container">
                             <asp:TextBox ID="Textbox_SearchBorrowedBookBasedOnUser" runat="server"></asp:TextBox>
@@ -358,19 +383,21 @@
                             </div>
                         </div>
                     </asp:View>
-                    <asp:View ID="View8" runat="server">
+                    <asp:View ID="View9" runat="server">
                         <asp:Label ID="Label21" runat="server" Text="check out page"></asp:Label>
                         <div class="view-container">
+                            <asp:TextBox ID="Textbox_SearchBookToBeBorrowed" runat="server"></asp:TextBox>
+                            <asp:Button ID="Button_ConfirmedBookToBeBorrowed" runat="server" Text="Button" />
                         </div>
                     </asp:View>
-                    <asp:View ID="View9" runat="server">
+                    <asp:View ID="View10" runat="server">
                         <asp:Label ID="Label22" runat="server" Text="manage notification page"></asp:Label>
                         <div class="view-container">
                             <asp:Button ID="Button_CreateNotification" runat="server" Text="Create Notification" OnClick="Button18_Click" />
                             <asp:Button ID="Button_ManageNotification" runat="server" Text="Manage Notification" OnClick="Button17_Click" />
                             <br />
                             <asp:MultiView ID="MultiView2" runat="server" ActiveViewIndex="0">
-                                <asp:View ID="View10" runat="server">
+                                <asp:View ID="View11" runat="server">
                                     <asp:Label ID="Label43" runat="server" CssClass="labels" Text="Create Notif"></asp:Label>
                                     <br />
                                     <br />
@@ -396,7 +423,7 @@
                                     <asp:Button ID="Button_SendNotification" runat="server" Text="Send Notification" />
                                     <br />
                                 </asp:View>
-                                <asp:View ID="View11" runat="server">
+                                <asp:View ID="View12" runat="server">
 
                                     <asp:Label ID="Label44" runat="server" CssClass="labels" Text="Manage Notif"></asp:Label>
                                     <br />

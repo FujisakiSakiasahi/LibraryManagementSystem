@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem
-{
+namespace LibraryManagementSystem {
 
 
-    public partial class Librarian
-    {
+    public partial class Librarian {
 
         /// <summary>
         /// form1 control.
@@ -888,6 +886,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View7;
 
         /// <summary>
+        /// View8 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View8;
+
+        /// <summary>
         /// Label20 control.
         /// </summary>
         /// <remarks>
@@ -933,13 +940,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_CheckIn;
 
         /// <summary>
-        /// View8 control.
+        /// View9 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View8;
+        protected global::System.Web.UI.WebControls.View View9;
 
         /// <summary>
         /// Label21 control.
@@ -951,13 +958,31 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label21;
 
         /// <summary>
-        /// View9 control.
+        /// Textbox_SearchBookToBeBorrowed control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View9;
+        protected global::System.Web.UI.WebControls.TextBox Textbox_SearchBookToBeBorrowed;
+
+        /// <summary>
+        /// Button_ConfirmedBookToBeBorrowed control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_ConfirmedBookToBeBorrowed;
+
+        /// <summary>
+        /// View10 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View10;
 
         /// <summary>
         /// Label22 control.
@@ -996,13 +1021,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.MultiView MultiView2;
 
         /// <summary>
-        /// View10 control.
+        /// View11 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View10;
+        protected global::System.Web.UI.WebControls.View View11;
 
         /// <summary>
         /// Label43 control.
@@ -1086,13 +1111,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Button Button_SendNotification;
 
         /// <summary>
-        /// View11 control.
+        /// View12 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.View View11;
+        protected global::System.Web.UI.WebControls.View View12;
 
         /// <summary>
         /// Label44 control.

@@ -108,19 +108,19 @@ namespace LibraryManagementSystem
         //button functions for Check In
         protected void Button_Click_CheckIn(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 7;
+            MultiView1.ActiveViewIndex = 8;
 
         }
 
         protected void Button_Click_CheckOut(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 8;
+            MultiView1.ActiveViewIndex = 9;
 
         }
 
         protected void Button_Click_Notification(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 9;
+            MultiView1.ActiveViewIndex = 10;
 
         }
 
