@@ -213,53 +213,10 @@ namespace LibraryManagementSystem
             }
         }
 
-        protected void GetBookData() {
-            //if (booKIdTxt == null || booKIdTxt.Equals("")) {
-                //Response.Write("<script>alert('No Book with ID Found')</script>");
-                //return;
-            //}
-            String query ="";
-            //query = $"SELECT * FROM Book WHERE bookId = {booKIdTxt.Text}";
-            DataTable returnedData = sessionHandler.RunQuery(query);
-            currentData = returnedData.Copy();
-            LoadDataIntoGridView(currentData, GridView_BookList);
-
-            if (returnedData == null) {
-                Response.Write("<script>alert('No Book with ID Found')</script>");
-            } else {
-                //bookNameTxt.Text = returnedData.Rows[0][1].ToString();
-                //authorNameTxt.Text = returnedData.Rows[0][2].ToString();
-                //bookDescTxt.Text = returnedData.Rows[0][4].ToString();
-                //pubNameTxt.Text = returnedData.Rows[0][5].ToString();
-                //pubDateTxt.Text = returnedData.Rows[0][6].ToString();
-                //ratingDrop.SelectedIndex = int.Parse(returnedData.Rows[0][7].ToString()) - 1;
-                //langTxt.Text = returnedData.Rows[0][8].ToString();
-                //isbnTxt.Text = returnedData.Rows[0][9].ToString();
-                if (returnedData.Rows[0][10].ToString().Equals("1")) {
-                    //availableChk.Checked = true;
-                }
-
-            }
+        protected void AddNewBookData() {
         }
 
-        protected void AddNewBookData(object sender, EventArgs e) {
-        }
-
-        protected void EditBookData(object sender, EventArgs e) {
-            LoadDataIntoGridView(this.currentData, GridView_BookList);
-
-//            bookNameTxt.ReadOnly = false;
-//            authorNameTxt.ReadOnly = false;
-//            bookDescTxt.ReadOnly = false;
-//            pubNameTxt.ReadOnly = false;
-//            pubDateTxt.ReadOnly = false;
-//            ratingDrop.Enabled = true;
-//            langTxt.ReadOnly = false;
-//            isbnTxt.ReadOnly = false;
-//            availableChk.Enabled = true;
-//            EditButton.Visible = false;
-//            SaveButton.Visible = true;
-//            CancelButton.Visible = true;
+        protected void EditBookData() {
         }
 
         protected void DeleteBookData() {
