@@ -140,7 +140,7 @@ namespace LibraryManagementSystem
                     if (int.TryParse(searchString, out int bookId)) {
                         query += "bookId = " + bookId + ";";
                     } else { 
-                        query += "bookName = '" + searchString + "';";
+                        query += "bookName = '%" + searchString + "%';";
                     }   
                     break;
                 case SelectedPage.ManageUser:
