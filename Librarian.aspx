@@ -30,6 +30,7 @@
                   <a href="Login.aspx" class="link">
                       <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
                   </a>
+                  <asp:Image ID="Image5" runat="server" CssClass="user-image" ImageUrl="~/images/unknown.png" />
               </div>
           </div>
 
@@ -394,17 +395,17 @@
                     </asp:View>
                     <asp:View ID="View5" runat="server">
                         <div class="view-container">
-                            <asp:Label ID="Label_view">view user</asp:Label>
+                            <asp:Label ID="Label_view" runat="server">view user</asp:Label>
                         </div>
                     </asp:View>
                     <asp:View ID="View6" runat="server">
                         <div class="view-container">
-                            <asp:Label ID="Label_edit">view user</asp:Label>
+                            <asp:Label ID="Label_edit" runat="server">view user</asp:Label>
                         </div>
                     </asp:View>
                     <asp:View ID="View7" runat="server">
                         <div class="view-container">
-                            <asp:Label ID="Label_add">view user</asp:Label>
+                            <asp:Label ID="Label_add" runat="server">view user</asp:Label>
                         </div>
                     </asp:View>
                     <asp:View ID="View8" runat="server">

@@ -78,6 +78,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label login_button;
 
         /// <summary>
+        /// Image5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Image Image5;
+
+        /// <summary>
         /// Button_ManageBook control.
         /// </summary>
         /// <remarks>
@@ -951,6 +960,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View5;
 
         /// <summary>
+        /// Label_view control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_view;
+
+        /// <summary>
         /// View6 control.
         /// </summary>
         /// <remarks>
@@ -960,6 +978,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View6;
 
         /// <summary>
+        /// Label_edit control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_edit;
+
+        /// <summary>
         /// View7 control.
         /// </summary>
         /// <remarks>
@@ -967,6 +994,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View7;
+
+        /// <summary>
+        /// Label_add control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_add;
 
         /// <summary>
         /// View8 control.

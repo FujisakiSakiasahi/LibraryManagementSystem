@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="CSS/Footer.css" /> 
     <link rel="stylesheet" href="CSS/Description/Content.css" /> 
 
+    <?php
+        $bookId = $_GET['bookId'];
+    ?>
 </head>
 <body>
     <form id="form1" runat="server">
