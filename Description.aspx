@@ -13,14 +13,28 @@
 <body>
     <form id="form1" runat="server">
         <div class="header">
-          <div class="header-logo">
-              <asp:Image ID="Image1" runat="server" ImageUrl="~/images/HamiShu_Blue_BG.png" Width="208px" />
+          <div class="header-logo-container">
+              <div class="header-logo">
+                  <asp:Image ID="logo_image" runat="server" ImageUrl="~/images/HamiShu_Blue_BG.png" Width="208px" />
+              </div>
           </div>
-          <div class="header-login">
-              <a href="Login.aspx" class="link">
-                  <asp:Label ID="Label1" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
-              </a>
+
+          <div class="header-navigation-container">
+              <asp:Button ID="header_home" runat="server" Text="Home" CssClass="nav-buttons" />
+              <asp:Button ID="header_search" runat="server" Text="Search" CssClass="nav-buttons" />
+              <asp:Button ID="header_about_us" runat="server" Text="About Us" CssClass="nav-buttons" />
+              <asp:Button ID="header_temp" runat="server" Text="Temp" CssClass="nav-buttons" />
           </div>
+
+          <div class="header-login-container">
+              <div class="header-login">
+                  <a href="Login.aspx" class="link">
+                      <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
+                  </a>
+              </div>
+          </div>
+
+
        </div>
         <div class="content">
             <div class="description">
