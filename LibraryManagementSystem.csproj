@@ -31,6 +31,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -104,6 +105,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
+    <Content Include="CSS\AboutUs\Content.css" />
+    <Content Include="CSS\Description\Content.css" />
     <Content Include="CSS\Home\Content.css" />
     <Content Include="CSS\Footer.css" />
     <Content Include="CSS\Header.css" />
@@ -111,12 +114,14 @@
     <Content Include="CSS\Librarian\Content.css" />
     <Content Include="CSS\Login\Content.css" />
     <Content Include="CSS\Login\Textbox.css" />
+    <Content Include="CSS\Search\Content.css" />
     <Content Include="Description.aspx" />
     <Content Include="images\HamiShu_Blue_BG.png" />
     <Content Include="images\HamiShu_Logo_WhiteBG.png" />
     <Content Include="images\unknown.png" />
     <Content Include="Librarian.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="Search.aspx" />
     <Content Include="Web.config" />
     <Content Include="login_code.aspx" />
     <Content Include="librarian_page_code.aspx" />
@@ -150,6 +155,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Search.aspx.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Search.aspx.designer.cs">
+      <DependentUpon>Search.aspx</DependentUpon>
     </Compile>
     <Compile Include="SessionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

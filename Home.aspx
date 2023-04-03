@@ -9,18 +9,6 @@
     <link rel="stylesheet" href="CSS/Home/Content.css" />
     <link rel="stylesheet" href="CSS/Footer.css" />
     <link rel="stylesheet" href="CSS/Home/Text.css" />
-
-    <style type="text/css">
-        #Text1 {
-            height: 38px;
-            width: 856px;
-            border: 0;
-            border-radius: 10px;
-            font-size: 20px;
-            padding: 10px;
-        }
-    </style>
-
 </head>
 <body>
      
@@ -60,7 +48,7 @@
             </div>
             <div class="search-bar-container">
                 <div class="search-bar">
-                    <input id="textbox_search" type="text" placeholder="Search for books here..." />
+                    <input id="textbox_search" type="text" placeholder="Search for books here..." class="search-bar-textbox" />
                     <br />
                     <asp:Button ID="search_button" runat="server" CssClass="advanced-search-button" Height="50px" OnClick="Button1_Click" Text="Search" />
                 </div>

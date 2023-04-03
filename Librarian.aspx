@@ -30,6 +30,7 @@
                   <a href="Login.aspx" class="link">
                       <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
                   </a>
+                  <asp:Image ID="Image5" runat="server" CssClass="user-image" ImageUrl="~/images/unknown.png" />
               </div>
           </div>
 
