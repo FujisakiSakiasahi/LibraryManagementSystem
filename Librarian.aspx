@@ -409,6 +409,11 @@
                                 <asp:Label ID="Label_Email2" runat="server" CssClass="desc-labels" Text="*Email*"></asp:Label>
                                 <br />
                                 <br />
+                                <asp:Label ID="Label_PhoneNumber" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
+                                <br />
+                                <asp:Label ID="Label_PhoneNumber2" runat="server" CssClass="desc-labels" Text="*Phone Number*"></asp:Label>
+                                <br />
+                                <br />
                                 <asp:Label ID="Label_Notification" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
                                 <br />
                                 <asp:Label ID="Label_Notification2" runat="server" CssClass="desc-labels" Text="*Notification*"></asp:Label>
@@ -436,6 +441,11 @@
                                 <asp:TextBox ID="TextBox25" runat="server"></asp:TextBox>
                                 <br />
                                 <br />
+                                <asp:Label ID="Label_PhoneNumber3" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
+                                <br />
+                                <asp:TextBox ID="TextBox28" runat="server"></asp:TextBox>
+                                <br />
+                                <br />
                                 <asp:Label ID="Label_Notification3" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
                                 <br />
                                 <asp:Label ID="Label_Notification4" runat="server" CssClass="desc-labels" Text="*Notification*"></asp:Label>
@@ -461,7 +471,12 @@
                                 <br />
                                 <asp:Label ID="Label_Email4" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox27" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox27" runat="server" Width="190px"></asp:TextBox>
+                                <br />
+                                <br />
+                                <asp:Label ID="Label_PhoneNumber4" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
+                                <br />
+                                <asp:TextBox ID="TextBox29" runat="server"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_Notification5" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
@@ -496,8 +511,10 @@
                     <asp:View ID="View9" runat="server">
                         <asp:Label ID="Label21" runat="server" Text="check out page"></asp:Label>
                         <div class="view-container">
-                            <asp:TextBox ID="Textbox_SearchBookToBeBorrowed" runat="server" CssClass="search-bar"></asp:TextBox>
-                            <asp:Button ID="Button_ConfirmedBookToBeBorrowed" runat="server" Text="Button" CssClass="search-button" />
+                            <div>
+                            </div>
+                            <br />
+                            <br />
                         </div>
                     </asp:View>
                     <asp:View ID="View10" runat="server">
