@@ -1014,6 +1014,24 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Email2;
 
         /// <summary>
+        /// Label_PhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_PhoneNumber;
+
+        /// <summary>
+        /// Label_PhoneNumber2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_PhoneNumber2;
+
+        /// <summary>
         /// Label_Notification control.
         /// </summary>
         /// <remarks>
@@ -1122,6 +1140,24 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.TextBox TextBox25;
 
         /// <summary>
+        /// Label_PhoneNumber3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_PhoneNumber3;
+
+        /// <summary>
+        /// TextBox28 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox28;
+
+        /// <summary>
         /// Label_Notification3 control.
         /// </summary>
         /// <remarks>
@@ -1228,6 +1264,24 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox TextBox27;
+
+        /// <summary>
+        /// Label_PhoneNumber4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_PhoneNumber4;
+
+        /// <summary>
+        /// TextBox29 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox29;
 
         /// <summary>
         /// Label_Notification5 control.
@@ -1363,24 +1417,6 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label21;
-
-        /// <summary>
-        /// Textbox_SearchBookToBeBorrowed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox Textbox_SearchBookToBeBorrowed;
-
-        /// <summary>
-        /// Button_ConfirmedBookToBeBorrowed control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_ConfirmedBookToBeBorrowed;
 
         /// <summary>
         /// View10 control.
