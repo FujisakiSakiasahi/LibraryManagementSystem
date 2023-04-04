@@ -171,6 +171,18 @@ namespace LibraryManagementSystem
             LoadUserData(SelectedPage.ViewUser, returned);
         }
 
+        protected void Button_Click_EditUser(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = (int)SelectedPage.EditUser;
+
+            Label_MemberID2.Text = Label_MemberID.Text;
+            TextBox_MemberName.Text = Label_MemberName2.Text;
+            TextBox_PhoneNumber.Text = Label_PhoneNumber2.Text;
+            TextBox_Email.Text = Label_Email2.Text;
+            Label_Notification4.Text = Label_Notification2.Text;
+            DropDown_Librarian.SelectedValue = Label_Librarian2.Text;
+        }
+
         //button functions for Check In
         protected void Button_Click_CheckIn(object sender, EventArgs e)
         {
@@ -309,7 +321,8 @@ namespace LibraryManagementSystem
             {
                 Label_MemberID.Text = returnedData.Rows[0][0].ToString();
                 Label_MemberName2.Text = returnedData.Rows[0][1].ToString();
-                Label_Email.Text = returnedData.Rows[0][3].ToString();
+                Label_PhoneNumber2.Text = returnedData.Rows[0][2].ToString();
+                Label_Email2.Text = returnedData.Rows[0][3].ToString();
                 if (returnedData.Rows[0][5].ToString().Equals("0"))
                 {
                     Label_Notification2.Text = "False";
@@ -415,5 +428,7 @@ namespace LibraryManagementSystem
         {
             MultiView2.ActiveViewIndex = 1;
         }
+
+        
     }
 }

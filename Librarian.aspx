@@ -425,25 +425,26 @@
                             </div>
                             <asp:Button ID="Button_UserBack" runat="server" Text="Back" />
                             <asp:Button ID="Button_DeleteUser" runat="server" Text="Delete User" />
-                            <asp:Button ID="Button_EditUser" runat="server" Text="Edit User" />
+                            <asp:Button ID="Button_EditUser" runat="server" Text="Edit User" OnClick="Button_Click_EditUser" />
                         </div>
                     </asp:View>
                     <asp:View ID="View6" runat="server">
                         <div class="view-container">
                             <div class="left-container">
+                                <asp:Label ID="Label_MemberID2" runat="server" CssClass="desc-labels" Text="*ID*" Visible="False"></asp:Label>
                                 <asp:Label ID="Label_MemberName3" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox24" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_MemberName" runat="server"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_Email3" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox25" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_Email" runat="server"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_PhoneNumber3" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox28" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_PhoneNumber" runat="server"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_Notification3" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
@@ -453,8 +454,10 @@
                                 <br />
                                 <asp:Label ID="Label_Librarian3" runat="server" CssClass="title-labels" Text="Librarian:"></asp:Label>
                                 <br />
-                                <asp:RadioButton ID="RadioButton_LibrarianNo" runat="server" CssClass="desc-labels" Text="No" />
-                                <asp:RadioButton ID="RadioButton_LibrarianYes" runat="server" CssClass="desc-labels" Text="Yes" />
+                                <asp:DropDownList ID="DropDown_Librarian" runat="server">
+                                    <asp:ListItem>False</asp:ListItem>
+                                    <asp:ListItem>True</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
                             <asp:Button ID="Button1" runat="server" Text="Discard Changes" />
                             <asp:Button ID="Button2" runat="server" Text="Save Changes" />
