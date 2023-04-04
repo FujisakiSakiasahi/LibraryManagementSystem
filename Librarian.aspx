@@ -39,11 +39,11 @@
         <div class="content">
             <div class="navigation-buttons-container">
 
-                <asp:Button ID="Button_ManageBook" runat="server" Text="Books" CssClass="nav-buttons" OnClick="Button_Click_ManageBook" />
-                <asp:Button ID="Button_ManageUser" runat="server" Text="User" CssClass="nav-buttons" OnClick="Button_Click_ManageUser" />
-                <asp:Button ID="Button_CheckIn" runat="server" Text="Check In" CssClass="nav-buttons" OnClick="Button_Click_CheckIn" />
-                <asp:Button ID="Button_CheckOut" runat="server" Text="Check Out" CssClass="nav-buttons" OnClick="Button_Click_CheckOut" />
-                <asp:Button ID="Button_Notification" runat="server" Text="Notification" CssClass="nav-buttons" OnClick="Button_Click_Notification" />
+                <asp:Button ID="Button_ManageBook" runat="server" Text="Books" CssClass="side-nav-buttons" OnClick="Button_Click_ManageBook" />
+                <asp:Button ID="Button_ManageUser" runat="server" Text="User" CssClass="side-nav-buttons" OnClick="Button_Click_ManageUser" />
+                <asp:Button ID="Button_CheckIn" runat="server" Text="Check In" CssClass="side-nav-buttons" OnClick="Button_Click_CheckIn" />
+                <asp:Button ID="Button_CheckOut" runat="server" Text="Check Out" CssClass="side-nav-buttons" OnClick="Button_Click_CheckOut" />
+                <asp:Button ID="Button_Notification" runat="server" Text="Notification" CssClass="side-nav-buttons" OnClick="Button_Click_Notification" />
 
 
             </div>
@@ -98,74 +98,74 @@
                         <div class="view-container">
                             <div class="content-container">
                                 <div class="left-container">
-                                    <asp:Label ID="Label_TitleText1" runat="server" CssClass="labels" Text="Title:"></asp:Label>
+                                    <asp:Label ID="Label_TitleText1" runat="server" CssClass="title-labels" Text="Title:"></asp:Label>
 
                                     <br />
 
-                                    <asp:Label ID="Label_Title" runat="server" Text="*Title*" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_Title" runat="server" Text="*Title*" CssClass="desc-labels"></asp:Label>
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label_DescriptionText1" runat="server" Text="Description:" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_DescriptionText1" runat="server" Text="Description:" CssClass="title-labels"></asp:Label>
                                 
                                     <br />
                                     <asp:Label ID="Label_Description" runat="server" Text="*Description*" CssClass="labels"></asp:Label>
                                 
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label_ImageText1" runat="server" Text="Image" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_ImageText1" runat="server" Text="Image:" CssClass="title-labels"></asp:Label>
                                     <br />
                                     <asp:Image ID="Image_BookCover" runat="server" ImageUrl="~/images/book.jpg" />
                                 
                                 </div>
                                 <div class="center-container">
-                                    <asp:Label ID="Label_AuthorText1" runat="server" CssClass="labels" Text="Author:"></asp:Label>
+                                    <asp:Label ID="Label_AuthorText1" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
                                     <br />
-                                    <asp:Label ID="label_Author" runat="server" CssClass="labels" Text="*Author*"></asp:Label>
+                                    <asp:Label ID="label_Author" runat="server" CssClass="desc-labels" Text="*Author*"></asp:Label>
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label_PublisherText1" runat="server" CssClass="labels" Text="Publisher:"></asp:Label>
+                                    <asp:Label ID="Label_PublisherText1" runat="server" CssClass="title-labels" Text="Publisher:"></asp:Label>
 
                                     <br />
 
-                                    <asp:Label ID="label_Publisher" runat="server" Text="*Publisher*" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="label_Publisher" runat="server" Text="*Publisher*" CssClass="desc-labels"></asp:Label>
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label_PublishDateText1" runat="server" Text="Publish Date:" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_PublishDateText1" runat="server" Text="Publish Date:" CssClass="title-labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:Label ID="Label_PublishDate" runat="server" Text="*Publish date*" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_PublishDate" runat="server" Text="*Publish date*" CssClass="desc-labels"></asp:Label>
                                 
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label_RatingText1" runat="server" Text="Rating:" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_RatingText1" runat="server" Text="Rating:" CssClass="title-labels"></asp:Label>
                                     <br />
-                                    <asp:Label ID="Label_Rating" runat="server" CssClass="labels" Text="*Rating*"></asp:Label>
+                                    <asp:Label ID="Label_Rating" runat="server" CssClass="desc-labels" Text="*Rating*"></asp:Label>
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label_LanguageText1" runat="server" CssClass="labels" Text="Language:"></asp:Label>
+                                    <asp:Label ID="Label_LanguageText1" runat="server" CssClass="title-labels" Text="Language:"></asp:Label>
                                     <br />
-                                    <asp:Label ID="Label_Language" runat="server" CssClass="labels" Text="*Language*"></asp:Label>
+                                    <asp:Label ID="Label_Language" runat="server" CssClass="desc-labels" Text="*Language*"></asp:Label>
                                     <br />
                                 
                                 </div>
                                 <div class="right-container">
-                                    <asp:Label ID="Label_ISBNText1" runat="server" CssClass="labels" Text="ISBN:"></asp:Label>
+                                    <asp:Label ID="Label_ISBNText1" runat="server" CssClass="title-labels" Text="ISBN:"></asp:Label>
 
                                     <br />
 
-                                    <asp:Label ID="Label_ISBN" runat="server" Text="*ISBN*" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_ISBN" runat="server" Text="*ISBN*" CssClass="desc-labels"></asp:Label>
                                     <br />
                                     <br />
-                                    <asp:Label ID="LabelAvailabilityText1" runat="server" Text="Availability:" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="LabelAvailabilityText1" runat="server" Text="Availability:" CssClass="title-labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:Label ID="Label_Availability" runat="server" Text="*Availability*" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_Availability" runat="server" Text="*Availability*" CssClass="desc-labels"></asp:Label>
                                 
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label_ShelfIDText1" runat="server" Text="Shelf ID:" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_ShelfIDText1" runat="server" Text="Shelf ID:" CssClass="title-labels"></asp:Label>
                                     <br />
-                                    <asp:Label ID="Label_ShelfID" runat="server" CssClass="labels" Text="*Shelf ID*"></asp:Label>
+                                    <asp:Label ID="Label_ShelfID" runat="server" CssClass="desc-labels" Text="*Shelf ID*"></asp:Label>
                                     <br />
                                 
                                 </div>

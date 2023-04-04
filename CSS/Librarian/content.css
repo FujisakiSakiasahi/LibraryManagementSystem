@@ -13,7 +13,7 @@
     display: flex;
 }
 
-.nav-buttons {
+.side-nav-buttons {
     width: 80%;
     padding: 10px;
     margin: 5px;
@@ -23,7 +23,7 @@
     border-radius: 10px;
 }
 
-.nav-buttons:hover {
+.side-nav-buttons:hover {
     transition: 0.2s;
     background: #d4d4d4;
 }
@@ -34,11 +34,6 @@
     width: 100%;
 }
 
-.labels {
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
-}
 
 .content-container {
     margin: 25px;
@@ -48,13 +43,31 @@
 
 .left-container {
     width: 33%;
+    text-align:left;
 }
 
 .center-container {
+    text-align:left;
     width: 33%;
 }
 
 .right-container {
+    text-align:left;
     width: 33%;
 }
 
+
+/*Labels*/
+.title-labels {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+
+.desc-labels {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 24px;
+}
