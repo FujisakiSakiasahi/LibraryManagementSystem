@@ -12,6 +12,17 @@
     <?php
         $bookId = $_GET['bookId'];
     ?>
+
+    <script type="text/javascript">
+        function copyText() {
+            var textarea = document.getElementById("citingText");
+            textarea.style.display = "block";
+            textarea.select();
+            document.execCommand("copy");
+            textarea.style.display = "none";
+        }
+
+    </script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -41,17 +52,33 @@
        </div>
         <div class="content">
             <div class="description">
-
-                <asp:Label ID="Label2" runat="server" Text="Title of the book"></asp:Label>
-                <br/>
-
-                <asp:Image ID="Image2" runat="server" CssClass="temp-img" ImageUrl="~/images/book.jpg" />
-                <asp:Label ID="Label3" runat="server" Text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur dignissim dignissim commodo. Suspendisse purus ex, efficitur nec libero et, rutrum faucibus diam. Pellentesque et lacus mollis, commodo urna nec, congue urna. Proin pulvinar eros vel odio vestibulum, quis ultrices justo feugiat. Etiam pellentesque sit amet lorem vitae tempor. Donec vehicula ipsum vel sem condimentum faucibus. Vestibulum iaculis est vel justo finibus, et accumsan urna rutrum. Duis posuere ipsum vitae felis cursus efficitur.Ut sodales, arcu vitae hendrerit placerat, orci sem pharetra magna, ac vulputate nisi ante id elit. Donec non congue libero, quis tincidunt risus. Duis mi est, malesuada eu ultricies at, suscipit non augue. Quisque vel tempus leo, nec rhoncus velit. Maecenas id accumsan tellus. Etiam efficitur imperdiet leo. Duis massa dui, ultrices sed varius tincidunt, fermentum vel arcu. Nunc pretium urna sed turpis bibendum, id tristique mauris faucibus. Integer dictum finibus purus, laoreet varius risus molestie varius. Duis malesuada eleifend sapien sit amet varius."></asp:Label>
-                <br/>
-                <asp:Button ID="Button2" runat="server" Text="Wishlist" />
-                <asp:Button ID="Button1" runat="server" Text="Copy Citation" />
-                <asp:Button ID="Button3" runat="server" Text="Borrow" />
-
+                <div class="title">
+                    <asp:Label ID="Label_Title" runat="server" Text="Title of the book"></asp:Label>
+                </div>
+                <div class="book-cover">
+                    <asp:Image ID="Image_BookCover" runat="server" CssClass="temp-img" ImageUrl="~/images/book.jpg" />
+                </div>
+                <div class="book-description">
+                    <asp:Label ID="Label_Description" runat="server" Text="*desciption*"></asp:Label>
+                </div>
+                <div class="operations">
+                    <asp:Button ID="Button2" runat="server" Text="Wishlist" />
+                    <asp:Button ID="Button1" runat="server" Text="Copy Citation" OnClientClick="return copyText()"/>
+                    <asp:Button ID="Button3" runat="server" Text="Borrow" />
+                </div>
+                <div class="other-info">
+                    <dl>
+                        <dt>Author:</dt><dd id="tablecell_author" runat="server"></dd>
+                        <dt>Publisher:</dt><dd id="tablecell_publisher" runat="server"></dd>
+                        <dt>Publish Date:</dt><dd id="tablecell_publishdate" runat="server"></dd>
+                        <dt>Rating:</dt><dd id="tablecell_rating" runat="server"></dd>
+                        <dt>Language:</dt><dd id="tablecell_language" runat="server"></dd>
+                        <dt>ISBN:</dt><dd id="tablecell_ISBN" runat="server"></dd>
+                        <dt>Availability:</dt><dd id="tablecell_availability" runat="server"></dd>
+                        <dt>Shelf ID:</dt><dd id="tablecell_shelfid" runat="server"></dd>
+                    </dl>
+                    <textarea id="citingText" runat="server" style="display: none;"></textarea>
+                </div>
             </div>
 
         </div>

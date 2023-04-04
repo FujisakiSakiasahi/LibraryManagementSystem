@@ -13,7 +13,7 @@
     display: flex;
 }
 
-.nav-buttons {
+.side-nav-buttons {
     width: 80%;
     padding: 10px;
     margin: 5px;
@@ -23,7 +23,7 @@
     border-radius: 10px;
 }
 
-.nav-buttons:hover {
+.side-nav-buttons:hover {
     transition: 0.2s;
     background: #d4d4d4;
 }
@@ -34,11 +34,6 @@
     width: 100%;
 }
 
-.labels {
-    color: black;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 24px;
-}
 
 .content-container {
     margin: 25px;
@@ -47,14 +42,57 @@
 }
 
 .left-container {
-    width: 33%;
+    width: 30%;
+    text-align:left;
 }
 
 .center-container {
-    width: 33%;
+    text-align:left;
+    width: 30%;
 }
 
 .right-container {
-    width: 33%;
+    text-align:left;
+    width: 30%;
 }
 
+/*Search*/
+.search-bar {
+    background: #c4c4c4;
+    height: 38px;
+    width: 856px;
+    border: 0;
+    border-radius: 10px;
+    font-size: 20px;
+    padding: 10px;
+    margin-top: 25px;
+}
+
+.search-button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #404040;
+    margin: 10px;
+    color: white;
+    font-weight: bolder;
+    font-size: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+
+/*Labels*/
+.title-labels {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+
+.desc-labels {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 20px;
+}

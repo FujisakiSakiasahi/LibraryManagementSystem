@@ -27,3 +27,32 @@
     padding-left: 20px;
     padding-right: 20px;
 }
+
+.bottom-container {
+    display: flex;
+}
+
+.result-container {
+    background: red;
+    height: 100px;
+    width: 80%;
+}
+
+.filter-container {
+    background: blue;
+    height: 100px;
+    width: 20%;
+    text-align:center;
+}
+
+.filter {
+    background: white;
+    height: 90px;
+    width: 90%;
+}
+
+.results {
+    background: white;
+    height: 90px;
+    width: 90%;
+}
