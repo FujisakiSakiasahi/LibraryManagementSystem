@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="CSS/Footer.css" /> 
     <link rel="stylesheet" href="CSS/Description/Content.css" /> 
 
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
     <?php
         $bookId = $_GET['bookId'];
     ?>
@@ -52,35 +56,68 @@
        </div>
         <div class="content">
             <div class="description">
-                <div class="title">
-                    <asp:Label ID="Label_Title" runat="server" Text="Title of the book"></asp:Label>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h2 id="Label_Title" runat="server"></h2>
+                    </div>
                 </div>
-                <div class="book-cover">
-                    <asp:Image ID="Image_BookCover" runat="server" CssClass="temp-img" ImageUrl="~/images/book.jpg" />
+                <hr class="solid" />
+                <div class="row">
+                    <div class="col-lg-3">
+                        <asp:Image ID="Image_BookCover" runat="server" CssClass="temp-img" ImageUrl="~/images/book.jpg" />
+                    </div>
+                    <div class="col-lg-9">
+                        <asp:Label ID="Label_Description" runat="server" Text="*desciption*"></asp:Label>
+                    </div>
                 </div>
-                <div class="book-description">
-                    <asp:Label ID="Label_Description" runat="server" Text="*desciption*"></asp:Label>
-                </div>
-                <div class="operations">
-                    <asp:Button ID="Button2" runat="server" Text="Wishlist" />
-                    <asp:Button ID="Button1" runat="server" Text="Copy Citation" OnClientClick="return copyText()"/>
-                    <asp:Button ID="Button3" runat="server" Text="Borrow" />
-                </div>
-                <div class="other-info">
-                    <dl>
-                        <dt>Author:</dt><dd id="tablecell_author" runat="server"></dd>
-                        <dt>Publisher:</dt><dd id="tablecell_publisher" runat="server"></dd>
-                        <dt>Publish Date:</dt><dd id="tablecell_publishdate" runat="server"></dd>
-                        <dt>Rating:</dt><dd id="tablecell_rating" runat="server"></dd>
-                        <dt>Language:</dt><dd id="tablecell_language" runat="server"></dd>
-                        <dt>ISBN:</dt><dd id="tablecell_ISBN" runat="server"></dd>
-                        <dt>Availability:</dt><dd id="tablecell_availability" runat="server"></dd>
-                        <dt>Shelf ID:</dt><dd id="tablecell_shelfid" runat="server"></dd>
-                    </dl>
-                    <textarea id="citingText" runat="server" style="display: none;"></textarea>
+                <div class="row">
+                    <div class="col-lg-3">
+                        <asp:Button ID="Button2" runat="server" Text="Wishlist" />
+                        <asp:Button ID="Button1" runat="server" Text="Copy Citation" OnClientClick="return copyText()"/>
+                        <asp:Button ID="Button3" runat="server" Text="Borrow" />
+                    </div>
+                    <div class="col-lg-9">
+                        <div class="row">
+                            <h3 class="text-left">More Information</h3>
+                            <div class="row">
+                                <asp:Label runat="server" class="col-lg-2 text-left">Author:</asp:Label>
+                                <asp:Label runat="server" ID="tablecell_author" class="col-lg-2 text-left"></asp:Label>
+                            </div>
+                            <div class="row">
+                                <asp:Label runat="server" class="col-lg-2 text-left">Publisher:</asp:Label>
+                                <asp:Label runat="server" ID="tablecell_publisher" class="col-lg-2 text-left"></asp:Label>
+                            </div>
+                            <div class="row">
+                                <asp:Label runat="server" class="col-lg-2 text-left">Publish Date:</asp:Label>
+                                <asp:Label runat="server" ID="tablecell_publishdate" class="col-lg-2 text-left"></asp:Label>
+                            </div>
+                            <div class="row">
+                                <asp:Label runat="server" class="col-lg-2 text-left">Rating:</asp:Label>
+                                <asp:Label runat="server" ID="tablecell_rating" class="col-lg-2 text-left"></asp:Label>
+                            </div>
+                            <div class="row">
+                                <asp:Label runat="server" class="col-lg-2 text-left">Language:</asp:Label>
+                                <asp:Label runat="server" ID="tablecell_language" class="col-lg-2 text-left"></asp:Label>
+                            </div>
+                            <div class="row">
+                                <asp:Label runat="server" class="col-lg-2 text-left">ISBN:</asp:Label>
+                                <asp:Label runat="server" ID="tablecell_ISBN" class="col-lg-2 text-left"></asp:Label>
+                            </div>
+                            <div class="row">
+                                <asp:Label runat="server" class="col-lg-2 text-left">Availability:</asp:Label>
+                                 <asp:Label runat="server" ID="tablecell_availability" class="col-lg-2 text-left"></asp:Label>
+                            </div>
+                            <div class="row">
+                                <asp:Label runat="server" class="col-lg-2 text-left">Shelf ID:</asp:Label>
+                                <asp:Label runat="server" ID="tablecell_shelfid" class="col-lg-2 text-left"></asp:Label>
+                            </div>
+                        </div>
+                        
+                        <!--this is use to store the citingText for copy usage-->
+                        <textarea id="citingText" runat="server" style="display: none;"></textarea>
+                    </div>
                 </div>
             </div>
-
         </div>
         <div class="footer">
             <div class="footer-container">

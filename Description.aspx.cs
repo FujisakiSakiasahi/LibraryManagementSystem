@@ -24,17 +24,16 @@ namespace LibraryManagementSystem
         }
 
         protected void LoadBookData(DataTable dataTable) {
-            Label_Title.Text = dataTable.Rows[0][1].ToString();
+            Label_Title.InnerHtml = dataTable.Rows[0][1].ToString();
             Label_Description.Text = dataTable.Rows[0][4].ToString();
-
-            tablecell_author.InnerHtml = dataTable.Rows[0][2].ToString();
-            tablecell_publisher.InnerHtml = dataTable.Rows[0][5].ToString();
-            tablecell_publishdate.InnerHtml = dataTable.Rows[0][6].ToString();
-            tablecell_rating.InnerHtml = dataTable.Rows[0][7].ToString();
-            tablecell_language.InnerHtml = dataTable.Rows[0][8].ToString();
-            tablecell_ISBN.InnerHtml = dataTable.Rows[0][9].ToString();
-            tablecell_availability.InnerHtml = dataTable.Rows[0][10].ToString();
-            tablecell_shelfid.InnerHtml = dataTable.Rows[0][11].ToString();
+            tablecell_author.Text = dataTable.Rows[0][2].ToString();
+            tablecell_publisher.Text = dataTable.Rows[0][5].ToString();
+            tablecell_publishdate.Text = dataTable.Rows[0][6].ToString();
+            tablecell_rating.Text = dataTable.Rows[0][7].ToString();
+            tablecell_language.Text = dataTable.Rows[0][8].ToString();
+            tablecell_ISBN.Text = dataTable.Rows[0][9].ToString();
+            tablecell_availability.Text = dataTable.Rows[0][10].ToString();
+            tablecell_shelfid.Text = dataTable.Rows[0][11].ToString();
         }
 
         protected void SetCitationText(string title, string publishDate, string author, string publisher) {

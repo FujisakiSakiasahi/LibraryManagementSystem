@@ -82,7 +82,7 @@ namespace LibraryManagementSystem {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Title;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Label_Title;
 
         /// <summary>
         /// Image_BookCover control.
@@ -136,7 +136,7 @@ namespace LibraryManagementSystem {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tablecell_author;
+        protected global::System.Web.UI.WebControls.Label tablecell_author;
 
         /// <summary>
         /// tablecell_publisher control.
@@ -145,7 +145,7 @@ namespace LibraryManagementSystem {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tablecell_publisher;
+        protected global::System.Web.UI.WebControls.Label tablecell_publisher;
 
         /// <summary>
         /// tablecell_publishdate control.
@@ -154,7 +154,7 @@ namespace LibraryManagementSystem {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tablecell_publishdate;
+        protected global::System.Web.UI.WebControls.Label tablecell_publishdate;
 
         /// <summary>
         /// tablecell_rating control.
@@ -163,7 +163,7 @@ namespace LibraryManagementSystem {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tablecell_rating;
+        protected global::System.Web.UI.WebControls.Label tablecell_rating;
 
         /// <summary>
         /// tablecell_language control.
@@ -172,7 +172,7 @@ namespace LibraryManagementSystem {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tablecell_language;
+        protected global::System.Web.UI.WebControls.Label tablecell_language;
 
         /// <summary>
         /// tablecell_ISBN control.
@@ -181,7 +181,7 @@ namespace LibraryManagementSystem {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tablecell_ISBN;
+        protected global::System.Web.UI.WebControls.Label tablecell_ISBN;
 
         /// <summary>
         /// tablecell_availability control.
@@ -190,7 +190,7 @@ namespace LibraryManagementSystem {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tablecell_availability;
+        protected global::System.Web.UI.WebControls.Label tablecell_availability;
 
         /// <summary>
         /// tablecell_shelfid control.
@@ -199,7 +199,7 @@ namespace LibraryManagementSystem {
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl tablecell_shelfid;
+        protected global::System.Web.UI.WebControls.Label tablecell_shelfid;
 
         /// <summary>
         /// citingText control.
