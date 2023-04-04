@@ -66,9 +66,10 @@
                         10    : notification (maybe can add one more, to use for editing notification)
                         -->
                     <asp:View ID="View0" runat="server">
+                        <asp:Label ID="Label1" runat="server" Text="Manage Books"></asp:Label>
                         <div class="view-container">
-                            <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" Width="227px"></asp:TextBox>
-                            <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" />
+                            <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" CssClass="search-bar"></asp:TextBox>
+                            <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" CssClass="search-button" />
                             <asp:Button ID="Button_AddNewBook0" runat="server" OnClick="Button_Click_AddNewBook" Text="Add New Book" />
                             <br />
                             <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewBook">
@@ -109,7 +110,7 @@
                                     <asp:Label ID="Label_DescriptionText1" runat="server" Text="Description:" CssClass="title-labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:Label ID="Label_Description" runat="server" Text="*Description*" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_Description" runat="server" Text="*Description*" CssClass="desc-labels"></asp:Label>
                                 
                                     <br />
                                     <br />
@@ -122,14 +123,14 @@
                                 <div class="center-container">
                                     <asp:Label ID="Label_AuthorText1" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
                                     <br />
-                                    <asp:Label ID="Label_Author" runat="server" CssClass="labels" Text="*Author*"></asp:Label>
+                                    <asp:Label ID="Label_Author" runat="server" CssClass="desc-labels" Text="*Author*"></asp:Label>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_PublisherText1" runat="server" CssClass="title-labels" Text="Publisher:"></asp:Label>
 
                                     <br />
 
-                                    <asp:Label ID="Label_Publisher" runat="server" Text="*Publisher*" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_Publisher" runat="server" Text="*Publisher*" CssClass="desc-labels"></asp:Label>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_PublishDateText1" runat="server" Text="Publish Date:" CssClass="title-labels"></asp:Label>
@@ -369,8 +370,8 @@
                     </asp:View>
                     <asp:View ID="View4" runat="server">
                         <div class="view-container">
-                            <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" Width="227px"></asp:TextBox>
-                            <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" />
+                            <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" CssClass="search-bar"></asp:TextBox>
+                            <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" CssClass="search-button" />
                             <br />
                             <asp:GridView ID="GridView_UserList" runat="server" ForeColor="Black" AutoGenerateColumns="False">
                                 <Columns>
@@ -411,8 +412,8 @@
                     <asp:View ID="View8" runat="server">
                         <asp:Label ID="Label20" runat="server" Text="check in page"></asp:Label>
                         <div class="view-container">
-                            <asp:TextBox ID="Textbox_SearchBorrowedBookBasedOnUser" runat="server"></asp:TextBox>
-                            <asp:Button ID="Button_SearchBorrowedBookBasedOnUser" runat="server" Text="Button" />
+                            <asp:TextBox ID="Textbox_SearchBorrowedBookBasedOnUser" runat="server" CssClass="search-bar"></asp:TextBox>
+                            <asp:Button ID="Button_SearchBorrowedBookBasedOnUser" runat="server" Text="Button" CssClass="search-button" />
                             <div id="checkIn_result" runat="server">
                                 <asp:CheckBoxList ID="CheckBoxList_CheckIn" runat="server">
                                     
@@ -423,8 +424,8 @@
                     <asp:View ID="View9" runat="server">
                         <asp:Label ID="Label21" runat="server" Text="check out page"></asp:Label>
                         <div class="view-container">
-                            <asp:TextBox ID="Textbox_SearchBookToBeBorrowed" runat="server"></asp:TextBox>
-                            <asp:Button ID="Button_ConfirmedBookToBeBorrowed" runat="server" Text="Button" />
+                            <asp:TextBox ID="Textbox_SearchBookToBeBorrowed" runat="server" CssClass="search-bar"></asp:TextBox>
+                            <asp:Button ID="Button_ConfirmedBookToBeBorrowed" runat="server" Text="Button" CssClass="search-button" />
                         </div>
                     </asp:View>
                     <asp:View ID="View10" runat="server">
