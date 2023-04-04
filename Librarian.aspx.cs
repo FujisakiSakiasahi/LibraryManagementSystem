@@ -16,20 +16,27 @@ namespace LibraryManagementSystem
         protected enum SelectedPage {
             /*
                 0 - 3: manage book
-                    0: list all
-                    1: view info
-                    2: edit info
-                    3: add new
-                4 - 6: manage user
-                7    : check in (return book)
-                8    : check out (borrow book)
-                9    : notification (maybe can add one more, to use for editing notification)
+                            0: list all
+                            1: view info
+                            2: edit info
+                            3: add new
+                        4 - 6: manage user
+                            4: list all
+                            5: view info
+                            6: edit info
+                            7: add new info
+                        8    : check in (return book)
+                        9    : check out (borrow book)
+                        10    : notification (maybe can add one more, to use for editing notification)
              */
             ManageBook,
             ViewBook,
             EditBook,
             AddNewBook,
             ManageUser,
+            ViewUser,
+            EditUser,
+            AddNewUser,
             CheckIn,
             CheckOut,
             Notification,
@@ -53,7 +60,7 @@ namespace LibraryManagementSystem
         }
 
         protected void Button_Click_ViewBook(object sender, GridViewCommandEventArgs e) {
-            MultiView1.ActiveViewIndex = 1;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ViewBook;
 
             GridViewRow gridViewRow = GridView_BookList.Rows[Convert.ToInt32(e.CommandArgument)];
 
@@ -63,12 +70,12 @@ namespace LibraryManagementSystem
         }
 
         protected void Button_Click_BackToManageBook(object sender, EventArgs e) {
-            MultiView1.ActiveViewIndex = 0;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ManageBook;
         }
 
         protected void Button_Click_DeleteBook(object sender, EventArgs e) {
             sessionHandler.RunQuery($"DELETE FROM Book WHERE bookId = {Label_BookID.Text};");
-            MultiView1.ActiveViewIndex = 0;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ManageBook;
 
             String[] tableColumn = { "bookId", "bookName" };
             LoadDataIntoGridView(GetAllData(SelectedPage.ManageBook).AsDataView().ToTable(true, tableColumn), GridView_BookList);
@@ -76,7 +83,7 @@ namespace LibraryManagementSystem
         }
 
         protected void Button_Click_EditBook(object sender, EventArgs e) {
-            MultiView1.ActiveViewIndex = 2;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.EditBook;
 
             Label_BookID2.Text = Label_BookID.Text;
             TextBox_Title2.Text = Label_Title.Text;
@@ -93,11 +100,11 @@ namespace LibraryManagementSystem
         }
 
         protected void Button_Click_AddNewBook(object sender, EventArgs e) {
-            MultiView1.ActiveViewIndex = 3;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.AddNewBook;
         }
 
         protected void Button_Click_DiscardChangesBook(object sender, EventArgs e) {
-            MultiView1.ActiveViewIndex = 1;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ViewBook;
         }
 
         protected void Button_Click_SaveChangesBook(object sender, EventArgs e) {
@@ -107,7 +114,7 @@ namespace LibraryManagementSystem
 
             sessionHandler.RunQuery(query);
 
-            MultiView1.ActiveViewIndex = 1;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ViewBook;
 
             DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Book WHERE bookId = {Label_BookID2.Text}");
 
@@ -116,11 +123,11 @@ namespace LibraryManagementSystem
         }
 
         protected void Button_Click_AbortAddingNewBook(object sender, EventArgs e) {
-            MultiView1.ActiveViewIndex = 1;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ManageBook;
         }
 
         protected void Button_Click_AddingNewBook(object sender, EventArgs e) {
-            MultiView1.ActiveViewIndex = 3;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.AddNewBook;
             String date = Calendar_PublishDate3.SelectedDate.ToString("yyyy-MM-dd");
 
             int highest = int.Parse(sessionHandler.RunQuery("SELECT MAX(bookId) FROM Book").Rows[0][0].ToString());
@@ -131,7 +138,7 @@ namespace LibraryManagementSystem
 
             sessionHandler.RunQuery(query);
 
-            MultiView1.ActiveViewIndex = 1;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ViewBook;
 
             LoadBookData(SelectedPage.ViewBook, sessionHandler.RunQuery($"SELECT * FROM Book WHERE bookId = {highest}"));
 
@@ -140,7 +147,7 @@ namespace LibraryManagementSystem
         //button functions for Manage User
         protected void Button_Click_ManageUser(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 4;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ManageUser;
 
             String[] tableColumn = { "memberId", "memberName" };
 
@@ -151,6 +158,17 @@ namespace LibraryManagementSystem
 
         protected void Button_Click_SearchUser(object sender, EventArgs e) {
             LoadDataIntoGridView(Search(SelectedPage.ManageBook, Textbox_SearchBook.Text), GridView_BookList);
+        }
+
+        protected void Button_Click_ViewUser(object sender, GridViewCommandEventArgs e)
+        {
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ViewUser;
+
+            GridViewRow gridViewRow = GridView_UserList.Rows[Convert.ToInt32(e.CommandArgument)];
+
+            DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Member WHERE memberId = {(gridViewRow.FindControl("USER_ID") as Label).Text}");
+
+            LoadBookData(SelectedPage.ViewUser, returned);
         }
 
         //button functions for Check In
@@ -199,10 +217,34 @@ namespace LibraryManagementSystem
                     }   
                     break;
                 case SelectedPage.ManageUser:
+                    query += "Member WHERE ";
+
+                    if (int.TryParse(searchString, out int memberId))
+                    {
+                        query += "memberId = " + memberId + ";";
+                    }
+                    else
+                    {
+                        query += "memberName LIKE '%" + searchString + "%';";
+                    }
                     break;
-                case SelectedPage.CheckIn: 
+                case SelectedPage.CheckIn:
+                    query += "Borrowed WHERE ";
+
+                    if (int.TryParse(searchString, out int memberId2))
+                    {
+                        query += "memberId = " + memberId2 + ";";
+                    }
+                    else
+                    {
+                        query += "memberName LIKE '%" + searchString + "%'";
+                    }
+
+                    query += " AND returnDate IS NULL;";
+
                     break;
-                case SelectedPage.CheckOut: 
+                case SelectedPage.CheckOut:
+                    //SELECT CASE WHEN NOT EXISTS (SELECT bookId FROM (SELECT bookId FROM Borrowed UNION SELECT bookId FROM Reserved) as Combined) THEN 1 ELSE 0 END;
                     break;
                 case SelectedPage.Notification: 
                     break;
@@ -262,16 +304,8 @@ namespace LibraryManagementSystem
             }
         }
 
-        protected void GetUserData() {
-        }
+        protected void LoadUserData(SelectedPage page, DataTable returnedData) {
 
-        protected void AddNewUserData() {
-        }
-
-        protected void EditUserData() {
-        }
-
-        protected void DeleteUserData() {
         }
 
         protected void GetUserBorrowedRecord(int userId) {

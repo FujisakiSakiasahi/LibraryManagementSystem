@@ -372,7 +372,7 @@
                             <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" Width="227px"></asp:TextBox>
                             <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" />
                             <br />
-                            <asp:GridView ID="GridView_UserList" runat="server" ForeColor="Black" AutoGenerateColumns="False">
+                            <asp:GridView ID="GridView_UserList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewUser">
                                 <Columns>
                                     <asp:TemplateField HeaderText="User ID">
                                         <ItemTemplate >
@@ -415,7 +415,9 @@
                             <asp:Button ID="Button_SearchBorrowedBookBasedOnUser" runat="server" Text="Button" />
                             <div id="checkIn_result" runat="server">
                                 <asp:CheckBoxList ID="CheckBoxList_CheckIn" runat="server">
-                                    
+                                    <asp:ListItem Text="test"></asp:ListItem>
+                                    <asp:ListItem Text="test"></asp:ListItem>
+                                    <asp:ListItem Text="test"></asp:ListItem>
                                 </asp:CheckBoxList>
                             </div>
                         </div>
