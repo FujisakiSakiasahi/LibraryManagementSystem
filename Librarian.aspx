@@ -86,7 +86,7 @@
                                     </asp:TemplateField>
                                     <asp:TemplateField HeaderText="Operation">
                                         <ItemTemplate>
-                                            <asp:Button ID="Button_Edit" runat="server" Text="View" CommandName="View" CommandArgument="<%# Container.DataItemIndex %>"/>
+                                            <asp:Button ID="Button_View" runat="server" Text="View" CommandName="View" CommandArgument="<%# Container.DataItemIndex %>"/>
                                         </ItemTemplate>
                                     </asp:TemplateField>
                                 </Columns>
@@ -98,6 +98,7 @@
                         <div class="view-container">
                             <div class="content-container">
                                 <div class="left-container">
+                                    <asp:Label ID="Label_BookID" runat="server" Text="" Visible="False"></asp:Label>
                                     <asp:Label ID="Label_TitleText1" runat="server" CssClass="title-labels" Text="Title:"></asp:Label>
 
                                     <br />
@@ -114,20 +115,21 @@
                                     <br />
                                     <asp:Label ID="Label_ImageText1" runat="server" Text="Image:" CssClass="title-labels"></asp:Label>
                                     <br />
+                                    
                                     <asp:Image ID="Image_BookCover" runat="server" ImageUrl="~/images/book.jpg" />
                                 
                                 </div>
                                 <div class="center-container">
                                     <asp:Label ID="Label_AuthorText1" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
                                     <br />
-                                    <asp:Label ID="label_Author" runat="server" CssClass="desc-labels" Text="*Author*"></asp:Label>
+                                    <asp:Label ID="Label_Author" runat="server" CssClass="labels" Text="*Author*"></asp:Label>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_PublisherText1" runat="server" CssClass="title-labels" Text="Publisher:"></asp:Label>
 
                                     <br />
 
-                                    <asp:Label ID="label_Publisher" runat="server" Text="*Publisher*" CssClass="desc-labels"></asp:Label>
+                                    <asp:Label ID="Label_Publisher" runat="server" Text="*Publisher*" CssClass="labels"></asp:Label>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_PublishDateText1" runat="server" Text="Publish Date:" CssClass="title-labels"></asp:Label>
@@ -183,6 +185,7 @@
                         <div class="view-container">
                             <div class="content-container">
                                 <div class="left-container">
+                                    <asp:Label ID="Label_BookID2" runat="server" Text="" Visible="False"></asp:Label>
                                     <asp:Label ID="Label_TitleText2" runat="server" CssClass="labels" Text="Title:"></asp:Label>
 
                                     <br />
@@ -222,13 +225,19 @@
                                     <asp:Label ID="Label_PublishDateText2" runat="server" Text="Publish Date:" CssClass="labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:TextBox ID="TextBox_PublishDate2" runat="server"></asp:TextBox>
+                                    <asp:Calendar ID="Calendar_PublishDate2" runat="server"></asp:Calendar>
                                 
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_RatingText2" runat="server" Text="Rating:" CssClass="labels"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="TextBox_Rating2" runat="server"></asp:TextBox>
+                                    <asp:DropDownList ID="DropDownList_Rating2" runat="server">
+                                        <asp:ListItem>1</asp:ListItem>
+                                        <asp:ListItem>2</asp:ListItem>
+                                        <asp:ListItem>3</asp:ListItem>
+                                        <asp:ListItem>4</asp:ListItem>
+                                        <asp:ListItem>5</asp:ListItem>
+                                    </asp:DropDownList>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_LanguageText2" runat="server" CssClass="labels" Text="Language:"></asp:Label>
@@ -242,13 +251,13 @@
 
                                     <br />
 
-                                    <asp:TextBox ID="TextBoxISBN2" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_ISBN2" runat="server"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_AvailabilityText2" runat="server" Text="Availability:" CssClass="labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:TextBox ID="TextBox_Availability2" runat="server"></asp:TextBox>
+                                    <asp:CheckBox ID="CheckBox_Availability2" runat="server" />
                                 
                                     <br />
                                     <br />
@@ -269,72 +278,85 @@
                         <div class="view-container">
                             <div class="content-container">
                                 <div class="left-container">
-                                    <asp:Label ID="Label24" runat="server" CssClass="labels" Text="Title:"></asp:Label>
+                                    <asp:Label ID="Label_BookID3" runat="server" Text="" Visible="False"></asp:Label>
+                                    <asp:Label ID="Label_Title3" runat="server" CssClass="labels" Text="Title:"></asp:Label>
 
                                     <br />
 
-                                    <asp:TextBox ID="TextBox10" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Title3" runat="server"></asp:TextBox>
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label26" runat="server" Text="Description:" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_Description3" runat="server" Text="Description:" CssClass="labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:TextBox ID="TextBox20" runat="server" Height="208px" Width="417px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Description3" runat="server" Height="208px" Width="417px"></asp:TextBox>
                                 
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label29" runat="server" Text="Image" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_Image3" runat="server" Text="Image" CssClass="labels"></asp:Label>
                                     <br />
-                                    <asp:Image ID="Image4" runat="server" ImageUrl="~/images/book.jpg" />
+                                    <asp:Image ID="Image3" runat="server" ImageUrl="~/images/book.jpg" />
                                 
                                     <br />
-                                    <asp:Button ID="Button16" runat="server" Text="Choose Image" />
+                                    <asp:Button ID="Button_Image3" runat="server" Text="Choose Image" />
                                 
                                 </div>
                                 <div class="center-container">
-                                    <asp:Label ID="Label31" runat="server" CssClass="labels" Text="Publisher:"></asp:Label>
+                                    <asp:Label ID="Label_Author3" runat="server" CssClass="labels" Text="Author:"></asp:Label>
+
+                                    <br />
+                                    <asp:TextBox ID="TextBox_Author3" runat="server"></asp:TextBox>
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label_Publisher3" runat="server" CssClass="labels" Text="Publisher:"></asp:Label>
 
                                     <br />
 
-                                    <asp:TextBox ID="TextBox12" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Publisher3" runat="server"></asp:TextBox>
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label33" runat="server" Text="Publish Date:" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_PublishDate3" runat="server" Text="Publish Date:" CssClass="labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:TextBox ID="TextBox13" runat="server"></asp:TextBox>
+                                    <asp:Calendar ID="Calendar_PublishDate3" runat="server"></asp:Calendar>
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label_Rating3" runat="server" CssClass="labels" Text="Rating:"></asp:Label>
+                                    <br />
+                                    <asp:DropDownList ID="DropDownList_Rating3" runat="server">
+                                        <asp:ListItem>1</asp:ListItem>
+                                        <asp:ListItem>2</asp:ListItem>
+                                        <asp:ListItem>3</asp:ListItem>
+                                        <asp:ListItem>4</asp:ListItem>
+                                        <asp:ListItem>5</asp:ListItem>
+                                    </asp:DropDownList>
+                                    <br />
+                                    <br />
+                                    <asp:Label ID="Label_Language3" runat="server" CssClass="labels" Text="Language:"></asp:Label>
+                                    <br />
+                                    <asp:TextBox ID="TextBox_Language3" runat="server"></asp:TextBox>
                                 
-                                    <br />
-                                    <br />
-                                    <asp:Label ID="Label35" runat="server" Text="Rating:" CssClass="labels"></asp:Label>
-                                    <br />
-                                    <asp:TextBox ID="TextBox14" runat="server"></asp:TextBox>
-                                    <br />
-                                    <br />
-                                    <asp:Label ID="Label37" runat="server" CssClass="labels" Text="Language:"></asp:Label>
-                                    <br />
-                                    <asp:TextBox ID="TextBox15" runat="server"></asp:TextBox>
                                     <br />
                                 
                                 </div>
                                 <div class="right-container">
-                                    <asp:Label ID="Label39" runat="server" CssClass="labels" Text="ISBN:"></asp:Label>
+                                    <asp:Label ID="Label_ISBN3" runat="server" CssClass="labels" Text="ISBN:"></asp:Label>
 
                                     <br />
 
-                                    <asp:TextBox ID="TextBox16" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_ISBN3" runat="server"></asp:TextBox>
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label41" runat="server" Text="Availability:" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_Availability3" runat="server" Text="Availability:" CssClass="labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:TextBox ID="TextBox17" runat="server"></asp:TextBox>
+                                    <asp:CheckBox ID="CheckBox_Availability3" runat="server" />
                                 
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label42" runat="server" Text="Shelf ID:" CssClass="labels"></asp:Label>
+                                    <asp:Label ID="Label_ShelfID3" runat="server" Text="Shelf ID:" CssClass="labels"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="TextBox18" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_ShelfID3" runat="server"></asp:TextBox>
                                     <br />
                                 
                                 </div>
@@ -350,7 +372,7 @@
                             <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" Width="227px"></asp:TextBox>
                             <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" />
                             <br />
-                            <asp:GridView ID="GridView_UserList" runat="server" AutoGenerateColumns="False">
+                            <asp:GridView ID="GridView_UserList" runat="server" ForeColor="Black" AutoGenerateColumns="False">
                                 <Columns>
                                     <asp:TemplateField HeaderText="User ID">
                                         <ItemTemplate >
@@ -373,17 +395,17 @@
                     </asp:View>
                     <asp:View ID="View5" runat="server">
                         <div class="view-container">
-                            <asp:Label ID="Label_view">view user</asp:Label>
+                            <asp:Label ID="Label_view" runat="server">view user</asp:Label>
                         </div>
                     </asp:View>
                     <asp:View ID="View6" runat="server">
                         <div class="view-container">
-                            <asp:Label ID="Label_edit">view user</asp:Label>
+                            <asp:Label ID="Label_edit" runat="server">view user</asp:Label>
                         </div>
                     </asp:View>
                     <asp:View ID="View7" runat="server">
                         <div class="view-container">
-                            <asp:Label ID="Label_add">view user</asp:Label>
+                            <asp:Label ID="Label_add" runat="server">view user</asp:Label>
                         </div>
                     </asp:View>
                     <asp:View ID="View8" runat="server">
