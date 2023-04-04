@@ -168,7 +168,7 @@ namespace LibraryManagementSystem
 
             DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Member WHERE memberId = {(gridViewRow.FindControl("USER_ID") as Label).Text}");
 
-            LoadBookData(SelectedPage.ViewUser, returned);
+            LoadUserData(SelectedPage.ViewUser, returned);
         }
 
         //button functions for Check In
@@ -305,8 +305,30 @@ namespace LibraryManagementSystem
         }
 
         protected void LoadUserData(SelectedPage page, DataTable returnedData) {
+            if (page == SelectedPage.ViewUser)
+            {
+                Label_MemberID.Text = returnedData.Rows[0][0].ToString();
+                Label_MemberName2.Text = returnedData.Rows[0][1].ToString();
+                Label_Email.Text = returnedData.Rows[0][3].ToString();
+                if (returnedData.Rows[0][5].ToString().Equals("0"))
+                {
+                    Label_Notification2.Text = "False";
+                }
+                else
+                {
+                    Label_Notification2.Text = "True";
+                }
+                if (returnedData.Rows[0][6].ToString().Equals("0"))
+                {
+                    Label_Librarian2.Text = "False";
+                }
+                else
+                {
+                    Label_Librarian2.Text = "True";
+                }
 
-        }
+                }
+            }
 
         protected void GetUserBorrowedRecord(int userId) {
             String query = "SELECT * FROM Borrowed WHERE memberId=" + userId + ";";

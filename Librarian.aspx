@@ -398,6 +398,7 @@
                     <asp:View ID="View5" runat="server">
                         <div class="view-container">
                             <div class="left-container">
+                                <asp:Label ID="Label_MemberID" runat="server" CssClass="desc-labels" Text="*ID*" Visible="False"></asp:Label>
                                 <asp:Label ID="Label_MemberName" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
                                 <br />
                                 <asp:Label ID="Label_MemberName2" runat="server" CssClass="desc-labels" Text="*Name*"></asp:Label>
