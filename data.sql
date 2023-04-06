@@ -46,7 +46,7 @@ create table Borrowed (
     returnDate DATE,
 
     PRIMARY KEY (borrowId),
-    FOREIGN KEY (bookId) REFERENCES Book (BookId),
+    FOREIGN KEY (bookId) REFERENCES Book (bookId),
     FOREIGN KEY (memberId) REFERENCES Member (memberId)
 );
 
@@ -58,7 +58,7 @@ create table Ratings (
         CHECK (rating BETWEEN 1 AND 5),
 
     PRIMARY KEY (bookId,memberId),
-    FOREIGN KEY (bookId) REFERENCES Book (BookId),
+    FOREIGN KEY (bookId) REFERENCES Book (bookId),
     FOREIGN KEY (memberId) REFERENCES Member (memberId)
 );
 
@@ -71,3 +71,23 @@ create table Notification (
     PRIMARY KEY (notifId),
     FOREIGN KEY (memberId) REFERENCES Member (memberId)
 );
+
+create table Reserved (
+    bookId INT NOT NULL,
+    memberId INT NOT NULL,
+    reservedUntil DATE NOT NULL,
+
+    PRIMARY KEY (bookId, memberId),
+    FOREIGN KEY (bookId) REFERENCES Book (bookId),
+    FOREIGN KEY (memberId) REFERENCES Member (memberId)
+);
+
+create table Wishlist (
+    bookId INT NOT NULL,
+    memberId INT NOT NULL,
+
+    PRIMARY KEY (bookId, memberId),
+    FOREIGN KEY (bookId) REFERENCES Book (bookId),
+    FOREIGN KEY (memberId) REFERENCES Member (memberId)
+);
+

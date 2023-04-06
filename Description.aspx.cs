@@ -13,9 +13,15 @@ namespace LibraryManagementSystem
     public partial class Description : System.Web.UI.Page
     {
         SessionHandler sessionHandler = new SessionHandler();
+        string bookId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            string bookId = Request.QueryString["bookId"];
+            if (Session["loginState"] != null) {
+                sessionHandler.CheckLoginState();
+            } else { Session["loginState"] = "false"; }
+
+            bookId = Request.QueryString["bookId"];
 
             DataTable dataTable = sessionHandler.RunQuery("SELECT * FROM Book WHERE bookId="+bookId+";");
 
@@ -23,18 +29,37 @@ namespace LibraryManagementSystem
             SetCitationText(dataTable.Rows[0][1].ToString(), dataTable.Rows[0][6].ToString(), dataTable.Rows[0][2].ToString(), dataTable.Rows[0][5].ToString());
         }
 
-        protected void LoadBookData(DataTable dataTable) {
-            Label_Title.Text = dataTable.Rows[0][1].ToString();
-            Label_Description.Text = dataTable.Rows[0][4].ToString();
+        protected void AddBookToWishList(String bookId) {
+            if (sessionHandler.GetLoginState()) {
+                //already login
+                sessionHandler.RunQuery("");//add the book to the wishlist table
+            } else {
+                //no login
+                Response.Redirect("Login.aspx");
+            }
+        }
 
-            tablecell_author.InnerHtml = dataTable.Rows[0][2].ToString();
-            tablecell_publisher.InnerHtml = dataTable.Rows[0][5].ToString();
-            tablecell_publishdate.InnerHtml = dataTable.Rows[0][6].ToString();
-            tablecell_rating.InnerHtml = dataTable.Rows[0][7].ToString();
-            tablecell_language.InnerHtml = dataTable.Rows[0][8].ToString();
-            tablecell_ISBN.InnerHtml = dataTable.Rows[0][9].ToString();
-            tablecell_availability.InnerHtml = dataTable.Rows[0][10].ToString();
-            tablecell_shelfid.InnerHtml = dataTable.Rows[0][11].ToString();
+        protected void ReservingBook(String bookId) {
+            if (sessionHandler.GetLoginState()) {
+                //already login
+                sessionHandler.RunQuery("");//add the book to the reserved table
+            } else {
+                //no login
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void LoadBookData(DataTable dataTable) {
+            Label_Title.InnerHtml = dataTable.Rows[0][1].ToString();
+            Label_Description.Text = dataTable.Rows[0][4].ToString();
+            tablecell_author.Text = dataTable.Rows[0][2].ToString();
+            tablecell_publisher.Text = dataTable.Rows[0][5].ToString();
+            tablecell_publishdate.Text = dataTable.Rows[0][6].ToString();
+            tablecell_rating.Text = dataTable.Rows[0][7].ToString();
+            tablecell_language.Text = dataTable.Rows[0][8].ToString();
+            tablecell_ISBN.Text = dataTable.Rows[0][9].ToString();
+            tablecell_availability.Text = dataTable.Rows[0][10].ToString();
+            tablecell_shelfid.Text = dataTable.Rows[0][11].ToString();
         }
 
         protected void SetCitationText(string title, string publishDate, string author, string publisher) {
@@ -54,6 +79,14 @@ namespace LibraryManagementSystem
             string citation = lastName + ", " + initials + " (" + formattedDate + "). " + title + ", " + publisher + ".";
 
             citingText.InnerHtml = citation;
+        }
+
+        protected void Button_Wishlist_Click(object sender, EventArgs e) {
+            AddBookToWishList(bookId);
+        }
+
+        protected void Button_ReserveBook_Click(object sender, EventArgs e) {
+            ReservingBook(bookId);
         }
     }
 }

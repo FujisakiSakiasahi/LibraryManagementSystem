@@ -1,6 +1,5 @@
 ﻿.content {
-    background-color: whitesmoke;
-    
+    background-color: whitesmoke; 
 }
 
 
@@ -12,28 +11,12 @@
     margin: 25px;
 }
 
-.title {
-    width: 100%;
-}
-
-.book-cover {
-    width: 25%;
-}
-
-.book-description {
-    width: 75%;
-}
-
-.operations {
-    width 25%
-}
-
-.other-info {
-    width: 75%;
-}
-
-
 .temp-img {
     margin: 10px;
     float: left;
+}
+
+/* Solid border */
+hr.solid {
+    border-top: 3px solid #bbb;
 }

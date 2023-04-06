@@ -19,9 +19,9 @@
           </div>
 
           <div class="header-navigation-container">
-              <asp:Button ID="header_home" runat="server" Text="Home" CssClass="nav-buttons" />
-              <asp:Button ID="header_search" runat="server" Text="Search" CssClass="nav-buttons" />
-              <asp:Button ID="header_about_us" runat="server" Text="About Us" CssClass="nav-buttons" />
+              <asp:Button ID="header_home" runat="server" Text="Home" CssClass="nav-buttons" PostBackUrl="~/Home.aspx" />
+              <asp:Button ID="header_search" runat="server" Text="Search" CssClass="nav-buttons" PostBackUrl="~/Search.aspx" />
+              <asp:Button ID="header_about_us" runat="server" Text="About Us" CssClass="nav-buttons" PostBackUrl="~/AboutUs.aspx" />
               <asp:Button ID="header_temp" runat="server" Text="Temp" CssClass="nav-buttons" />
           </div>
 

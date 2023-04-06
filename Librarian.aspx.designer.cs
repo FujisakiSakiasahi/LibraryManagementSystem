@@ -978,6 +978,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View5;
 
         /// <summary>
+        /// Label_MemberID control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_MemberID;
+
+        /// <summary>
         /// Label_MemberName control.
         /// </summary>
         /// <remarks>
@@ -1104,6 +1113,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View6;
 
         /// <summary>
+        /// Label_MemberID2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_MemberID2;
+
+        /// <summary>
         /// Label_MemberName3 control.
         /// </summary>
         /// <remarks>
@@ -1113,13 +1131,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_MemberName3;
 
         /// <summary>
-        /// TextBox24 control.
+        /// TextBox_MemberName control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox24;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_MemberName;
 
         /// <summary>
         /// Label_Email3 control.
@@ -1131,13 +1149,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Email3;
 
         /// <summary>
-        /// TextBox25 control.
+        /// TextBox_Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox25;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Email;
 
         /// <summary>
         /// Label_PhoneNumber3 control.
@@ -1149,13 +1167,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_PhoneNumber3;
 
         /// <summary>
-        /// TextBox28 control.
+        /// TextBox_PhoneNumber control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox28;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_PhoneNumber;
 
         /// <summary>
         /// Label_Notification3 control.
@@ -1185,22 +1203,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Librarian3;
 
         /// <summary>
-        /// RadioButton_LibrarianNo control.
+        /// CheckBox_Librarian control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton_LibrarianNo;
-
-        /// <summary>
-        /// RadioButton_LibrarianYes control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton_LibrarianYes;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_Librarian;
 
         /// <summary>
         /// Button1 control.
@@ -1212,13 +1221,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Button Button1;
 
         /// <summary>
-        /// Button2 control.
+        /// Button_UserSave control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button Button_UserSave;
 
         /// <summary>
         /// View7 control.
@@ -1230,6 +1239,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View7;
 
         /// <summary>
+        /// Label_MemberID3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_MemberID3;
+
+        /// <summary>
         /// Label_MemberName4 control.
         /// </summary>
         /// <remarks>
@@ -1239,13 +1257,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_MemberName4;
 
         /// <summary>
-        /// TextBox26 control.
+        /// TextBox_MemberName3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox26;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_MemberName3;
 
         /// <summary>
         /// Label_Email4 control.
@@ -1257,13 +1275,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Email4;
 
         /// <summary>
-        /// TextBox27 control.
+        /// TextBox_Email3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox27;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Email3;
 
         /// <summary>
         /// Label_PhoneNumber4 control.
@@ -1275,13 +1293,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_PhoneNumber4;
 
         /// <summary>
-        /// TextBox29 control.
+        /// TextBox_PhoneNumber3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox29;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_PhoneNumber3;
 
         /// <summary>
         /// Label_Notification5 control.
@@ -1293,13 +1311,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Notification5;
 
         /// <summary>
-        /// Label_Notification6 control.
+        /// CheckBox_Notification2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Notification6;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_Notification2;
 
         /// <summary>
         /// Label_Librarian4 control.
@@ -1311,22 +1329,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Librarian4;
 
         /// <summary>
-        /// RadioButton_LibrarianNo0 control.
+        /// CheckBox_Librarian2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton_LibrarianNo0;
-
-        /// <summary>
-        /// RadioButton_LibrarianYes0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButton RadioButton_LibrarianYes0;
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_Librarian2;
 
         /// <summary>
         /// Button3 control.
@@ -1399,6 +1408,24 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_CheckIn;
+
+        /// <summary>
+        /// Label_StoreUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_StoreUser;
+
+        /// <summary>
+        /// Button_CheckInBooks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_CheckInBooks;
 
         /// <summary>
         /// View9 control.
