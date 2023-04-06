@@ -32,9 +32,9 @@ namespace LibraryManagementSystem
                 Label3.Text = returnedData.Rows[0][1].ToString();
                 //we have no fucking clue as to why sometime false sometime 0
                 if (returnedData.Rows[0][1].ToString() == "False" || returnedData.Rows[0][1].ToString() == "0") {
-                    Response.Redirect("homepage_code.aspx");
+                    Response.Redirect("Home.aspx");
                 } else if (returnedData.Rows[0][1].ToString() == "True" || returnedData.Rows[0][1].ToString() == "1") {
-                    Response.Redirect("librarian_page_code.aspx");
+                    Response.Redirect("Librarian.aspx");
                 } else {
                     Response.Write("<script>alert('Login data returning error occurs')</script>");
                 }
