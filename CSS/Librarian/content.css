@@ -56,6 +56,34 @@
     width: 30%;
 }
 
+/*Check Out*/
+.checkout-search-bar {
+
+}
+
+.checkout-search-button {
+
+}
+
+.user-container {
+    width: 40%;
+    background: red;
+}
+
+.book-container {
+    width: 40%;
+    background: green;
+}
+
+
+.top-container {
+
+}
+
+.bottom-container {
+
+}
+
 /*Search*/
 .search-bar {
     background: #c4c4c4;

@@ -508,10 +508,32 @@
                     <asp:View ID="View9" runat="server">
                         <asp:Label ID="Label21" runat="server" Text="check out page"></asp:Label>
                         <div class="view-container">
-                            <div>
+                            <div class="content-container">
+                                <div class="user-container">
+                                    <div class="top-container">
+                                        <asp:TextBox ID="TextBox30" runat="server"></asp:TextBox>
+                                        <asp:Button ID="Button15" runat="server" Text="Button" />
+                                    </div>
+                                    <div class="bottom-container">
+                                        <asp:ListBox ID="ListBox1" runat="server">
+                                            <asp:ListItem>test</asp:ListItem>
+                                        </asp:ListBox>
+                                    </div>
+
+                                </div>
+                                <div class="book-container">
+                                    <div class="top-container">
+                                        <asp:TextBox ID="TextBox31" runat="server"></asp:TextBox>
+                                        <asp:Button ID="Button16" runat="server" Text="Button" />
+                                    </div>
+                                    <div class="bottom-container">
+                                        
+                                        <asp:ListBox ID="ListBox3" runat="server">
+                                            <asp:ListItem>teset</asp:ListItem>
+                                        </asp:ListBox>
+                                    </div>
+                                </div>
                             </div>
-                            <br />
-                            <br />
                         </div>
                     </asp:View>
                     <asp:View ID="View10" runat="server">
