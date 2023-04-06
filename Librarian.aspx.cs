@@ -157,7 +157,8 @@ namespace LibraryManagementSystem
         }
 
         protected void Button_Click_SearchUser(object sender, EventArgs e) {
-            LoadDataIntoGridView(Search(SelectedPage.ManageBook, Textbox_SearchBook.Text), GridView_BookList);
+            String[] tableColumn = { "memberId", "memberName" };
+            LoadDataIntoGridView(Search(SelectedPage.ManageUser, Textbox_SearchUser.Text).AsDataView().ToTable(true, tableColumn), GridView_UserList);
         }
 
         protected void Button_Click_AddUser(object sender, EventArgs e)
@@ -244,11 +245,64 @@ namespace LibraryManagementSystem
         }
 
         //button functions for Check In
+
+        protected void Button_CLick_SearchForBorrowedBooks(object sender, EventArgs e)
+        {
+            DataTable BorrowedBooks = Search(SelectedPage.CheckIn, Textbox_SearchBorrowedBookBasedOnUser.Text);
+
+            Label_StoreUser.Text = BorrowedBooks.Rows[0][2].ToString();
+
+            CheckBoxList_CheckIn.Items.Clear();
+
+            foreach (DataRow book in BorrowedBooks.Rows)
+            {
+                CheckBoxList_CheckIn.Items.Add(book["bookName"].ToString());
+            }
+
+            Button_CheckInBooks.Visible = true;
+
+        }
         protected void Button_Click_CheckIn(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 8;
 
         }
+
+        protected void Button_Click_CheckInBooks(object sender, EventArgs e)
+        {
+            String bookQuery = "";
+
+            foreach (ListItem book in CheckBoxList_CheckIn.Items)
+            {
+                if (book.Selected)
+                {
+                    bookQuery += "'" + book.Value + "'" + ", ";
+                }
+            }
+
+            //add error handling here when none are selected
+            char[] toTrim = {',', ' '};
+            bookQuery = bookQuery.TrimEnd(toTrim);
+
+            String nowDate = DateTime.Now.ToString("yyyy-MM-dd");
+
+            String query = $"UPDATE Borrowed SET returnDate = '{nowDate}' WHERE memberId = {Label_StoreUser.Text} AND bookId IN (SELECT bookId FROM Book WHERE bookName IN ({bookQuery}))";
+            Debug.WriteLine(query);
+
+            sessionHandler.RunQuery(query);
+
+            DataTable BorrowedBooks = Search(SelectedPage.CheckIn, Textbox_SearchBorrowedBookBasedOnUser.Text);
+
+            CheckBoxList_CheckIn.Items.Clear();
+
+            foreach (DataRow book in BorrowedBooks.Rows)
+            {
+                CheckBoxList_CheckIn.Items.Add(book["bookName"].ToString());
+            }
+
+        }
+
+        //button functions for Check Out
 
         protected void Button_Click_CheckOut(object sender, EventArgs e)
         {
@@ -301,11 +355,11 @@ namespace LibraryManagementSystem
                     }
                     break;
                 case SelectedPage.CheckIn:
-                    query += "Borrowed WHERE ";
+                    query += "Borrowed INNER JOIN Book ON Book.bookId = Borrowed.bookId WHERE ";
 
                     if (int.TryParse(searchString, out int memberId2))
                     {
-                        query += "memberId = " + memberId2 + ";";
+                        query += "memberId = " + memberId2;
                     }
                     else
                     {
@@ -488,5 +542,7 @@ namespace LibraryManagementSystem
         {
             MultiView2.ActiveViewIndex = 1;
         }
+
+
     }
 }

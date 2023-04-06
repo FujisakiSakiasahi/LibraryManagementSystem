@@ -68,8 +68,10 @@
                     <asp:View ID="View0" runat="server">
                         <asp:Label ID="Label1" runat="server" Text="Manage Books"></asp:Label>
                         <div class="view-container">
-                            <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" CssClass="search-bar"></asp:TextBox>
-                            <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" CssClass="search-button" />
+                            <asp:Panel runat="server" DefaultButton="Button_SearchBook">
+                                <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" CssClass="search-bar"></asp:TextBox>
+                                <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" CssClass="search-button" />
+                            </asp:Panel>
                             <asp:Button ID="Button_AddNewBook0" runat="server" OnClick="Button_Click_AddNewBook" Text="Add New Book" />
                             <br />
                             <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewBook">
@@ -370,8 +372,10 @@
                     </asp:View>
                     <asp:View ID="View4" runat="server">
                         <div class="view-container">
-                            <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" CssClass="search-bar"></asp:TextBox>
-                            <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" CssClass="search-button" />
+                            <asp:Panel runat="server" DefaultButton="Button_SearchUser">
+                                <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" CssClass="search-bar"></asp:TextBox>
+                                <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" CssClass="search-button" />
+                            </asp:Panel>
                             <asp:Button ID="Button_AddUser" runat="server" Text="Add New User" OnClick="Button_Click_AddUser"/>
                             <br />
                             <asp:GridView ID="GridView_UserList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewUser">
@@ -497,15 +501,15 @@
                     <asp:View ID="View8" runat="server">
                         <asp:Label ID="Label20" runat="server" Text="check in page"></asp:Label>
                         <div class="view-container">
-                            <asp:TextBox ID="Textbox_SearchBorrowedBookBasedOnUser" runat="server" CssClass="search-bar"></asp:TextBox>
-                            <asp:Button ID="Button_SearchBorrowedBookBasedOnUser" runat="server" Text="Button" CssClass="search-button" />
+                            <asp:Panel runat="server" DefaultButton="Button_SearchBorrowedBookBasedOnUser">
+                                <asp:TextBox ID="Textbox_SearchBorrowedBookBasedOnUser" runat="server" CssClass="search-bar"></asp:TextBox>
+                                <asp:Button ID="Button_SearchBorrowedBookBasedOnUser" runat="server" Text="Button" CssClass="search-button" OnClick="Button_CLick_SearchForBorrowedBooks"  />
+                            </asp:Panel>
                             <div id="checkIn_result" runat="server">
-                                <asp:CheckBoxList ID="CheckBoxList_CheckIn" runat="server">
-                                    <asp:ListItem Text="test"></asp:ListItem>
-                                    <asp:ListItem Text="test"></asp:ListItem>
-                                    <asp:ListItem Text="test"></asp:ListItem>
-                                </asp:CheckBoxList>
+                                <asp:CheckBoxList ID="CheckBoxList_CheckIn" ForeColor="Black" runat="server"/>
+                                <asp:Label ID="Label_StoreUser" runat="server" Text="Label" Visible="False"></asp:Label>
                             </div>
+                            <asp:Button ID="Button_CheckInBooks" runat="server" Text="Check In" OnClick="Button_Click_CheckInBooks" Visible="False" />
                         </div>
                     </asp:View>
                     <asp:View ID="View9" runat="server">
