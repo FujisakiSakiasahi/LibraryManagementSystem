@@ -103,31 +103,31 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Label Label_Description;
 
         /// <summary>
-        /// Button2 control.
+        /// Button_Wishlist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button2;
+        protected global::System.Web.UI.WebControls.Button Button_Wishlist;
 
         /// <summary>
-        /// Button1 control.
+        /// Button_CopyCite control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button1;
+        protected global::System.Web.UI.WebControls.Button Button_CopyCite;
 
         /// <summary>
-        /// Button3 control.
+        /// Button_ReserveBook control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button3;
+        protected global::System.Web.UI.WebControls.Button Button_ReserveBook;
 
         /// <summary>
         /// tablecell_author control.

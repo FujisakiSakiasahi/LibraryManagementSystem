@@ -124,8 +124,6 @@
     <Content Include="Login.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="Web.config" />
-    <Content Include="login_code.aspx" />
-    <Content Include="librarian_page_code.aspx" />
     <Content Include="Home.aspx" />
   </ItemGroup>
   <ItemGroup>
@@ -166,23 +164,9 @@
     </Compile>
     <Compile Include="SessionHandler.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="login_code.aspx.cs">
-      <DependentUpon>login_code.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="login_code.aspx.designer.cs">
-      <DependentUpon>login_code.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="librarian_page_code.aspx.cs">
-      <DependentUpon>librarian_page_code.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
     <Compile Include="Home.aspx.cs">
       <DependentUpon>Home.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="librarian_page_code.aspx.designer.cs">
-      <DependentUpon>librarian_page_code.aspx</DependentUpon>
     </Compile>
     <Compile Include="Home.aspx.designer.cs">
       <DependentUpon>Home.aspx</DependentUpon>

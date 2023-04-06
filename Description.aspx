@@ -38,9 +38,9 @@
           </div>
 
           <div class="header-navigation-container">
-              <asp:Button ID="header_home" runat="server" Text="Home" CssClass="nav-buttons" />
-              <asp:Button ID="header_search" runat="server" Text="Search" CssClass="nav-buttons" />
-              <asp:Button ID="header_about_us" runat="server" Text="About Us" CssClass="nav-buttons" />
+              <asp:Button ID="header_home" runat="server" Text="Home" CssClass="nav-buttons" PostBackUrl="~/Home.aspx" />
+              <asp:Button ID="header_search" runat="server" Text="Search" CssClass="nav-buttons" PostBackUrl="~/Search.aspx" />
+              <asp:Button ID="header_about_us" runat="server" Text="About Us" CssClass="nav-buttons" PostBackUrl="~/AboutUs.aspx" />
               <asp:Button ID="header_temp" runat="server" Text="Temp" CssClass="nav-buttons" />
           </div>
 
@@ -51,9 +51,8 @@
                   </a>
               </div>
           </div>
-
-
        </div>
+
         <div class="content">
             <div class="description">
                 <div class="row">
@@ -72,9 +71,9 @@
                 </div>
                 <div class="row">
                     <div class="col-lg-3">
-                        <asp:Button ID="Button2" runat="server" Text="Wishlist" />
-                        <asp:Button ID="Button1" runat="server" Text="Copy Citation" OnClientClick="return copyText()"/>
-                        <asp:Button ID="Button3" runat="server" Text="Borrow" />
+                        <asp:Button ID="Button_Wishlist" runat="server" Text="Wishlist" OnClick="Button_Wishlist_Click" />
+                        <asp:Button ID="Button_CopyCite" runat="server" Text="Copy Citation" OnClientClick="return copyText()"/>
+                        <asp:Button ID="Button_ReserveBook" runat="server" Text="Reserve" OnClick="Button_ReserveBook_Click" />
                     </div>
                     <div class="col-lg-9">
                         <div class="row">

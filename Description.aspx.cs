@@ -13,14 +13,40 @@ namespace LibraryManagementSystem
     public partial class Description : System.Web.UI.Page
     {
         SessionHandler sessionHandler = new SessionHandler();
+        string bookId;
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            string bookId = Request.QueryString["bookId"];
+            if (Session["loginState"] != null) {
+                sessionHandler.CheckLoginState();
+            } else { Session["loginState"] = "false"; }
+
+            bookId = Request.QueryString["bookId"];
 
             DataTable dataTable = sessionHandler.RunQuery("SELECT * FROM Book WHERE bookId="+bookId+";");
 
             LoadBookData(dataTable);
             SetCitationText(dataTable.Rows[0][1].ToString(), dataTable.Rows[0][6].ToString(), dataTable.Rows[0][2].ToString(), dataTable.Rows[0][5].ToString());
+        }
+
+        protected void AddBookToWishList(String bookId) {
+            if (sessionHandler.GetLoginState()) {
+                //already login
+                sessionHandler.RunQuery("");//add the book to the wishlist table
+            } else {
+                //no login
+                Response.Redirect("Login.aspx");
+            }
+        }
+
+        protected void ReservingBook(String bookId) {
+            if (sessionHandler.GetLoginState()) {
+                //already login
+                sessionHandler.RunQuery("");//add the book to the reserved table
+            } else {
+                //no login
+                Response.Redirect("Login.aspx");
+            }
         }
 
         protected void LoadBookData(DataTable dataTable) {
@@ -53,6 +79,14 @@ namespace LibraryManagementSystem
             string citation = lastName + ", " + initials + " (" + formattedDate + "). " + title + ", " + publisher + ".";
 
             citingText.InnerHtml = citation;
+        }
+
+        protected void Button_Wishlist_Click(object sender, EventArgs e) {
+            AddBookToWishList(bookId);
+        }
+
+        protected void Button_ReserveBook_Click(object sender, EventArgs e) {
+            ReservingBook(bookId);
         }
     }
 }
