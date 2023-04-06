@@ -372,7 +372,7 @@
                         <div class="view-container">
                             <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" CssClass="search-bar"></asp:TextBox>
                             <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" CssClass="search-button" />
-                            <asp:Button ID="Button_AddUser" runat="server" Text="Add New User" />
+                            <asp:Button ID="Button_AddUser" runat="server" Text="Add New User" OnClick="Button_Click_AddUser"/>
                             <br />
                             <asp:GridView ID="GridView_UserList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewUser">
                                 <Columns>
@@ -423,8 +423,8 @@
                                 <br />
                                 <asp:Label ID="Label_Librarian2" runat="server" CssClass="desc-labels" Text="*Librarian*"></asp:Label>
                             </div>
-                            <asp:Button ID="Button_UserBack" runat="server" Text="Back" />
-                            <asp:Button ID="Button_DeleteUser" runat="server" Text="Delete User" />
+                            <asp:Button ID="Button_UserBack" runat="server" Text="Back" OnClick="Button_Click_ManageUser"/>
+                            <asp:Button ID="Button_DeleteUser" runat="server" Text="Delete User" OnClick="Button_Click_DeleteUser" />
                             <asp:Button ID="Button_EditUser" runat="server" Text="Edit User" OnClick="Button_Click_EditUser" />
                         </div>
                     </asp:View>
@@ -454,46 +454,43 @@
                                 <br />
                                 <asp:Label ID="Label_Librarian3" runat="server" CssClass="title-labels" Text="Librarian:"></asp:Label>
                                 <br />
-                                <asp:DropDownList ID="DropDown_Librarian" runat="server">
-                                    <asp:ListItem>False</asp:ListItem>
-                                    <asp:ListItem>True</asp:ListItem>
-                                </asp:DropDownList>
+                                <asp:CheckBox ID="CheckBox_Librarian" runat="server" />
                             </div>
-                            <asp:Button ID="Button1" runat="server" Text="Discard Changes" />
-                            <asp:Button ID="Button2" runat="server" Text="Save Changes" />
+                            <asp:Button ID="Button1" runat="server" Text="Discard Changes" OnClick="Button_Click_DiscardChangesUser" />
+                            <asp:Button ID="Button_UserSave" runat="server" Text="Save Changes" OnClick="Button_Click_SaveChangesUser" />
                         
                         </div>
                     </asp:View>
                     <asp:View ID="View7" runat="server">
                         <div class="view-container">
                             <div class="left-container">
+                                <asp:Label ID="Label_MemberID3" runat="server" Text="Label" Visible="False"></asp:Label>
                                 <asp:Label ID="Label_MemberName4" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox26" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_MemberName3" runat="server"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_Email4" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox27" runat="server" Width="190px"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_Email3" runat="server" Width="190px"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_PhoneNumber4" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox29" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_PhoneNumber3" runat="server"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_Notification5" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
                                 <br />
-                                <asp:Label ID="Label_Notification6" runat="server" CssClass="desc-labels" Text="*Notification*"></asp:Label>
+                                <asp:CheckBox ID="CheckBox_Notification2" runat="server" />
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_Librarian4" runat="server" CssClass="title-labels" Text="Librarian:"></asp:Label>
                                 <br />
-                                <asp:RadioButton ID="RadioButton_LibrarianNo0" runat="server" CssClass="desc-labels" Text="No" />
-                                <asp:RadioButton ID="RadioButton_LibrarianYes0" runat="server" CssClass="desc-labels" Text="Yes" />
+                                <asp:CheckBox ID="CheckBox_Librarian2" runat="server" />
                             </div>
-                            <asp:Button ID="Button3" runat="server" Text="Back" />
-                            <asp:Button ID="Button4" runat="server" Text="Create New User" />
+                            <asp:Button ID="Button3" runat="server" Text="Back" OnClick="Button_Click_AbortNewUser"/>
+                            <asp:Button ID="Button4" runat="server" Text="Create New User" OnCLick="Button_Click_AddingNewUser"/>
                         
                         </div>
                     </asp:View>

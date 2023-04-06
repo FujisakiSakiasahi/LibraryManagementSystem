@@ -160,6 +160,31 @@ namespace LibraryManagementSystem
             LoadDataIntoGridView(Search(SelectedPage.ManageBook, Textbox_SearchBook.Text), GridView_BookList);
         }
 
+        protected void Button_Click_AddUser(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = (int)SelectedPage.AddNewUser;
+        }
+
+        protected void Button_Click_AddingNewUser(object sender, EventArgs e)
+        {
+
+            int highest = int.Parse(sessionHandler.RunQuery("SELECT MAX(memberID) FROM Member").Rows[0][0].ToString());
+            Label_MemberID3.Text = highest.ToString();
+
+            String query = $"INSERT INTO `Member` (`memberId`, `memberName`, `memberNo`, `memberEmail`, `memberPasswd`, `newsletter`, `librarian`) VALUES ('{highest += 1}', '{TextBox_MemberName3.Text}', '{TextBox_PhoneNumber3.Text}', '{TextBox_Email3.Text}', 'PlaceHolder_Password', b'{(CheckBox_Notification2.Checked ? 1 : 0)}', b'{(CheckBox_Librarian2.Checked ? 1 : 0)}');";
+
+            sessionHandler.RunQuery(query);
+
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ViewUser;
+
+            LoadUserData(SelectedPage.ViewUser, sessionHandler.RunQuery($"SELECT * FROM Member WHERE memberId = {highest}"));
+        }
+
+        protected void Button_Click_AbortNewUser(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ManageUser;
+        }
+
         protected void Button_Click_ViewUser(object sender, GridViewCommandEventArgs e)
         {
             MultiView1.ActiveViewIndex = (int)SelectedPage.ViewUser;
@@ -180,7 +205,42 @@ namespace LibraryManagementSystem
             TextBox_PhoneNumber.Text = Label_PhoneNumber2.Text;
             TextBox_Email.Text = Label_Email2.Text;
             Label_Notification4.Text = Label_Notification2.Text;
-            DropDown_Librarian.SelectedValue = Label_Librarian2.Text;
+            if (Label_Librarian2.Text.Equals("True"))
+            {
+                CheckBox_Librarian.Checked = true;
+            }
+            else
+            {
+                CheckBox_Librarian.Checked = false;
+            }
+        }
+
+        protected void Button_Click_SaveChangesUser(object sender, EventArgs e)
+        {
+            String query = $"UPDATE `Member` SET `memberName` = '{TextBox_MemberName.Text}', memberNo = '{TextBox_PhoneNumber.Text}', memberEmail = '{TextBox_Email.Text}', `librarian` = b'{(CheckBox_Librarian2.Checked ? 1 : 0)}' WHERE `Member`.`memberId` = {Label_MemberID2.Text};";
+
+            sessionHandler.RunQuery(query);
+
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ViewUser;
+
+            DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Member WHERE memberId = {Label_MemberID.Text}");
+
+            LoadUserData(SelectedPage.ViewUser, returned);
+        }
+
+        protected void Button_Click_DiscardChangesUser(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ViewUser;
+        }
+
+        protected void Button_Click_DeleteUser(object sender, EventArgs e)
+        {
+            sessionHandler.RunQuery($"DELETE FROM Member WHERE memberId = {Label_MemberID.Text};");
+            MultiView1.ActiveViewIndex = (int)SelectedPage.ManageUser;
+
+            String[] tableColumn = { "memberId", "memberName" };
+            LoadDataIntoGridView(GetAllData(SelectedPage.ManageUser).AsDataView().ToTable(true, tableColumn), GridView_UserList);
+
         }
 
         //button functions for Check In
@@ -428,7 +488,5 @@ namespace LibraryManagementSystem
         {
             MultiView2.ActiveViewIndex = 1;
         }
-
-        
     }
 }
