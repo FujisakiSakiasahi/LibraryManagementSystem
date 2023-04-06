@@ -541,6 +541,11 @@
                                     </div>
                                 </div>
                             </div>
+                            <div class="check-out-button-container">
+                                
+                                <asp:Button ID="Button17" runat="server" Text="Confirm Checkout" />
+                                
+                            </div>
                         </div>
                     </asp:View>
                     <asp:View ID="View10" runat="server">

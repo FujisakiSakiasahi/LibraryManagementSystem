@@ -1500,6 +1500,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.ListBox ListBox3;
 
         /// <summary>
+        /// Button17 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button17;
+
+        /// <summary>
         /// View10 control.
         /// </summary>
         /// <remarks>
