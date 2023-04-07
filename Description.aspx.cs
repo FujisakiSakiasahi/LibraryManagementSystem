@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.EnterpriseServices;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -32,7 +33,7 @@ namespace LibraryManagementSystem
         protected void AddBookToWishList(String bookId) {
             if (sessionHandler.GetLoginState()) {
                 //already login
-                sessionHandler.RunQuery("");//add the book to the wishlist table
+                sessionHandler.RunQuery("INSERT INTO Wishlist (bookId, memberId) VALUES (" + bookId + ", " + sessionHandler.GetUserId() + ");");//add the book to the wishlist table
             } else {
                 //no login
                 Response.Redirect("Login.aspx");
@@ -41,12 +42,22 @@ namespace LibraryManagementSystem
 
         protected void ReservingBook(String bookId) {
             if (sessionHandler.GetLoginState()) {
+                if (CheckIfBookIsAvailabe(bookId))
                 //already login
-                sessionHandler.RunQuery("");//add the book to the reserved table
+                sessionHandler.RunQuery("INSERT INTO Wishlist (bookId, memberId, reservedUntil) VALUES (" + bookId + ", " + sessionHandler.GetUserId() + ", '" + DateTime.Now.AddDays(1).ToString("yyyy-MM-dd") + "');");//add the book to the reserved table
             } else {
                 //no login
                 Response.Redirect("Login.aspx");
             }
+        }
+
+        protected bool CheckIfBookIsAvailabe(String bookId) {
+            DataTable bookAvailable = sessionHandler.RunQuery($"SELECT available FROM Book WHERE bookId = {bookId};");
+            DataTable bookReserved = sessionHandler.RunQuery($"SELECT * FROM Reserved WHERE bookId = {bookId}");
+
+            if (bookAvailable.Rows[0][0].ToString() != "1") return false;
+            if (bookReserved != null) return false;
+            return true;
         }
 
         protected void LoadBookData(DataTable dataTable) {
