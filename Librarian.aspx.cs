@@ -306,8 +306,107 @@ namespace LibraryManagementSystem
 
         protected void Button_Click_CheckOut(object sender, EventArgs e)
         {
-            MultiView1.ActiveViewIndex = 9;
+            MultiView1.ActiveViewIndex = (int)SelectedPage.CheckOut;
 
+            DataTable memberNames = sessionHandler.RunQuery("SELECT * FROM Member;");
+            ListBox_SearchedUserCheckOut.DataSource = memberNames;
+            ListBox_SearchedUserCheckOut.DataTextField = "memberName";
+            ListBox_SearchedUserCheckOut.DataValueField = "memberId";
+            ListBox_SearchedUserCheckOut.DataBind();
+
+            DataTable bookNames = sessionHandler.RunQuery("SELECT * FROM Book WHERE available = TRUE;");
+            ListBox_SearchedBookCheckOut.DataSource = bookNames;
+            ListBox_SearchedBookCheckOut.DataTextField = "bookName";
+            ListBox_SearchedBookCheckOut.DataValueField = "bookId";
+            ListBox_SearchedBookCheckOut.DataBind();
+        }
+
+        protected void Button_Click_SearchUserCheckOut(object sender, EventArgs e)
+        {
+            if (TextBox_SearchUserCheckOut.Text.Equals(""))
+            {
+                DataTable memberNames = sessionHandler.RunQuery("SELECT * FROM Member WHERE available = TRUE;");
+                ListBox_SearchedUserCheckOut.DataSource = memberNames;
+                ListBox_SearchedUserCheckOut.DataTextField = "memberName";
+                ListBox_SearchedUserCheckOut.DataValueField = "memberId";
+                ListBox_SearchedUserCheckOut.DataBind();
+            }
+            else
+            {
+                String searchString = TextBox_SearchUserCheckOut.Text;
+                String query = "SELECT * FROM Member WHERE ";
+
+                if (int.TryParse(searchString, out int memberId))
+                {
+                    query += "memberId = " + memberId + ";";
+                }
+                else
+                {
+                    query += "memberName LIKE '%" + searchString + "%';";
+                }
+
+                DataTable memberNames = sessionHandler.RunQuery(query);
+                ListBox_SearchedUserCheckOut.DataSource = memberNames;
+                ListBox_SearchedUserCheckOut.DataTextField = "memberName";
+                ListBox_SearchedUserCheckOut.DataValueField = "memberId";
+                ListBox_SearchedUserCheckOut.DataBind();
+            }
+        }
+        protected void Button_Click_SearchBookCheckOut(object sender, EventArgs e)
+        {
+            if (TextBox_SearchBookCheckOut.Text.Equals(""))
+            {
+                DataTable bookNames = sessionHandler.RunQuery("SELECT * FROM Book WHERE available = TRUE;");
+                ListBox_SearchedBookCheckOut.DataSource = bookNames;
+                ListBox_SearchedBookCheckOut.DataTextField = "bookName";
+                ListBox_SearchedBookCheckOut.DataValueField = "bookId";
+                ListBox_SearchedBookCheckOut.DataBind();
+            }
+            else
+            {
+                String searchString = TextBox_SearchBookCheckOut.Text;
+                String query = "SELECT * FROM Book WHERE available = TRUE AND ";
+
+                if (int.TryParse(searchString, out int bookId))
+                {
+                    query += "bookId = " + bookId + ";";
+                }
+                else
+                {
+                    query += "bookName LIKE '%" + searchString + "%';";
+                }
+
+                DataTable bookNames = sessionHandler.RunQuery(query);
+                ListBox_SearchedBookCheckOut.DataSource = bookNames;
+                ListBox_SearchedBookCheckOut.DataTextField = "bookName";
+                ListBox_SearchedBookCheckOut.DataValueField = "bookId";
+                ListBox_SearchedBookCheckOut.DataBind();
+            }
+        }
+
+        protected void Button_Click_ConfirmCheckOut(object sender, EventArgs e)
+        {
+            if (ListBox_SearchedBookCheckOut.SelectedItem == null || ListBox_SearchedUserCheckOut.SelectedItem == null)
+            {
+                Response.Write("<script>alert('Must have a user and a book selected.')</script>");
+            }
+            else
+            {
+                String memberId = ListBox_SearchedUserCheckOut.SelectedItem.Value;
+                String bookId = ListBox_SearchedBookCheckOut.SelectedItem.Value;
+                int highest = int.Parse(sessionHandler.RunQuery("SELECT MAX(borrowId) FROM Borrowed").Rows[0][0].ToString());
+
+
+
+                String query = $"INSERT INTO Borrowed (borrowId, bookId, memberId, dateBorrowed, expectDate, returnDate) VALUES ({highest+1}, {bookId}, {memberId}, '{DateTime.Now.ToString("yyyy-MM-dd")}', '{DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")}', NULL);";
+                sessionHandler.RunQuery(query);
+
+                sessionHandler.RunQuery($"UPDATE Book SET available = FALSE WHERE bookId = {bookId}");
+
+                Button_Click_CheckOut(sender, e);
+                //needs to add confirmation somehow
+
+            }
         }
 
         protected void Button_Click_Notification(object sender, EventArgs e)
