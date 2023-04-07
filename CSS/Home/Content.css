@@ -84,3 +84,12 @@
     font-size: 20px;
     padding: 10px;
 }
+
+a.item-card {
+    color: black;
+    text-decoration: none;
+}
+
+a.item-card:visited {
+    color: black;
+}

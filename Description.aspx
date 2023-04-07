@@ -53,71 +53,82 @@
           </div>
        </div>
 
-        <div class="content">
-            <div class="description">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <h2 id="Label_Title" runat="server"></h2>
-                    </div>
+        <div class="container-fluid">
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
                 </div>
-                <hr class="solid" />
-                <div class="row">
-                    <div class="col-lg-3">
-                        <asp:Image ID="Image_BookCover" runat="server" CssClass="temp-img" ImageUrl="~/images/book.jpg" />
-                    </div>
-                    <div class="col-lg-9">
-                        <asp:Label ID="Label_Description" runat="server" Text="*desciption*" class="text-left"></asp:Label>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-3">
-                        <asp:Button ID="Button_Wishlist" runat="server" Text="Wishlist" OnClick="Button_Wishlist_Click" />
-                        <asp:Button ID="Button_CopyCite" runat="server" Text="Copy Citation" OnClientClick="return copyText()"/>
-                        <asp:Button ID="Button_ReserveBook" runat="server" Text="Reserve" OnClick="Button_ReserveBook_Click" />
-                    </div>
-                    <div class="col-lg-9">
-                        <div class="row">
-                            <h3 class="text-left">More Information</h3>
+                <div class="col-sm-8 text-left">
+                    <div class="content">
+                        <div class="description">
                             <div class="row">
-                                <asp:Label runat="server" class="col-lg-2 text-left">Author:</asp:Label>
-                                <asp:Label runat="server" ID="tablecell_author" class="col-lg-2 text-left"></asp:Label>
+                                <div class="col-lg-12">
+                                    <h2 id="Label_Title" runat="server"></h2>
+                                </div>
+                            </div>
+                            <hr class="solid" />
+                            <div class="row">
+                                <div class="col-lg-3">
+                                    <asp:Image ID="Image_BookCover" runat="server" CssClass="temp-img" ImageUrl="~/images/book.jpg" />
+                                </div>
+                                <div class="col-lg-9">
+                                    <asp:Label ID="Label_Description" runat="server" Text="*desciption*" class="text-left"></asp:Label>
+                                </div>
                             </div>
                             <div class="row">
-                                <asp:Label runat="server" class="col-lg-2 text-left">Publisher:</asp:Label>
-                                <asp:Label runat="server" ID="tablecell_publisher" class="col-lg-2 text-left"></asp:Label>
-                            </div>
-                            <div class="row">
-                                <asp:Label runat="server" class="col-lg-2 text-left">Publish Date:</asp:Label>
-                                <asp:Label runat="server" ID="tablecell_publishdate" class="col-lg-2 text-left"></asp:Label>
-                            </div>
-                            <div class="row">
-                                <asp:Label runat="server" class="col-lg-2 text-left">Rating:</asp:Label>
-                                <asp:Label runat="server" ID="tablecell_rating" class="col-lg-2 text-left"></asp:Label>
-                            </div>
-                            <div class="row">
-                                <asp:Label runat="server" class="col-lg-2 text-left">Language:</asp:Label>
-                                <asp:Label runat="server" ID="tablecell_language" class="col-lg-2 text-left"></asp:Label>
-                            </div>
-                            <div class="row">
-                                <asp:Label runat="server" class="col-lg-2 text-left">ISBN:</asp:Label>
-                                <asp:Label runat="server" ID="tablecell_ISBN" class="col-lg-2 text-left"></asp:Label>
-                            </div>
-                            <div class="row">
-                                <asp:Label runat="server" class="col-lg-2 text-left">Availability:</asp:Label>
-                                 <asp:Label runat="server" ID="tablecell_availability" class="col-lg-2 text-left"></asp:Label>
-                            </div>
-                            <div class="row">
-                                <asp:Label runat="server" class="col-lg-2 text-left">Shelf ID:</asp:Label>
-                                <asp:Label runat="server" ID="tablecell_shelfid" class="col-lg-2 text-left"></asp:Label>
+                                <div class="col-lg-3">
+                                    <asp:Button ID="Button_Wishlist" runat="server" Text="Wishlist" OnClick="Button_Wishlist_Click" />
+                                    <asp:Button ID="Button_CopyCite" runat="server" Text="Copy Citation" OnClientClick="return copyText()"/>
+                                    <asp:Button ID="Button_ReserveBook" runat="server" Text="Reserve" OnClick="Button_ReserveBook_Click" />
+                                </div>
+                                <div class="col-lg-9">
+                                    <div class="row">
+                                        <h3 class="text-left">More Information</h3>
+                                        <div class="row">
+                                            <asp:Label runat="server" class="col-lg-2 text-left">Author:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_author" class="col-lg-2 text-left"></asp:Label>
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label runat="server" class="col-lg-2 text-left">Publisher:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_publisher" class="col-lg-2 text-left"></asp:Label>
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label runat="server" class="col-lg-2 text-left">Publish Date:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_publishdate" class="col-lg-2 text-left"></asp:Label>
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label runat="server" class="col-lg-2 text-left">Rating:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_rating" class="col-lg-2 text-left"></asp:Label>
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label runat="server" class="col-lg-2 text-left">Language:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_language" class="col-lg-2 text-left"></asp:Label>
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label runat="server" class="col-lg-2 text-left">ISBN:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_ISBN" class="col-lg-2 text-left"></asp:Label>
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label runat="server" class="col-lg-2 text-left">Availability:</asp:Label>
+                                             <asp:Label runat="server" ID="tablecell_availability" class="col-lg-2 text-left"></asp:Label>
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label runat="server" class="col-lg-2 text-left">Shelf ID:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_shelfid" class="col-lg-2 text-left"></asp:Label>
+                                        </div>
+                                    </div>
+                        
+                                    <!--this is use to store the citingText for copy usage-->
+                                    <textarea id="citingText" runat="server" style="display: none;"></textarea>
+                                </div>
                             </div>
                         </div>
-                        
-                        <!--this is use to store the citingText for copy usage-->
-                        <textarea id="citingText" runat="server" style="display: none;"></textarea>
                     </div>
+                </div>
+                <div class="col-sm-2 sidenav">
                 </div>
             </div>
         </div>
+
         <div class="footer">
             <div class="footer-container">
                 <div class="footer-item footer-item-1">
