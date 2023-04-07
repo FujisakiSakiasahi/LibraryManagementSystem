@@ -42,9 +42,10 @@ namespace LibraryManagementSystem
 
         protected void ReservingBook(String bookId) {
             if (sessionHandler.GetLoginState()) {
-                if (CheckIfBookIsAvailabe(bookId))
                 //already login
-                sessionHandler.RunQuery("INSERT INTO Wishlist (bookId, memberId, reservedUntil) VALUES (" + bookId + ", " + sessionHandler.GetUserId() + ", '" + DateTime.Now.AddDays(1).ToString("yyyy-MM-dd") + "');");//add the book to the reserved table
+                if (CheckIfBookIsAvailabe(bookId)) { 
+                    sessionHandler.RunQuery("INSERT INTO Wishlist (bookId, memberId, reservedUntil) VALUES (" + bookId + ", " + sessionHandler.GetUserId() + ", '" + DateTime.Now.AddDays(1).ToString("yyyy-MM-dd") + "');");//add the book to the reserved table
+                }
             } else {
                 //no login
                 Response.Redirect("Login.aspx");
