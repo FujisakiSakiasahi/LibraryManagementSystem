@@ -44,7 +44,7 @@
                 <asp:Button ID="Button_CheckIn" runat="server" Text="Check In" CssClass="side-nav-buttons" OnClick="Button_Click_CheckIn" />
                 <asp:Button ID="Button_CheckOut" runat="server" Text="Check Out" CssClass="side-nav-buttons" OnClick="Button_Click_CheckOut" />
                 <asp:Button ID="Button_Notification" runat="server" Text="Notification" CssClass="side-nav-buttons" OnClick="Button_Click_Notification" />
-
+                <asp:Button ID="Button2" runat="server" Text="Requests" CssClass="side-nav-buttons" OnClick="Button2_Click" />
 
             </div>
             <div class="multiview">
@@ -594,7 +594,15 @@
                             </asp:MultiView>
                         </div>
                     </asp:View>
+                    <asp:View ID="View13" runat="server">
+                        <div class="view-container">
 
+                            <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                            </asp:CheckBoxList>
+                            <asp:Button ID="Button15" runat="server" Text="Button" />
+
+                        </div>
+                    </asp:View>
                 </asp:MultiView>
 
             </div>

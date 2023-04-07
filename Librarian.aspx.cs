@@ -642,6 +642,10 @@ namespace LibraryManagementSystem
             MultiView2.ActiveViewIndex = 11;
         }
 
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            MultiView2.ActiveViewIndex = 12;
 
+        }
     }
 }
