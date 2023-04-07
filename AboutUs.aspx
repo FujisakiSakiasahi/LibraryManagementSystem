@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="CSS/Header.css"/>
     <link rel="stylesheet" href="CSS/AboutUs/Content.css"/>
     <link rel="stylesheet" href="CSS/Footer.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
     <form id="form1" runat="server">
@@ -32,24 +35,35 @@
                   </a>
               </div>
           </div>
+        </div>
 
-
-       </div>
-
-        <div>
-            About us content
-            <div class="aboutus-container">
-                <asp:Label ID="Label2" runat="server" CssClass="labels" Text="Our library is a hub for knowledge, learning, and exploration. We strive to provide a welcoming and inclusive space for all members of our community to access a wide range of learning resources and find their next great read."></asp:Label>
-            </div>
-            <div class="aboutus-container">
-                <asp:Label ID="Label3" runat="server" CssClass="labels" Text="For years, we've been dedicated to promoting literacy and lifelong learning. Our team of knowledgeable librarians is always on hand to help you find the perfect book, navigate our digital resources, or answer any other questions you may have."></asp:Label>
-            </div>
-            <div class="aboutus-container">
-                <asp:Label ID="Label4" runat="server" CssClass="labels" Text="At our library, we believe that access to reading materials and educational resources is a fundamental right for all. That's why we work hard to keep our library well-stocked and up-to-date with the latest and greatest books, magazines, audiobooks, and more. We also offer a variety of digital resources, such as e-books, audiobooks, and databases, so that you can access our materials from anywhere."></asp:Label>
-            </div>
-            <div class="aboutus-container">
-                <asp:Label ID="Label5" runat="server" CssClass="labels" Text="Thank you for choosing Our Library as your go-to source for all things books and knowledge. We look forward to seeing you soon and helping you on your learning journey."></asp:Label>
-
+        <div class="container-fluid text-center">
+            <div class="row content">
+                <div class="col-sm-2 sidenav">
+                </div>
+                <div class="col-sm-8 text-left">
+                    <h1>About Us</h1>
+                    <p>Our library is a hub for knowledge, learning, and exploration. We strive to provide a welcoming and inclusive space for all members of our community to access a wide range of learning resources and find their next great read.</p>
+                    <hr>
+                    <p>For years, we've been dedicated to promoting literacy and lifelong learning. Our team of knowledgeable librarians is always on hand to help you find the perfect book, navigate our digital resources, or answer any other questions you may have.</p>
+                    <hr>
+                    <p>At our library, we believe that access to reading materials and educational resources is a fundamental right for all. That's why we work hard to keep our library well-stocked and up-to-date with the latest and greatest books, magazines, audiobooks, and more. We also offer a variety of digital resources, such as e-books, audiobooks, and databases, so that you can access our materials from anywhere.</p>
+                    <hr>
+                    <p>Thank you for choosing Our Library as your go-to source for all things books and knowledge. We look forward to seeing you soon and helping you on your learning journey.</p>
+                    <hr>
+                    <h3>Our Location</h3>
+                    <p>6XXX, Jalan XXXXXXX,</p>
+                    <p>110000, Georgetown,</p>
+                    <p>Penang, Malaysia.</p>
+                    <br/><br/>
+                    <h3>Our Contact</h3>
+                    <p>Phone no. 012-3456789</p>
+                    <p>Tel no. 04-1234567</p>
+                    <p>Fax no. 123-456-7890</p>
+                    <br/><br/>
+                </div>
+                <div class="col-sm-2 sidenav">
+                </div>
             </div>
         </div>
 

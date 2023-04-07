@@ -66,7 +66,7 @@
                         <asp:Image ID="Image_BookCover" runat="server" CssClass="temp-img" ImageUrl="~/images/book.jpg" />
                     </div>
                     <div class="col-lg-9">
-                        <asp:Label ID="Label_Description" runat="server" Text="*desciption*"></asp:Label>
+                        <asp:Label ID="Label_Description" runat="server" Text="*desciption*" class="text-left"></asp:Label>
                     </div>
                 </div>
                 <div class="row">
