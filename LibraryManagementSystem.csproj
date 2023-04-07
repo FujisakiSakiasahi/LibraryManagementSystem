@@ -104,6 +104,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="FAQ.aspx" />
     <Content Include="AboutUs.aspx" />
     <Content Include="CSS\AboutUs\Content.css" />
     <Content Include="CSS\Description\Content.css" />
@@ -127,6 +128,13 @@
     <Content Include="Home.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+    </Compile>
     <Compile Include="AboutUs.aspx.cs">
       <SubType>ASPXCodeBehind</SubType>
       <DependentUpon>AboutUs.aspx</DependentUpon>
