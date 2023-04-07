@@ -9,6 +9,10 @@
     <link rel="stylesheet" href="CSS/Home/Content.css" />
     <link rel="stylesheet" href="CSS/Footer.css" />
     <link rel="stylesheet" href="CSS/Home/Text.css" />
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
      
@@ -48,9 +52,10 @@
             </div>
             <div class="search-bar-container">
                 <div class="search-bar">
-                    <input id="textbox_search" type="text" placeholder="Search for books here..." class="search-bar-textbox" />
+                    <asp:TextBox runat="server" ID="Textbox_Search" class="search-bar-textbox"> </asp:TextBox>
+                    <!--<input id="test" type="text" placeholder="Search for books here..." class="search-bar-textbox" runat="server"/>-->
                     <br />
-                    <asp:Button ID="search_button" runat="server" CssClass="advanced-search-button" Height="50px" OnClick="Button1_Click" Text="Search" />
+                    <asp:Button ID="search_button" runat="server" CssClass="advanced-search-button" Height="50px" OnClick="Button_Search_Click" Text="Search" />
                 </div>
                 </div>
             <div class="list-container">
@@ -58,30 +63,17 @@
                     <div class="list-item list-item-1">
                         <asp:Label ID="Label2" runat="server" Text="Popular Books" CssClass="labels" ForeColor="White"></asp:Label>
                         <div class="list-item-content list-item-content-1" id="div_popular_book">
-                            <a href="Description.aspx?bookId=12">
-                                <asp:ImageButton ID="book_item1" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" PostBackUrl="Description.aspx?bookId=12" />
-                            </a>
-                            
-                            <asp:ImageButton ID="book_item2" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
-                            <asp:ImageButton ID="book_item3" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
-                            <asp:ImageButton ID="book_item4" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
-
+                            <div id="popular_book_content" runat="server" class="row">
+                                <!--for popular book item carrd-->
+                            </div>
                         </div>
                     </div>
                     <div class="list-item list-item-2">
                         <asp:Label ID="Label3" runat="server" Text="Newly Acquired" CssClass="labels" ForeColor="White"></asp:Label>
                         <div class="list-item-content list-item-content-2">
-
-                            <asp:ImageButton ID="book_item5" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
-                            <asp:ImageButton ID="book_item6" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
-                            <asp:ImageButton ID="book_item7" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
-                            <asp:ImageButton ID="book_item8" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/unknown.png" />
-
-                            <asp:ImageButton ID="book_item9" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
-                            <asp:ImageButton ID="book_item10" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
-                            <asp:ImageButton ID="book_item11" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
-                            <asp:ImageButton ID="book_item12" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
-
+                            <div id="newest_book_content" runat="server" class="row">
+                                <!--for newest book item carrd-->
+                            </div>
                         </div>
                     </div>
                     <div class="list-item list-item-3">

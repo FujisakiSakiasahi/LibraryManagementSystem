@@ -9,8 +9,11 @@
     <link rel="stylesheet" href="CSS/Footer.css" /> 
         <link rel="stylesheet" href="CSS/Search/Content.css" /> 
 
-    <style type="text/css">
+    <?php
+        $search_query = $_GET['search_query'];
+    ?>
 
+    <style type="text/css">
 
 .search-bar-textbox {
     height: 38px;

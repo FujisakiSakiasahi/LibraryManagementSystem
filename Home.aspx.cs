@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,6 +19,8 @@ namespace LibraryManagementSystem
             if (Session["loginState"] != null) {
                 sessionHandler.CheckLoginState();
             } else { Session["loginState"] = "false"; }
+
+            SetBookRecommendation();
         }
 
         protected void Search(String searchStatement, String filter) {
@@ -36,10 +40,61 @@ namespace LibraryManagementSystem
             }
         }
 
-        protected void SetBookRecommendation(String genre) {
+        protected void SetBookRecommendation() {
+            //html string for item-card
+            string item = @"<div class=""col-lg-3\"">
+                               <div class=""thumbnail"">
+                                        <a href=""Description.aspx?bookId=12"">
+                                            <img src=""/images/book.jpg"" style=""width:100%""/>
+                                            <div class=""caption"">
+                                                <p>Title</p>
+                                                <p>By Author</p>
+                                             </div>
+                                        </a>
+                                    </div>
+                                </div>";
+
             //get a list of book from the database
-            String query;
-            if (genre == "random") {//random genre
+            string[] queryList = new string[2];
+            queryList[0] = "SELECT Book.bookId, Book.bookName, Book.authorName, Book.bookImage, AVG(Ratings.rating) AS avg_rating FROM Ratings JOIN Book ON Ratings.bookId = Book.bookId GROUP BY Book.bookId, Book.bookName, Book.authorName, Book.bookImage ORDER BY avg_rating DESC LIMIT 4;";//get top 4 rating books
+            queryList[1] = "SELECT bookId, bookName, authorName, bookImage FROM Book ORDER BY bookId DESC LIMIT 4;";//get 4 newest book
+
+            DataTable result = sessionHandler.RunQuery(queryList[0]);
+            string content = "";
+            if (result.Rows.Count != 0) {//insert 4 popular book
+                for (int i = 0; i < result.Rows.Count; i++) {
+                    string image = result.Rows[i][3].ToString()!="" ? File.Exists($"/images/{result.Rows[i][3].ToString()}") ? result.Rows[i][3].ToString() : "book.jpg" : "book.jpg";
+
+                    content += $@"<div class=""col-lg-3"">
+                                    <div class=""thumbnail"">
+                                            <a href=""Description.aspx?bookId={result.Rows[i][0]}"">
+                                                <img src=""/images/{image}"" style=""width:100%""/>
+                                                <div class=""caption"">
+                                                    <p>{result.Rows[i][1]}</p>
+                                                    <p>By {result.Rows[i][2]}</p>
+                                                    </div>
+                                            </a>
+                                        </div>
+                                    </div>";
+                }
+                popular_book_content.InnerHtml = "";
+                popular_book_content.InnerHtml = content;
+            } else {
+                popular_book_content.InnerHtml = "";
+                popular_book_content.InnerHtml = $@"<div class=""col-lg-3"">
+                                                           <div class=""thumbnail"">
+                                                                    <img src=""/images/book.jpg"" style=""width:100%""/>
+                                                                    <div class=""caption"">
+                                                                        <p>No Books</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>";
+            }
+
+
+
+/*
+            if () {//random genre
                 query = "SELECT DISTINCT genre FROM Genre;";
                 DataTable genreListData = sessionHandler.RunQuery(query);
                 int genreCount = genreListData.Rows.Count;
@@ -57,15 +112,20 @@ namespace LibraryManagementSystem
                 query = "SELECT bookName, authorName, bookImage FROM Book WHERE bookId IN (SELECT bookId FROM genre WHERE genre='" + genreList[genreIndexChosen] + "';);";
             } else {//specific genre
                 query = "SELECT bookName, authorName, bookImage FROM Book WHERE bookId IN(SELECT bookId FROM genre WHERE genre='" + genre + "';)";
-            }
-            DataTable result = sessionHandler.RunQuery(query);
+            }*/
+            
 
             //set the books to the page here
         }
 
-        protected void Button1_Click(object sender, EventArgs e)
-        {
+        protected void Button_Search_Click(object sender, EventArgs e){
+            
+            Response.Redirect($"Search.aspx?search_query={ReplaceSpacesWithPlus(Textbox_Search.Text)}");
+        }
 
+        public string ReplaceSpacesWithPlus(string input) {
+            string output = input.Replace(" ", "+");
+            return output;
         }
     }
 }
