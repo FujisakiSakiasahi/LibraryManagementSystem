@@ -535,12 +535,12 @@ namespace LibraryManagementSystem
 
         protected void Button18_Click(object sender, EventArgs e)
         {
-            MultiView2.ActiveViewIndex = 0;
+            MultiView2.ActiveViewIndex = 10;
         }
 
         protected void Button17_Click(object sender, EventArgs e)
         {
-            MultiView2.ActiveViewIndex = 1;
+            MultiView2.ActiveViewIndex = 11;
         }
 
 

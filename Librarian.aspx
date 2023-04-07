@@ -561,11 +561,12 @@
                                     <br />
                                     <asp:Label ID="Label45" runat="server" CssClass="labels" Text="Message Title"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="TextBox21" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox21" runat="server" Height="47px" TextMode="MultiLine" Width="1086px"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label46" runat="server" CssClass="labels" Text="Message Content"></asp:Label>
-                                    <asp:TextBox ID="TextBox22" runat="server"></asp:TextBox>
+                                    <br />
+                                    <asp:TextBox ID="TextBox22" runat="server" Height="307px" TextMode="MultiLine" Width="1154px"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label47" runat="server" CssClass="labels" Text="Temp Label"></asp:Label>
