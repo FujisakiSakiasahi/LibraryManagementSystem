@@ -22,18 +22,29 @@ namespace LibraryManagementSystem
                 sessionHandler.CheckLoginState();
             } else { Session["loginState"] = "false"; }
 
-            bookId = Request.QueryString["bookId"];
+            DataTable dataTable = new DataTable();
 
-            DataTable dataTable = sessionHandler.RunQuery("SELECT * FROM Book WHERE bookId="+bookId+";");
-
-            LoadBookData(dataTable);
-            SetCitationText(dataTable.Rows[0][1].ToString(), dataTable.Rows[0][6].ToString(), dataTable.Rows[0][2].ToString(), dataTable.Rows[0][5].ToString());
+            try {
+                bookId = Request.QueryString["bookId"];
+                dataTable = sessionHandler.RunQuery("SELECT * FROM Book WHERE bookId="+bookId+";");
+                LoadBookData(dataTable);
+                SetCitationText(dataTable.Rows[0][1].ToString(), dataTable.Rows[0][6].ToString(), dataTable.Rows[0][2].ToString(), dataTable.Rows[0][5].ToString());
+            } catch {
+                Response.Write("<script>alert('Book ID not found in redirecting to home')</script>");
+                string redirectScript = "<script>window.location.href = 'Home.aspx';</script>";
+                ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
+            }
         }
+
 
         protected void AddBookToWishList(String bookId) {
             if (sessionHandler.GetLoginState()) {
                 //already login
-                sessionHandler.RunQuery("INSERT INTO Wishlist (bookId, memberId) VALUES (" + bookId + ", " + sessionHandler.GetUserId() + ");");//add the book to the wishlist table
+                try {
+                    sessionHandler.RunQuery("INSERT INTO Wishlist (bookId, memberId) VALUES (" + bookId + ", " + sessionHandler.GetUserId() + ");");//add the book to the wishlist table
+                } catch {
+                    Response.Write("<script>alert('The book has been added into wishlist')</script>");
+                }
             } else {
                 //no login
                 Response.Redirect("Login.aspx");
@@ -43,9 +54,9 @@ namespace LibraryManagementSystem
         protected void ReservingBook(String bookId) {
             if (sessionHandler.GetLoginState()) {
                 //already login
-                if (CheckIfBookIsAvailabe(bookId)) { 
-                    sessionHandler.RunQuery("INSERT INTO Wishlist (bookId, memberId, reservedUntil) VALUES (" + bookId + ", " + sessionHandler.GetUserId() + ", '" + DateTime.Now.AddDays(1).ToString("yyyy-MM-dd") + "');");//add the book to the reserved table
-                }
+                if (CheckIfBookIsAvailabe(bookId)) {
+                    sessionHandler.RunQuery("INSERT INTO Reserved (bookId, memberId, reservedUntil) VALUES (" + bookId + ", " + sessionHandler.GetUserId() + ", '" + DateTime.Now.AddDays(1).ToString("yyyy-MM-dd") + "');");//add the book to the reserved table
+                } else { Response.Write("<script>alert('This book already reserved by a user.')</script>"); }
             } else {
                 //no login
                 Response.Redirect("Login.aspx");
