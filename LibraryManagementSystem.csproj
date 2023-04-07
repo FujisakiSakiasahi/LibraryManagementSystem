@@ -173,6 +173,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="connectionString.config" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
