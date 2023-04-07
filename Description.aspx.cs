@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.EnterpriseServices;
 using System.IO;
 using System.Linq;
@@ -68,7 +69,7 @@ namespace LibraryManagementSystem
             DataTable bookReserved = sessionHandler.RunQuery($"SELECT * FROM Reserved WHERE bookId = {bookId}");
 
             if (bookAvailable.Rows[0][0].ToString() != "1") return false;
-            if (bookReserved != null) return false;
+            if (bookReserved.Rows.Count != 0) return false;
             return true;
         }
 
