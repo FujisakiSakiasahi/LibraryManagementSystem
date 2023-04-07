@@ -44,7 +44,7 @@
                 <asp:Button ID="Button_CheckIn" runat="server" Text="Check In" CssClass="side-nav-buttons" OnClick="Button_Click_CheckIn" />
                 <asp:Button ID="Button_CheckOut" runat="server" Text="Check Out" CssClass="side-nav-buttons" OnClick="Button_Click_CheckOut" />
                 <asp:Button ID="Button_Notification" runat="server" Text="Notification" CssClass="side-nav-buttons" OnClick="Button_Click_Notification" />
-
+                <asp:Button ID="Button2" runat="server" Text="Requests" CssClass="side-nav-buttons" OnClick="Button2_Click" />
 
             </div>
             <div class="multiview">
@@ -518,32 +518,32 @@
                             <div class="content-container">
                                 <div class="user-container">
                                     <div class="top-container">
-                                        <asp:TextBox ID="TextBox30" runat="server"></asp:TextBox>
-                                        <asp:Button ID="Button15" runat="server" Text="Button" />
+                                        <asp:Panel runat="server" DefaultButton="Button_SearchUserCheckOut">
+                                            <asp:TextBox ID="TextBox_SearchUserCheckOut" runat="server"></asp:TextBox>
+                                            <asp:Button ID="Button_SearchUserCheckOut" runat="server" Text="Search" OnClick="Button_Click_SearchUserCheckOut"/>
+                                        </asp:Panel>
                                     </div>
                                     <div class="bottom-container">
-                                        <asp:ListBox ID="ListBox1" runat="server">
-                                            <asp:ListItem>test</asp:ListItem>
-                                        </asp:ListBox>
+                                        <asp:ListBox ID="ListBox_SearchedUserCheckOut" runat="server"/>
                                     </div>
 
                                 </div>
                                 <div class="book-container">
                                     <div class="top-container">
-                                        <asp:TextBox ID="TextBox31" runat="server"></asp:TextBox>
-                                        <asp:Button ID="Button16" runat="server" Text="Button" />
+                                        <asp:Panel runat="server" DefaultButton="Button_SearchBookCheckOut">
+                                             <asp:TextBox ID="TextBox_SearchBookCheckOut" runat="server"></asp:TextBox>
+                                            <asp:Button ID="Button_SearchBookCheckOut" runat="server" Text="Button" OnClick="Button_Click_SearchBookCheckOut" />
+                                        </asp:Panel>
                                     </div>
                                     <div class="bottom-container">
                                         
-                                        <asp:ListBox ID="ListBox3" runat="server">
-                                            <asp:ListItem>teset</asp:ListItem>
-                                        </asp:ListBox>
+                                        <asp:ListBox ID="ListBox_SearchedBookCheckOut" runat="server"/>
                                     </div>
                                 </div>
                             </div>
                             <div class="check-out-button-container">
                                 
-                                <asp:Button ID="Button17" runat="server" Text="Confirm Checkout" />
+                                <asp:Button ID="Button_ConfirmCheckOut" runat="server" Text="Confirm Checkout" OnClick="Button_Click_ConfirmCheckOut"/>
                                 
                             </div>
                         </div>
@@ -561,11 +561,12 @@
                                     <br />
                                     <asp:Label ID="Label45" runat="server" CssClass="labels" Text="Message Title"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="TextBox21" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox21" runat="server" Height="47px" TextMode="MultiLine" Width="1086px"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label46" runat="server" CssClass="labels" Text="Message Content"></asp:Label>
-                                    <asp:TextBox ID="TextBox22" runat="server"></asp:TextBox>
+                                    <br />
+                                    <asp:TextBox ID="TextBox22" runat="server" Height="307px" TextMode="MultiLine" Width="1154px"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label47" runat="server" CssClass="labels" Text="Temp Label"></asp:Label>
@@ -593,7 +594,15 @@
                             </asp:MultiView>
                         </div>
                     </asp:View>
+                    <asp:View ID="View13" runat="server">
+                        <div class="view-container">
 
+                            <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                            </asp:CheckBoxList>
+                            <asp:Button ID="Button15" runat="server" Text="Button" />
+
+                        </div>
+                    </asp:View>
                 </asp:MultiView>
 
             </div>

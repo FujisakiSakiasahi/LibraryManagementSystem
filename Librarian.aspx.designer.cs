@@ -132,6 +132,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Button Button_Notification;
 
         /// <summary>
+        /// Button2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button2;
+
+        /// <summary>
         /// MultiView1 control.
         /// </summary>
         /// <remarks>
@@ -1446,67 +1455,67 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label21;
 
         /// <summary>
-        /// TextBox30 control.
+        /// TextBox_SearchUserCheckOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox30;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_SearchUserCheckOut;
 
         /// <summary>
-        /// Button15 control.
+        /// Button_SearchUserCheckOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button15;
+        protected global::System.Web.UI.WebControls.Button Button_SearchUserCheckOut;
 
         /// <summary>
-        /// ListBox1 control.
+        /// ListBox_SearchedUserCheckOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox1;
+        protected global::System.Web.UI.WebControls.ListBox ListBox_SearchedUserCheckOut;
 
         /// <summary>
-        /// TextBox31 control.
+        /// TextBox_SearchBookCheckOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox31;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_SearchBookCheckOut;
 
         /// <summary>
-        /// Button16 control.
+        /// Button_SearchBookCheckOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button16;
+        protected global::System.Web.UI.WebControls.Button Button_SearchBookCheckOut;
 
         /// <summary>
-        /// ListBox3 control.
+        /// ListBox_SearchedBookCheckOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListBox ListBox3;
+        protected global::System.Web.UI.WebControls.ListBox ListBox_SearchedBookCheckOut;
 
         /// <summary>
-        /// Button17 control.
+        /// Button_ConfirmCheckOut control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button17;
+        protected global::System.Web.UI.WebControls.Button Button_ConfirmCheckOut;
 
         /// <summary>
         /// View10 control.
@@ -1669,5 +1678,32 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView1;
+
+        /// <summary>
+        /// View13 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.View View13;
+
+        /// <summary>
+        /// CheckBoxList1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+
+        /// <summary>
+        /// Button15 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button15;
     }
 }
