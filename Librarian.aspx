@@ -45,6 +45,7 @@
                 <asp:Button ID="Button_CheckOut" runat="server" Text="Check Out" CssClass="side-nav-buttons" OnClick="Button_Click_CheckOut" />
                 <asp:Button ID="Button_Notification" runat="server" Text="Notification" CssClass="side-nav-buttons" OnClick="Button_Click_Notification" />
                 <asp:Button ID="Button2" runat="server" Text="Requests" CssClass="side-nav-buttons" OnClick="Button2_Click1" />
+                <asp:Button ID="Button_Overdue" runat="server" Text="Overdue" CssClass="side-nav-buttons" OnClick="Button_Click_ManageOverdue" />
 
             </div>
             <div class="multiview">
@@ -69,7 +70,7 @@
                         <asp:Label ID="Label1" runat="server" Text="Manage Books"></asp:Label>
                         <div class="view-container">
                             <asp:Panel runat="server" DefaultButton="Button_SearchBook">
-                                <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" CssClass="search-bar"></asp:TextBox>
+                                <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" CssClass="search-bar" TextMode="Search"></asp:TextBox>
                                 <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" CssClass="search-button" />
                             </asp:Panel>
                             <asp:Button ID="Button_AddNewBook0" runat="server" OnClick="Button_Click_AddNewBook" Text="Add New Book" />
@@ -193,13 +194,13 @@
 
                                     <br />
 
-                                    <asp:TextBox ID="TextBox_Title2" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Title2" runat="server" MaxLength="50"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_Description2" runat="server" Text="Description:" CssClass="title-labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:TextBox ID="TextBox_Description2" runat="server" Height="208px" Width="417px" TextMode="MultiLine"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Description2" runat="server" Height="208px" Width="417px" TextMode="MultiLine" MaxLength="1000"></asp:TextBox>
                                 
                                     <br />
                                     <br />
@@ -215,14 +216,14 @@
                                     <asp:Label ID="Label_AuthorText2" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
 
                                     <br />
-                                    <asp:TextBox ID="TextBox_Author2" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Author2" runat="server" MaxLength="50"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_Publisher2" runat="server" CssClass="title-labels" Text="Publisher:"></asp:Label>
 
                                     <br />
 
-                                    <asp:TextBox ID="TextBox_Publisher2" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Publisher2" runat="server" MaxLength="50"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_PublishDateText2" runat="server" Text="Publish Date:" CssClass="title-labels"></asp:Label>
@@ -245,7 +246,7 @@
                                     <br />
                                     <asp:Label ID="Label_LanguageText2" runat="server" CssClass="title-labels" Text="Language:"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="TextBox_Language2" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Language2" runat="server" MaxLength="10"></asp:TextBox>
                                     <br />
                                 
                                 </div>
@@ -254,7 +255,7 @@
 
                                     <br />
 
-                                    <asp:TextBox ID="TextBox_ISBN2" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_ISBN2" runat="server" TextMode="Number"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_AvailabilityText2" runat="server" Text="Availability:" CssClass="title-labels"></asp:Label>
@@ -266,7 +267,7 @@
                                     <br />
                                     <asp:Label ID="Label_ShelfIDText2" runat="server" Text="Shelf ID:" CssClass="title-labels"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="TextBox_ShelfID2" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_ShelfID2" runat="server" TextMode="Number"></asp:TextBox>
                                     <br />
                                 
                                 </div>
@@ -286,13 +287,13 @@
 
                                     <br />
 
-                                    <asp:TextBox ID="TextBox_Title3" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Title3" runat="server" MaxLength="50"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_Description3" runat="server" Text="Description:" CssClass="title-labels"></asp:Label>
                                 
                                     <br />
-                                    <asp:TextBox ID="TextBox_Description3" runat="server" Height="208px" Width="417px" TextMode="MultiLine"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Description3" runat="server" Height="208px" Width="417px" TextMode="MultiLine" MaxLength="1000"></asp:TextBox>
                                 
                                     <br />
                                     <br />
@@ -308,14 +309,14 @@
                                     <asp:Label ID="Label_Author3" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
 
                                     <br />
-                                    <asp:TextBox ID="TextBox_Author3" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Author3" runat="server" MaxLength="50"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_Publisher3" runat="server" CssClass="title-labels" Text="Publisher:"></asp:Label>
 
                                     <br />
 
-                                    <asp:TextBox ID="TextBox_Publisher3" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Publisher3" runat="server" MaxLength="50"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_PublishDate3" runat="server" Text="Publish Date:" CssClass="title-labels"></asp:Label>
@@ -337,7 +338,7 @@
                                     <br />
                                     <asp:Label ID="Label_Language3" runat="server" CssClass="title-labels" Text="Language:"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="TextBox_Language3" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Language3" runat="server" MaxLength="10"></asp:TextBox>
                                 
                                     <br />
                                 
@@ -347,7 +348,7 @@
 
                                     <br />
 
-                                    <asp:TextBox ID="TextBox_ISBN3" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_ISBN3" runat="server" TextMode="Number"></asp:TextBox>
                                     <br />
                                     <br />
                                     <asp:Label ID="Label_Availability3" runat="server" Text="Availability:" CssClass="title-labels"></asp:Label>
@@ -359,7 +360,7 @@
                                     <br />
                                     <asp:Label ID="Label_ShelfID3" runat="server" Text="Shelf ID:" CssClass="title-labels"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="TextBox_ShelfID3" runat="server"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_ShelfID3" runat="server" TextMode="Number"></asp:TextBox>
                                     <br />
                                 
                                 </div>
@@ -373,7 +374,7 @@
                     <asp:View ID="View4" runat="server">
                         <div class="view-container">
                             <asp:Panel runat="server" DefaultButton="Button_SearchUser">
-                                <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" CssClass="search-bar"></asp:TextBox>
+                                <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" CssClass="search-bar" TextMode="Search"></asp:TextBox>
                                 <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" CssClass="search-button" />
                             </asp:Panel>
                             <asp:Button ID="Button_AddUser" runat="server" Text="Add New User" OnClick="Button_Click_AddUser"/>
@@ -438,17 +439,17 @@
                                 <asp:Label ID="Label_MemberID2" runat="server" CssClass="desc-labels" Text="*ID*" Visible="False"></asp:Label>
                                 <asp:Label ID="Label_MemberName3" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox_MemberName" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_MemberName" runat="server" MaxLength="50"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_Email3" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox_Email" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_Email" runat="server" TextMode="Email" MaxLength="30"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_PhoneNumber3" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox_PhoneNumber" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_PhoneNumber" runat="server" TextMode="Number"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_Notification3" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
@@ -471,17 +472,17 @@
                                 <asp:Label ID="Label_MemberID3" runat="server" Text="Label" Visible="False"></asp:Label>
                                 <asp:Label ID="Label_MemberName4" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox_MemberName3" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_MemberName3" runat="server" MaxLength="50"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_Email4" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox_Email3" runat="server" Width="190px"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_Email3" runat="server" Width="190px" TextMode="Email" MaxLength="30"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_PhoneNumber4" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
                                 <br />
-                                <asp:TextBox ID="TextBox_PhoneNumber3" runat="server"></asp:TextBox>
+                                <asp:TextBox ID="TextBox_PhoneNumber3" runat="server" TextMode="Number"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_Notification5" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
@@ -502,7 +503,7 @@
                         <asp:Label ID="Label20" runat="server" Text="check in page"></asp:Label>
                         <div class="view-container">
                             <asp:Panel runat="server" DefaultButton="Button_SearchBorrowedBookBasedOnUser">
-                                <asp:TextBox ID="Textbox_SearchBorrowedBookBasedOnUser" runat="server" CssClass="search-bar"></asp:TextBox>
+                                <asp:TextBox ID="Textbox_SearchBorrowedBookBasedOnUser" runat="server" CssClass="search-bar" TextMode="Search"></asp:TextBox>
                                 <asp:Button ID="Button_SearchBorrowedBookBasedOnUser" runat="server" Text="Button" CssClass="search-button" OnClick="Button_CLick_SearchForBorrowedBooks"  />
                             </asp:Panel>
                             <div id="checkIn_result" runat="server">
@@ -551,35 +552,35 @@
                     <asp:View ID="View10" runat="server">
                         <asp:Label ID="Label22" runat="server" Text="manage notification page"></asp:Label>
                         <div class="view-container">
-                            <asp:Button ID="Button_CreateNotification" runat="server" Text="Create Notification" OnClick="Button18_Click" />
-                            <asp:Button ID="Button_ManageNotification" runat="server" Text="Manage Notification" OnClick="Button17_Click" />
+                            <asp:Button ID="Button_CreateNotification" runat="server" Text="Create Notification" OnClick="Button_Click_CreateNotif" Enabled="False" />
+                            <asp:Button ID="Button_ManageNotification" runat="server" Text="Manage Notification" OnClick="Button_Click_ManageNotif" />
                             <br />
                             <asp:MultiView ID="MultiView2" runat="server" ActiveViewIndex="0">
                                 <asp:View ID="View11" runat="server">
-                                    <asp:Label ID="Label43" runat="server" CssClass="labels" Text="Create Notif"></asp:Label>
+                                    <asp:Label ID="Label_CreateNotif" runat="server" CssClass="labels" Text="Create Notif"></asp:Label>
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label45" runat="server" CssClass="labels" Text="Message Title"></asp:Label>
+                                    <asp:Label ID="Label_NotifMsgTitle" runat="server" CssClass="title-labels" Text="Message Title"></asp:Label>
                                     <br />
-                                    <asp:TextBox ID="TextBox21" runat="server" Height="47px" TextMode="MultiLine" Width="1086px"></asp:TextBox>
-                                    <br />
-                                    <br />
-                                    <asp:Label ID="Label46" runat="server" CssClass="labels" Text="Message Content"></asp:Label>
-                                    <br />
-                                    <asp:TextBox ID="TextBox22" runat="server" Height="307px" TextMode="MultiLine" Width="1154px"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_NotifMsgTitle" runat="server" Height="47px" TextMode="MultiLine" Width="1086px" MaxLength="500"></asp:TextBox>
                                     <br />
                                     <br />
-                                    <asp:Label ID="Label47" runat="server" CssClass="labels" Text="Temp Label"></asp:Label>
-                                    <asp:TextBox ID="TextBox23" runat="server"></asp:TextBox>
+                                    <asp:Label ID="Label_NotifMsgContent" runat="server" CssClass="title-labels" Text="Message Content"></asp:Label>
+                                    <br />
+                                    <asp:TextBox ID="TextBox_NotifMsgContent" runat="server" Height="307px" TextMode="MultiLine" Width="1154px" MaxLength="1024"></asp:TextBox>
                                     <br />
                                     <br />
-                                    <asp:RadioButtonList ID="RadioButtonList1" runat="server">
-                                        <asp:ListItem>All Users</asp:ListItem>
-                                        <asp:ListItem>Users Only</asp:ListItem>
-                                        <asp:ListItem>Librarian Only</asp:ListItem>
-                                        <asp:ListItem>Specified User</asp:ListItem>
+                                    <br />
+                                    <asp:RadioButtonList ID="RadioButtonList_NotifUserSelect" runat="server" ForeColor="Black" OnSelectedIndexChanged="RadioButtonList_NotifUserSelect_SelectedIndexChanged" AutoPostBack="True"> <%--center this pls @jhunkit--%>
+                                        <asp:ListItem Selected="True" Value="0" ForeColor="Black">All Users</asp:ListItem> <%--id = 0--%>
+                                        <asp:ListItem Value="1" ForeColor="Black">Specified User</asp:ListItem>
                                     </asp:RadioButtonList>
-                                    <asp:Button ID="Button_SendNotification" runat="server" Text="Send Notification" />
+                                    <asp:Label ID="Label_NotifSelectMember" runat="server" Text="Member ID:" CssClass="title-labels" Visible="False"></asp:Label>
+                                    <br />
+                                    <asp:TextBox ID="TextBox_NotifSelectMember" runat="server" TextMode="Number" Visible="False"></asp:TextBox>
+                                    <br />
+                                    <br />
+                                    <asp:Button ID="Button_SendNotification" runat="server" Text="Send Notification" OnClick="Button_SendNotification_Click" />
                                     <br />
                                 </asp:View>
                                 <asp:View ID="View12" runat="server">
