@@ -486,6 +486,7 @@ namespace LibraryManagementSystem
         //code for overdue page
         protected void Button_Click_ManageOverdue(object sender, EventArgs e)
         {
+            MultiView1.ActiveViewIndex = 12;
 
         }
 

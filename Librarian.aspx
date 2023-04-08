@@ -604,6 +604,11 @@
 
                         </div>
                     </asp:View>
+                    <asp:View ID="View14" runat="server">
+                        <div class="view-container">
+                            <asp:GridView ID="GridView2" runat="server"></asp:GridView>
+                        </div>
+                    </asp:View>
                 </asp:MultiView>
 
             </div>

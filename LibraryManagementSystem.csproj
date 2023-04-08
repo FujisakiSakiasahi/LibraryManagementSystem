@@ -105,6 +105,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
+    <Content Include="CSS\FAQ\content.css" />
     <Content Include="CSS\AboutUs\Content.css" />
     <Content Include="CSS\Description\Content.css" />
     <Content Include="CSS\Home\Content.css" />
