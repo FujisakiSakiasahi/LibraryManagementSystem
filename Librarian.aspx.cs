@@ -409,9 +409,83 @@ namespace LibraryManagementSystem
             }
         }
 
+        //code for notifications page
         protected void Button_Click_Notification(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 10;
+
+        }
+
+        protected void Button_Click_CreateNotif(object sender, EventArgs e)
+        {
+            MultiView2.ActiveViewIndex = 0;
+            Button_CreateNotification.Enabled = false;
+            Button_ManageNotification.Enabled = true;
+        }
+
+        protected void Button_Click_ManageNotif(object sender, EventArgs e)
+        {
+            MultiView2.ActiveViewIndex = 1;
+            Button_CreateNotification.Enabled = true;
+            Button_ManageNotification.Enabled = false;
+        }
+
+        protected void Button_SendNotification_Click(object sender, EventArgs e)
+        {
+            String title = TextBox_NotifMsgTitle.Text; //add error handling for length
+            String content = TextBox_NotifMsgContent.Text; //see above
+
+            int user = 0;
+
+            if (RadioButtonList_NotifUserSelect.SelectedValue != "0")
+            {
+                if (TextBox_NotifSelectMember.Text.Equals(""))
+                {
+                    Response.Write("<script>alert('Must enter Member ID.')</script>");
+                }
+                else
+                {
+                    user = int.Parse(TextBox_NotifSelectMember.Text);
+
+                    if (sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId = {user};").Rows.Count == 0)
+                    {
+                        Response.Write("<script>alert('Member does not exist.')</script>");
+
+                    }
+
+                }
+            }
+
+            int highest = int.Parse(sessionHandler.RunQuery("SELECT MAX(notifId) FROM Notification;").Rows[0][0].ToString());
+
+            String query = $"INSERT INTO Notification (notifId, notifTitle, memberId, msg) VALUES ({highest + 1}, '{title}', {user}, '{content}');";
+
+            sessionHandler.RunQuery(query);
+
+            TextBox_NotifMsgTitle.Text = "";
+            TextBox_NotifMsgContent.Text = "";
+            RadioButtonList_NotifUserSelect.SelectedIndex = 0;
+
+        }
+
+        protected void RadioButtonList_NotifUserSelect_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            Debug.WriteLine("Test");
+            if (RadioButtonList_NotifUserSelect.SelectedIndex == 1)
+            {
+                Label_NotifSelectMember.Visible = true;
+                TextBox_NotifSelectMember.Visible = true;
+            }
+            else
+            {
+                Label_NotifSelectMember.Visible = false;
+                TextBox_NotifSelectMember.Visible = false;
+            }
+        }
+
+        //code for overdue page
+        protected void Button_Click_ManageOverdue(object sender, EventArgs e)
+        {
 
         }
 
@@ -632,16 +706,6 @@ namespace LibraryManagementSystem
 
         }
 
-        protected void Button18_Click(object sender, EventArgs e)
-        {
-            MultiView2.ActiveViewIndex = 0;
-        }
-
-        protected void Button17_Click(object sender, EventArgs e)
-        {
-            MultiView2.ActiveViewIndex = 1;
-        }
-
         protected void Button2_Click(object sender, EventArgs e)
         {
             MultiView2.ActiveViewIndex = 12;
@@ -652,5 +716,7 @@ namespace LibraryManagementSystem
         {
             MultiView1.ActiveViewIndex = 11;
         }
+
+
     }
 }

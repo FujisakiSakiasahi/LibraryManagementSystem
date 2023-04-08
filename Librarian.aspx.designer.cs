@@ -141,6 +141,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Button Button2;
 
         /// <summary>
+        /// Button_Overdue control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Overdue;
+
+        /// <summary>
         /// MultiView1 control.
         /// </summary>
         /// <remarks>
@@ -1572,76 +1581,76 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View11;
 
         /// <summary>
-        /// Label43 control.
+        /// Label_CreateNotif control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label43;
+        protected global::System.Web.UI.WebControls.Label Label_CreateNotif;
 
         /// <summary>
-        /// Label45 control.
+        /// Label_NotifMsgTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label45;
+        protected global::System.Web.UI.WebControls.Label Label_NotifMsgTitle;
 
         /// <summary>
-        /// TextBox21 control.
+        /// TextBox_NotifMsgTitle control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox21;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_NotifMsgTitle;
 
         /// <summary>
-        /// Label46 control.
+        /// Label_NotifMsgContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label46;
+        protected global::System.Web.UI.WebControls.Label Label_NotifMsgContent;
 
         /// <summary>
-        /// TextBox22 control.
+        /// TextBox_NotifMsgContent control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox22;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_NotifMsgContent;
 
         /// <summary>
-        /// Label47 control.
+        /// RadioButtonList_NotifUserSelect control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label47;
+        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList_NotifUserSelect;
 
         /// <summary>
-        /// TextBox23 control.
+        /// Label_NotifSelectMember control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox23;
+        protected global::System.Web.UI.WebControls.Label Label_NotifSelectMember;
 
         /// <summary>
-        /// RadioButtonList1 control.
+        /// TextBox_NotifSelectMember control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.RadioButtonList RadioButtonList1;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_NotifSelectMember;
 
         /// <summary>
         /// Button_SendNotification control.
