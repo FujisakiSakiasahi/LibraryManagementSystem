@@ -34,7 +34,7 @@ namespace LibraryManagementSystem
                 link += search_query!=null ? $"?search_query={search_query}&page=" : "?page=";
 
                 //get data from database
-                DataTable returnedData = sessionHandler.RunQuery($"SELECT bookId, bookName, bookDescription, bookImage FROM Book WHERE bookName LIKE '%{search_query}%'");
+                DataTable returnedData = sessionHandler.RunQuery($"SELECT bookId, bookName, bookDescription, bookImage FROM Book WHERE bookName LIKE '%{ReplacePlusWithSpace(search_query)}%'");
 
                 LoadBookDataIntoList(returnedData);
                 LoadListPager((int)(Math.Ceiling((float)(returnedData.Rows.Count)/10)));
@@ -46,6 +46,12 @@ namespace LibraryManagementSystem
                 LoadListPager((int)(Math.Ceiling((float)(returnedData.Rows.Count) / 10)));
             }
             
+        }
+
+        public string ReplacePlusWithSpace(string input) {
+            if (input == null) return "";
+            string output = input.Replace("+", " ");
+            return output;
         }
 
         protected void LoadListPager(int totalPage) {
