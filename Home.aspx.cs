@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Mysqlx.Crud;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Drawing;
@@ -41,25 +42,13 @@ namespace LibraryManagementSystem
         }
 
         protected void SetBookRecommendation() {
-            //html string for item-card
-            string item = @"<div class=""col-lg-3\"">
-                               <div class=""thumbnail"">
-                                        <a href=""Description.aspx?bookId=12"">
-                                            <img src=""/images/book.jpg"" style=""width:100%""/>
-                                            <div class=""caption"">
-                                                <p>Title</p>
-                                                <p>By Author</p>
-                                             </div>
-                                        </a>
-                                    </div>
-                                </div>";
-
             //get a list of book from the database
-            string[] queryList = new string[2];
-            queryList[0] = "SELECT Book.bookId, Book.bookName, Book.authorName, Book.bookImage, AVG(Ratings.rating) AS avg_rating FROM Ratings JOIN Book ON Ratings.bookId = Book.bookId GROUP BY Book.bookId, Book.bookName, Book.authorName, Book.bookImage ORDER BY avg_rating DESC LIMIT 4;";//get top 4 rating books
-            queryList[1] = "SELECT bookId, bookName, authorName, bookImage FROM Book ORDER BY bookId DESC LIMIT 4;";//get 4 newest book
+            string query;
+            DataTable result;
 
-            DataTable result = sessionHandler.RunQuery(queryList[0]);
+            //get top 4 rating books
+            query = "SELECT Book.bookId, Book.bookName, Book.authorName, Book.bookImage, AVG(Ratings.rating) AS avg_rating FROM Ratings JOIN Book ON Ratings.bookId = Book.bookId GROUP BY Book.bookId, Book.bookName, Book.authorName, Book.bookImage ORDER BY avg_rating DESC LIMIT 4;";
+            result = sessionHandler.RunQuery(query);
             string content = "";
             if (result.Rows.Count != 0) {//insert 4 popular book
                 for (int i = 0; i < result.Rows.Count; i++) {
@@ -90,32 +79,74 @@ namespace LibraryManagementSystem
                                                                 </div>
                                                             </div>";
             }
-
-
-
-/*
-            if () {//random genre
-                query = "SELECT DISTINCT genre FROM Genre;";
-                DataTable genreListData = sessionHandler.RunQuery(query);
-                int genreCount = genreListData.Rows.Count;
-
-                String[] genreList = new String[genreCount];
-                for (int i = 0; i < genreCount; i++) {
-                    genreList[i] = genreListData.Rows[i].ToString();
-                }
-
-                //randomly select one genre
-                Random rnd = new Random();
-                int genreIndexChosen = rnd.Next(genreCount);
-
-                //set query
-                query = "SELECT bookName, authorName, bookImage FROM Book WHERE bookId IN (SELECT bookId FROM genre WHERE genre='" + genreList[genreIndexChosen] + "';);";
-            } else {//specific genre
-                query = "SELECT bookName, authorName, bookImage FROM Book WHERE bookId IN(SELECT bookId FROM genre WHERE genre='" + genre + "';)";
-            }*/
             
+            //get 4 newest book
+            query = "SELECT bookId, bookName, authorName, bookImage FROM Book ORDER BY bookId DESC LIMIT 4;";
+            result = sessionHandler.RunQuery(query);
+            content = "";
+            if (result.Rows.Count != 0) {//insert 4 newest book
+                for (int i = 0; i < result.Rows.Count; i++) {
+                    string image = result.Rows[i][3].ToString() != "" ? File.Exists($"/images/{result.Rows[i][3].ToString()}") ? result.Rows[i][3].ToString() : "book.jpg" : "book.jpg";
 
-            //set the books to the page here
+                    content += $@"<div class=""col-lg-3"">
+                                    <div class=""thumbnail"">
+                                            <a href=""Description.aspx?bookId={result.Rows[i][0]}"">
+                                                <img src=""/images/{image}"" style=""width:100%""/>
+                                                <div class=""caption"">
+                                                    <p>{result.Rows[i][1]}</p>
+                                                    <p>By {result.Rows[i][2]}</p>
+                                                    </div>
+                                            </a>
+                                        </div>
+                                    </div>";
+                }
+                newest_book_content.InnerHtml = "";
+                newest_book_content.InnerHtml = content;
+            } else {
+                newest_book_content.InnerHtml = "";
+                newest_book_content.InnerHtml = $@"<div class=""col-lg-3"">
+                                                           <div class=""thumbnail"">
+                                                                    <img src=""/images/book.jpg"" style=""width:100%""/>
+                                                                    <div class=""caption"">
+                                                                        <p>No Books</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>";
+            }
+
+            //get 4 random book
+            query = "SELECT bookId, bookName, authorName, bookImage FROM Book ORDER BY RAND() DESC LIMIT 4;";
+            result = sessionHandler.RunQuery(query);
+            content = "";
+            if (result.Rows.Count != 0) {//insert 4 newest book
+                for (int i = 0; i < result.Rows.Count; i++) {
+                    string image = result.Rows[i][3].ToString() != "" ? File.Exists($"/images/{result.Rows[i][3].ToString()}") ? result.Rows[i][3].ToString() : "book.jpg" : "book.jpg";
+
+                    content += $@"<div class=""col-lg-3"">
+                                    <div class=""thumbnail"">
+                                            <a href=""Description.aspx?bookId={result.Rows[i][0]}"">
+                                                <img src=""/images/{image}"" style=""width:100%""/>
+                                                <div class=""caption"">
+                                                    <p>{result.Rows[i][1]}</p>
+                                                    <p>By {result.Rows[i][2]}</p>
+                                                    </div>
+                                            </a>
+                                        </div>
+                                    </div>";
+                }
+                recommended_book_content.InnerHtml = "";
+                recommended_book_content.InnerHtml = content;
+            } else {
+                recommended_book_content.InnerHtml = "";
+                recommended_book_content.InnerHtml = $@"<div class=""col-lg-3"">
+                                                           <div class=""thumbnail"">
+                                                                    <img src=""/images/book.jpg"" style=""width:100%""/>
+                                                                    <div class=""caption"">
+                                                                        <p>No Books</p>
+                                                                    </div>
+                                                                </div>
+                                                            </div>";
+            }
         }
 
         protected void Button_Search_Click(object sender, EventArgs e){

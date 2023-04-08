@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="CSS/Header.css"/>
     <link rel="stylesheet" href="CSS/AboutUs/Content.css"/>
     <link rel="stylesheet" href="CSS/Footer.css" />
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 </head>
@@ -44,13 +44,13 @@
                 <div class="col-sm-8 text-left">
                     <h1>About Us</h1>
                     <p>Our library is a hub for knowledge, learning, and exploration. We strive to provide a welcoming and inclusive space for all members of our community to access a wide range of learning resources and find their next great read.</p>
-                    <hr>
+                    </>
                     <p>For years, we've been dedicated to promoting literacy and lifelong learning. Our team of knowledgeable librarians is always on hand to help you find the perfect book, navigate our digital resources, or answer any other questions you may have.</p>
-                    <hr>
+                    <hr/>
                     <p>At our library, we believe that access to reading materials and educational resources is a fundamental right for all. That's why we work hard to keep our library well-stocked and up-to-date with the latest and greatest books, magazines, audiobooks, and more. We also offer a variety of digital resources, such as e-books, audiobooks, and databases, so that you can access our materials from anywhere.</p>
-                    <hr>
+                    <hr/>
                     <p>Thank you for choosing Our Library as your go-to source for all things books and knowledge. We look forward to seeing you soon and helping you on your learning journey.</p>
-                    <hr>
+                    <hr/>
                     <h3>Our Location</h3>
                     <p>6XXX, Jalan XXXXXXX,</p>
                     <p>110000, Georgetown,</p>

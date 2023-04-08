@@ -7,13 +7,21 @@
     <title></title>
     <link rel="stylesheet" href="CSS/Header.css" /> 
     <link rel="stylesheet" href="CSS/Footer.css" /> 
-        <link rel="stylesheet" href="CSS/Search/Content.css" /> 
+    <link rel="stylesheet" href="CSS/Search/Content.css" /> 
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <?php
         $search_query = $_GET['search_query'];
+        $page = $_GET['page'];
     ?>
 
     <style type="text/css">
+
+        :root {
+            --bs-light: $gray-200;
+        }
 
 .search-bar-textbox {
     height: 38px;
@@ -51,51 +59,92 @@
 
 
        </div>
-        <div class="content">
-            <div class="top-container">
-                <input id="textbox_search" type="text" placeholder="Search for books here..." class="search-bar" /><br />
-                <asp:Button ID="Button_Search" runat="server" Text="Search" CssClass="search-button" />
+        <div class="container-fluid">
+            <div class="row">
+                <div class="top-container">
+                    <input id="textbox_search" type="text" placeholder="Search for books here..." class="search-bar" /><br />
+                    <asp:Button ID="Button_Search" runat="server" Text="Search" CssClass="search-button" />
+                </div>
             </div>
-            <div class="bottom-container">
-
-                <div class="filter-container">
-                    <asp:Label ID="Label1" runat="server" Text="Filter"></asp:Label>
-                    <br />
-                    <div class="filter">
+            <div class="row">
+                <div class="col-lg-2">
+                </div>
+                <div class="col-lg-2 bg-light">
+                    <div class="row">
+                        <asp:Label ID="Label1" runat="server" Text="Filter"></asp:Label>
+                    </div>
+                    <hr/>
+                    <div class="row">
                         <asp:CheckBoxList ID="CheckBoxList1" runat="server">
                             <asp:ListItem>Tag</asp:ListItem>
                         </asp:CheckBoxList>
-
-                    </div>
-
-                </div>
-
-                <div class="result-container">
-                    <asp:Label ID="Label2" runat="server" Text="Results"></asp:Label>
-                    
-                    <br />
-                    
-                    <div class="results">
-                         <asp:GridView ID="GridView1" runat="server">
-                        </asp:GridView>
                     </div>
                 </div>
+                <div class="col-lg-6 bg-light">
+                    <div class="row">
+                        <h2>Result...</h2>
+                        <hr/>
+                    </div>
+                    <div class="row">
 
-            </div>
-            
+                            <div class="row">
+                                    <div class="container">
+                                        <ul class="list-group" id="search_result" runat="server">
+                                            <!--list item card, result for searching
+                                            
+                                            
+                                            <li class="list-group-item">
+                                                <a href="Description.aspx?bookId=12">
+                                                    <div class="row">
+                                                        <div class="col-lg-3">
+                                                            <img src="/images/book.jpg" />
+                                                        </div>
+                                                        <div class="col-lg-9">
+                                                            <h4 class="text-dark">Title</h4>
+                                                            <p class="text-dark">Description</p>
+                                                        </div>
+                                                    </div>
+                                                </a>
+                                            </li>
+                                                -->
 
+                                        </ul>
+                                    </div>
+                                    
+                                </div>
+                            <div class="row">
+                                    <div class="d-flex justify-content-center">
+                                        <div id="pager_buttons" runat="server">
+                                            <!--
+                                                
+                                            <ul class="pagination">
+                                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                            </ul>
+                                                
+                                                -->
+                                        </div>
+                                    </div>
+                                </div>
 
-        </div>
-        <div class="footer">
-            <div class="footer-container">
-                <div class="footer-item footer-item-1">
-
+                    </div>
                 </div>
-                <div class="footer-item footer-item-2">
-
+                <div class="col-lg-2">
                 </div>
             </div>
-
+            <div class="row">
+                <div class="footer">
+                    <div class="footer-container">
+                        <div class="footer-item footer-item-1">
+                        </div>
+                        <div class="footer-item footer-item-2">
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </form>
 </body>

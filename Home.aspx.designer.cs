@@ -166,40 +166,13 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
-        /// book_item13 control.
+        /// recommended_book_content control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton book_item13;
-
-        /// <summary>
-        /// book_item14 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton book_item14;
-
-        /// <summary>
-        /// book_item15 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton book_item15;
-
-        /// <summary>
-        /// book_item16 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.ImageButton book_item16;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl recommended_book_content;
 
         /// <summary>
         /// footer_logo_image control.

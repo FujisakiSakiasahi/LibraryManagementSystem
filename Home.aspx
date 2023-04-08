@@ -62,7 +62,7 @@
                 <div class="list">
                     <div class="list-item list-item-1">
                         <asp:Label ID="Label2" runat="server" Text="Popular Books" CssClass="labels" ForeColor="White"></asp:Label>
-                        <div class="list-item-content list-item-content-1" id="div_popular_book">
+                        <div class="list-item-content list-item-content-1">
                             <div id="popular_book_content" runat="server" class="row">
                                 <!--for popular book item carrd-->
                             </div>
@@ -77,15 +77,11 @@
                         </div>
                     </div>
                     <div class="list-item list-item-3">
-                        <asp:Label ID="Label4" runat="server" Text="Most Liked" CssClass="labels" ForeColor="White"></asp:Label>
+                        <asp:Label ID="Label4" runat="server" Text="Recommended to you" CssClass="labels" ForeColor="White"></asp:Label>
                         <div class="list-item-content list-item-content-3">
-
-
-                            <asp:ImageButton ID="book_item13" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
-                            <asp:ImageButton ID="book_item14" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
-                            <asp:ImageButton ID="book_item15" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
-                            <asp:ImageButton ID="book_item16" runat="server" CssClass="list-item-content-images" Height="200px" ImageUrl="~/images/book.jpg" />
-
+                            <div id="recommended_book_content" runat="server" class="row">
+                                <!--for newest book item carrd-->
+                            </div>
                         </div>
                     </div>
                 </div>

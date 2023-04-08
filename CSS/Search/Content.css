@@ -47,12 +47,17 @@
 
 .filter {
     background: white;
-    height: 90px;
-    width: 90%;
 }
 
 .results {
     background: white;
-    height: 90px;
-    width: 90%;
+}
+
+a.item-card {
+    color: black;
+    text-decoration: none;
+}
+
+a.item-card:visited {
+        color: black;
 }
