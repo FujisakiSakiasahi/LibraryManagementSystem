@@ -33,9 +33,16 @@
 
           <div class="header-login-container">
               <div class="header-login">
-                  <a href="Login.aspx" class="link">
-                      <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
-                  </a>
+                  <div id="login_link" runat="server">
+                      <a href="Login.aspx" class="link">
+                          <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
+                      </a>
+                  </div>
+                  <div id="profile" runat="server">
+                      <a href="Login.aspx" class="link">
+                          <asp:Label ID="Label1" runat="server" Text="test" CssClass="link"></asp:Label>
+                      </a>
+                  </div>
               </div>
           </div>
 

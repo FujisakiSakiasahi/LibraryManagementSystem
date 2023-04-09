@@ -22,6 +22,14 @@ namespace LibraryManagementSystem
             } else { Session["loginState"] = "false"; }
 
             SetBookRecommendation();
+
+            login_link.Visible = false;
+            profile.Visible = false;
+            if (sessionHandler.GetLoginState() == false) { 
+                login_link.Visible = true;
+            } else { 
+                profile.Visible = true; 
+            }
         }
 
         protected void Search(String searchStatement, String filter) {
