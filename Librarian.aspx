@@ -18,13 +18,6 @@
               </div>
           </div>
 
-          <div class="header-navigation-container">
-              <asp:Button ID="header_home" runat="server" Text="Home" CssClass="nav-buttons" />
-              <asp:Button ID="header_search" runat="server" Text="Search" CssClass="nav-buttons" />
-              <asp:Button ID="header_about_us" runat="server" Text="About Us" CssClass="nav-buttons" />
-              <asp:Button ID="header_temp" runat="server" Text="Temp" CssClass="nav-buttons" />
-          </div>
-
           <div class="header-login-container">
               <div class="header-login">
                   <a href="Login.aspx" class="link">
@@ -44,7 +37,7 @@
                 <asp:Button ID="Button_CheckIn" runat="server" Text="Check In" CssClass="side-nav-buttons" OnClick="Button_Click_CheckIn" />
                 <asp:Button ID="Button_CheckOut" runat="server" Text="Check Out" CssClass="side-nav-buttons" OnClick="Button_Click_CheckOut" />
                 <asp:Button ID="Button_Notification" runat="server" Text="Notification" CssClass="side-nav-buttons" OnClick="Button_Click_Notification" />
-                <asp:Button ID="Button2" runat="server" Text="Requests" CssClass="side-nav-buttons" OnClick="Button2_Click1" />
+                <asp:Button ID="Button2" runat="server" Text="Requests" CssClass="side-nav-buttons" OnClick="Button_Click_RequestedBooks" />
                 <asp:Button ID="Button_Overdue" runat="server" Text="Overdue" CssClass="side-nav-buttons" OnClick="Button_Click_ManageOverdue" />
 
             </div>
@@ -65,6 +58,8 @@
                         8    : check in (return book)
                         9    : check out (borrow book)
                         10    : notification (maybe can add one more, to use for editing notification)
+                        11  : requests
+                        12  : overdue
                         -->
                     <asp:View ID="View0" runat="server">
                         <asp:Label ID="Label1" runat="server" Text="Manage Books"></asp:Label>
@@ -506,7 +501,7 @@
                                 <asp:TextBox ID="Textbox_SearchBorrowedBookBasedOnUser" runat="server" CssClass="search-bar" TextMode="Search"></asp:TextBox>
                                 <asp:Button ID="Button_SearchBorrowedBookBasedOnUser" runat="server" Text="Button" CssClass="search-button" OnClick="Button_CLick_SearchForBorrowedBooks"  />
                             </asp:Panel>
-                            <div id="checkIn_result" runat="server">
+                            <div id="checkIn_result" runat="server" style="text-align: left; margin: 0 auto; display: block"> <%--can we center this somehow--%>
                                 <asp:CheckBoxList ID="CheckBoxList_CheckIn" ForeColor="Black" runat="server"/>
                                 <asp:Label ID="Label_StoreUser" runat="server" Text="Label" Visible="False"></asp:Label>
                             </div>
@@ -588,25 +583,91 @@
                                     <asp:Label ID="Label44" runat="server" CssClass="labels" Text="Manage Notif"></asp:Label>
                                     <br />
                                     <br />
-                                    <asp:GridView ID="GridView1" runat="server">
+                                    <asp:GridView ID="GridView_Notifications" runat="server" ForeColor="Black" OnRowCommand="Button_Click_RemoveNotif" AutoGenerateColumns="False">
+                                        <Columns>
+                                            <asp:TemplateField HeaderText="Notification ID">
+                                                <ItemTemplate >
+                                                    <asp:Label ID="NOTIF_ID" runat="server" Text='<%# Bind("notifId")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Notification Title">
+                                                <ItemTemplate >
+                                                    <asp:Label ID="NOTIF_TITLE" runat="server" Text='<%# Bind("notifTitle")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Receivers">
+                                                <ItemTemplate>
+                                                    <asp:Label ID="RECEIVERS" runat="server" Text='<%# Bind("memberId")%>'></asp:Label>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                            <asp:TemplateField HeaderText="Operation">
+                                                <ItemTemplate>
+                                                    <asp:Button ID="Button_Remove_Notif" runat="server" Text="Remove" CommandName="Remove" CommandArgument="<%# Container.DataItemIndex %>"/>
+                                                </ItemTemplate>
+                                            </asp:TemplateField>
+                                        </Columns>
                                     </asp:GridView>
-
                                 </asp:View>
                             </asp:MultiView>
                         </div>
                     </asp:View>
                     <asp:View ID="View13" runat="server">
                         <div class="view-container">
-
-                            <asp:CheckBoxList ID="CheckBoxList1" runat="server">
-                            </asp:CheckBoxList>
-                            <asp:Button ID="Button15" runat="server" Text="Button" />
+                            <div style="text-align: left; margin: 0 auto; display: block"> <%--can we center this somehow--%>
+                            <asp:CheckBoxList ID="CheckBoxList_RequestedBooks" ForeColor="Black" runat="server"/> 
+                            </div>
+                            <asp:Button ID="Button_AddedRequestedBooks" runat="server" Text="Remove" OnClick="Button_Click_AddedRequestedBooks" />
 
                         </div>
                     </asp:View>
                     <asp:View ID="View14" runat="server">
                         <div class="view-container">
-                            <asp:GridView ID="GridView2" runat="server"></asp:GridView>
+                            <asp:GridView ID="GridView_Overdue" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ClaimOverdue">
+
+                                <Columns>
+                                    <asp:TemplateField HeaderText="Borrow ID">
+                                        <ItemTemplate >
+                                            <asp:Label ID="BORROW_ID" runat="server" Text='<%# Bind("borrowId")%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Book Name">
+                                        <ItemTemplate >
+                                            <asp:Label ID="BOOK_NAME" runat="server" Text='<%# Bind("bookName")%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Member Name">
+                                        <ItemTemplate >
+                                            <asp:Label ID="MEMBER_NAME" runat="server" Text='<%# Bind("memberName")%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Borrow Date">
+                                        <ItemTemplate >
+                                            <asp:Label ID="BORROW_DATE" runat="server" Text='<%# Bind("dateBorrowed")%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Expected Date">
+                                        <ItemTemplate >
+                                            <asp:Label ID="EXPECT_DATE" runat="server" Text='<%# Bind("expectDate")%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Days Late">
+                                        <ItemTemplate >
+                                            <asp:Label ID="LATE_DAYS" runat="server" Text='<%# Bind("daysLate")%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Money Owed">
+                                        <ItemTemplate >
+                                            <asp:Label ID="MONEY_OWED" runat="server" Text='<%# Bind("moneyOwed")%>'></asp:Label>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                    <asp:TemplateField HeaderText="Operation">
+                                        <ItemTemplate>
+                                            <asp:Button ID="Button_Claim" runat="server" Text="Claimed" CommandName="View" CommandArgument="<%# Container.DataItemIndex %>"/>
+                                        </ItemTemplate>
+                                    </asp:TemplateField>
+                                </Columns>
+                                
+                            </asp:GridView>
                         </div>
                     </asp:View>
                 </asp:MultiView>

@@ -308,7 +308,7 @@ namespace LibraryManagementSystem
         {
             MultiView1.ActiveViewIndex = (int)SelectedPage.CheckOut;
 
-            DataTable memberNames = sessionHandler.RunQuery("SELECT * FROM Member;");
+            DataTable memberNames = sessionHandler.RunQuery("SELECT * FROM Member WHERE memberId >= 1;");
             ListBox_SearchedUserCheckOut.DataSource = memberNames;
             ListBox_SearchedUserCheckOut.DataTextField = "memberName";
             ListBox_SearchedUserCheckOut.DataValueField = "memberId";
@@ -325,7 +325,7 @@ namespace LibraryManagementSystem
         {
             if (TextBox_SearchUserCheckOut.Text.Equals(""))
             {
-                DataTable memberNames = sessionHandler.RunQuery("SELECT * FROM Member WHERE available = TRUE;");
+                DataTable memberNames = sessionHandler.RunQuery("SELECT * FROM Member WHERE memberId >= 1;");
                 ListBox_SearchedUserCheckOut.DataSource = memberNames;
                 ListBox_SearchedUserCheckOut.DataTextField = "memberName";
                 ListBox_SearchedUserCheckOut.DataValueField = "memberId";
@@ -334,7 +334,7 @@ namespace LibraryManagementSystem
             else
             {
                 String searchString = TextBox_SearchUserCheckOut.Text;
-                String query = "SELECT * FROM Member WHERE ";
+                String query = "SELECT * FROM Member WHERE memberId >= 1 AND ";
 
                 if (int.TryParse(searchString, out int memberId))
                 {
@@ -388,7 +388,7 @@ namespace LibraryManagementSystem
         {
             if (ListBox_SearchedBookCheckOut.SelectedItem == null || ListBox_SearchedUserCheckOut.SelectedItem == null)
             {
-                Response.Write("<script>alert('Must have a user and a book selected.')</script>");
+                Response.Write("<script>alert('Must have a user and a book selected.')</script>"); //needs improvement on the alerts
             }
             else
             {
@@ -426,6 +426,12 @@ namespace LibraryManagementSystem
         protected void Button_Click_ManageNotif(object sender, EventArgs e)
         {
             MultiView2.ActiveViewIndex = 1;
+
+            DataTable notifications = sessionHandler.RunQuery("SELECT * FROM Notification;");
+
+            GridView_Notifications.DataSource = notifications;
+            GridView_Notifications.DataBind();
+
             Button_CreateNotification.Enabled = true;
             Button_ManageNotification.Enabled = false;
         }
@@ -441,7 +447,7 @@ namespace LibraryManagementSystem
             {
                 if (TextBox_NotifSelectMember.Text.Equals(""))
                 {
-                    Response.Write("<script>alert('Must enter Member ID.')</script>");
+                    Response.Write("<script>alert('Must enter Member ID.')</script>"); //needs improvement on the alerts
                 }
                 else
                 {
@@ -449,7 +455,7 @@ namespace LibraryManagementSystem
 
                     if (sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId = {user};").Rows.Count == 0)
                     {
-                        Response.Write("<script>alert('Member does not exist.')</script>");
+                        Response.Write("<script>alert('Member does not exist.')</script>"); //needs improvement on the alerts
 
                     }
 
@@ -483,10 +489,79 @@ namespace LibraryManagementSystem
             }
         }
 
+        protected void Button_Click_RemoveNotif(object sender, GridViewCommandEventArgs e)
+        {
+            GridViewRow gridViewRow = GridView_Notifications.Rows[Convert.ToInt32(e.CommandArgument)];
+
+            sessionHandler.RunQuery($"DELETE FROM Notification WHERE notifId = {(gridViewRow.FindControl("NOTIF_ID") as Label).Text}");
+
+            Button_Click_ManageNotif(sender, e);
+
+        }
+
+        //code for requested page
+        protected void Button_Click_RequestedBooks(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 11;
+
+            DataTable requestedBookList = sessionHandler.RunQuery("SELECT * FROM Requests;");
+
+            CheckBoxList_RequestedBooks.DataSource = requestedBookList;
+            CheckBoxList_RequestedBooks.DataTextField = "bookName";
+            CheckBoxList_RequestedBooks.DataValueField = "requestId";
+            CheckBoxList_RequestedBooks.DataBind();
+
+        }
+
+        protected void Button_Click_AddedRequestedBooks(object sender, EventArgs e)
+        {
+            String requests = "";
+
+            foreach (ListItem request in CheckBoxList_RequestedBooks.Items)
+            {
+                if (request.Selected)
+                {
+                    requests += request.Value += ", ";
+                }
+            }
+
+            if (requests == "")
+            {
+                Response.Write("<script>alert('Must select at least 1 book.')</script>"); //needs improvement on the alerts
+                return;
+            }
+
+            char[] toTrim = { ',', ' ' };
+            requests = requests.TrimEnd(toTrim);
+
+            sessionHandler.RunQuery($"DELETE FROM Requests WHERE requestId IN ({requests})"); //needs confirmation
+
+            Button_Click_RequestedBooks(sender, e);
+
+        }
+
+
+
         //code for overdue page
         protected void Button_Click_ManageOverdue(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 12;
+
+            DataTable overdues = sessionHandler.RunQuery("SELECT Borrowed.borrowId, Book.bookName, Member.memberName, Borrowed.dateBorrowed, Borrowed.expectDate, Borrowed.returnDate, DATEDIFF(CURRENT_DATE,\r\nBorrowed.expectDate) AS daysLate, FORMAT(DATEDIFF(CURRENT_DATE, Borrowed.expectDate)*0.1, 2) AS moneyOwed FROM Borrowed INNER JOIN Book\r\nUSING (bookId) INNER JOIN Member USING (memberId) WHERE expectDate < CURRENT_DATE AND returnDate IS NULL;");
+
+            GridView_Overdue.DataSource = overdues; 
+            GridView_Overdue.DataBind();
+
+        }
+
+        protected void Button_Click_ClaimOverdue(object sender, GridViewCommandEventArgs e)
+        {
+            GridViewRow gridViewRow = GridView_Overdue.Rows[Convert.ToInt32(e.CommandArgument)];
+
+            //this needs to add confirmation
+            sessionHandler.RunQuery($"UPDATE Borrowed SET returnDate = '{DateTime.Now.ToString("yyyy-MM-dd")}' WHERE borrowId = {(gridViewRow.FindControl("BORROW_ID") as Label).Text} ");
+
+            Button_Click_ManageOverdue(sender, e);
 
         }
 
@@ -521,12 +596,15 @@ namespace LibraryManagementSystem
 
                     if (int.TryParse(searchString, out int memberId))
                     {
-                        query += "memberId = " + memberId + ";";
+                        query += "memberId = " + memberId;
                     }
                     else
                     {
-                        query += "memberName LIKE '%" + searchString + "%';";
+                        query += "memberName LIKE '%" + searchString + "%'";
                     }
+
+                    query += " WHERE memberId>=1;";
+
                     break;
                 case SelectedPage.CheckIn:
                     query += "Borrowed INNER JOIN Book ON Book.bookId = Borrowed.bookId WHERE ";
@@ -560,7 +638,7 @@ namespace LibraryManagementSystem
                     query += "Book;";
                     break;
                 case SelectedPage.ManageUser:
-                    query += "Member;";
+                    query += "Member WHERE memberId >= 1;";
                     break;
                 case SelectedPage.CheckIn:
                     break;
@@ -639,16 +717,6 @@ namespace LibraryManagementSystem
             LoadDataIntoGridView(returnedData, GridView_UserList);
         }
 
-        protected float CalculateLateFee(String expectedReturnedDate, String returnedDate) {
-            float fee = 0;
-            float feeRate = 0.1f;
-
-            //fee = (returnedDate - expectedReturnedDate) * feeRate;
-
-            return fee;
-        }
-
-
         protected void AddNewNotification(String title, String content) {
             //get the highest Id of the notification
             DataTable returnedData = sessionHandler.RunQuery("SELECT MAX(notifId) FROM Notification");
@@ -711,11 +779,6 @@ namespace LibraryManagementSystem
         {
             MultiView2.ActiveViewIndex = 12;
 
-        }
-
-        protected void Button2_Click1(object sender, EventArgs e)
-        {
-            MultiView1.ActiveViewIndex = 11;
         }
 
 
