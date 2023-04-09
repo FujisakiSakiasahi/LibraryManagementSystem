@@ -1,14 +1,12 @@
 create table Book (
-    bookId INT NOT NULL
-        CHECK (bookId > 0),
+    bookId INT NOT NULL,
     bookName VARCHAR(50) NOT NULL,
     authorName VARCHAR(50) NOT NULL,
     bookImage VARCHAR(100),
     bookDescription VARCHAR(1000),
     publisherName VARCHAR(50) NOT NULL,
     pubDate DATE NOT NULL,
-    rating INT
-        CHECK (rating BETWEEN 1 AND 5),
+    rating INT,
     lang VARCHAR(10) NOT NULL,
     isbn BIGINT NOT NULL,
     available BIT NOT NULL,
@@ -21,8 +19,7 @@ create table Member (
     memberId INT NOT NULL,
     memberName VARCHAR(50) NOT NULL,
     memberNo INT NOT NULL,
-    memberEmail VARCHAR (30) NOT NULL
-        CHECK (memberEmail LIKE '%_@__%.__%'),
+    memberEmail VARCHAR (30) NOT NULL,
     memberPasswd VARCHAR (50) NOT NULL,
     newsletter BIT NOT NULL,
     librarian BIT NOT NULL,
@@ -54,8 +51,7 @@ create table Ratings (
     bookId INT NOT NULL,
     memberId INT NOT NULL,
     comment VARCHAR(150),
-    rating INT NOT NULL
-        CHECK (rating BETWEEN 1 AND 5),
+    rating INT NOT NULL,
 
     PRIMARY KEY (bookId,memberId),
     FOREIGN KEY (bookId) REFERENCES Book (bookId),
