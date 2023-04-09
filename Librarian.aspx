@@ -169,6 +169,10 @@
                                     <asp:Label ID="Label_ShelfID" runat="server" CssClass="desc-labels" Text="*Shelf ID*"></asp:Label>
                                     <br />
                                 
+                                    <br />
+                                    <asp:Label ID="Label_BorrowedBy" runat="server" Text="Borrowed By:" CssClass="title-labels"></asp:Label>
+                                    <br />
+                                    <asp:Label ID="Label_BorrowedBy2" runat="server" CssClass="desc-labels" Text="*Member Name*"></asp:Label>
                                 </div>
                             </div>
                             <div class="action-buttons-container">

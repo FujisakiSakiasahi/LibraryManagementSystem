@@ -67,6 +67,18 @@ namespace LibraryManagementSystem
             DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Book WHERE bookId = {(gridViewRow.FindControl("BOOK_ID") as Label).Text}");
 
             LoadBookData(SelectedPage.ViewBook, returned);
+
+            DataTable borrowed = sessionHandler.RunQuery($"SELECT Member.memberId, Member.memberName FROM Borrowed INNER JOIN Member USING (memberId) WHERE bookId = {Label_BookID.Text};");
+
+            if (borrowed.Rows.Count == 0)
+            {
+                Label_BorrowedBy2.Text = "N/A";
+            }
+            else
+            {
+                Label_BorrowedBy2.Text = borrowed.Rows[0][1].ToString() + $" ({borrowed.Rows[0][0].ToString()})";
+            }
+
         }
 
         protected void Button_Click_BackToManageBook(object sender, EventArgs e) {
