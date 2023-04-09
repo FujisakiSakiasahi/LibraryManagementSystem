@@ -10,9 +10,14 @@
     <link rel="stylesheet" href="CSS/Footer.css" />
     <link rel="stylesheet" href="CSS/Home/Text.css" />
 
+    <!--
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"/>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>   
+        -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
      
@@ -39,9 +44,22 @@
                       </a>
                   </div>
                   <div id="profile" runat="server">
-                      <a href="Login.aspx" class="link">
-                          <asp:Label ID="Label1" runat="server" Text="test" CssClass="link"></asp:Label>
-                      </a>
+                    <div class="d-flex align-items-center">
+                      <div class="dropdown">
+                        <!-- Profile picture with dropdown toggle -->
+                        <a href="#" class="d-block rounded-circle overflow-hidden border border-2 border-light dropdown-toggle" id="profile_menu" data-bs-toggle="dropdown" aria-expanded="false">
+                          <img src="images/book.jpg" alt="Profile Picture" class="w-100 h-100"/>
+                        </a>
+
+                        <!-- Dropdown menu with items -->
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile-menu">
+                          <li><a class="dropdown-item" href="#">Notification</a></li>
+                          <li><a class="dropdown-item" href="#">Settings</a></li>
+                          <li><hr class="dropdown-divider"/></li>
+                          <li><a class="dropdown-item" href="#">Log Out</a></li>
+                        </ul>
+                      </div>
+                    </div>
                   </div>
               </div>
           </div>
