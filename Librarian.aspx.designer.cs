@@ -393,6 +393,24 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_ShelfID;
 
         /// <summary>
+        /// Label_BorrowedBy control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_BorrowedBy;
+
+        /// <summary>
+        /// Label_BorrowedBy2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_BorrowedBy2;
+
+        /// <summary>
         /// Button_BackToManageBook control.
         /// </summary>
         /// <remarks>
