@@ -91,3 +91,11 @@ create table Wishlist (
     FOREIGN KEY (memberId) REFERENCES Member (memberId)
 );
 
+create table Requests(
+    requestId INT NOT NULL,
+    bookName VARCHAR(50) NOT NULL,
+    isbn BIGINT,
+    
+    PRIMARY KEY (requestId)
+);
+

@@ -33,42 +33,6 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Image logo_image;
 
         /// <summary>
-        /// header_home control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button header_home;
-
-        /// <summary>
-        /// header_search control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button header_search;
-
-        /// <summary>
-        /// header_about_us control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button header_about_us;
-
-        /// <summary>
-        /// header_temp control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button header_temp;
-
-        /// <summary>
         /// login_button control.
         /// </summary>
         /// <remarks>
@@ -1680,13 +1644,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label44;
 
         /// <summary>
-        /// GridView1 control.
+        /// GridView_Notifications control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.GridView GridView_Notifications;
 
         /// <summary>
         /// View13 control.
@@ -1698,22 +1662,22 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View13;
 
         /// <summary>
-        /// CheckBoxList1 control.
+        /// CheckBoxList_RequestedBooks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_RequestedBooks;
 
         /// <summary>
-        /// Button15 control.
+        /// Button_AddedRequestedBooks control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button15;
+        protected global::System.Web.UI.WebControls.Button Button_AddedRequestedBooks;
 
         /// <summary>
         /// View14 control.
@@ -1725,12 +1689,12 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View14;
 
         /// <summary>
-        /// GridView2 control.
+        /// GridView_Overdue control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView2;
+        protected global::System.Web.UI.WebControls.GridView GridView_Overdue;
     }
 }
