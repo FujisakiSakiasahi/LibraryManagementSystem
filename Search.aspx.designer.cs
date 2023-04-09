@@ -94,13 +94,13 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Label Label1;
 
         /// <summary>
-        /// CheckBoxList1 control.
+        /// CheckBoxList_Filter control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList1;
+        protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_Filter;
 
         /// <summary>
         /// search_result control.

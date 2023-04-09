@@ -13,7 +13,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <?php
-        $search_query = $_GET['search_query'];
+        $title = $_GET['title'];
         $page = $_GET['page'];
     ?>
 
@@ -75,7 +75,7 @@
                     </div>
                     <hr/>
                     <div class="row">
-                        <asp:CheckBoxList ID="CheckBoxList1" runat="server">
+                        <asp:CheckBoxList ID="CheckBoxList_Filter" runat="server">
                             <asp:ListItem>Tag</asp:ListItem>
                         </asp:CheckBoxList>
                     </div>

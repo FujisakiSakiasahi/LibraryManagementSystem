@@ -32,23 +32,6 @@ namespace LibraryManagementSystem
             }
         }
 
-        protected void Search(String searchStatement, String filter) {
-            String searchQuery = "SELECT * FROM Book WHERE " + filter + "=" + searchStatement + ";";
-            DataTable result = sessionHandler.RunQuery(searchQuery);
-
-
-            //set the returning datatable to the required space
-            //write here
-        }
-
-        ///!!!! to-be written after the advanced search UI is done
-        protected void Search(String title, String author, String lang, int isbn, bool availablility) {
-            String searchQuery = "SELECT * FROM Book WHERE ";
-            if (!String.IsNullOrEmpty(title)) {
-                searchQuery += "bookName='" + title + "'";
-            }
-        }
-
         protected void SetBookRecommendation() {
             //get a list of book from the database
             string query;
@@ -159,7 +142,7 @@ namespace LibraryManagementSystem
 
         protected void Button_Search_Click(object sender, EventArgs e){
             
-            Response.Redirect($"Search.aspx?search_query={ReplaceSpacesWithPlus(Textbox_Search.Text)}");
+            Response.Redirect($"Search.aspx?title={ReplaceSpacesWithPlus(Textbox_Search.Text)}");
         }
 
         public string ReplaceSpacesWithPlus(string input) {
