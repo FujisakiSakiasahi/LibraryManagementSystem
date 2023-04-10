@@ -14,8 +14,6 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-
 </head>
 <body>
     <form id="form1" runat="server">
@@ -42,11 +40,35 @@
           </div>
         </div>
 
-        <div class="container-fluid text-center">
-            <div class="row content">
-                <div class="col-sm-2 sidenav">
+        <div class="content contaier">
+            <div class="row">
+                <div class="col-12 justify-content-center text-center">
+                    <h2>
+                        About Us
+                    </h2>
                 </div>
-                <div class="col-sm-8 text-left">
+            </div>
+        </div>
+
+        <div class=" question container">
+            <div class="row">
+                <div class="col-12">
+                    <h3>Lorem ipsum?</h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!--
+        <div class="container">
+            <div class="row content">
+                <div class="col-12 text-left">
                     <h1>About Us</h1>
                     <p>Our library is a hub for knowledge, learning, and exploration. We strive to provide a welcoming and inclusive space for all members of our community to access a wide range of learning resources and find their next great read.</p>
                     </>
@@ -71,6 +93,7 @@
                 </div>
             </div>
         </div>
+        -->
 
          <!--Footer-->
 

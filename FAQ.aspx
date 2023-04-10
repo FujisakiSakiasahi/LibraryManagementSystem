@@ -52,7 +52,8 @@
         <div class="content contaier">
             <div class="row">
                 <div class="col-12 justify-content-center text-center">
-                    <h2>Frequently Asked Questions
+                    <h2>
+                        Frequently Asked Questions
                     </h2>
                 </div>
             </div>

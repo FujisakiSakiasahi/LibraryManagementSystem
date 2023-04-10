@@ -41,7 +41,7 @@
                   <div id="login_link" runat="server">
                       <a href="Login.aspx" class="link">
                           <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
-                      </a>y
+                      </a>
                   </div>
                   <!--Profile Picture after login-->
                   <div id="profile" runat="server">
