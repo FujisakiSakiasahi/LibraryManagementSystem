@@ -341,6 +341,10 @@ namespace LibraryManagementSystem {
             ListBox_SearchedBookCheckOut.DataTextField = "bookName";
             ListBox_SearchedBookCheckOut.DataValueField = "bookId";
             ListBox_SearchedBookCheckOut.DataBind();
+
+            Label_ConfirmCheckOut.Visible = false;
+
+
         }
 
         protected void Button_Click_SearchUserCheckOut(object sender, EventArgs e) {
@@ -408,7 +412,7 @@ namespace LibraryManagementSystem {
                 sessionHandler.RunQuery($"UPDATE Book SET available = FALSE WHERE bookId = {bookId}");
 
                 Button_Click_CheckOut(sender, e);
-                //needs to add confirmation somehow
+                Label_ConfirmCheckOut.Visible = true;
 
             }
         }
@@ -417,12 +421,15 @@ namespace LibraryManagementSystem {
         protected void Button_Click_Notification(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = 10;
 
+            Label_ConfirmSendNotification.Visible = false;
+
         }
 
         protected void Button_Click_CreateNotif(object sender, EventArgs e) {
             MultiView2.ActiveViewIndex = 0;
             Button_CreateNotification.Enabled = false;
             Button_ManageNotification.Enabled = true;
+            Label_ConfirmSendNotification.Visible = false;
         }
 
         protected void Button_Click_ManageNotif(object sender, EventArgs e) {
@@ -460,6 +467,7 @@ namespace LibraryManagementSystem {
             int highest = int.Parse(sessionHandler.RunQuery("SELECT MAX(notifId) FROM Notification;").Rows[0][0].ToString());
 
             String query = $"INSERT INTO Notification (notifId, notifTitle, memberId, msg) VALUES ({highest + 1}, '{title}', {user}, '{content}');";
+            Label_ConfirmSendNotification.Visible = true;
 
             sessionHandler.RunQuery(query);
 
@@ -500,6 +508,9 @@ namespace LibraryManagementSystem {
             CheckBoxList_RequestedBooks.DataValueField = "requestId";
             CheckBoxList_RequestedBooks.DataBind();
 
+            Label_AddedRequestedBooks.Visible = false;
+
+
         }
 
         protected void Button_Click_AddedRequestedBooks(object sender, EventArgs e) {
@@ -519,9 +530,11 @@ namespace LibraryManagementSystem {
             char[] toTrim = { ',', ' ' };
             requests = requests.TrimEnd(toTrim);
 
-            sessionHandler.RunQuery($"DELETE FROM Requests WHERE requestId IN ({requests})"); //needs confirmation
+
+            sessionHandler.RunQuery($"DELETE FROM Requests WHERE requestId IN ({requests})");
 
             Button_Click_RequestedBooks(sender, e);
+            Label_AddedRequestedBooks.Visible = true;
 
         }
 
@@ -536,15 +549,17 @@ namespace LibraryManagementSystem {
             GridView_Overdue.DataSource = overdues;
             GridView_Overdue.DataBind();
 
+            Label_ClaimedBooks.Visible = false;
+
         }
 
         protected void Button_Click_ClaimOverdue(object sender, GridViewCommandEventArgs e) {
             GridViewRow gridViewRow = GridView_Overdue.Rows[Convert.ToInt32(e.CommandArgument)];
 
-            //this needs to add confirmation
             sessionHandler.RunQuery($"UPDATE Borrowed SET returnDate = '{DateTime.Now.ToString("yyyy-MM-dd")}' WHERE borrowId = {(gridViewRow.FindControl("BORROW_ID") as Label).Text} ");
 
             Button_Click_ManageOverdue(sender, e);
+            Label_ClaimedBooks.Visible = true;
 
         }
 

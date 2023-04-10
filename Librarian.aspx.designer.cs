@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem {
+namespace LibraryManagementSystem
+{
 
 
-    public partial class Librarian {
+    public partial class Librarian
+    {
 
         /// <summary>
         /// form1 control.
@@ -1561,6 +1563,15 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.ListBox ListBox_SearchedBookCheckOut;
 
         /// <summary>
+        /// Label_ConfirmCheckOut control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_ConfirmCheckOut;
+
+        /// <summary>
         /// Button_ConfirmCheckOut control.
         /// </summary>
         /// <remarks>
@@ -1696,6 +1707,15 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.TextBox TextBox_NotifSelectMember;
 
         /// <summary>
+        /// Label_ConfirmSendNotification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_ConfirmSendNotification;
+
+        /// <summary>
         /// Button_SendNotification control.
         /// </summary>
         /// <remarks>
@@ -1750,6 +1770,15 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.CheckBoxList CheckBoxList_RequestedBooks;
 
         /// <summary>
+        /// Label_AddedRequestedBooks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_AddedRequestedBooks;
+
+        /// <summary>
         /// Button_AddedRequestedBooks control.
         /// </summary>
         /// <remarks>
@@ -1775,5 +1804,14 @@ namespace LibraryManagementSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.GridView GridView_Overdue;
+
+        /// <summary>
+        /// Label_ClaimedBooks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_ClaimedBooks;
     }
 }
