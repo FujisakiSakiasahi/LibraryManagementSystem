@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem {
+namespace LibraryManagementSystem
+{
 
 
-    public partial class FAQ {
+    public partial class FAQ
+    {
 
         /// <summary>
         /// form1 control.
