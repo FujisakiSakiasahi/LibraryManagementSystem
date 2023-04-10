@@ -5,7 +5,6 @@
     text-align: center;
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: none;
-    color: white;
 }
 
 .header {
@@ -40,11 +39,6 @@
 }
 
 a {
-    text-decoration: none;
-    color: white;
-}
-
-a:visited {
     text-decoration: none;
     color: white;
 }
