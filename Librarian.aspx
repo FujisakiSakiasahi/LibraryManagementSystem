@@ -413,6 +413,11 @@
                                 <asp:Label ID="Label_Email2" runat="server" CssClass="desc-labels" Text="*Email*"></asp:Label>
                                 <br />
                                 <br />
+                                <asp:Label ID="Label_Password" runat="server" CssClass="title-labels" Text="Password:"></asp:Label>
+                                <br />
+                                <asp:Label ID="Label_Password2" runat="server" CssClass="desc-labels" Text="*Password*"></asp:Label>
+                                <br />
+                                <br />
                                 <asp:Label ID="Label_PhoneNumber" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
                                 <br />
                                 <asp:Label ID="Label_PhoneNumber2" runat="server" CssClass="desc-labels" Text="*Phone Number*"></asp:Label>
@@ -444,6 +449,11 @@
                                 <asp:Label ID="Label_Email3" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
                                 <br />
                                 <asp:TextBox ID="TextBox_Email" runat="server" TextMode="Email" MaxLength="30"></asp:TextBox>
+                                <br />
+                                <br />
+                                <asp:Label ID="Label_Password3" runat="server" CssClass="title-labels" Text="Password:"></asp:Label>
+                                <br />
+                                <asp:TextBox ID="TextBox_Password" runat="server" MaxLength="50"></asp:TextBox>
                                 <br />
                                 <br />
                                 <asp:Label ID="Label_PhoneNumber3" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
@@ -479,6 +489,11 @@
                                 <asp:TextBox ID="TextBox_Email3" runat="server" Width="190px" TextMode="Email" MaxLength="30"></asp:TextBox>
                                 <br />
                                 <br />
+                                <asp:Label ID="Label_Password4" runat="server" CssClass="title-labels" Text="Password:"></asp:Label>
+                                <br />
+                                <asp:TextBox ID="TextBox_Password3" runat="server" MaxLength="50"></asp:TextBox>
+                                <br />
+                                <br />
                                 <asp:Label ID="Label_PhoneNumber4" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
                                 <br />
                                 <asp:TextBox ID="TextBox_PhoneNumber3" runat="server" TextMode="Number"></asp:TextBox>
@@ -505,6 +520,7 @@
                                 <asp:TextBox ID="Textbox_SearchBorrowedBookBasedOnUser" runat="server" CssClass="search-bar" TextMode="Search"></asp:TextBox>
                                 <asp:Button ID="Button_SearchBorrowedBookBasedOnUser" runat="server" Text="Button" CssClass="search-button" OnClick="Button_CLick_SearchForBorrowedBooks"  />
                             </asp:Panel>
+                            <asp:ListBox ID="ListBox_CheckIn" runat="server" OnSelectedIndexChanged="ListBox_CheckIn_SelectedIndexChanged" AutoPostBack="True" ></asp:ListBox>
                             <div id="checkIn_result" runat="server" style="text-align: left; margin: 0 auto; display: block"> <%--can we center this somehow--%>
                                 <asp:CheckBoxList ID="CheckBoxList_CheckIn" ForeColor="Black" runat="server"/>
                                 <asp:Label ID="Label_StoreUser" runat="server" Text="Label" Visible="False"></asp:Label>

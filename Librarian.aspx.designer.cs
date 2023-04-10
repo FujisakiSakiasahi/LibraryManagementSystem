@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem
-{
+namespace LibraryManagementSystem {
 
 
-    public partial class Librarian
-    {
+    public partial class Librarian {
 
         /// <summary>
         /// form1 control.
@@ -1023,6 +1021,24 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Email2;
 
         /// <summary>
+        /// Label_Password control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Password;
+
+        /// <summary>
+        /// Label_Password2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Password2;
+
+        /// <summary>
         /// Label_PhoneNumber control.
         /// </summary>
         /// <remarks>
@@ -1158,6 +1174,24 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.TextBox TextBox_Email;
 
         /// <summary>
+        /// Label_Password3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Password3;
+
+        /// <summary>
+        /// TextBox_Password control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Password;
+
+        /// <summary>
         /// Label_PhoneNumber3 control.
         /// </summary>
         /// <remarks>
@@ -1284,6 +1318,24 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.TextBox TextBox_Email3;
 
         /// <summary>
+        /// Label_Password4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Password4;
+
+        /// <summary>
+        /// TextBox_Password3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Password3;
+
+        /// <summary>
         /// Label_PhoneNumber4 control.
         /// </summary>
         /// <remarks>
@@ -1390,6 +1442,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button_SearchBorrowedBookBasedOnUser;
+
+        /// <summary>
+        /// ListBox_CheckIn control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListBox ListBox_CheckIn;
 
         /// <summary>
         /// checkIn_result control.
