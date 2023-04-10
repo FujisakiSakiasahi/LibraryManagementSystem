@@ -12,9 +12,7 @@ namespace LibraryManagementSystem
 		
         protected void Page_Load(object sender, EventArgs e)
 		{
-            if (Session["loginState"] != null) {
-                sessionHandler.CheckLoginState();
-            } else { Session["loginState"] = "false"; }
+            SetInitialLoginState();
 
             login_link.Visible = false;
             profile.Visible = false;
@@ -31,6 +29,15 @@ namespace LibraryManagementSystem
                 librarian_link.Visible = true;
             }
         }
+
+        protected void 
+
+        protected void SetInitialLoginState() {
+            if (Session["loginState"] != null) {
+                sessionHandler.CheckLoginState();
+            } else { Session["loginState"] = "false"; }
+        }
+
         protected void Logout_Function(object sender, EventArgs e) {
             string link = sessionHandler.GetIsLibrarian() && Request.RawUrl.Equals("Librarian.aspx") ?  "Home.aspx" : Request.RawUrl;
             
