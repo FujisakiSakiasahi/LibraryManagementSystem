@@ -20,7 +20,7 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <!--Header-->
+       <!--Header-->
 
 
         <div class="navigation-bar container-fluid">
@@ -34,11 +34,35 @@
                     <li><a href="Search.aspx" class="nav-link px-2 link-light">Search</a></li>
                     <li><a href="AboutUs.aspx" class="nav-link px-2 link-light">About Us</a></li>
                     <li><a href="FAQ.aspx" class="nav-link px-2 link-light">FAQ</a></li>
-                    <li><a href="Librarian.aspx" class="nav-link px-2 link-light">Librarian</a></li>
+                    <li id="librarian_link" runat="server"><a href="Librarian.aspx" class="nav-link px-2 link-light">Librarian</a></li>
                 </ul>
 
                 <div class="col-md-3 text-end">
-                    <button type="button" class="btn btn-login">Login</button>
+                    <div id="login_link" runat="server">
+                        <a href="Login.aspx" class="link">
+                            <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
+                        </a>
+                    </div>
+
+                    <!--Profile Picture after login-->
+                    <div id="profile" runat="server">
+                        <div class="d-flex align-items-center pfp">
+                            <div class="dropdown text-end">
+                                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle"/>
+                                </a>
+                                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                                    <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
+                                    <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
+                                    <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider"/>
+                                    </li>
+                                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </header>
         </div>

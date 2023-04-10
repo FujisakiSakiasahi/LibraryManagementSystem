@@ -102,8 +102,10 @@ a {
     background: #2F557F;
 }
 
-.pfp {
-    height: 10px;
+.login-text{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
 }
 
 

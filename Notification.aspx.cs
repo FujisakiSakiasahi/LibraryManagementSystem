@@ -11,7 +11,33 @@ namespace LibraryManagementSystem
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            SessionHandler sessionHandler = new SessionHandler();
 
+            if (Session["loginState"] != null)
+            {
+                sessionHandler.CheckLoginState();
+            }
+            else { Session["loginState"] = "false"; }
+
+            login_link.Visible = false;
+            profile.Visible = false;
+
+            librarian_link.Visible = false;
+
+            if (sessionHandler.GetLoginState() == false)
+            {
+                login_link.Visible = true;
+            }
+            else
+            {
+                profile.Visible = true;
+            }
+
+            if (sessionHandler.GetIsLibrarian())
+            {
+                librarian_link.Visible = true;
+                Response.Write($"<script>alert('{librarian_link + " " + true}')</script>");
+            }
         }
     }
 }
