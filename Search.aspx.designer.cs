@@ -87,15 +87,6 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Button Button_Search;
 
         /// <summary>
-        /// Label1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
-
-        /// <summary>
         /// CheckBoxList_Filter control.
         /// </summary>
         /// <remarks>

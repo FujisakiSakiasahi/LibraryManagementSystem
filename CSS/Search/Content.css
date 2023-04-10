@@ -73,3 +73,11 @@ a.item-card:visited {
 .search-container {
     margin: 10px;
 }
+
+.filter {
+    background: whitesmoke;
+}
+
+.pager-buttons {
+    margin: 10px;
+}

@@ -5,23 +5,13 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
     <title></title>
-    <link rel="stylesheet" href="CSS/Header.css" /> 
-    <link rel="stylesheet" href="CSS/Footer.css" /> 
-    <link rel="stylesheet" href="CSS/Search/Content.css" /> 
+    <link rel="stylesheet" href="CSS/Header.css" />
+    <link rel="stylesheet" href="CSS/Footer.css" />
+    <link rel="stylesheet" href="CSS/Search/Content.css" />
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
-    <?php
-        $title = $_GET['title'];
-        $page = $_GET['page'];
-    ?>
-
-    <style type="text/css">
-        :root {
-            --bs-light: $gray-200;
-        }
-    </style>
 
 </head>
 <body>
@@ -82,6 +72,8 @@
 
         <!--Content-->
         <div class="container">
+
+            <!--Search Bar-->
             <div class="search-container container-fluid">
                 <div class="row">
                     <div class="col-11">
@@ -93,32 +85,47 @@
                     </div>
                 </div>
             </div>
-            
-            <div class="row">
-                <div class="col-lg-2">
-                </div>
-                <div class="col-lg-2 bg-light">
-                    <div class="row">
-                        <asp:Label ID="Label1" runat="server" Text="Filter"></asp:Label>
-                    </div>
-                    <hr />
-                    <div class="row">
-                        <asp:CheckBoxList ID="CheckBoxList_Filter" runat="server">
-                            <asp:ListItem>Tag</asp:ListItem>
-                        </asp:CheckBoxList>
-                    </div>
-                </div>
-                <div class="col-lg-6 bg-light">
-                    <div class="row">
-                        <h2>Result...</h2>
-                        <hr />
-                    </div>
-                    <div class="row">
 
-                        <div class="row">
-                            <div class="container">
-                                <ul class="list-group" id="search_result" runat="server">
-                                    <!--list item card, result for searching
+            <!--Filter & Result-->
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!--Filter-->
+                    <div class="filter col-3">
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>Filter</h2>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <asp:CheckBoxList ID="CheckBoxList_Filter" runat="server">
+                                        <asp:ListItem>Tag</asp:ListItem>
+                                    </asp:CheckBoxList>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Results-->
+                    <div class="result col-9">
+                        <div class="contaier-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <h2>Results</h2>
+                                    <hr />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="contaier-fluid">
+                            <div class="row">
+                                <div class="col-12">
+                                    <ul class="list-group" id="search_result" runat="server">
+                                        <!--list item card, result for searching
                                             
                                             
                                             <li class="list-group-item">
@@ -135,37 +142,37 @@
                                                 </a>
                                             </li>
                                                 -->
-
-                                </ul>
-                            </div>
-
-                        </div>
-                        <div class="row">
-                            <div class="d-flex justify-content-center">
-                                <div id="pager_buttons" runat="server">
-                                    <!--
-                                                
-                                            <ul class="pagination">
-                                                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                                <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                                                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-                                            </ul>
-                                                
-                                                -->
+                                    </ul>
                                 </div>
                             </div>
                         </div>
+                    </div>
 
+                </div>
+            </div>
+
+            <!--Pager Buttons-->
+            <div class="pager-buttons container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="d-flex justify-content-center">
+                            <div id="pager_buttons" runat="server">
+                                <!--
+                                                
+                                        <ul class="pagination">
+                                            <li class="page-item"><a class="page-link" href="#">Previous</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                            <li class="page-item active"><a class="page-link" href="#">2</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                            <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                                        </ul>
+                                                
+                                            -->
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="col-lg-2">
-                </div>
             </div>
-            <div class="row">
-            </div>
-
         </div>
 
         <!--Footer-->
