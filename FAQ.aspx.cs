@@ -12,8 +12,6 @@ namespace LibraryManagementSystem
 		
         protected void Page_Load(object sender, EventArgs e)
 		{
-            
-
             if (Session["loginState"] != null) {
                 sessionHandler.CheckLoginState();
             } else { Session["loginState"] = "false"; }
@@ -31,10 +29,8 @@ namespace LibraryManagementSystem
 
             if (sessionHandler.GetIsLibrarian()) { 
                 librarian_link.Visible = true;
-                Response.Write($"<script>alert('{librarian_link + " " + true}')</script>");
             }
         }
-
         protected void Logout_Function(object sender, EventArgs e) {
             string link = sessionHandler.GetIsLibrarian() && Request.RawUrl.Equals("Librarian.aspx") ?  "Home.aspx" : Request.RawUrl;
             
