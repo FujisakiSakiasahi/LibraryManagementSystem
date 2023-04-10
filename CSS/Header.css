@@ -36,6 +36,7 @@
     display: flex;
     justify-content:center;
     align-items: center;
+    margin: 35px;
 }
 
 a {
@@ -46,6 +47,35 @@ a {
 a:visited {
     text-decoration: none;
     color: white;
+}
+
+
+
+.header-bookmark-base {
+    float: right;
+    box-shadow: 5px -6px 5px 0px rgba(0, 0, 0, 0.25);
+    width: 70px;
+    height: 150px;
+    background: #e58f8f;
+}
+
+.header-bookmark-circle {
+    top: 20px;
+    right: 10px;
+    height: 50px;
+    width: 50px;
+    background-color: #555;
+    border-radius: 50%;
+}
+
+.header-bookmark-tri {
+    left: -20%;
+    top: 80px;
+    width: 0;
+    height: 0;
+    border-left: 35px solid transparent;
+    border-right: 35px solid transparent;
+    border-bottom: 50px solid white;
 }
 
 .nav-buttons {
@@ -72,4 +102,10 @@ a:visited {
     height: 50px;
     width: 50px;
 }
+
+/*New Header*/
+.navigation-bar {
+    background: #2F557F;
+}
+
 

@@ -117,6 +117,7 @@
     <Content Include="CSS\Login\Textbox.css" />
     <Content Include="CSS\Search\Content.css" />
     <Content Include="Description.aspx" />
+    <Content Include="FAQ.aspx" />
     <Content Include="images\book.jpg" />
     <Content Include="images\HamiShu_Blue_BG.png" />
     <Content Include="images\HamiShu_Logo_WhiteBG.png" />
@@ -141,6 +142,13 @@
     </Compile>
     <Compile Include="Description.aspx.designer.cs">
       <DependentUpon>Description.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="FAQ.aspx.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="FAQ.aspx.designer.cs">
+      <DependentUpon>FAQ.aspx</DependentUpon>
     </Compile>
     <Compile Include="Librarian.aspx.cs">
       <DependentUpon>Librarian.aspx</DependentUpon>
