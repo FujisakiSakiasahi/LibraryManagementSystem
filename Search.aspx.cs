@@ -21,12 +21,18 @@ namespace LibraryManagementSystem
         string filter;
         protected void Page_Load(object sender, EventArgs e)
         {
+            //CheckBoxList_Filter got problem where the system cant get the data
+            //textbox also cannot use
+            CheckBoxList_Filter.Enabled = false;
+            
             if (Session["loginState"] != null) {
                 sessionHandler.CheckLoginState();
             } else { Session["loginState"] = "false"; }
 
             try { 
                 bookTitle = Request.QueryString["title"];
+                Textbox_Search.Text = bookTitle?.Replace("+", " ");
+
                 try {
                     page = int.Parse(Request.QueryString["page"]);
                 } catch { 
@@ -36,12 +42,12 @@ namespace LibraryManagementSystem
                 filter = Request.QueryString["filter"];
 
                 LoadFilterList(sessionHandler.RunQuery("SELECT genre, COUNT(bookId) as num_books FROM Genre GROUP BY genre;"));
-                GenerateSearchPageLink(out link);
+                GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
 
                 //get data from database
                 string query;
                 if (filter != null) {
-                    GetFilterString(out string filterString);
+                    string filterString = GetFilterString();
                     query = $"SELECT bookId, bookName, bookDescription, bookImage FROM Book WHERE bookName LIKE '%{ReplacePlusWithSpace(bookTitle)}%' AND bookId IN (SELECT bookId FROM Genre WHERE genre IN ({filterString}));";
                 } else {
                     query = $"SELECT bookId, bookName, bookDescription, bookImage FROM Book WHERE bookName LIKE '%{ReplacePlusWithSpace(bookTitle)}%'";
@@ -54,8 +60,8 @@ namespace LibraryManagementSystem
                 //get data from database
                 string query;
                 if (filter != null) {
-                    GetFilterString(out string filterString);
-                    query = $"SELECT bookId, bookName, bookDescription, bookImage FROM Book WHERE bookId IN (SELECT bookId FROM Genre WHERE genre IN ({filterString});";
+                    string filterString = GetFilterString();
+                    query = $"SELECT bookId, bookName, bookDescription, bookImage FROM Book WHERE bookId IN (SELECT bookId FROM Genre WHERE genre IN ({filterString}));";
                 } else {
                     query = "SELECT bookId, bookName, bookDescription, bookImage FROM Book;";
                 }
@@ -66,47 +72,44 @@ namespace LibraryManagementSystem
             }
         }
 
-        protected void GenerateSearchPageLink(out string link) {
-            link = "Search.aspx";
+        protected void GenerateSearchPageLink(out string link, string title, string filter) {
+            link = "Search.aspx?";
+            bool hasQuery = false;
 
-            if (bookTitle != null) {
-                link += $"?title={bookTitle}";
-
-                GetFilterString(out string filterString);
-                if (filterString != null) {
-                    if (!filterString.Equals("")) {
-                        filterString = filterString.Replace(',', '-');
-                        link += $"&filter={filterString}";
-                    }
-                }
-
-                link += $"&page={page}";
-            } else {
-                GetFilterString(out string filterString);
-                if (filterString != null) {
-                    if (!filterString.Equals("")) {
-                        filterString = filterString.Replace(',', '-');
-                        link += $"?filter={filterString}";
-                    }
-
-                    link += $"&page={page}";
-                } else {
-                    link += $"?page={page}";
-                }
+            if (!string.IsNullOrEmpty(title)) {
+                link += $"title={title.Replace(" ", "+")}";
+                hasQuery = true;
             }
+
+            string filterString = GetFilterString();
+            if (!string.IsNullOrEmpty(filterString)) {
+                if (hasQuery) {
+                    link += "&";
+                }
+
+                link += $"filter={filterString.Replace("'", "").Replace(",","-")}";
+                hasQuery = true;
+            }
+
+            if (hasQuery) {
+                link += "&";
+            }
+
+            link += $"page={page}";
         }
 
-        protected void GetFilterString(out string filterString) {
+        protected string GetFilterString() {
             bool hasFilter = false;
-            filterString = "";
+            string filterString = "";
             foreach (ListItem item in CheckBoxList_Filter.Items) {
+                
                 if (item.Selected) {
                     hasFilter = true;
-                    filterString += "'" + item.Value + "'" + ",";
+                    filterString += "'" + item.Value.Substring(0, item.Value.IndexOf('(')).Trim() + "'" + ",";
                 }
             }
 
-            filterString = hasFilter ? filterString.Remove(filterString.Length - 1) : null;
+            return filterString = hasFilter ? filterString.TrimEnd(',') : null;
         }
 
         protected void LoadFilterList(DataTable dataTable){ 
@@ -114,15 +117,13 @@ namespace LibraryManagementSystem
             string[] filterList = filter?.Split('-');
 
             for (int i = 0; i < dataTable.Rows.Count; i++) {
-                CheckBoxList_Filter.Items.Add(" " + dataTable.Rows[i][0].ToString() + $" ({dataTable.Rows[i][1]})");
-            }
-
-            //check if anything was selected before
-            if (filterList != null) { 
-                for (int i = 0; i < dataTable.Rows.Count; i++) {
-                    for (int j = 0; j < dataTable.Rows.Count; j++) { 
-                        if (dataTable.Rows[i][0].ToString().Equals(filterList[j])) {
-                            CheckBoxList_Filter.Items.FindByText(" " + dataTable.Rows[i][0].ToString() + $" ({dataTable.Rows[i][1]})").Selected = true;
+                ListItem item = new ListItem(" " + dataTable.Rows[i][0].ToString() + $" ({dataTable.Rows[i][1]})");
+                CheckBoxList_Filter.Items.Add(item);
+                if (filterList != null) {
+                    foreach (string filter in filterList) {
+                        if (dataTable.Rows[i][0].ToString().Equals(filter.Trim())) {
+                            item.Selected = true;
+                            break;
                         }
                     }
                 }
@@ -152,10 +153,10 @@ namespace LibraryManagementSystem
                     content += "";
                 } else {
                     page -= 1;
-                    GenerateSearchPageLink(out link);
+                    GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
                     content += link;
                     page += 1;
-                    GenerateSearchPageLink(out link);
+                    GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
                 }
                 content += $@""">Previous</a></li>";
 
@@ -172,10 +173,10 @@ namespace LibraryManagementSystem
                     content += "";
                 } else {
                     page += 1;
-                    GenerateSearchPageLink(out link);
+                    GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
                     content += link;
                     page -= 1;
-                    GenerateSearchPageLink(out link);
+                    GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
                 }
                 content += $@""">Next</a></li>";
             }
@@ -246,7 +247,7 @@ namespace LibraryManagementSystem
         }
 
         protected void Button_Search_Click(object sender, EventArgs e) {
-            GenerateSearchPageLink(out link);
+            GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
             Response.Redirect(link);
         }
     }

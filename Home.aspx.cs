@@ -141,8 +141,11 @@ namespace LibraryManagementSystem
         }
 
         protected void Button_Search_Click(object sender, EventArgs e){
-            
-            Response.Redirect($"Search.aspx?title={ReplaceSpacesWithPlus(Textbox_Search.Text)}");
+            if (String.IsNullOrEmpty(Textbox_Search.Text)) {
+                Response.Redirect("Search.aspx");
+            } else { 
+                Response.Redirect($"Search.aspx?title={ReplaceSpacesWithPlus(Textbox_Search.Text)}");
+            }
         }
 
         public string ReplaceSpacesWithPlus(string input) {
