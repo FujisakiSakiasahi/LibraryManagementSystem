@@ -33,5 +33,11 @@ namespace LibraryManagementSystem
                 Response.Write($"<script>alert('{librarian_link + " " + true}')</script>");
             }
         }
+
+        protected void Logout_Function(object sender, EventArgs e) {
+            Session["userLoginState"] = false;
+            Session.Abandon();
+            Response.Redirect(Request.RawUrl);
+        }
 	}
 }
