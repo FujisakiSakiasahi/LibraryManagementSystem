@@ -43,7 +43,21 @@ namespace LibraryManagementSystem {
         private SessionHandler sessionHandler = new SessionHandler();
         private DataTable currentData = new DataTable();
 
-        //button functions for Manage Book
+        protected void Page_Load(object sender, EventArgs e) {
+            if (!this.IsPostBack) {
+                if (Session["loginState"] != null) {
+                    sessionHandler.CheckLoginState();
+                } else { Session["loginState"] = "false"; };
+
+                //when the page is loaded the Multiview will be set on View 0 which is manage book page, this line of code is to load the data on the first hand
+                String[] tableColumn = { "bookId", "bookName" };
+                LoadDataIntoGridView(GetAllData(SelectedPage.ManageBook).AsDataView().ToTable(true, tableColumn), GridView_BookList);
+            }
+
+        }
+
+        //--------------------------------------------------------------------------------------------------------------------------------------------------
+        //-----------------------------------------------------button functions for Manage Book-------------------------------------------------------------
         protected void Button_Click_ManageBook(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = (int)SelectedPage.ManageBook;
             String[] tableColumn = { "bookId", "bookName" };
@@ -124,7 +138,6 @@ namespace LibraryManagementSystem {
             DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Book WHERE bookId = {Label_BookID2.Text}");
 
             LoadBookData(SelectedPage.ViewBook, returned);
-
         }
 
         protected void Button_Click_AbortAddingNewBook(object sender, EventArgs e) {
@@ -146,10 +159,35 @@ namespace LibraryManagementSystem {
             MultiView1.ActiveViewIndex = (int)SelectedPage.ViewBook;
 
             LoadBookData(SelectedPage.ViewBook, sessionHandler.RunQuery($"SELECT * FROM Book WHERE bookId = {highest}"));
-
         }
 
-        //button functions for Manage User
+        protected void LoadBookData(SelectedPage page, DataTable returnedData) {
+            if (page == SelectedPage.ViewBook) {
+                Label_BookID.Text = returnedData.Rows[0][0].ToString();
+                Label_Title.Text = returnedData.Rows[0][1].ToString();
+                Label_Author.Text = returnedData.Rows[0][2].ToString();
+                Label_Description.Text = returnedData.Rows[0][4].ToString();
+                Label_Publisher.Text = returnedData.Rows[0][5].ToString();
+                Label_PublishDate.Text = returnedData.Rows[0][6].ToString();
+                Label_Rating.Text = returnedData.Rows[0][7].ToString();
+                Label_Language.Text = returnedData.Rows[0][8].ToString();
+                Label_ISBN.Text = returnedData.Rows[0][9].ToString();
+                Label_ShelfID.Text = returnedData.Rows[0][10].ToString();
+                if (returnedData.Rows[0][10].ToString().Equals("1")) {
+                    Label_Availability.Text = "True";
+                } else if (returnedData.Rows[0][10].ToString().Equals("0")) {
+                    Label_Availability.Text = "False";
+                } else {
+                    Label_Availability.Text = "N/A";
+
+                }
+            } else if (page == SelectedPage.EditBook) {
+
+            }
+        }
+
+        //---------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //----------------------------------------------------------button functions for Manage User---------------------------------------------------------------------
         protected void Button_Click_ManageUser(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = (int)SelectedPage.ManageUser;
 
@@ -238,8 +276,28 @@ namespace LibraryManagementSystem {
 
         }
 
-        //button functions for Check In
+        protected void LoadUserData(SelectedPage page, DataTable returnedData) {
+            if (page == SelectedPage.ViewUser) {
+                Label_MemberID.Text = returnedData.Rows[0][0].ToString();
+                Label_MemberName2.Text = returnedData.Rows[0][1].ToString();
+                Label_PhoneNumber2.Text = returnedData.Rows[0][2].ToString();
+                Label_Email2.Text = returnedData.Rows[0][3].ToString();
+                Label_Password2.Text = returnedData.Rows[0]["memberPasswd"].ToString();
+                if (returnedData.Rows[0][5].ToString().Equals("0")) {
+                    Label_Notification2.Text = "False";
+                } else {
+                    Label_Notification2.Text = "True";
+                }
+                if (returnedData.Rows[0][6].ToString().Equals("0")) {
+                    Label_Librarian2.Text = "False";
+                } else {
+                    Label_Librarian2.Text = "True";
+                }
+            }
+        }
 
+        //--------------------------------------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------button functions for Check In--------------------------------------------------------------------
         protected void Button_CLick_SearchForBorrowedBooks(object sender, EventArgs e) {
             if (Textbox_SearchBorrowedBookBasedOnUser.Text.Equals("")) {
                 DataTable members = sessionHandler.RunQuery("SELECT memberId, memberName FROM Member WHERE memberId >= 1;");
@@ -325,7 +383,8 @@ namespace LibraryManagementSystem {
 
         }
 
-        //button functions for Check Out
+        //--------------------------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------button functions for Check Out-------------------------------------------------------------
 
         protected void Button_Click_CheckOut(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = (int)SelectedPage.CheckOut;
@@ -343,8 +402,6 @@ namespace LibraryManagementSystem {
             ListBox_SearchedBookCheckOut.DataBind();
 
             Label_ConfirmCheckOut.Visible = false;
-
-
         }
 
         protected void Button_Click_SearchUserCheckOut(object sender, EventArgs e) {
@@ -417,7 +474,8 @@ namespace LibraryManagementSystem {
             }
         }
 
-        //code for notifications page
+        //----------------------------------------------------------------------------------------------------------------------------------
+        //--------------------------------------------------------------code for notifications page-----------------------------------------
         protected void Button_Click_Notification(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = 10;
 
@@ -513,7 +571,7 @@ namespace LibraryManagementSystem {
 
         }
 
-        protected void Button_Click_AddedRequestedBooks(object sender, EventArgs e) {
+        protected void Button_Click_AddedRequestedBooks(object sender, EventArgs e) { //remove requested book from list
             String requests = "";
 
             foreach (ListItem request in CheckBoxList_RequestedBooks.Items) {
@@ -538,9 +596,8 @@ namespace LibraryManagementSystem {
 
         }
 
-
-
-        //code for overdue page
+        //-----------------------------------------------------------------------------------------------------------------------------------------------------------
+        //---------------------------------------------------------------------code for overdue page----------------------------------------------------------------
         protected void Button_Click_ManageOverdue(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = 12;
 
@@ -563,55 +620,11 @@ namespace LibraryManagementSystem {
 
         }
 
-        //functions for the actual backend function
-        protected void Page_Load(object sender, EventArgs e) {
-            if (!this.IsPostBack) {
-                if (Session["loginState"] != null) {
-                    sessionHandler.CheckLoginState();
-                } else { Session["loginState"] = "false"; };
-
-                //when the page is loaded the Multiview will be set on View 0 which is manage book page, this line of code is to load the data on the first hand
-                String[] tableColumn = { "bookId", "bookName" };
-                LoadDataIntoGridView(GetAllData(SelectedPage.ManageBook).AsDataView().ToTable(true, tableColumn), GridView_BookList);
-            }
-
-        }
-
-        protected DataTable Search(SelectedPage page, String searchString) {
-            String query = "";
-            switch (page) {
-                case SelectedPage.ManageBook:
-                    query += "Book WHERE ";
-
-                    if (int.TryParse(searchString, out int bookId)) {
-                        query += "SELECT * FROM bookId = " + bookId + ";";
-                    } else {
-                        query += "bookName LIKE '%" + searchString + "%';";
-                    }
-                    break;
-                case SelectedPage.ManageUser:
-                    query += "SELECT * FROM Member WHERE ";
-
-                    if (int.TryParse(searchString, out int memberId)) {
-                        query += "memberId = " + memberId;
-                    } else {
-                        query += "memberName LIKE '%" + searchString + "%'";
-                    }
-
-                    query += " WHERE memberId>=1;";
-
-                    break;
-                case SelectedPage.CheckIn:
-
-                    break;
-                case SelectedPage.CheckOut:
-                    //SELECT CASE WHEN NOT EXISTS (SELECT bookId FROM (SELECT bookId FROM Borrowed UNION SELECT bookId FROM Reserved) as Combined) THEN 1 ELSE 0 END;
-                    break;
-                case SelectedPage.Notification:
-                    break;
-            }
-
-            return sessionHandler.RunQuery(query);
+        //-----------------------------------------------------------------------------------------------------------
+        //--------------------------------------------general functions----------------------------------------------
+        protected void LoadDataIntoGridView(DataTable dataTable, GridView gridView) {
+            gridView.DataSource = dataTable;
+            gridView.DataBind();
         }
 
         protected DataTable GetAllData(SelectedPage page) {
@@ -635,90 +648,33 @@ namespace LibraryManagementSystem {
             return sessionHandler.RunQuery(query);
         }
 
-        protected void LoadBookData(SelectedPage page, DataTable returnedData) {
-            if (page == SelectedPage.ViewBook) {
-                Label_BookID.Text = returnedData.Rows[0][0].ToString();
-                Label_Title.Text = returnedData.Rows[0][1].ToString();
-                Label_Author.Text = returnedData.Rows[0][2].ToString();
-                Label_Description.Text = returnedData.Rows[0][4].ToString();
-                Label_Publisher.Text = returnedData.Rows[0][5].ToString();
-                Label_PublishDate.Text = returnedData.Rows[0][6].ToString();
-                Label_Rating.Text = returnedData.Rows[0][7].ToString();
-                Label_Language.Text = returnedData.Rows[0][8].ToString();
-                Label_ISBN.Text = returnedData.Rows[0][9].ToString();
-                Label_ShelfID.Text = returnedData.Rows[0][10].ToString();
-                if (returnedData.Rows[0][10].ToString().Equals("1")) {
-                    Label_Availability.Text = "True";
-                } else if (returnedData.Rows[0][10].ToString().Equals("0")) {
-                    Label_Availability.Text = "False";
-                } else {
-                    Label_Availability.Text = "N/A";
+        protected DataTable Search(SelectedPage page, String searchString) { // for user and book
+            String query = "";
+            switch (page) {
+                case SelectedPage.ManageBook:
+                    query += "Book WHERE ";
 
-                }
-            } else if (page == SelectedPage.EditBook) {
+                    if (int.TryParse(searchString, out int bookId)) {
+                        query += "SELECT * FROM bookId = " + bookId + ";";
+                    } else {
+                        query += "bookName LIKE '%" + searchString + "%';";
+                    }
+                    break;
+                case SelectedPage.ManageUser:
+                    query += "SELECT * FROM Member WHERE ";
 
+                    if (int.TryParse(searchString, out int memberId)) {
+                        query += "memberId = " + memberId;
+                    } else {
+                        query += "memberName LIKE '%" + searchString + "%'";
+                    }
+
+                    query += " WHERE memberId>=1;";
+
+                    break;
             }
-        }
 
-        protected void LoadUserData(SelectedPage page, DataTable returnedData) {
-            if (page == SelectedPage.ViewUser) {
-                Label_MemberID.Text = returnedData.Rows[0][0].ToString();
-                Label_MemberName2.Text = returnedData.Rows[0][1].ToString();
-                Label_PhoneNumber2.Text = returnedData.Rows[0][2].ToString();
-                Label_Email2.Text = returnedData.Rows[0][3].ToString();
-                Label_Password2.Text = returnedData.Rows[0]["memberPasswd"].ToString();
-                if (returnedData.Rows[0][5].ToString().Equals("0")) {
-                    Label_Notification2.Text = "False";
-                } else {
-                    Label_Notification2.Text = "True";
-                }
-                if (returnedData.Rows[0][6].ToString().Equals("0")) {
-                    Label_Librarian2.Text = "False";
-                } else {
-                    Label_Librarian2.Text = "True";
-                }
-            }
-        }
-
-        protected void GetUserBorrowedRecord(int userId) {
-            String query = "SELECT * FROM Borrowed WHERE memberId=" + userId + ";";
-            DataTable returnedData = sessionHandler.RunQuery(query);
-
-            //load data into the list
-            LoadDataIntoGridView(returnedData, GridView_UserList);
-        }
-
-
-        //------------------------------------------------------------------------------------------------------------------
-        //-------------------------------------NOTIFICATION-----------------------------------------------------------------
-        protected void AddNewNotification(String title, String content) {
-            //get the highest Id of the notification
-            DataTable returnedData = sessionHandler.RunQuery("SELECT MAX(notifId) FROM Notification");
-            int notifId = int.Parse(returnedData.Rows[0][0].ToString());
-
-            String query = "INSERT INTO Notification (notifId, memberId, title, msg) VALUES (" +
-                (notifId + 1).ToString() +
-                ", " +
-                sessionHandler.GetUserId().ToString() +
-                ", '" + title +
-                "', '" + content +
-                "');";
-            sessionHandler.RunQuery(query);
-
-            LoadNotificationList();
-        }
-
-        //use to load all the notification that has been made
-        protected void LoadNotificationList() {
-            DataTable returnedData = sessionHandler.RunQuery("SELECT * FROM Notification;");
-
-            //set it into datatable
-            LoadDataIntoGridView(returnedData, GridView_UserList);
-        }
-
-        protected void LoadDataIntoGridView(DataTable dataTable, GridView gridView) {
-            gridView.DataSource = dataTable;
-            gridView.DataBind();
+            return sessionHandler.RunQuery(query);
         }
     }
 }
