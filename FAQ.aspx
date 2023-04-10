@@ -58,19 +58,7 @@
                                     <li>
                                         <hr class="dropdown-divider"/>
                                     </li>
-                                    <script>
-                                        function clearSessionData() {
-                                          // Clear the loginState session data
-                                          <%= Session["loginState"] %> = "";
-
-                                          // Clear the memberId session data
-                                          <%= Session["memberId"] %> = "-1";
-
-                                          // Clear the isLibrarian session data
-                                          <%= Session["isLibrarian"] %> = "false";
-                                                                                }
-                                    </script>
-                                    <li><a class="dropdown-item" href="#" onclick="clearSessionData(); location.reload();">Sign out</a></li>
+                                    <li><a class="dropdown-item" href="#">Sign out</a></li>
                                 </ul>
                             </div>
                         </div>
