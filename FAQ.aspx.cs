@@ -8,10 +8,11 @@ using System.Web.UI.WebControls;
 namespace LibraryManagementSystem
 {
 	public partial class FAQ : System.Web.UI.Page
-	{
-		protected void Page_Load(object sender, EventArgs e)
+	{   SessionHandler sessionHandler = new SessionHandler();
+		
+        protected void Page_Load(object sender, EventArgs e)
 		{
-            SessionHandler sessionHandler = new SessionHandler();
+            
 
             if (Session["loginState"] != null) {
                 sessionHandler.CheckLoginState();
@@ -35,9 +36,11 @@ namespace LibraryManagementSystem
         }
 
         protected void Logout_Function(object sender, EventArgs e) {
+            string link = sessionHandler.GetIsLibrarian() && Request.RawUrl.Equals("Librarian.aspx") ?  "Home.aspx" : Request.RawUrl;
+            
             Session["userLoginState"] = false;
             Session.Abandon();
-            Response.Redirect(Request.RawUrl);
+            Response.Redirect(link);
         }
 	}
 }
