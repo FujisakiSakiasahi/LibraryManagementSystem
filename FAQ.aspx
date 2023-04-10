@@ -58,9 +58,7 @@
                                     <li>
                                         <hr class="dropdown-divider"/>
                                     </li>
-                                    <li>
-                                        <a class="dropdown-item" href="#" id="Logout_Button" runat="server" onserverclick="Logout_Function">Sign out</a>
-                                        <!--<asp:Button ID="Button1" runat="server" Text="Button" OnClick="Logout_Function" />--></li>
+                                    <li><a class="dropdown-item" href="#" id="Logout_Button" runat="server" onserverclick="Logout_Function">Sign out</a></li>
                                 </ul>
                             </div>
                         </div>
