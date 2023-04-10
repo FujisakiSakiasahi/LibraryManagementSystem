@@ -28,9 +28,9 @@ namespace LibraryManagementSystem
             } else {
                 Session["loginState"] = "true";
                 Session["memberId"] = returnedData.Rows[0][0];
+                Session["isLibrarian"] = returnedData.Rows[0][1];
 
                 Label3.Text = returnedData.Rows[0][1].ToString();
-                //we have no fucking clue as to why sometime false sometime 0
                 if (returnedData.Rows[0][1].ToString() == "False" || returnedData.Rows[0][1].ToString() == "0") {
                     Response.Redirect("Home.aspx");
                 } else if (returnedData.Rows[0][1].ToString() == "True" || returnedData.Rows[0][1].ToString() == "1") {
