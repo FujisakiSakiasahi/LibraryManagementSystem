@@ -13,8 +13,9 @@ namespace LibraryManagementSystem
     public class SessionHandler
     {
         private MySqlConnection connection;
-        public bool userLoginState;
-        public int loginUserId;
+        private bool userLoginState;
+        private int loginUserId;
+        private bool isLibrarian; 
 
         public SessionHandler()
         {
@@ -26,6 +27,7 @@ namespace LibraryManagementSystem
                 connection = new MySqlConnection(settings.ConnectionString);
 
             userLoginState = false;
+            isLibrarian = false;
         }
 
         public void CheckLoginState()
@@ -48,6 +50,18 @@ namespace LibraryManagementSystem
             else
             {
                 loginUserId = -1;
+            }
+
+            //load isLibrarian
+            if (HttpContext.Current.Session["memberId"] != null) {
+                if (HttpContext.Current.Session["isLibrarian"].ToString() == "1" || HttpContext.Current.Session["isLibrarian"].ToString() == "true") {
+                    isLibrarian = true;
+                } else { 
+                    isLibrarian= false;
+                }
+                
+            } else {
+                isLibrarian = false;
             }
         }
 
@@ -72,9 +86,8 @@ namespace LibraryManagementSystem
             return userLoginState;
         }
 
-        public void SetCookie(String cookieName, String cookieValue)
-        {
-            HttpContext.Current.Response.Cookies.Add(new HttpCookie(cookieName, cookieValue));
+        public bool GetIsLibrarian() {
+            return isLibrarian;
         }
     }
 }

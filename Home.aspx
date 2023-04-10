@@ -38,24 +38,27 @@
 
           <div class="header-login-container">
               <div class="header-login">
+
+                  <!--Login Page link before login-->
                   <div id="login_link" runat="server">
                       <a href="Login.aspx" class="link">
                           <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
-                      </a>y
+                      </a>
                   </div>
+
                   <!--Profile Picture after login-->
                   <div id="profile" runat="server">
                       <div class="d-flex align-items-center">
                           <div class="dropdown text-end">
                               <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                  <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle">
+                                  <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle"/>
                               </a>
                               <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
                                   <li><a class="dropdown-item" href="#">New project...</a></li>
                                   <li><a class="dropdown-item" href="#">Settings</a></li>
                                   <li><a class="dropdown-item" href="#">Profile</a></li>
                                   <li>
-                                      <hr class="dropdown-divider">
+                                      <hr class="dropdown-divider"/>
                                   </li>
                                   <li><a class="dropdown-item" href="#">Sign out</a></li>
                               </ul>
@@ -66,8 +69,6 @@
           </div>
       </div>
 
-
-        </div>
         <div class="content">
             <div class="banner-container">
                 <div class="banner">
