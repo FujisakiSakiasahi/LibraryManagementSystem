@@ -13,7 +13,10 @@ namespace LibraryManagementSystem
         protected void Page_Load(object sender, EventArgs e)
 		{
             SetInitialLoginState();
+            HeaderUIHandler();
+        }
 
+        protected void HeaderUIHandler() { 
             login_link.Visible = false;
             profile.Visible = false;
 
@@ -27,10 +30,8 @@ namespace LibraryManagementSystem
 
             if (sessionHandler.GetIsLibrarian()) { 
                 librarian_link.Visible = true;
-            }
+            } 
         }
-
-        protected void 
 
         protected void SetInitialLoginState() {
             if (Session["loginState"] != null) {
