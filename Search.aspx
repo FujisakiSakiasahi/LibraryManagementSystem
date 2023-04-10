@@ -62,8 +62,10 @@
         <div class="container-fluid">
             <div class="row">
                 <div class="top-container">
-                    <input id="textbox_search" type="text" placeholder="Search for books here..." class="search-bar" /><br />
-                    <asp:Button ID="Button_Search" runat="server" Text="Search" CssClass="search-button" />
+                    <asp:TextBox runat="server" ID="Textbox1" class="search-bar-textbox"> </asp:TextBox>
+                    <!--<input id="textbox_search" type="text" placeholder="Search for books here..." class="search-bar" />-->
+                    <br />
+                    <asp:Button ID="Button_Search" runat="server" Text="Search" CssClass="search-button" OnClick="Button_Search_Click" />
                 </div>
             </div>
             <div class="row">

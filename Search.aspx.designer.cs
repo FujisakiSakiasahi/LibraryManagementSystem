@@ -76,6 +76,15 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Label login_button;
 
         /// <summary>
+        /// Textbox1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Textbox1;
+
+        /// <summary>
         /// Button_Search control.
         /// </summary>
         /// <remarks>

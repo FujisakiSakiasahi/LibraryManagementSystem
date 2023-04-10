@@ -70,10 +70,10 @@ namespace LibraryManagementSystem
             link = "Search.aspx";
 
             if (bookTitle != null) {
-                link += $"?title={bookTitle}&page=";
+                link += $"?title={bookTitle}";
 
                 GetFilterString(out string filterString);
-                if (filter != null) {
+                if (filterString != null) {
                     if (!filterString.Equals("")) {
                         filterString = filterString.Replace(',', '-');
                         link += $"&filter={filterString}";
@@ -83,7 +83,7 @@ namespace LibraryManagementSystem
                 link += $"&page={page}";
             } else {
                 GetFilterString(out string filterString);
-                if (filter != null) {
+                if (filterString != null) {
                     if (!filterString.Equals("")) {
                         filterString = filterString.Replace(',', '-');
                         link += $"?filter={filterString}";
@@ -106,7 +106,7 @@ namespace LibraryManagementSystem
                 }
             }
 
-            filterString = hasFilter ? filterString.Remove(filterString.Length - 1) : "";
+            filterString = hasFilter ? filterString.Remove(filterString.Length - 1) : null;
         }
 
         protected void LoadFilterList(DataTable dataTable){ 
@@ -243,6 +243,11 @@ namespace LibraryManagementSystem
                 search_result.InnerHtml = "";
                 search_result.InnerHtml = content;
             }
+        }
+
+        protected void Button_Search_Click(object sender, EventArgs e) {
+            GenerateSearchPageLink(out link);
+            Response.Redirect(link);
         }
     }
 }
