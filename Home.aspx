@@ -41,31 +41,33 @@
                   <div id="login_link" runat="server">
                       <a href="Login.aspx" class="link">
                           <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
-                      </a>
+                      </a>y
                   </div>
+                  <!--Profile Picture after login-->
                   <div id="profile" runat="server">
-                    <div class="d-flex align-items-center">
-                      <div class="dropdown">
-                        <!-- Profile picture with dropdown toggle -->
-                        <a href="#" class="d-block rounded-circle overflow-hidden border border-2 border-light dropdown-toggle" id="profile_menu" data-bs-toggle="dropdown" aria-expanded="false">
-                          <img src="images/book.jpg" alt="Profile Picture" class="w-100 h-100"/>
-                        </a>
-
-                        <!-- Dropdown menu with items -->
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="profile-menu">
-                          <li><a class="dropdown-item" href="#">Notification</a></li>
-                          <li><a class="dropdown-item" href="#">Settings</a></li>
-                          <li><hr class="dropdown-divider"/></li>
-                          <li><a class="dropdown-item" href="#">Log Out</a></li>
-                        </ul>
+                      <div class="d-flex align-items-center">
+                          <div class="dropdown text-end">
+                              <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                  <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle">
+                              </a>
+                              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                                  <li><a class="dropdown-item" href="#">New project...</a></li>
+                                  <li><a class="dropdown-item" href="#">Settings</a></li>
+                                  <li><a class="dropdown-item" href="#">Profile</a></li>
+                                  <li>
+                                      <hr class="dropdown-divider">
+                                  </li>
+                                  <li><a class="dropdown-item" href="#">Sign out</a></li>
+                              </ul>
+                          </div>
                       </div>
-                    </div>
                   </div>
               </div>
           </div>
+      </div>
 
 
-       </div>
+        </div>
         <div class="content">
             <div class="banner-container">
                 <div class="banner">
@@ -112,31 +114,64 @@
                 </div>
             </div>
         </div>
-        <div class="footer">
-            <div class="footer-container">
-                <div class="footer-item footer-item-1">
+        <!--Footer-->
 
-                    <asp:Image ID="footer_logo_image" runat="server" ImageUrl="~/images/HamiShu_Blue_BG.png" Width="484px" />
-                    <br />
-                    <br />
-                    <asp:HyperLink ID="footer_home" runat="server" NavigateUrl="~/Home.aspx" Target="_self">Home</asp:HyperLink>
-                    <br />
-                    <br />
-                    <asp:HyperLink ID="footer_search" runat="server">Search</asp:HyperLink>
-                    <br />
-                    <br />
-                    <asp:HyperLink ID="footer_temp" runat="server">Temp</asp:HyperLink>
-                    <br />
-                    <br />
-                    <asp:HyperLink ID="footer_temp2" runat="server">temp</asp:HyperLink>
+        <footer class="text-center text-lg-start bg-dark text-white">
+            <!-- Section: Links  -->
+            <section class="">
+                <div class="container text-center text-md-start mt-5">
+                    <!-- Grid row -->
+                    <div class="row mt-3">
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+                            <!-- Content -->
+                            <h6 class="text-uppercase fw-bold mb-4">
+                                HamiShu LMS
 
+                            </h6>
+                            <p>
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+                            </p>
+                        </div>
+
+                        <!-- Grid column -->
+                        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">Useful links
+                            </h6>
+                            <p>
+                                <a href="Home.aspx" class="text-reset">Home</a>
+                            </p>
+                            <p>
+                                <a href="Search.aspx" class="text-reset">Search</a>
+                            </p>
+                            <p>
+                                <a href="AboutUs.aspx" class="text-reset">About Us</a>
+                            </p>
+                            <p>
+                                <a href="FAQ.aspx" class="text-reset">FAQ</a>
+                            </p>
+                        </div>
+                        <!-- Grid column -->
+
+                        <!-- Grid column -->
+                        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+                            <!-- Links -->
+                            <h6 class="text-uppercase fw-bold mb-4">Contact</h6>
+                            <p>Jalan XXX, Taman XXX, 99999, City XXX, State XXX, Country XXX</p>
+                            <p>XXX@example.com</p>
+                            <p class="footer-text">+ 01 234 567 88</p>
+                            <p>+ 01 234 567 89</p>
+                        </div>
+                        <!-- Grid column -->
+                    </div>
+                    <!-- Grid row -->
                 </div>
-                <div class="footer-item footer-item-2">
+            </section>
+            <!-- Section: Links  -->
 
-                </div>
-            </div>
-
-        </div>
+        </footer>
+        <!-- Footer -->
     </form>
 </body>
 </html>
