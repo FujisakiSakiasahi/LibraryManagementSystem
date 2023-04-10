@@ -52,13 +52,25 @@
                                     <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle"/>
                                 </a>
                                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
-                                    <li><a class="dropdown-item" href="#">New project...</a></li>
-                                    <li><a class="dropdown-item" href="#">Settings</a></li>
-                                    <li><a class="dropdown-item" href="#">Profile</a></li>
+                                    <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
+                                    <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
+                                    <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
                                     <li>
                                         <hr class="dropdown-divider"/>
                                     </li>
-                                    <li><a class="dropdown-item" href="#">Sign out</a></li>
+                                    <script>
+                                        function clearSessionData() {
+                                          // Clear the loginState session data
+                                          <%= Session["loginState"] %> = "";
+
+                                          // Clear the memberId session data
+                                          <%= Session["memberId"] %> = "-1";
+
+                                          // Clear the isLibrarian session data
+                                          <%= Session["isLibrarian"] %> = "false";
+                                                                                }
+                                    </script>
+                                    <li><a class="dropdown-item" href="#" onclick="clearSessionData(); location.reload();">Sign out</a></li>
                                 </ul>
                             </div>
                         </div>
