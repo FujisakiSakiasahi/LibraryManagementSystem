@@ -18,7 +18,6 @@
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <form id="form1" runat="server">
@@ -134,7 +133,7 @@
                 </div>
             </div>
         </div>
-        =
+
         <!--Footer-->
 
         <footer class="text-center text-lg-start bg-dark text-white">
