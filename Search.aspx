@@ -18,56 +18,82 @@
     ?>
 
     <style type="text/css">
-
         :root {
             --bs-light: $gray-200;
         }
-
-.search-bar-textbox {
-    height: 38px;
-    width: 856px;
-    border: 0;
-    border-radius: 10px;
-    font-size: 20px;
-    padding: 10px;
-}</style>
+    </style>
 
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="header">
-          <div class="header-logo-container">
-              <div class="header-logo">
-                  <asp:Image ID="logo_image" runat="server" ImageUrl="~/images/HamiShu_Blue_BG.png" Width="208px" />
-              </div>
-          </div>
 
-          <div class="header-navigation-container">
-              <asp:Button ID="header_home" runat="server" Text="Home" CssClass="nav-buttons" PostBackUrl="~/Home.aspx" />
-              <asp:Button ID="header_search" runat="server" Text="Search" CssClass="nav-buttons" PostBackUrl="~/Search.aspx" />
-              <asp:Button ID="header_about_us" runat="server" Text="About Us" CssClass="nav-buttons" PostBackUrl="~/AboutUs.aspx" />
-              <asp:Button ID="header_temp" runat="server" Text="Temp" CssClass="nav-buttons" />
-          </div>
-
-          <div class="header-login-container">
-              <div class="header-login">
-                  <a href="Login.aspx" class="link">
-                      <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
-                  </a>
-              </div>
-          </div>
+        <!--Header-->
+        <div class="navigation-bar container-fluid">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
 
-       </div>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="top-container">
-                    <asp:TextBox runat="server" ID="Textbox_Search" class="search-bar-textbox"> </asp:TextBox>
-                    <!--<input id="textbox_search" type="text" placeholder="Search for books here..." class="search-bar" />-->
-                    <br />
-                    <asp:Button ID="Button_Search" runat="server" Text="Search" CssClass="search-button" OnClick="Button_Search_Click" />
+                <!--Logo-->
+                <a href="Home.aspx" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <img src="images/HamiShu_Blue_BG.png" alt="Alternate Text" class="img-responsive" width="150" />
+                </a>
+
+                <!--Navigation Links-->
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="Home.aspx" class="nav-link px-2 link-light ">Home</a></li>
+                    <li><a href="Search.aspx" class="nav-link px-2 link-light">Search</a></li>
+                    <li><a href="AboutUs.aspx" class="nav-link px-2 link-light">About Us</a></li>
+                    <li><a href="FAQ.aspx" class="nav-link px-2 link-light">FAQ</a></li>
+                    <li id="librarian_link" runat="server"><a href="Librarian.aspx" class="nav-link px-2 link-light">Librarian</a></li>
+                </ul>
+
+                <!--Login / Profile Dropdown-->
+                <div class="col-md-3 text-end ">
+
+                    <!--Login / Signup-->
+                    <div id="login_link" runat="server">
+                        <a href="Login.aspx" class="link-light login-text">
+                            <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
+                        </a>
+                    </div>
+
+                    <!--Profile Picture & Dropdown after login-->
+                    <div id="profile" runat="server">
+                        <div class="d-flex align-items-center">
+                            <div class="dropdown text-end">
+                                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" />
+                                </a>
+                                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                                    <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
+                                    <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
+                                    <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" id="Logout_Button" runat="server" onserverclick="Logout_Function">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
+
+
+        <!--Content-->
+        <div class="container">
+            <div class="search-container container-fluid">
+                <div class="row">
+                    <div class="col-11">
+                        <asp:TextBox runat="server" ID="Textbox_Search" class="search-bar"> </asp:TextBox>
+                        <!--<input id="textbox_search" type="text" placeholder="Search for books here..." class="search-bar" />-->
+                    </div>
+                    <div class="col-1">
+                        <asp:Button ID="Button_Search" runat="server" Text="Search" CssClass="search-button" OnClick="Button_Search_Click" />
+                    </div>
                 </div>
             </div>
+            
             <div class="row">
                 <div class="col-lg-2">
                 </div>
@@ -75,7 +101,7 @@
                     <div class="row">
                         <asp:Label ID="Label1" runat="server" Text="Filter"></asp:Label>
                     </div>
-                    <hr/>
+                    <hr />
                     <div class="row">
                         <asp:CheckBoxList ID="CheckBoxList_Filter" runat="server">
                             <asp:ListItem>Tag</asp:ListItem>
@@ -85,14 +111,14 @@
                 <div class="col-lg-6 bg-light">
                     <div class="row">
                         <h2>Result...</h2>
-                        <hr/>
+                        <hr />
                     </div>
                     <div class="row">
 
-                            <div class="row">
-                                    <div class="container">
-                                        <ul class="list-group" id="search_result" runat="server">
-                                            <!--list item card, result for searching
+                        <div class="row">
+                            <div class="container">
+                                <ul class="list-group" id="search_result" runat="server">
+                                    <!--list item card, result for searching
                                             
                                             
                                             <li class="list-group-item">
@@ -110,14 +136,14 @@
                                             </li>
                                                 -->
 
-                                        </ul>
-                                    </div>
-                                    
-                                </div>
-                            <div class="row">
-                                    <div class="d-flex justify-content-center">
-                                        <div id="pager_buttons" runat="server">
-                                            <!--
+                                </ul>
+                            </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="d-flex justify-content-center">
+                                <div id="pager_buttons" runat="server">
+                                    <!--
                                                 
                                             <ul class="pagination">
                                                 <li class="page-item"><a class="page-link" href="#">Previous</a></li>
@@ -128,9 +154,9 @@
                                             </ul>
                                                 
                                                 -->
-                                        </div>
-                                    </div>
                                 </div>
+                            </div>
+                        </div>
 
                     </div>
                 </div>
@@ -138,8 +164,11 @@
                 </div>
             </div>
             <div class="row">
-                 <!--Footer-->
+            </div>
 
+        </div>
+
+        <!--Footer-->
         <footer class="text-center text-lg-start bg-dark text-white">
             <!-- Section: Links  -->
             <section class="">
@@ -149,8 +178,7 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <!-- Content -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                HamiShu LMS
+                            <h6 class="text-uppercase fw-bold mb-4">HamiShu LMS
 
                             </h6>
                             <p>
@@ -196,8 +224,6 @@
 
         </footer>
         <!-- Footer -->
-            </div>
-        </div>
     </form>
 </body>
 </html>

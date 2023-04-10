@@ -24,10 +24,9 @@ namespace LibraryManagementSystem
             //CheckBoxList_Filter got problem where the system cant get the data
             //textbox also cannot use
             CheckBoxList_Filter.Enabled = false;
-            
-            if (Session["loginState"] != null) {
-                sessionHandler.CheckLoginState();
-            } else { Session["loginState"] = "false"; }
+
+            SetInitialLoginState();
+            HeaderUIHandler();
 
             try { 
                 bookTitle = Request.QueryString["title"];
@@ -72,6 +71,15 @@ namespace LibraryManagementSystem
             }
         }
 
+        protected void Logout_Function(object sender, EventArgs e)
+        {
+            string link = sessionHandler.GetIsLibrarian() && Request.RawUrl.Equals("Librarian.aspx") ? "Home.aspx" : Request.RawUrl;
+
+            Session["userLoginState"] = false;
+            Session.Abandon();
+            Response.Redirect(link);
+        }
+
         protected void GenerateSearchPageLink(out string link, string title, string filter) {
             link = "Search.aspx?";
             bool hasQuery = false;
@@ -110,6 +118,37 @@ namespace LibraryManagementSystem
             }
 
             return filterString = hasFilter ? filterString.TrimEnd(',') : null;
+        }
+
+        protected void HeaderUIHandler()
+        {
+            login_link.Visible = false;
+            profile.Visible = false;
+
+            librarian_link.Visible = false;
+
+            if (sessionHandler.GetLoginState() == false)
+            {
+                login_link.Visible = true;
+            }
+            else
+            {
+                profile.Visible = true;
+            }
+
+            if (sessionHandler.GetIsLibrarian())
+            {
+                librarian_link.Visible = true;
+            }
+        }
+
+        protected void SetInitialLoginState()
+        {
+            if (Session["loginState"] != null)
+            {
+                sessionHandler.CheckLoginState();
+            }
+            else { Session["loginState"] = "false"; }
         }
 
         protected void LoadFilterList(DataTable dataTable){ 

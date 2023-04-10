@@ -10,10 +10,8 @@
     <link rel="stylesheet" href="CSS/Header.css" />
     <link rel="stylesheet" href="CSS/Footer.css" />
 
-    <!-- Latest compiled and minified CSS -->
+    <!--Bootstrap 5-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </head>
@@ -21,14 +19,16 @@
     <form id="form1" runat="server">
 
         <!--Header-->
-
-
         <div class="navigation-bar container-fluid">
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
+
+
+                <!--Logo-->
                 <a href="Home.aspx" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
                     <img src="images/HamiShu_Blue_BG.png" alt="Alternate Text" class="img-responsive" width="150" />
                 </a>
 
+                <!--Navigation Links-->
                 <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
                     <li><a href="Home.aspx" class="nav-link px-2 link-light ">Home</a></li>
                     <li><a href="Search.aspx" class="nav-link px-2 link-light">Search</a></li>
@@ -37,15 +37,17 @@
                     <li id="librarian_link" runat="server"><a href="Librarian.aspx" class="nav-link px-2 link-light">Librarian</a></li>
                 </ul>
                 
-                <!--Login-->
+                <!--Login / Profile Dropdown-->
                 <div class="col-md-3 text-end ">
+
+                    <!--Login / Signup-->
                     <div id="login_link" runat="server">
                         <a href="Login.aspx" class="link-light login-text">
                             <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
                         </a>
                     </div>
 
-                    <!--Profile Picture after login-->
+                    <!--Profile Picture & Dropdown after login-->
                     <div id="profile" runat="server">
                         <div class="d-flex align-items-center">
                             <div class="dropdown text-end">
