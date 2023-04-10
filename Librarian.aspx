@@ -564,7 +564,7 @@
                                 </div>
                             </div>
                             <div class="check-out-button-container">
-                                
+                                <asp:Label ID="Label_ConfirmCheckOut" runat="server" ForeColor="Green" Text="Books Have Been Successfully Checked Out" Visible="False"></asp:Label>
                                 <asp:Button ID="Button_ConfirmCheckOut" runat="server" Text="Confirm Checkout" OnClick="Button_Click_ConfirmCheckOut"/>
                                 
                             </div>
@@ -600,6 +600,8 @@
                                     <br />
                                     <asp:TextBox ID="TextBox_NotifSelectMember" runat="server" TextMode="Number" Visible="False"></asp:TextBox>
                                     <br />
+                                    <br />
+                                    <asp:Label ID="Label_ConfirmSendNotification" ForeColor="Green" Visible="false" runat="server" Text="Notification Sent!"></asp:Label>
                                     <br />
                                     <asp:Button ID="Button_SendNotification" runat="server" Text="Send Notification" OnClick="Button_SendNotification_Click" />
                                     <br />
@@ -642,6 +644,7 @@
                             <div style="text-align: left; margin: 0 auto; display: block"> <%--can we center this somehow--%>
                             <asp:CheckBoxList ID="CheckBoxList_RequestedBooks" ForeColor="Black" runat="server"/> 
                             </div>
+                            <asp:Label ID="Label_AddedRequestedBooks" ForeColor="Green" runat="server" Text="Removed Books" Visible="False"></asp:Label>
                             <asp:Button ID="Button_AddedRequestedBooks" runat="server" Text="Remove" OnClick="Button_Click_AddedRequestedBooks" />
 
                         </div>
@@ -694,6 +697,7 @@
                                 </Columns>
                                 
                             </asp:GridView>
+                            <asp:Label ID="Label_ClaimedBooks" runat="server" ForeColor="Green" Text="Claimed Book" Visible="False"></asp:Label>
                         </div>
                     </asp:View>
                 </asp:MultiView>
