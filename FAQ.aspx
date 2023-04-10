@@ -36,10 +36,11 @@
                     <li><a href="FAQ.aspx" class="nav-link px-2 link-light">FAQ</a></li>
                     <li id="librarian_link" runat="server"><a href="Librarian.aspx" class="nav-link px-2 link-light">Librarian</a></li>
                 </ul>
-
-                <div class="col-md-3 text-end">
+                
+                <!--Login-->
+                <div class="col-md-3 text-end ">
                     <div id="login_link" runat="server">
-                        <a href="Login.aspx" class="link">
+                        <a href="Login.aspx" class="link-light login-text">
                             <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
                         </a>
                     </div>
