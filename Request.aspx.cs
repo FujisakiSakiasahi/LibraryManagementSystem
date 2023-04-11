@@ -12,29 +12,14 @@ namespace LibraryManagementSystem
         private SessionHandler sessionHandler = new SessionHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
-            SetInitialLoginState();
-            HeaderUIHandler();
-        }
+            if (!Page.IsPostBack) { 
+                SetInitialLoginState();
 
-        protected void HeaderUIHandler()
-        {
-            login_link.Visible = false;
-            profile.Visible = false;
-
-            librarian_link.Visible = false;
-
-            if (sessionHandler.GetLoginState() == false)
-            {
-                login_link.Visible = true;
-            }
-            else
-            {
-                profile.Visible = true;
-            }
-
-            if (sessionHandler.GetIsLibrarian())
-            {
-                librarian_link.Visible = true;
+                if (!sessionHandler.GetLoginState()) {
+                    Response.Write("<script>alert('Access denied, redirecting to home')</script>");
+                    string redirectScript = "<script>window.location.href = 'Home.aspx';</script>";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
+                }
             }
         }
 
@@ -54,6 +39,12 @@ namespace LibraryManagementSystem
             Session["userLoginState"] = false;
             Session.Abandon();
             Response.Redirect(link);
+        }
+
+        protected void Button_Request_Click(object sender, EventArgs e) {
+            if (!string.IsNullOrEmpty(Textbox_Request.Text)) {
+                sessionHandler.RunQuery($"INSERT INTO Requests (bookName) VALUES ('{Textbox_Request.Text}');");
+            }
         }
     }
 }
