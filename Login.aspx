@@ -40,7 +40,7 @@
             </div>
             <div class="button-container">
                 <div class="buttons">
-                    <asp:Button ID="Button1" runat="server" Text="Forgot Password" CssClass="button-forgotpassword" PostBackUrl="~/FAQ.aspx" />
+                    <asp:Button ID="Button1" runat="server" Text="Forgot Password" CssClass="button-forgotpassword" PostBackUrl="~/FAQ.aspx" TabIndex="1" />
                     <asp:Button ID="Button2" runat="server" Text="Login" CssClass="button-login" OnClick="Button2_Click" />
                 </div>
                 
