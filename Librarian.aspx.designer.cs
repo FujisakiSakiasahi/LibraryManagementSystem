@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem {
+namespace LibraryManagementSystem
+{
 
 
-    public partial class Librarian {
+    public partial class Librarian
+    {
 
         /// <summary>
         /// form1 control.
@@ -29,6 +31,15 @@ namespace LibraryManagementSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Image logo_image;
+
+        /// <summary>
+        /// username control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl username;
 
         /// <summary>
         /// Logout_Button control.
@@ -499,13 +510,13 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Image Image_Book2;
 
         /// <summary>
-        /// Button_ChooseImage control.
+        /// FileUpload_Image control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_ChooseImage;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload_Image;
 
         /// <summary>
         /// Label_AuthorText2 control.
@@ -742,13 +753,13 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Image Image3;
 
         /// <summary>
-        /// Button_Image3 control.
+        /// FileUpload_Image2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_Image3;
+        protected global::System.Web.UI.WebControls.FileUpload FileUpload_Image2;
 
         /// <summary>
         /// Label_Author3 control.

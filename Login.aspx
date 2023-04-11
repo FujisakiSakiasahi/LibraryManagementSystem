@@ -33,21 +33,23 @@
                         <!--Email & Password Input-->
 
                         <div class="input-container container-fluid justify-content-center text-center">
-                            <div class="container-fluid">
-                                <asp:Label ID="Label1" runat="server" Text="Email Address"></asp:Label>
+                            <asp:Panel runat="server" DefaultButton="Button2">
+                                <div class="container-fluid">
+                                    <asp:Label ID="Label1" runat="server" Text="Email Address"></asp:Label>
 
-                            </div>
-                            <div class="container-fluid">
-                                <asp:TextBox ID="TextBox1" runat="server" CssClass="textbox"></asp:TextBox>
-                            </div>
-                            <div class="container-fluid">
-                                <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+                                </div>
+                                <div class="container-fluid">
+                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="textbox"></asp:TextBox>
+                                </div>
+                                <div class="container-fluid">
+                                    <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
 
-                            </div>
-                            <div class="container-fluid">
-                                <asp:TextBox ID="TextBox2" runat="server" CssClass="textbox" TextMode="Password"></asp:TextBox>
+                                </div>
+                                <div class="container-fluid">
+                                    <asp:TextBox ID="TextBox2" runat="server" CssClass="textbox" TextMode="Password"></asp:TextBox>
 
-                            </div>
+                                </div>
+                            </asp:Panel>
                         </div>
 
                         <!--Buttons-->

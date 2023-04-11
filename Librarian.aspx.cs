@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using System.Diagnostics;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.DynamicData;
@@ -46,6 +47,8 @@ namespace LibraryManagementSystem {
         protected void Page_Load(object sender, EventArgs e) {
             if (!this.IsPostBack) {
                 SetInitialLoginState();
+
+                username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
 
                 if (!sessionHandler.GetIsLibrarian()) {
                     Response.Write("<script>alert('Access denied, redirecting to home')</script>");
@@ -112,6 +115,7 @@ namespace LibraryManagementSystem {
             TextBox_Title2.Text = Label_Title.Text;
             TextBox_Description2.Text = Label_Description.Text;
             TextBox_Author2.Text = Label_Author.Text;
+            Image_Book2.ImageUrl = Image_BookCover.ImageUrl;
             TextBox_Publisher2.Text = Label_Publisher.Text;
             Calendar_PublishDate2.SelectedDate = Convert.ToDateTime(Label_PublishDate.Text);
             DropDownList_Rating2.SelectedValue = Label_Rating.Text;
@@ -133,7 +137,15 @@ namespace LibraryManagementSystem {
         protected void Button_Click_SaveChangesBook(object sender, EventArgs e) {
             String date = Calendar_PublishDate2.SelectedDate.ToString("yyyy-MM-dd");
 
-            String query = $"UPDATE Book SET bookName = '{TextBox_Title2.Text}', bookDescription = '{TextBox_Description2.Text}', authorName = '{TextBox_Author2.Text}', publisherName = '{TextBox_Publisher2.Text}', pubDate = '{date}', rating = {DropDownList_Rating2.SelectedValue}, lang = '{TextBox_Language2.Text}', isbn = {TextBox_ISBN2.Text}, available = b'{(CheckBox_Availability2.Checked ? 1 : 0)}', shelfid = '{TextBox_ShelfID2.Text}' WHERE Book.bookId = {Label_BookID2.Text};";
+            String image = Image_Book2.ImageUrl;
+
+            if (FileUpload_Image2.HasFile)
+            {
+                Upload_Book_Image(FileUpload_Image, Label_BookID2 + ".jpg");
+                image = "~/images/books/" + Label_BookID2.Text + ".jpg";
+            }
+
+            String query = $"UPDATE Book SET bookName = '{TextBox_Title2.Text}', bookDescription = '{TextBox_Description2.Text}', authorName = '{TextBox_Author2.Text}', bookImage = '{image}', publisherName = '{TextBox_Publisher2.Text}', pubDate = '{date}', rating = {DropDownList_Rating2.SelectedValue}, lang = '{TextBox_Language2.Text}', isbn = {TextBox_ISBN2.Text}, available = b'{(CheckBox_Availability2.Checked ? 1 : 0)}', shelfid = '{TextBox_ShelfID2.Text}' WHERE Book.bookId = {Label_BookID2.Text};";
 
             sessionHandler.RunQuery(query);
 
@@ -155,8 +167,15 @@ namespace LibraryManagementSystem {
             int highest = int.Parse(sessionHandler.RunQuery("SELECT MAX(bookId) FROM Book").Rows[0][0].ToString());
             Label_BookID3.Text = highest.ToString();
 
-            String query = $"INSERT INTO `Book` (`bookId`, `bookName`, `authorName`, `bookImage`, `bookDescription`, `publisherName`, `pubDate`, `rating`, `lang`, `isbn`, `available`, `shelfid`) VALUES ('{highest += 1}', '{TextBox_Title3.Text}', '{TextBox_Author3.Text}', 'placeholder.png', '{TextBox_Description3.Text}', '{TextBox_Publisher3.Text}', '{date}', '{DropDownList_Rating3.SelectedValue}', '{TextBox_Language3.Text}', '{TextBox_ISBN3.Text}', b'{(CheckBox_Availability3.Checked ? 1 : 0)}', '{TextBox_ShelfID3.Text}');";
+            String image = null;
 
+            if (FileUpload_Image2.HasFile)
+            {
+                Upload_Book_Image(FileUpload_Image2, highest + 1.ToString()+".jpg");
+                image = "~/images/books/" + highest + 1.ToString() + ".jpg";
+            }
+
+            String query = $"INSERT INTO `Book` (`bookId`, `bookName`, `authorName`, `bookImage`, `bookDescription`, `publisherName`, `pubDate`, `rating`, `lang`, `isbn`, `available`, `shelfid`) VALUES ('{highest += 1}', '{TextBox_Title3.Text}', '{TextBox_Author3.Text}', '{(string.IsNullOrEmpty(image) ? "~/images/book.jpg" : image)}', '{TextBox_Description3.Text}', '{TextBox_Publisher3.Text}', '{date}', '{DropDownList_Rating3.SelectedValue}', '{TextBox_Language3.Text}', '{TextBox_ISBN3.Text}', b'{(CheckBox_Availability3.Checked ? 1 : 0)}', '{TextBox_ShelfID3.Text}');";
 
             sessionHandler.RunQuery(query);
 
@@ -170,6 +189,7 @@ namespace LibraryManagementSystem {
                 Label_BookID.Text = returnedData.Rows[0][0].ToString();
                 Label_Title.Text = returnedData.Rows[0][1].ToString();
                 Label_Author.Text = returnedData.Rows[0][2].ToString();
+                Image_BookCover.ImageUrl = returnedData.Rows[0]["bookImage"].ToString();
                 Label_Description.Text = returnedData.Rows[0][4].ToString();
                 Label_Publisher.Text = returnedData.Rows[0][5].ToString();
                 Label_PublishDate.Text = returnedData.Rows[0][6].ToString();
@@ -338,8 +358,7 @@ namespace LibraryManagementSystem {
         }
 
         protected void ListBox_CheckIn_SelectedIndexChanged(object sender, EventArgs e) {
-            Debug.WriteLine("ran");
-            DataTable BorrowedBooks = sessionHandler.RunQuery($"SELECT bookId, bookName, memberId FROM Borrowed INNER JOIN Book USING (bookId) WHERE memberId = {ListBox_CheckIn.SelectedValue}");
+            DataTable BorrowedBooks = sessionHandler.RunQuery($"SELECT bookId, bookName, memberId FROM Borrowed INNER JOIN Book USING (bookId) WHERE memberId = {ListBox_CheckIn.SelectedValue} AND returnDate IS NULL");
 
             if (BorrowedBooks.Rows.Count == 0) {
                 Response.Write("<script>alert('This user has no borrowed books.')</script>"); //needs improvement on the alerts
@@ -348,11 +367,10 @@ namespace LibraryManagementSystem {
 
             Label_StoreUser.Text = BorrowedBooks.Rows[0]["memberId"].ToString();
 
-            CheckBoxList_CheckIn.Items.Clear();
-
-            foreach (DataRow book in BorrowedBooks.Rows) {
-                CheckBoxList_CheckIn.Items.Add(book["bookName"].ToString());
-            }
+            CheckBoxList_CheckIn.DataSource = BorrowedBooks;
+            CheckBoxList_CheckIn.DataTextField = "bookName";
+            CheckBoxList_CheckIn.DataValueField = "bookId";
+            CheckBoxList_CheckIn.DataBind();
 
             Button_CheckInBooks.Visible = true;
         }
@@ -366,24 +384,29 @@ namespace LibraryManagementSystem {
                 }
             }
 
+            if (string.IsNullOrEmpty(bookQuery))
+            {
+                Response.Write("<script>alert('No book was selected.')</script>"); //needs improvement on the alerts
+                return;
+            }
+
             //add error handling here when none are selected
             char[] toTrim = { ',', ' ' };
             bookQuery = bookQuery.TrimEnd(toTrim);
 
             String nowDate = DateTime.Now.ToString("yyyy-MM-dd");
 
-            String query = $"UPDATE Borrowed SET returnDate = '{nowDate}' WHERE memberId = {Label_StoreUser.Text} AND bookId IN (SELECT bookId FROM Book WHERE bookName IN ({bookQuery}))";
-            Debug.WriteLine(query);
-
+            String query = $"UPDATE Borrowed SET returnDate = '{nowDate}' WHERE memberId = {Label_StoreUser.Text} AND bookId IN ({bookQuery})";
             sessionHandler.RunQuery(query);
 
-            DataTable BorrowedBooks = Search(SelectedPage.CheckIn, Textbox_SearchBorrowedBookBasedOnUser.Text);
+            DataTable BorrowedBooks = sessionHandler.RunQuery($"SELECT bookId, bookName FROM Borrowed INNER JOIN Book USING (bookId) WHERE memberId = {Label_StoreUser.Text} AND returnDate IS NULL;");
 
-            CheckBoxList_CheckIn.Items.Clear();
+            CheckBoxList_CheckIn.DataSource = null;
 
-            foreach (DataRow book in BorrowedBooks.Rows) {
-                CheckBoxList_CheckIn.Items.Add(book["bookName"].ToString());
-            }
+            CheckBoxList_CheckIn.DataSource = BorrowedBooks;
+            CheckBoxList_CheckIn.DataTextField = "bookName";
+            CheckBoxList_CheckIn.DataValueField = "bookId";
+            CheckBoxList_CheckIn.DataBind();
 
         }
 
@@ -540,7 +563,6 @@ namespace LibraryManagementSystem {
         }
 
         protected void RadioButtonList_NotifUserSelect_SelectedIndexChanged(object sender, EventArgs e) {
-            Debug.WriteLine("Test");
             if (RadioButtonList_NotifUserSelect.SelectedIndex == 1) {
                 Label_NotifSelectMember.Visible = true;
                 TextBox_NotifSelectMember.Visible = true;
@@ -652,11 +674,30 @@ namespace LibraryManagementSystem {
             return sessionHandler.RunQuery(query);
         }
 
+        protected void Upload_Book_Image(FileUpload fu, String filename)
+        {
+            if (!Directory.Exists(Server.MapPath("~/images")))
+            {
+                Directory.CreateDirectory(Server.MapPath("~/images"));
+                if (!Directory.Exists(Server.MapPath("~/images/books")))
+                {
+                    Directory.CreateDirectory(Server.MapPath("~/images/books"));
+                }
+            }
+
+            if (File.Exists(Server.MapPath("~/images/books" + filename)))
+            {
+                File.Delete(Server.MapPath("~/images/books" + filename));
+            }
+
+            fu.SaveAs(Server.MapPath("~/images/books/" + filename));
+
+        }
         protected DataTable Search(SelectedPage page, String searchString) { // for user and book
             String query = "";
             switch (page) {
                 case SelectedPage.ManageBook:
-                    query += "Book WHERE ";
+                    query += "SELECT * FROM Book WHERE ";
 
                     if (int.TryParse(searchString, out int bookId)) {
                         query += "SELECT * FROM bookId = " + bookId + ";";
@@ -673,7 +714,7 @@ namespace LibraryManagementSystem {
                         query += "memberName LIKE '%" + searchString + "%'";
                     }
 
-                    query += " WHERE memberId>=1;";
+                    query += " AND memberId>=1;";
 
                     break;
             }

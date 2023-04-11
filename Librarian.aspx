@@ -32,6 +32,10 @@
                               <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" />
                           </a>
                           <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                              <li><p id="username" runat="server" class="dropdown-item"></p></li>
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
                               <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
                               <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
                               <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
@@ -226,7 +230,8 @@
                                     <asp:Image ID="Image_Book2" runat="server" ImageUrl="~/images/book.jpg" />
                                 
                                     <br />
-                                    <asp:Button ID="Button_ChooseImage" runat="server" Text="Choose Image" />
+                                    <asp:FileUpload ID="FileUpload_Image" runat="server" />
+                                    <br />
                                 
                                 </div>
                                 <div class="center-container">
@@ -319,8 +324,8 @@
                                     <asp:Image ID="Image3" runat="server" ImageUrl="~/images/book.jpg" />
                                 
                                     <br />
-                                    <asp:Button ID="Button_Image3" runat="server" Text="Choose Image" />
-                                
+                                    <asp:FileUpload ID="FileUpload_Image2" runat="server" />
+                                    <br />
                                 </div>
                                 <div class="center-container">
                                     <asp:Label ID="Label_Author3" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
