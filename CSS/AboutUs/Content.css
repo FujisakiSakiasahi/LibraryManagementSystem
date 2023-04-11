@@ -2,7 +2,7 @@
 }
 
 .content {
-    display: flex;
+    text-align-last: center;
 }
 
 .labels {
@@ -10,4 +10,7 @@
     font-family: Arial, Helvetica, sans-serif;
     font-size: 24px;
     padding: 20px;
+}
+.abe {
+    text-align:center;
 }
