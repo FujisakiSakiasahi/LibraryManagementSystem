@@ -9,6 +9,23 @@
 </head>
 <body>
     <form id="form1" runat="server">
+
+        <!--Login-->
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="background col-3">
+                    asdf
+                </div>
+                <div class="login-panel col-6">
+                    asdf
+                </div>
+                <div class="background col-3">
+                    asdf
+                </div>
+            </div>
+        </div>
+
         <div class="login-container">
             <div class="image-container">
                 <asp:Image ID="Image1" runat="server" ImageUrl="~/images/HamiShu_Logo_WhiteBG.png" />
