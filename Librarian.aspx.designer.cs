@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem
-{
+namespace LibraryManagementSystem {
 
 
-    public partial class Librarian
-    {
+    public partial class Librarian {
 
         /// <summary>
         /// form1 control.
@@ -33,22 +31,13 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Image logo_image;
 
         /// <summary>
-        /// login_button control.
+        /// Logout_Button control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label login_button;
-
-        /// <summary>
-        /// Image5 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Image Image5;
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Logout_Button;
 
         /// <summary>
         /// Button_ManageBook control.

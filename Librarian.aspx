@@ -26,10 +26,22 @@
 
           <div class="header-login-container">
               <div class="header-login">
-                  <a href="Login.aspx" class="link">
-                      <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
-                  </a>
-                  <asp:Image ID="Image5" runat="server" CssClass="user-image" ImageUrl="~/images/unknown.png" />
+                  <div class="d-flex align-items-center justify-content-end">
+                      <div class="dropdown text-end">
+                          <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                              <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" />
+                          </a>
+                          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                              <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
+                              <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
+                              <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
+                              <li>
+                                  <hr class="dropdown-divider" />
+                              </li>
+                              <li><a class="dropdown-item" href="#" id="Logout_Button" runat="server" onserverclick="Logout_Function">Sign out</a></li>
+                          </ul>
+                      </div>
+                  </div>
               </div>
           </div>
 
