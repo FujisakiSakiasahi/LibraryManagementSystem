@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="CSS/Header.css" />
     <link rel="stylesheet" href="CSS/Footer.css" />
+    <link rel="stylesheet" href="CSS/request.css" />
+
 
 
 
@@ -73,6 +75,25 @@
         </div>
 
         <!--content-->
+        <div class="container">
+            <div class="contaier-fluid text-center">
+                <h2 class="page-title">Request A Book</h2>
+            </div>
+            <div class="contaier">
+                <div class="container-fluid">
+                    <p>Request a book and we'll try to add it our library</p>
+                </div>
+                <div class="container-fluid">
+                    <asp:TextBox ID="Textbox_Request" runat="server" CssClass="request-bar"></asp:TextBox>
+
+                </div>
+                <div class="button-container container-fluid text-center">
+                    <asp:Button ID="Button_Request" runat="server" Text="Request Book" CssClass="request-button" />
+
+                </div>
+
+            </div>
+        </div>
 
         <!--Footer-->
 
