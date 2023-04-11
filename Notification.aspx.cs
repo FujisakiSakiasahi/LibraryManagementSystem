@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -17,6 +18,8 @@ namespace LibraryManagementSystem
                 SetInitialLoginState();
                 HeaderUIHandler();
 
+                username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
+
                 if (!sessionHandler.GetLoginState())
                 {
                     Response.Write("<script>alert('Access denied, redirecting to home')</script>");
@@ -24,7 +27,18 @@ namespace LibraryManagementSystem
                     ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
                 }
 
-                //$@"";
+                DataTable notificationList = sessionHandler.RunQuery($"SELECT notifTitle, msg FROM Notification WHERE memberId={sessionHandler.GetUserId()} OR memberId=0;");
+                string content = "";
+                for (int i = 0; i < notificationList.Rows.Count; i++) { 
+                    content += $@" <li class=""list-group-item"">
+                                        <h3>{notificationList.Rows[i][0]}</h3>
+                                        <hr/>
+                                        <p>{notificationList.Rows[i][1]}</p>
+                                    </li>";
+                }
+
+                notification_list.InnerHtml = "";
+                notification_list.InnerHtml = content;
             }
         }
 

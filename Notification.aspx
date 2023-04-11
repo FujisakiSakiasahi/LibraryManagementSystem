@@ -52,7 +52,11 @@
                                     <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" />
                                 </a>
                                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
-                                    <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
+                                    <li><p id="username" runat="server" class="dropdown-item"></p></li>
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
+                                    <li><a class="dropdown-item active" href="Notification.aspx">Notification</a></li>
                                     <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
                                     <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
                                     <li>
@@ -75,24 +79,14 @@
                 <h2 class="page-title">Notification</h2>
             </div>
             <div class="contaier-fluid">
-                <ul class="list-group" id="notification_list" runat="server">
+                <ul class="list-group mb-3 shadow" id="notification_list" runat="server">
                     <!--list item card, result for searching              
+                    <li class="list-group-item">
+                        <h3>{title}</h3>
+                        <hr/>
+                        <p>{message}</p>
+                    </li>
                     -->
-                    <li class="list-group-item">
-                        <h3>{title}</h3>
-                        <hr/>
-                        <p>{message}</p>
-                    </li>
-                    <li class="list-group-item">
-                        <h3>{title}</h3>
-                        <hr/>
-                        <p>{message}</p>
-                    </li>
-                    <li class="list-group-item">
-                        <h3>{title}</h3>
-                        <hr/>
-                        <p>{message}</p>
-                    </li>
                 </ul>
             </div>
         </div>
