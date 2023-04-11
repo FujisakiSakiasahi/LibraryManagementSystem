@@ -31,7 +31,7 @@ namespace LibraryManagementSystem
                 LoadBookData(dataTable);
                 SetCitationText(dataTable.Rows[0][1].ToString(), dataTable.Rows[0][6].ToString(), dataTable.Rows[0][2].ToString(), dataTable.Rows[0][5].ToString());
             } catch {
-                Response.Write("<script>alert('Book ID not found in redirecting to home')</script>");
+                Response.Write("<script>alert('Book ID not found, redirecting to home')</script>");
                 string redirectScript = "<script>window.location.href = 'Home.aspx';</script>";
                 ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
             }

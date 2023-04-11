@@ -45,9 +45,13 @@ namespace LibraryManagementSystem {
 
         protected void Page_Load(object sender, EventArgs e) {
             if (!this.IsPostBack) {
-                if (Session["loginState"] != null) {
-                    sessionHandler.CheckLoginState();
-                } else { Session["loginState"] = "false"; };
+                SetInitialLoginState();
+
+                if (!sessionHandler.GetIsLibrarian()) {
+                    Response.Write("<script>alert('Access denied, redirecting to home')</script>");
+                    string redirectScript = "<script>window.location.href = 'Home.aspx';</script>";
+                    ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
+                }
 
                 //when the page is loaded the Multiview will be set on View 0 which is manage book page, this line of code is to load the data on the first hand
                 String[] tableColumn = { "bookId", "bookName" };
@@ -675,6 +679,20 @@ namespace LibraryManagementSystem {
             }
 
             return sessionHandler.RunQuery(query);
+        }
+
+        protected void SetInitialLoginState() {
+            if (Session["loginState"] != null) {
+                sessionHandler.CheckLoginState();
+            } else { Session["loginState"] = "false"; }
+        }
+
+        protected void Logout_Function(object sender, EventArgs e) {
+            string link = sessionHandler.GetIsLibrarian() && Request.RawUrl.Equals("Librarian.aspx") ? "Home.aspx" : Request.RawUrl;
+
+            Session["userLoginState"] = false;
+            Session.Abandon();
+            Response.Redirect(link);
         }
     }
 }
