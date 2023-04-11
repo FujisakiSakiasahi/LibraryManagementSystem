@@ -54,13 +54,5 @@ namespace LibraryManagementSystem
             Session.Abandon();
             Response.Redirect(link);
         }
-
-        protected void HeaderUIHandler() {
-            librarian_link.Visible = false;
-
-            if (sessionHandler.GetIsLibrarian()) {
-                librarian_link.Visible = true;
-            }
-        }
     }
 }
