@@ -202,13 +202,14 @@ namespace LibraryManagementSystem
                 int currentPage = page;
                 for (int i = 0; i < totalPage; i++) {
                     content += $@"<li class=""page-item";
-                    if (page == i + 1) content += " active";
+                    if (currentPage == i + 1) content += " active";
                     content += $@"""><a class=""page-link";
                     content += (page == i + 1) ? " text-light" : " text-dark";
                     page= i + 1;
                     GenerateSearchPageLink(out link, bookTitle, filter);
                     content += $@""" href=""{link}"">{i + 1}</a></li>";
                 }
+                page = currentPage;
 
                 content += $@"<li class=""page-item""><a class=""page-link text-dark"" href=""";
                 if (page + 1 == totalPage + 1) {
@@ -226,15 +227,6 @@ namespace LibraryManagementSystem
             content += $@" </ul>";
             pager_buttons.InnerHtml = "";
             pager_buttons.InnerHtml = content;
-
-            /*           pager_buttons.InnerHtml = $@" <ul class=""pagination"">
-                               <li class=""page-item""><a class=""page-link"" href=""#"">Previous</a></li>
-                               <li class=""page-item""><a class=""page-link"" href=""#"">1</a></li>
-                               <li class=""page-item active""><a class=""page-link"" href=""#"">2</a></li>
-                               <li class=""page-item""><a class=""page-link"" href=""#"">3</a></li>
-                               <li class=""page-item""><a class=""page-link"" href=""#"">Next</a></li>
-                           </ul>";*/
-
         }
 
         protected void LoadBookDataIntoList(DataTable dataTable) {
