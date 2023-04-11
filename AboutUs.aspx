@@ -71,63 +71,54 @@
 
         <!--Content-->
         <div class="content contaier">
-            <div class="row">
+            <div class="row gx-0">
                 <div class="col-12 justify-content-center text-center">
-                    <h2>
+                    <h2 class="page-title">
                         About Us
                     </h2>
                 </div>
             </div>
         </div>
 
-        <div class=" question container">
-            <div class="row">
-                <div class="col-12">
-                    <h3>Lorem ipsum?</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-12">
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <!--
         <div class="container">
-            <div class="row content">
-                <div class="col-12 text-left">
-                    <h1>About Us</h1>
+
+            <div class="row">
+                <div class="col-12">
+                    <h3>
+                        HamiShu LMS
+                    </h3>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
                     <p>Our library is a hub for knowledge, learning, and exploration. We strive to provide a welcoming and inclusive space for all members of our community to access a wide range of learning resources and find their next great read.</p>
-                    </>
                     <p>For years, we've been dedicated to promoting literacy and lifelong learning. Our team of knowledgeable librarians is always on hand to help you find the perfect book, navigate our digital resources, or answer any other questions you may have.</p>
                     <hr/>
                     <p>At our library, we believe that access to reading materials and educational resources is a fundamental right for all. That's why we work hard to keep our library well-stocked and up-to-date with the latest and greatest books, magazines, audiobooks, and more. We also offer a variety of digital resources, such as e-books, audiobooks, and databases, so that you can access our materials from anywhere.</p>
                     <hr/>
                     <p>Thank you for choosing Our Library as your go-to source for all things books and knowledge. We look forward to seeing you soon and helping you on your learning journey.</p>
                     <hr/>
-                    <h3>Our Location</h3>
-                    <p>6XXX, Jalan XXXXXXX,</p>
-                    <p>110000, Georgetown,</p>
-                    <p>Penang, Malaysia.</p>
-                    <br/><br/>
-                    <h3>Our Contact</h3>
-                    <p>Phone no. 012-3456789</p>
-                    <p>Tel no. 04-1234567</p>
-                    <p>Fax no. 123-456-7890</p>
-                    <br/><br/>
                 </div>
-                <div class="col-sm-2 sidenav">
+            </div>
+
+            <div class="row">
+                <div class="col-6 text-center">
+                    <h3>Our Location</h3>
+                    <p>Jalan XXX, Taman XXX, 99999, City XXX,</p>
+                    <p>State XXX, Country XXX</p>
+                </div>
+                <div class="col-6 text-center">
+                    <h3>Our Contact</h3>
+                    <p>Email: XXX@example.com</p>
+                    <p>Tel no: + 01 234 567 89</p>
                 </div>
             </div>
         </div>
-        -->
+
 
          <!--Footer-->
 
-        <footer class="text-center text-lg-start bg-dark text-white">
+        <footer class="text-center text-lg-start bg-dark text-white gx-0">
             <!-- Section: Links  -->
             <section class="">
                 <div class="container text-center text-md-start mt-5">

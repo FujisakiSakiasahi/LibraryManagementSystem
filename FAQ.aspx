@@ -76,7 +76,7 @@
         <div class="content contaier">
             <div class="row gx-0">
                 <div class="col-12 justify-content-center text-center">
-                    <h2>
+                    <h2 class="page-title">
                         Frequently Asked Questions
                     </h2>
                 </div>
@@ -86,13 +86,13 @@
         <div class=" question container">
             <div class="row">
                 <div class="col-12">
-                    <h3>Lorem ipsum?</h3>
+                    <h3>How do I become a member / create an account? </h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        You will need to go to the library physically to register an account from the librarian. Please prepare your information like your E-mail as you will need to fill up you information at the library. Once registered, you will be able to log in to this website.
                     </p>
                 </div>
             </div>
@@ -101,18 +101,17 @@
         <div class=" question container">
             <div class="row">
                 <div class="col-12">
-                    <h3>Lorem ipsum?</h3>
+                    <h3>I have forgot my password. What should I do?</h3>
                 </div>
             </div>
             <div class="row">
                 <div class="col-12">
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                        You will need to pay a visit to the library. There you will need to ask for a password change from the librarian.
                     </p>
                 </div>
             </div>
         </div>
-
 
         <div class=" question container">
             <div class="row">
