@@ -3,6 +3,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -21,40 +22,57 @@ namespace LibraryManagementSystem
         string filter;
         protected void Page_Load(object sender, EventArgs e)
         {
-            //CheckBoxList_Filter got problem where the system cant get the data
-            //textbox also cannot use
-            CheckBoxList_Filter.Enabled = false;
-
             SetInitialLoginState();
             HeaderUIHandler();
 
-            try { 
-                bookTitle = Request.QueryString["title"];
-                Textbox_Search.Text = bookTitle?.Replace("+", " ");
 
-                try {
-                    page = int.Parse(Request.QueryString["page"]);
-                } catch { 
-                    page = 1;
+            try {
+                if (!Page.IsPostBack)
+                {
+                    bookTitle = Request.QueryString["title"];
+
+                    if (bookTitle != null)
+                    {
+                        Textbox_Search.Text = bookTitle.Replace("+", " ");
+                    }
+
+
+                    try
+                    {
+                        page = int.Parse(Request.QueryString["page"]);
+                        if (page <= 0) { 
+                        page = 1;
+                        }
+                    }
+                    catch
+                    {
+                        page = 1;
+                    }
+
+                    filter = Request.QueryString["filter"];
+
+
+                    LoadFilterList(sessionHandler.RunQuery("SELECT genre, COUNT(bookId) as num_books FROM Genre GROUP BY genre;"));
+
+
+                    GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
+
+                    //get data from database
+                    string query;
+                    if (!string.IsNullOrEmpty(filter))
+                    {
+                        string filterString = GetFilterString();
+                        query = $"SELECT bookId, bookName, bookDescription, bookImage FROM Book WHERE bookName LIKE '%{ReplacePlusWithSpace(bookTitle)}%' AND bookId IN (SELECT bookId FROM Genre WHERE genre IN ({filterString}));";
+                    }
+                    else
+                    {
+                        query = $"SELECT bookId, bookName, bookDescription, bookImage FROM Book WHERE bookName LIKE '%{ReplacePlusWithSpace(bookTitle)}%'";
+                    }
+                    DataTable returnedData = sessionHandler.RunQuery(query);
+
+                    LoadBookDataIntoList(returnedData);
+                    LoadListPager((int)(Math.Ceiling((float)(returnedData.Rows.Count) / 10)));
                 }
-
-                filter = Request.QueryString["filter"];
-
-                LoadFilterList(sessionHandler.RunQuery("SELECT genre, COUNT(bookId) as num_books FROM Genre GROUP BY genre;"));
-                GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
-
-                //get data from database
-                string query;
-                if (filter != null) {
-                    string filterString = GetFilterString();
-                    query = $"SELECT bookId, bookName, bookDescription, bookImage FROM Book WHERE bookName LIKE '%{ReplacePlusWithSpace(bookTitle)}%' AND bookId IN (SELECT bookId FROM Genre WHERE genre IN ({filterString}));";
-                } else {
-                    query = $"SELECT bookId, bookName, bookDescription, bookImage FROM Book WHERE bookName LIKE '%{ReplacePlusWithSpace(bookTitle)}%'";
-                }
-                DataTable returnedData = sessionHandler.RunQuery(query);
-
-                LoadBookDataIntoList(returnedData);
-                LoadListPager((int)(Math.Ceiling((float)(returnedData.Rows.Count)/10)));
             } catch {
                 //get data from database
                 string query;
@@ -89,7 +107,7 @@ namespace LibraryManagementSystem
                 hasQuery = true;
             }
 
-            string filterString = GetFilterString();
+            string filterString = filter;
             if (!string.IsNullOrEmpty(filterString)) {
                 if (hasQuery) {
                     link += "&";
@@ -109,15 +127,18 @@ namespace LibraryManagementSystem
         protected string GetFilterString() {
             bool hasFilter = false;
             string filterString = "";
-            foreach (ListItem item in CheckBoxList_Filter.Items) {
-                
+            foreach (ListItem item in CheckBoxList_Filter.Items) 
+            {
                 if (item.Selected) {
                     hasFilter = true;
                     filterString += "'" + item.Value.Substring(0, item.Value.IndexOf('(')).Trim() + "'" + ",";
                 }
             }
 
-            return filterString = hasFilter ? filterString.TrimEnd(',') : null;
+            filterString = hasFilter ? filterString.TrimEnd(',') : null;
+            
+
+            return filterString;
         }
 
         protected void HeaderUIHandler()
@@ -153,7 +174,11 @@ namespace LibraryManagementSystem
 
         protected void LoadFilterList(DataTable dataTable){ 
             CheckBoxList_Filter.Items.Clear();
-            string[] filterList = filter?.Split('-');
+            string[] filterList = null;
+            if (!string.IsNullOrEmpty(filter))
+            {
+                filterList = filter.Split('-');
+            }
 
             for (int i = 0; i < dataTable.Rows.Count; i++) {
                 ListItem item = new ListItem(" " + dataTable.Rows[i][0].ToString() + $" ({dataTable.Rows[i][1]})");
@@ -282,6 +307,7 @@ namespace LibraryManagementSystem
 
         protected void Button_Search_Click(object sender, EventArgs e) {
             GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
+            
             Response.Redirect(link);
         }
     }

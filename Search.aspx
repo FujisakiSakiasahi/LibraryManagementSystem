@@ -17,6 +17,13 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 
+    <?php
+        $title = $_GET['title'];
+        $page = $_GET['page'];
+        $filter = $_GET['filter']
+        
+        ?>
+
 </head>
 <body>
     <form id="form1" runat="server">
@@ -81,7 +88,7 @@
             <div class="search-container container-fluid">
                 <div class="row">
                     <div class="col-11">
-                        <asp:TextBox runat="server" ID="Textbox_Search" class="search-bar"> </asp:TextBox>
+                        <asp:TextBox ID="Textbox_Search" runat="server" CssClass="search-bar" TextMode="Search"></asp:TextBox>
                         <!--<input id="textbox_search" type="text" placeholder="Search for books here..." class="search-bar" />-->
                     </div>
                     <div class="col-1">
