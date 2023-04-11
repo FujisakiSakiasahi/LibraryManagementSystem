@@ -25,6 +25,7 @@ namespace LibraryManagementSystem
             SetInitialLoginState();
             HeaderUIHandler();
 
+            username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
 
             try {
 

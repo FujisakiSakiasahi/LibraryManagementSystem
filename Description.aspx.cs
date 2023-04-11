@@ -23,6 +23,8 @@ namespace LibraryManagementSystem
                 sessionHandler.CheckLoginState();
             } else { Session["loginState"] = "false"; }
 
+            username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
+
             DataTable dataTable = new DataTable();
 
             try {
