@@ -6,7 +6,7 @@
 <head runat="server">
     <title>FAQ</title>
 
-    <link rel="stylesheet" href="CSS/FAQ/content.css" />
+    <link rel="stylesheet" href="CSS/FAQ/faq-css.css" />
     <link rel="stylesheet" href="CSS/Header.css" />
     <link rel="stylesheet" href="CSS/Footer.css" />
 
@@ -36,7 +36,7 @@
                     <li><a href="FAQ.aspx" class="nav-link px-2 link-light">FAQ</a></li>
                     <li id="librarian_link" runat="server"><a href="Librarian.aspx" class="nav-link px-2 link-light">Librarian</a></li>
                 </ul>
-                
+
                 <!--Login / Profile Dropdown-->
                 <div class="col-md-3 text-end ">
 
@@ -49,17 +49,17 @@
 
                     <!--Profile Picture & Dropdown after login-->
                     <div id="profile" runat="server">
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center justify-content-end">
                             <div class="dropdown text-end">
                                 <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle"/>
+                                    <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" />
                                 </a>
                                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
                                     <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
                                     <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
                                     <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
                                     <li>
-                                        <hr class="dropdown-divider"/>
+                                        <hr class="dropdown-divider" />
                                     </li>
                                     <li><a class="dropdown-item" href="#" id="Logout_Button" runat="server" onserverclick="Logout_Function">Sign out</a></li>
                                 </ul>
@@ -73,9 +73,8 @@
 
 
         <!--Content-->
-
         <div class="content contaier">
-            <div class="row">
+            <div class="row gx-0">
                 <div class="col-12 justify-content-center text-center">
                     <h2>
                         Frequently Asked Questions

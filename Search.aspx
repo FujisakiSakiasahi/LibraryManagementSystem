@@ -59,7 +59,7 @@
 
                     <!--Profile Picture & Dropdown after login-->
                     <div id="profile" runat="server">
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-items-center justify-content-end">
                             <div class="dropdown text-end">
                                 <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
                                     <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" />

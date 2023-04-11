@@ -107,6 +107,7 @@
     <Content Include="AboutUs.aspx" />
     <Content Include="CSS\AboutUs\Content.css" />
     <Content Include="CSS\Description\Content.css" />
+    <Content Include="CSS\FAQ\faq-css.css" />
     <Content Include="CSS\Home\Content.css" />
     <Content Include="CSS\Footer.css" />
     <Content Include="CSS\Header.css" />
@@ -215,9 +216,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="CSS\FAQ\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
