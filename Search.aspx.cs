@@ -192,10 +192,10 @@ namespace LibraryManagementSystem
                     content += "";
                 } else {
                     page -= 1;
-                    GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
+                    GenerateSearchPageLink(out link, bookTitle, filter);
                     content += link;
                     page += 1;
-                    GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
+                    GenerateSearchPageLink(out link, bookTitle, filter);
                 }
                 content += $@""">Previous</a></li>";
 
@@ -204,7 +204,7 @@ namespace LibraryManagementSystem
                     if (page == i + 1) content += " active";
                     content += $@"""><a class=""page-link";
                     content += (page == i + 1) ? " text-light" : " text-dark";
-                    content += $@""" href=""{link + (i + 1)}"">{i + 1}</a></li>";
+                    content += $@""" href=""{link}"">{i + 1}</a></li>";
                 }
 
                 content += $@"<li class=""page-item""><a class=""page-link text-dark"" href=""";
@@ -212,10 +212,10 @@ namespace LibraryManagementSystem
                     content += "";
                 } else {
                     page += 1;
-                    GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
+                    GenerateSearchPageLink(out link, bookTitle, filter);
                     content += link;
                     page -= 1;
-                    GenerateSearchPageLink(out link, Textbox_Search.Text, GetFilterString());
+                    GenerateSearchPageLink(out link, bookTitle, filter);
                 }
                 content += $@""">Next</a></li>";
             }
