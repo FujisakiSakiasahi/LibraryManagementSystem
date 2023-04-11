@@ -19,9 +19,8 @@ namespace LibraryManagementSystem
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Session["loginState"] != null) {
-                sessionHandler.CheckLoginState();
-            } else { Session["loginState"] = "false"; }
+            SetInitialLoginState();
+            HeaderUIHandler();
 
             username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
 
@@ -39,6 +38,28 @@ namespace LibraryManagementSystem
             }
         }
 
+        protected void SetInitialLoginState() {
+            if (Session["loginState"] != null) {
+                sessionHandler.CheckLoginState();
+            } else { Session["loginState"] = "false"; }
+        }
+
+        protected void HeaderUIHandler() {
+            login_link.Visible = false;
+            profile.Visible = false;
+
+            librarian_link.Visible = false;
+
+            if (sessionHandler.GetLoginState() == false) {
+                login_link.Visible = true;
+            } else {
+                profile.Visible = true;
+            }
+
+            if (sessionHandler.GetIsLibrarian()) {
+                librarian_link.Visible = true;
+            }
+        }
 
         protected void AddBookToWishList(String bookId) {
             if (sessionHandler.GetLoginState()) {
