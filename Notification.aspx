@@ -75,22 +75,24 @@
                 <h2 class="page-title">Notification</h2>
             </div>
             <div class="contaier-fluid">
-                <ul class="list-group" id="search_result" runat="server">
+                <ul class="list-group" id="notification_list" runat="server">
                     <!--list item card, result for searching              
-                        <li class="list-group-item">
-                            <a href="Description.aspx?bookId=12">
-                                <div class="row">
-                                    <div class="col-lg-3">
-                                        <img src="/images/book.jpg" />
-                                    </div>
-                                    <div class="col-lg-9">
-                                        <h4 class="text-dark">Title</h4>
-                                        <p class="text-dark">Description</p>
-                                    </div>
-                                </div>
-                            </a>
-                        </li>
                     -->
+                    <li class="list-group-item">
+                        <h3>{title}</h3>
+                        <hr/>
+                        <p>{message}</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h3>{title}</h3>
+                        <hr/>
+                        <p>{message}</p>
+                    </li>
+                    <li class="list-group-item">
+                        <h3>{title}</h3>
+                        <hr/>
+                        <p>{message}</p>
+                    </li>
                 </ul>
             </div>
         </div>

@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem
-{
+namespace LibraryManagementSystem {
 
 
-    public partial class Notification
-    {
+    public partial class Notification {
 
         /// <summary>
         /// form1 control.
@@ -51,12 +49,12 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.HtmlControls.HtmlAnchor Logout_Button;
 
         /// <summary>
-        /// search_result control.
+        /// notification_list control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl search_result;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl notification_list;
     }
 }

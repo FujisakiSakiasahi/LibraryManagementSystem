@@ -15,6 +15,7 @@ namespace LibraryManagementSystem
             if (!Page.IsPostBack)
             {
                 SetInitialLoginState();
+                HeaderUIHandler();
 
                 if (!sessionHandler.GetLoginState())
                 {
@@ -22,6 +23,8 @@ namespace LibraryManagementSystem
                     string redirectScript = "<script>window.location.href = 'Home.aspx';</script>";
                     ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
                 }
+
+                //$@"";
             }
         }
 
@@ -41,6 +44,14 @@ namespace LibraryManagementSystem
             Session["userLoginState"] = false;
             Session.Abandon();
             Response.Redirect(link);
+        }
+
+        protected void HeaderUIHandler() {
+            librarian_link.Visible = false;
+
+            if (sessionHandler.GetIsLibrarian()) {
+                librarian_link.Visible = true;
+            }
         }
     }
 }
