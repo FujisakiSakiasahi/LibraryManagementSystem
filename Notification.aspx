@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="CSS/Header.css" />
     <link rel="stylesheet" href="CSS/Footer.css" />
+        <link rel="stylesheet" href="CSS/Notification/notification-css.css" />
+
 
 
 
@@ -45,7 +47,8 @@
                     <!--Login / Signup-->
                     <div id="login_link" runat="server">
                         <a href="Login.aspx" class="link-light login-text">
-                            <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
+                            <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link">
+                            </asp:Label>
                         </a>
                     </div>
 
@@ -74,6 +77,15 @@
 
 
         <!--content-->
+
+        <div class="container">
+            <div class="contaier-fluid text-center">
+                <h2 class="page-title">Notification</h2>
+            </div>
+            <div class="contaier-fluid">
+                <asp:GridView ID="GridView1" runat="server" CssClass="notifs"></asp:GridView>
+            </div>
+        </div>
 
         <!--Footer-->
 
