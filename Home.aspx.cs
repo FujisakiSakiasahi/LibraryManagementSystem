@@ -61,12 +61,10 @@ namespace LibraryManagementSystem
             string content = "";
             if (result.Rows.Count != 0) {//insert 4 popular book
                 for (int i = 0; i < result.Rows.Count; i++) {
-                    string image = result.Rows[i][3].ToString()!="" ? File.Exists($"/images/{result.Rows[i][3].ToString()}") ? result.Rows[i][3].ToString() : "book.jpg" : "book.jpg";
-
                     content += $@"<div class=""col-lg-3"">
                                     <div class=""thumbnail"">
                                             <a href=""Description.aspx?bookId={result.Rows[i][0]}"">
-                                                <img src=""/images/{image}"" style=""width:100%""/>
+                                                <img src=""{result.Rows[i][3].ToString().TrimStart('~')}"" style=""width:100%""  class=""book-cover-size""/>
                                                 <div class=""caption"">
                                                     <p>{result.Rows[i][1]}</p>
                                                     <p>By {result.Rows[i][2]}</p>
@@ -81,7 +79,7 @@ namespace LibraryManagementSystem
                 popular_book_content.InnerHtml = "";
                 popular_book_content.InnerHtml = $@"<div class=""col-lg-3"">
                                                            <div class=""thumbnail"">
-                                                                    <img src=""/images/book.jpg"" style=""width:100%""/>
+                                                                    <img src=""/images/book.jpg"" style=""width:100%""  class=""book-cover-size""/>
                                                                     <div class=""caption"">
                                                                         <p>No Books</p>
                                                                     </div>
@@ -95,12 +93,10 @@ namespace LibraryManagementSystem
             content = "";
             if (result.Rows.Count != 0) {//insert 4 newest book
                 for (int i = 0; i < result.Rows.Count; i++) {
-                    string image = result.Rows[i][3].ToString() != "" ? File.Exists($"/images/{result.Rows[i][3].ToString()}") ? result.Rows[i][3].ToString() : "book.jpg" : "book.jpg";
-
                     content += $@"<div class=""col-lg-3"">
                                     <div class=""thumbnail"">
                                             <a href=""Description.aspx?bookId={result.Rows[i][0]}"">
-                                                <img src=""/images/{image}"" style=""width:100%""/>
+                                                <img src=""{result.Rows[i][3].ToString().TrimStart('~')}"" style=""width:100%""  class=""book-cover-size""/>
                                                 <div class=""caption"">
                                                     <p>{result.Rows[i][1]}</p>
                                                     <p>By {result.Rows[i][2]}</p>
@@ -129,16 +125,14 @@ namespace LibraryManagementSystem
             content = "";
             if (result.Rows.Count != 0) {//insert 4 newest book
                 for (int i = 0; i < result.Rows.Count; i++) {
-                    string image = result.Rows[i][3].ToString() != "" ? File.Exists($"/images/{result.Rows[i][3].ToString()}") ? result.Rows[i][3].ToString() : "book.jpg" : "book.jpg";
-
                     content += $@"<div class=""col-lg-3"">
                                     <div class=""thumbnail"">
                                             <a href=""Description.aspx?bookId={result.Rows[i][0]}"">
-                                                <img src=""/images/{image}"" style=""width:100%""/>
+                                                <img src=""{result.Rows[i][3].ToString().TrimStart('~')}"" style=""width:100%""  class=""book-cover-size""/>
                                                 <div class=""caption"">
                                                     <p>{result.Rows[i][1]}</p>
                                                     <p>By {result.Rows[i][2]}</p>
-                                                    </div>
+                                                 </div>
                                             </a>
                                         </div>
                                     </div>";
@@ -149,7 +143,7 @@ namespace LibraryManagementSystem
                 recommended_book_content.InnerHtml = "";
                 recommended_book_content.InnerHtml = $@"<div class=""col-lg-3"">
                                                            <div class=""thumbnail"">
-                                                                    <img src=""/images/book.jpg"" style=""width:100%""/>
+                                                                    <img src=""/images/book.jpg"" style=""width:100%"" class=""book-cover-size""/>
                                                                     <div class=""caption"">
                                                                         <p>No Books</p>
                                                                     </div>

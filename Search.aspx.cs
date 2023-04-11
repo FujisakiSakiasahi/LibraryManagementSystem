@@ -264,13 +264,11 @@ namespace LibraryManagementSystem
                 string content = "";
                 for (int i = 0; i < 10; i++) {
                     int dataIndex = i + (page * 10 - 10);
-                    string image = dataTable.Rows[dataIndex][3].ToString() != "" ? File.Exists($"/images/{dataTable.Rows[dataIndex][3].ToString()}") ? dataTable.Rows[dataIndex][3].ToString() : "book.jpg" : "book.jpg";
-
                     content += $@"<li class=""list-group-item"">
                                     <a href=""Description.aspx?bookId={dataTable.Rows[dataIndex][0]}"">
                                         <div class=""row"">
                                             <div class=""col-lg-3"">
-                                                <img src=""/images/{image}"" />
+                                                <img src=""{dataTable.Rows[dataIndex][3].ToString().TrimStart('~')}"" class=""book-cover-size""/>
                                             </div>
                                             <div class=""col-lg-9"">
                                                 <h4 class=""text-dark"">{dataTable.Rows[dataIndex][1]}</h4>
@@ -287,13 +285,11 @@ namespace LibraryManagementSystem
                 string content = "";
                 for (int i = 0; i < dataTable.Rows.Count-(page*10-10); i++) {
                     int dataIndex = i + (page * 10 - 10);
-                    string image = dataTable.Rows[dataIndex][3].ToString() != "" ? File.Exists($"/images/{dataTable.Rows[dataIndex][3].ToString()}") ? dataTable.Rows[dataIndex][3].ToString() : "book.jpg" : "book.jpg";
-
                     content += $@"<li class=""list-group-item"">
                                     <a href=""Description.aspx?bookId={dataTable.Rows[dataIndex][0]}"">
                                         <div class=""row"">
                                             <div class=""col-lg-3"">
-                                                <img src=""/images/{image}"" />
+                                                <img src=""{dataTable.Rows[dataIndex][3].ToString().TrimStart('~')}"" class=""book-cover-size""/>
                                             </div>
                                             <div class=""col-lg-9"">
                                                 <h4 class=""text-dark"">{dataTable.Rows[dataIndex][1]}</h4>
