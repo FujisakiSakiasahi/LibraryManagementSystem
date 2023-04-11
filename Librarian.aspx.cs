@@ -171,8 +171,8 @@ namespace LibraryManagementSystem {
 
             if (FileUpload_Image2.HasFile)
             {
-                Upload_Book_Image(FileUpload_Image2, highest + 1.ToString()+".jpg");
-                image = "~/images/books/" + highest + 1.ToString() + ".jpg";
+                Upload_Book_Image(FileUpload_Image2, (highest + 1).ToString()+".jpg");
+                image = "~/images/books/" + (highest + 1).ToString() + ".jpg";
             }
 
             String query = $"INSERT INTO `Book` (`bookId`, `bookName`, `authorName`, `bookImage`, `bookDescription`, `publisherName`, `pubDate`, `rating`, `lang`, `isbn`, `available`, `shelfid`) VALUES ('{highest += 1}', '{TextBox_Title3.Text}', '{TextBox_Author3.Text}', '{(string.IsNullOrEmpty(image) ? "~/images/book.jpg" : image)}', '{TextBox_Description3.Text}', '{TextBox_Publisher3.Text}', '{date}', '{DropDownList_Rating3.SelectedValue}', '{TextBox_Language3.Text}', '{TextBox_ISBN3.Text}', b'{(CheckBox_Availability3.Checked ? 1 : 0)}', '{TextBox_ShelfID3.Text}');";
@@ -676,6 +676,7 @@ namespace LibraryManagementSystem {
 
         protected void Upload_Book_Image(FileUpload fu, String filename)
         {
+            Debug.WriteLine(filename);
             if (!Directory.Exists(Server.MapPath("~/images")))
             {
                 Directory.CreateDirectory(Server.MapPath("~/images"));
