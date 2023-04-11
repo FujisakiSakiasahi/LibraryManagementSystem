@@ -6,7 +6,6 @@ create table Book (
     bookDescription VARCHAR(1000),
     publisherName VARCHAR(50) NOT NULL,
     pubDate DATE NOT NULL,
-    rating INT,
     lang VARCHAR(10) NOT NULL,
     isbn BIGINT NOT NULL,
     available BIT NOT NULL,
