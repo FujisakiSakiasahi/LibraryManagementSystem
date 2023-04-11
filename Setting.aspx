@@ -58,7 +58,7 @@
                                     </li>
                                     <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
                                     <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
-                                    <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
+                                    <li><a class="dropdown-item active" href="Setting.aspx">Setting</a></li>
                                     <li>
                                         <hr class="dropdown-divider" />
                                     </li>
