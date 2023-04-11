@@ -52,7 +52,7 @@
                         <div class="d-flex align-items-center justify-content-end">
                             <div class="dropdown text-end">
                                 <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" />
+                                    <img src="/images/user.jpg" alt="mdo" width="40" height="40" class="rounded-circle" />
                                 </a>
                                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
                                     <li><p id="username" runat="server" class="dropdown-item"></p></li>
