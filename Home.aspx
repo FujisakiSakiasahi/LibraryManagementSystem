@@ -16,52 +16,57 @@
 <body>
      
     <form id="form1" runat="server">
-      <div class="header">
-          <div class="header-logo-container">
-              <div class="header-logo">
-                  <asp:Image ID="logo_image" runat="server" ImageUrl="~/images/HamiShu_Blue_BG.png" Width="208px" />
-              </div>
-          </div>
+      <!--Header-->
+        <div class="navigation-bar container-fluid">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
-          <div class="header-navigation-container">
-              <asp:Button ID="header_home" runat="server" Text="Home" CssClass="nav-buttons" PostBackUrl="~/Home.aspx" />
-              <asp:Button ID="header_search" runat="server" Text="Search" CssClass="nav-buttons" PostBackUrl="~/Search.aspx" />
-              <asp:Button ID="header_about_us" runat="server" Text="About Us" CssClass="nav-buttons" PostBackUrl="~/AboutUs.aspx" />
-              <asp:Button ID="header_temp" runat="server" Text="Temp" CssClass="nav-buttons" />
-          </div>
 
-          <div class="header-login-container">
-              <div class="header-login">
+                <!--Logo-->
+                <a href="Home.aspx" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <img src="images/HamiShu_Blue_BG.png" alt="Alternate Text" class="img-responsive" width="150" />
+                </a>
 
-                  <!--Login Page link before login-->
-                  <div id="login_link" runat="server">
-                      <a href="Login.aspx" class="link">
-                          <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
-                      </a>
-                  </div>
+                <!--Navigation Links-->
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="Home.aspx" class="nav-link px-2 link-light ">Home</a></li>
+                    <li><a href="Search.aspx" class="nav-link px-2 link-light">Search</a></li>
+                    <li><a href="AboutUs.aspx" class="nav-link px-2 link-light">About Us</a></li>
+                    <li><a href="FAQ.aspx" class="nav-link px-2 link-light">FAQ</a></li>
+                    <li id="librarian_link" runat="server"><a href="Librarian.aspx" class="nav-link px-2 link-light">Librarian</a></li>
+                </ul>
 
-                  <!--Profile Picture after login-->
-                  <div id="profile" runat="server">
-                      <div class="d-flex align-items-center">
-                          <div class="dropdown text-end">
-                              <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                                  <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle"/>
-                              </a>
-                              <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
-                                  <li><a class="dropdown-item" href="#">New project...</a></li>
-                                  <li><a class="dropdown-item" href="#">Settings</a></li>
-                                  <li><a class="dropdown-item" href="#">Profile</a></li>
-                                  <li>
-                                      <hr class="dropdown-divider"/>
-                                  </li>
-                                  <li><a class="dropdown-item" href="#">Sign out</a></li>
-                              </ul>
-                          </div>
-                      </div>
-                  </div>
-              </div>
-          </div>
-      </div>
+                <!--Login / Profile Dropdown-->
+                <div class="col-md-3 text-end ">
+
+                    <!--Login / Signup-->
+                    <div id="login_link" runat="server">
+                        <a href="Login.aspx" class="link-light login-text">
+                            <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
+                        </a>
+                    </div>
+
+                    <!--Profile Picture & Dropdown after login-->
+                    <div id="profile" runat="server">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <div class="dropdown text-end">
+                                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" />
+                                </a>
+                                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                                    <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
+                                    <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
+                                    <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" id="Logout_Button" runat="server" onserverclick="Logout_Function">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
 
         <div class="content">
             <div class="banner-container">

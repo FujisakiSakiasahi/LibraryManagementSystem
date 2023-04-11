@@ -152,5 +152,14 @@ namespace LibraryManagementSystem
             string output = input.Replace(" ", "+");
             return output;
         }
+
+        protected void Logout_Function(object sender, EventArgs e)
+        {
+            string link = sessionHandler.GetIsLibrarian() && Request.RawUrl.Equals("Librarian.aspx") ? "Home.aspx" : Request.RawUrl;
+
+            Session["userLoginState"] = false;
+            Session.Abandon();
+            Response.Redirect(link);
+        }
     }
 }

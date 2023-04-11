@@ -15,6 +15,7 @@ namespace LibraryManagementSystem
             if (!Page.IsPostBack)
             {
                 SetInitialLoginState();
+                HeaderUIHandler();
 
                 if (!sessionHandler.GetLoginState())
                 {
@@ -25,6 +26,15 @@ namespace LibraryManagementSystem
             }
         }
 
+        protected void HeaderUIHandler()
+        {
+            librarian_link.Visible = false;
+
+            if (sessionHandler.GetIsLibrarian())
+            {
+                librarian_link.Visible = true;
+            }
+        }
         protected void SetInitialLoginState()
         {
             if (Session["loginState"] != null)
