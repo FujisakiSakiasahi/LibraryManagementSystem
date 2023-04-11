@@ -15,7 +15,7 @@
 
 
     <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -44,13 +44,6 @@
                 <!--Login / Profile Dropdown-->
                 <div class="col-md-3 text-end ">
 
-                    <!--Login / Signup-->
-                    <div id="login_link" runat="server">
-                        <a href="Login.aspx" class="link-light login-text">
-                            <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
-                        </a>
-                    </div>
-
                     <!--Profile Picture & Dropdown after login-->
                     <div id="profile" runat="server">
                         <div class="d-flex align-items-center justify-content-end">
@@ -59,8 +52,12 @@
                                     <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" />
                                 </a>
                                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                                    <li><p id="username" runat="server" class="dropdown-item"></p></li>
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
                                     <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
-                                    <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
+                                    <li><a class="dropdown-item active" href="Request.aspx">Request a book</a></li>
                                     <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
                                     <li>
                                         <hr class="dropdown-divider" />
@@ -88,7 +85,7 @@
 
                 </div>
                 <div class="button-container container-fluid text-center">
-                    <asp:Button ID="Button_Request" runat="server" Text="Request Book" CssClass="request-button" />
+                    <asp:Button ID="Button_Request" runat="server" Text="Request Book" CssClass="request-button" OnClick="Button_Request_Click" />
 
                 </div>
 

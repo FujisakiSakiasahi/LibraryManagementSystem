@@ -25,6 +25,7 @@ namespace LibraryManagementSystem
             SetInitialLoginState();
             HeaderUIHandler();
 
+            username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
 
             try {
 
@@ -230,7 +231,7 @@ namespace LibraryManagementSystem
                     content += $@"<li class=""page-item";
                     if (currentPage == i + 1) content += " active";
                     content += $@"""><a class=""page-link";
-                    content += (page == i + 1) ? " text-light" : " text-dark";
+                    content += (currentPage == i + 1) ? " text-light" : " text-dark";
                     page= i + 1;
                     GenerateSearchPageLink(out link, bookTitle, filter);
                     content += $@""" href=""{link}"">{i + 1}</a></li>";

@@ -15,7 +15,7 @@
 
 
     <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -44,14 +44,6 @@
                 <!--Login / Profile Dropdown-->
                 <div class="col-md-3 text-end ">
 
-                    <!--Login / Signup-->
-                    <div id="login_link" runat="server">
-                        <a href="Login.aspx" class="link-light login-text">
-                            <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link">
-                            </asp:Label>
-                        </a>
-                    </div>
-
                     <!--Profile Picture & Dropdown after login-->
                     <div id="profile" runat="server">
                         <div class="d-flex align-items-center justify-content-end">
@@ -60,7 +52,11 @@
                                     <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" />
                                 </a>
                                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
-                                    <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
+                                    <li><p id="username" runat="server" class="dropdown-item"></p></li>
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
+                                    <li><a class="dropdown-item active" href="Notification.aspx">Notification</a></li>
                                     <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
                                     <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
                                     <li>
@@ -83,7 +79,15 @@
                 <h2 class="page-title">Notification</h2>
             </div>
             <div class="contaier-fluid">
-                <asp:GridView ID="GridView1" runat="server" CssClass="notifs"></asp:GridView>
+                <ul class="list-group mb-3 shadow" id="notification_list" runat="server">
+                    <!--list item card, result for searching              
+                    <li class="list-group-item">
+                        <h3>{title}</h3>
+                        <hr/>
+                        <p>{message}</p>
+                    </li>
+                    -->
+                </ul>
             </div>
         </div>
 

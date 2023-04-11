@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem
-{
+namespace LibraryManagementSystem {
 
 
-    public partial class Setting
-    {
+    public partial class Setting {
 
         /// <summary>
         /// form1 control.
@@ -33,24 +31,6 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl librarian_link;
 
         /// <summary>
-        /// login_link control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl login_link;
-
-        /// <summary>
-        /// login_button control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label login_button;
-
-        /// <summary>
         /// profile control.
         /// </summary>
         /// <remarks>
@@ -60,6 +40,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl profile;
 
         /// <summary>
+        /// username control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl username;
+
+        /// <summary>
         /// Logout_Button control.
         /// </summary>
         /// <remarks>
@@ -67,5 +56,32 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlAnchor Logout_Button;
+
+        /// <summary>
+        /// CheckBox_Notification control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.CheckBox CheckBox_Notification;
+
+        /// <summary>
+        /// Button_Save control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Save;
+
+        /// <summary>
+        /// Button_Cancel control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_Cancel;
     }
 }
