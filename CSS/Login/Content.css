@@ -1,53 +1,30 @@
-﻿body {
-    background-color: whitesmoke;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+﻿
+/*New Login*/
+body {
+    background: whitesmoke;
 }
 
-.login-container {
-    background-color: white;
-    height: 500px;
-    width: 500px;
-    margin: 0 auto;
-
+.background {
+    background: whitesmoke;
+    height: 100%;
 }
 
-.image-container {
-    margin: 10px;
-    text-align: center;
+.login {
+    background: white;
+    border-radius: 20px;
 }
 
-.image-container img{
-    height: 100px;
+img{
     width: 100px;
-}
-
-.textbox-container {
-    text-align: center;
+    height: 100px;
 }
 
 .textbox {
     padding: 10px;
     margin: 10px;
-}
-
-.button-container {
-    background: white;
-    display: flex;
-    height: min-content;
-    width: 90%;
-    justify-content: center;
-    margin: 0 auto;
-    align-items: space-between;
-}
-
-
-.buttons {
-    width: 90%;
-    background: white;
-    margin: 10px;
-    text-align: center;
+    border: solid grey 1px;
+    border-radius: 10px;
+    width:90%;
 }
 
 .button-forgotpassword {
@@ -57,6 +34,7 @@
     padding: 10px;
     float: left;
     margin: 10px;
+    border-radius: 10px;
 }
 
 .button-login {
@@ -66,8 +44,17 @@
     padding: 10px;
     float: right;
     margin: 10px;
+    border-radius: 10px;
 }
 
-.create-account {
-    text-align: center;
+.intro-container {
+    padding: 25px;
+}
+
+.input-container {
+    margin: 25px;
+}
+
+.button-container {
+    padding-bottom: 25px;
 }

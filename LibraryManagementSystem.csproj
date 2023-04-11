@@ -114,7 +114,6 @@
     <Content Include="CSS\Home\Text.css" />
     <Content Include="CSS\Librarian\Content.css" />
     <Content Include="CSS\Login\Content.css" />
-    <Content Include="CSS\Login\Textbox.css" />
     <Content Include="CSS\Notification\notification-css.css" />
     <Content Include="CSS\Search\Content.css" />
     <Content Include="Description.aspx" />
