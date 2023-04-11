@@ -17,7 +17,7 @@ namespace LibraryManagementSystem
     {
         SessionHandler sessionHandler = new SessionHandler();
         string bookTitle;
-        int page;
+        int page = 1;
         string link;
         string filter;
         protected void Page_Load(object sender, EventArgs e)
@@ -27,6 +27,7 @@ namespace LibraryManagementSystem
 
 
             try {
+
                 if (!Page.IsPostBack)
                 {
                     bookTitle = Request.QueryString["title"];
@@ -213,7 +214,7 @@ namespace LibraryManagementSystem
                 content = $@"<ul class=""pagination"">";
 
                 content += $@"<li class=""page-item""><a class=""page-link text-dark"" href=""";
-                if (page - 1 == 0) {
+                if (page - 1 <= 0) {
                     content += "";
                 } else {
                     page -= 1;
@@ -237,7 +238,7 @@ namespace LibraryManagementSystem
                 page = currentPage;
 
                 content += $@"<li class=""page-item""><a class=""page-link text-dark"" href=""";
-                if (page + 1 == totalPage + 1) {
+                if (page + 1 >= totalPage + 1) {
                     content += "";
                 } else {
                     page += 1;

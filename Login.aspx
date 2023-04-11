@@ -33,10 +33,12 @@
                 <asp:Label ID="Label3" runat="server" Text="Login to HamiShu"></asp:Label>
             </div>
             <div class="textbox-container">
-                <asp:Label ID="Label1" runat="server" Text="Email Address"></asp:Label>
-                <asp:TextBox ID="TextBox1" runat="server" Width="419px" CssClass="textbox"></asp:TextBox>
-                <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-                <asp:TextBox ID="TextBox2" runat="server" Width="419px" CssClass="textbox"></asp:TextBox>
+                <asp:Panel runat="server" DefaultButton="Button2">
+                    <asp:Label ID="Label1" runat="server" Text="Email Address"></asp:Label>
+                    <asp:TextBox ID="TextBox1" runat="server" Width="419px" CssClass="textbox"></asp:TextBox>
+                    <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
+                    <asp:TextBox ID="TextBox2" runat="server" Width="419px" CssClass="textbox"></asp:TextBox>
+                </asp:Panel>
             </div>
             <div class="button-container">
                 <div class="buttons">
