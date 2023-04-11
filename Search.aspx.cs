@@ -17,7 +17,7 @@ namespace LibraryManagementSystem
     {
         SessionHandler sessionHandler = new SessionHandler();
         string bookTitle;
-        int page;
+        int page = 1;
         string link;
         string filter;
         protected void Page_Load(object sender, EventArgs e)
@@ -27,6 +27,7 @@ namespace LibraryManagementSystem
 
 
             try {
+
                 if (!Page.IsPostBack)
                 {
                     bookTitle = Request.QueryString["title"];
