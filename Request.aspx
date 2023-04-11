@@ -44,13 +44,6 @@
                 <!--Login / Profile Dropdown-->
                 <div class="col-md-3 text-end ">
 
-                    <!--Login / Signup-->
-                    <div id="login_link" runat="server">
-                        <a href="Login.aspx" class="link-light login-text">
-                            <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
-                        </a>
-                    </div>
-
                     <!--Profile Picture & Dropdown after login-->
                     <div id="profile" runat="server">
                         <div class="d-flex align-items-center justify-content-end">

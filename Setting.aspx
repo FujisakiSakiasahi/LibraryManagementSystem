@@ -8,6 +8,8 @@
 
     <link rel="stylesheet" href="CSS/Header.css" />
     <link rel="stylesheet" href="CSS/Footer.css" />
+    <link rel="stylesheet" href="CSS/setting.css" />
+
 
 
 
@@ -42,13 +44,6 @@
                 <!--Login / Profile Dropdown-->
                 <div class="col-md-3 text-end ">
 
-                    <!--Login / Signup-->
-                    <div id="login_link" runat="server">
-                        <a href="Login.aspx" class="link-light login-text">
-                            <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link"></asp:Label>
-                        </a>
-                    </div>
-
                     <!--Profile Picture & Dropdown after login-->
                     <div id="profile" runat="server">
                         <div class="d-flex align-items-center justify-content-end">
@@ -74,8 +69,31 @@
 
         <!--Content-->
 
+        <div class="container">
+            <div class="contaier-fluid text-center">
+                <h2 class="page-title">Settings</h2>
+            </div>
+            <div class="container-fluid">
+                <div class="container-fluid">
+                    <h3>
+                        Notification
+                    </h3>
+                </div>
+                <div class="container-fluid">
+                    <asp:CheckBox ID="CheckBox_Notification" runat="server" Text=" Turn On Notification" />
+                </div>
+                <div class="button-container container-fluid">
+                    <div class="row">
+                        <div class="col-12">
+                            <asp:Button ID="Button_Save" runat="server" Text="Save Changes" CssClass="button-save" />
+                            <asp:Button ID="Button_Cancel" runat="server" Text="Cancel" CssClass="button-cancel" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-<!--Footer-->
+        <!--Footer-->
 
         <footer class="text-center text-lg-start bg-dark text-white">
             <!-- Section: Links  -->
@@ -86,8 +104,7 @@
                         <!-- Grid column -->
                         <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
                             <!-- Content -->
-                            <h6 class="text-uppercase fw-bold mb-4">
-                                HamiShu LMS
+                            <h6 class="text-uppercase fw-bold mb-4">HamiShu LMS
 
                             </h6>
                             <p>

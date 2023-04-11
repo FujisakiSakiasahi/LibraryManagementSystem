@@ -117,6 +117,7 @@
     <Content Include="CSS\Notification\notification-css.css" />
     <Content Include="CSS\request.css" />
     <Content Include="CSS\Search\Content.css" />
+    <Content Include="CSS\setting.css" />
     <Content Include="Description.aspx" />
     <Content Include="FAQ.aspx" />
     <Content Include="images\book.jpg" />

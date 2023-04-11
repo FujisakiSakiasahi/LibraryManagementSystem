@@ -44,14 +44,6 @@
                 <!--Login / Profile Dropdown-->
                 <div class="col-md-3 text-end ">
 
-                    <!--Login / Signup-->
-                    <div id="login_link" runat="server">
-                        <a href="Login.aspx" class="link-light login-text">
-                            <asp:Label ID="login_button" runat="server" Text="Login / Sign Up" CssClass="link">
-                            </asp:Label>
-                        </a>
-                    </div>
-
                     <!--Profile Picture & Dropdown after login-->
                     <div id="profile" runat="server">
                         <div class="d-flex align-items-center justify-content-end">
@@ -83,7 +75,23 @@
                 <h2 class="page-title">Notification</h2>
             </div>
             <div class="contaier-fluid">
-                <asp:GridView ID="GridView1" runat="server" CssClass="notifs"></asp:GridView>
+                <ul class="list-group" id="search_result" runat="server">
+                    <!--list item card, result for searching              
+                        <li class="list-group-item">
+                            <a href="Description.aspx?bookId=12">
+                                <div class="row">
+                                    <div class="col-lg-3">
+                                        <img src="/images/book.jpg" />
+                                    </div>
+                                    <div class="col-lg-9">
+                                        <h4 class="text-dark">Title</h4>
+                                        <p class="text-dark">Description</p>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    -->
+                </ul>
             </div>
         </div>
 
