@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem
-{
+namespace LibraryManagementSystem {
 
 
-    public partial class Setting
-    {
+    public partial class Setting {
 
         /// <summary>
         /// form1 control.
@@ -40,6 +38,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl profile;
+
+        /// <summary>
+        /// username control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl username;
 
         /// <summary>
         /// Logout_Button control.

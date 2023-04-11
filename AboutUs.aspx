@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="CSS/Footer.css" />
     
      <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -54,6 +54,10 @@
                                     <img src="https://github.com/mdo.png" alt="mdo" width="40" height="40" class="rounded-circle" />
                                 </a>
                                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                                    <li><p id="username" runat="server" class="dropdown-item"></p></li>
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
                                     <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
                                     <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
                                     <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
