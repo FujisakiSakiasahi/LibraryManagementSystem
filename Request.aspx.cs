@@ -12,13 +12,11 @@ namespace LibraryManagementSystem
         private SessionHandler sessionHandler = new SessionHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack)
-            {
+            if (!Page.IsPostBack) { 
                 SetInitialLoginState();
                 HeaderUIHandler();
 
-                if (!sessionHandler.GetLoginState())
-                {
+                if (!sessionHandler.GetLoginState()) {
                     Response.Write("<script>alert('Access denied, redirecting to home')</script>");
                     string redirectScript = "<script>window.location.href = 'Home.aspx';</script>";
                     ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
@@ -50,6 +48,12 @@ namespace LibraryManagementSystem
             Session["userLoginState"] = false;
             Session.Abandon();
             Response.Redirect(link);
+        }
+
+        protected void Button_Request_Click(object sender, EventArgs e) {
+            if (!string.IsNullOrEmpty(Textbox_Request.Text)) {
+                sessionHandler.RunQuery($"INSERT INTO Requests (bookName) VALUES ('{Textbox_Request.Text}');");
+            }
         }
     }
 }

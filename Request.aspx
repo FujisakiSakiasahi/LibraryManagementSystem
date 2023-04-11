@@ -15,7 +15,7 @@
 
 
     <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -81,7 +81,7 @@
 
                 </div>
                 <div class="button-container container-fluid text-center">
-                    <asp:Button ID="Button_Request" runat="server" Text="Request Book" CssClass="request-button" />
+                    <asp:Button ID="Button_Request" runat="server" Text="Request Book" CssClass="request-button" OnClick="Button_Request_Click" />
 
                 </div>
 
