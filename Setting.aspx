@@ -88,7 +88,8 @@
                 </div>
                 <div class="button-container container-fluid">
                     <div class="row">
-                        <p id="system_response" runat="server" class="text-success"></p>
+                        <p id="system_response_success" runat="server" class="text-success text-end"></p>
+                        <p id="system_response_fail" runat="server" class="text-error text-end"></p>
                     </div>
                     <div class="row">
                         <div class="col-12">

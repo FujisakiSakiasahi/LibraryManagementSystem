@@ -142,7 +142,7 @@ namespace LibraryManagementSystem
         {
             string link = sessionHandler.GetIsLibrarian() && Request.RawUrl.Equals("Librarian.aspx") ? "Home.aspx" : Request.RawUrl;
 
-            Session["userLoginState"] = false;
+            Session["loginState"] = false;
             Session.Abandon();
             Response.Redirect(link);
         }
