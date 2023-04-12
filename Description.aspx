@@ -119,13 +119,11 @@
                         <!--User Rating-->
                         <div class="row">
                             <div class="col-6">
-                                <div class="rating-label">
-                                    <asp:Label ID="Label_Rating" runat="server" Text="Rating: "></asp:Label>
-                                </div>
+                                    <asp:Label ID="Label_Rating" runat="server" Text="Rating: " CssClass="rating-label"></asp:Label>
 
                             </div>
                             <div class="col-6">
-                                <asp:DropDownList ID="DropDownList_Rating" runat="server" CssClass="rating-dropdownlist" Enabled="False" OnSelectedIndexChanged="DropDownList_Rating_SelectedIndexChanged">
+                                <asp:DropDownList ID="DropDownList_Rating" runat="server" CssClass="rating-dropdownlist" Enabled="False">
                                     <asp:ListItem>1</asp:ListItem>
                                     <asp:ListItem>2</asp:ListItem>
                                     <asp:ListItem>3</asp:ListItem>
@@ -138,9 +136,8 @@
                             <p id="rating_success" runat="server" class="text-success text-center">Rating has been saved!</p>
                         </div>
                         <div class="row">
-                            <div class="save-button">
+                            <div class="text-center align-items-center rating-button-div">
                                 <asp:Button ID="Button_SaveRating" runat="server" Text="Save Rating" CssClass="" Enabled="False" OnClick="Button_SaveRating_Click" />
-
                             </div>
                         </div>
                     </div>
