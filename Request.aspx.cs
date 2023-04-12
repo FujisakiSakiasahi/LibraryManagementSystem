@@ -15,13 +15,13 @@ namespace LibraryManagementSystem
             SetInitialLoginState();
             HeaderUIHandler();
 
-            if (!Page.IsPostBack) { 
-                username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
-
+            if (!Page.IsPostBack) {
                 if (!sessionHandler.GetLoginState()) {
                     Response.Write("<script>alert('Access denied, redirecting to home')</script>");
                     string redirectScript = "<script>window.location.href = 'Home.aspx';</script>";
                     ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
+                } else { 
+                    username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
                 }
 
                 system_response_success.Visible = false;
