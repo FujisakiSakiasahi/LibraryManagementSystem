@@ -769,19 +769,30 @@
                         </div>
                     </asp:View>
                     <asp:View ID="View13" runat="server">
-                        <div class="view-container">
-                            <div style="text-align: left; margin: 0 auto; display: block"> <%--can we center this somehow--%>
+                        <div class="view-container container">
+                            `<div class="row">
+                               <div class="col-12">
+                                 <div style="text-align: left; margin: 0 auto; display: block"> <%--can we center this somehow--%>
                             <asp:CheckBoxList ID="CheckBoxList_RequestedBooks" ForeColor="Black" runat="server"/> 
                             </div>
                             <asp:Label ID="Label_AddedRequestedBooks" ForeColor="Green" runat="server" Text="Removed Books" Visible="False"></asp:Label>
-                            <asp:Button ID="Button_AddedRequestedBooks" runat="server" Text="Remove" OnClick="Button_Click_AddedRequestedBooks" />
+                            
+                             </div> 
+                            </div>
+                            <div class="row">
+                                <div class="col-11">
 
+                                </div>
+                                <div class="col-1">
+                                    <asp:Button ID="Button_AddedRequestedBooks" runat="server" Text="Remove" OnClick="Button_Click_AddedRequestedBooks" />
+                                </div>
+                            </div>
                         </div>
                     </asp:View>
                     <asp:View ID="View14" runat="server">
-                        <div class="view-container">
-                            <asp:GridView ID="GridView_Overdue" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ClaimOverdue">
-
+                        <div class="view-container container">
+                            <div class="row">
+                                   <asp:GridView ID="GridView_Overdue" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ClaimOverdue">
                                 <Columns>
                                     <asp:TemplateField HeaderText="Borrow ID">
                                         <ItemTemplate >
@@ -827,6 +838,7 @@
                                 
                             </asp:GridView>
                             <asp:Label ID="Label_ClaimedBooks" runat="server" ForeColor="Green" Text="Claimed Book" Visible="False"></asp:Label>
+                               </div>
                         </div>
                     </asp:View>
                 </asp:MultiView>
