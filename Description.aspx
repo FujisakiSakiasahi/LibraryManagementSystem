@@ -139,6 +139,9 @@
                                 <asp:Button ID="Button_SaveRating" runat="server" Text="Save Rating" CssClass="" Enabled="False" OnClick="Button_SaveRating_Click" />
                             </div>
                         </div>
+                        <div class="row">
+                            <p id="rating_error" runat="server" class="text-danger text-center"></p>
+                        </div>
                     </div>
 
                     <!--right side-->
