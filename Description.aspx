@@ -89,78 +89,151 @@
             </header>
         </div>
 
-        <div class="container-fluid">
-            <div class="row content">
-                <div class="col-sm-2 sidenav">
-                </div>
-                <div class="col-sm-8 text-left">
-                    <div class="content">
-                        <div class="description">
-                            <div class="row">
-                                <div class="col-lg-12">
-                                    <h2 id="Label_Title" runat="server"></h2>
+        <!--Content-->
+        <div class="container content shadow">
+
+            <!--Title-->
+            <div class="container-fluid">
+                <h2 id="Label_Title" runat="server"></h2>
+                <hr />
+            </div>
+
+            <div class="container-fluid">
+                <div class="row">
+
+                    <!--left side-->
+                    <div class="col-md-2 col-sm-12 foreground justify-content-center">
+
+                        <!--image-->
+                        <div class="row">
+                            <asp:Image ID="Image_BookCover" runat="server" CssClass="book-image" ImageUrl="~/images/book.jpg" AlternateText="book image" />
+                        </div>
+
+                        <!--buttons-->
+                        <div class="row buttons">
+                            <asp:Button ID="Button_Wishlist" runat="server" Text="Wishlist" OnClick="Button_Wishlist_Click"  CssClass="wishlist-button"/>
+                            <asp:Button ID="Button_CopyCite" runat="server" Text="Copy Citation" OnClientClick="return copyText()" CssClass="copy-citation-button" />
+                            <asp:Button ID="Button_ReserveBook" runat="server" Text="Reserve" OnClick="Button_ReserveBook_Click" CssClass="reserve-button" />
+                        </div>
+
+                        <!--User Rating-->
+                        <div class="row">
+                            <div class="col-6">
+                                <div class="rating-label">
+                                    <asp:Label ID="Label_Rating" runat="server" Text="Rating: "></asp:Label>
                                 </div>
+
                             </div>
-                            <hr class="solid" />
-                            <div class="row">
-                                <div class="col-lg-3">
-                                    <asp:Image ID="Image_BookCover" runat="server" CssClass="temp-img" ImageUrl="~/images/book.jpg" />
-                                </div>
-                                <div class="col-lg-9">
-                                    <asp:Label ID="Label_Description" runat="server" Text="*desciption*" class="text-left"></asp:Label>
-                                </div>
+                            <div class="col-6">
+                                <asp:DropDownList ID="DropDownList_Rating" runat="server" CssClass="rating-dropdownlist">
+                                    <asp:ListItem>1</asp:ListItem>
+                                    <asp:ListItem>2</asp:ListItem>
+                                    <asp:ListItem>3</asp:ListItem>
+                                    <asp:ListItem>4</asp:ListItem>
+                                    <asp:ListItem>5</asp:ListItem>
+                                </asp:DropDownList>
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="save-button">
+                                <asp:Button ID="Button_SaveRating" runat="server" Text="Save Rating" CssClass="" />
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--right side-->
+                    <div class="col-md-10 col-sm-12">
+                        
+                        <!--Description-->
+                        <div class="row">
+                            <h3>Description</h3>
+                            <hr />
+                        </div>
+                        <div class="row description">
+                            <asp:Label ID="Label_Description" runat="server" Text="*desciption*"></asp:Label>
+
+                        </div>
+
+                        <!--More Information-->
+                        <div class="row">
                             <div class="row">
-                                <div class="col-lg-3">
-                                    <asp:Button ID="Button_Wishlist" runat="server" Text="Wishlist" OnClick="Button_Wishlist_Click" />
-                                    <asp:Button ID="Button_CopyCite" runat="server" Text="Copy Citation" OnClientClick="return copyText()"/>
-                                    <asp:Button ID="Button_ReserveBook" runat="server" Text="Reserve" OnClick="Button_ReserveBook_Click" />
-                                </div>
-                                <div class="col-lg-9">
-                                    <div class="row">
-                                        <h3 class="text-left">More Information</h3>
-                                        <div class="row">
-                                            <asp:Label runat="server" class="col-lg-2 text-left">Author:</asp:Label>
-                                            <asp:Label runat="server" ID="tablecell_author" class="col-lg-2 text-left"></asp:Label>
+                                <h3>More Information</h3>
+                                <hr />
+                            </div>
+                            <div class="row more-information">
+                                <div class="row">
+
+                                    <!--info left-->
+                                    <div class="col-6">
+                                        <div class="row desc">
+                                            <asp:Label runat="server" CssClass="title-label">Author:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_author"></asp:Label>
+                                            <br />
+                                            <br />
                                         </div>
                                         <div class="row">
-                                            <asp:Label runat="server" class="col-lg-2 text-left">Publisher:</asp:Label>
-                                            <asp:Label runat="server" ID="tablecell_publisher" class="col-lg-2 text-left"></asp:Label>
+                                            <asp:Label runat="server" CssClass="title-label">Publisher:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_publisher"></asp:Label>
+                                            <br />
+                                            <br />
+
                                         </div>
                                         <div class="row">
-                                            <asp:Label runat="server" class="col-lg-2 text-left">Publish Date:</asp:Label>
-                                            <asp:Label runat="server" ID="tablecell_publishdate" class="col-lg-2 text-left"></asp:Label>
-                                        </div>
-                                        <div class="row">
-                                            <asp:Label runat="server" class="col-lg-2 text-left">Rating:</asp:Label>
-                                            <asp:Label runat="server" ID="tablecell_rating" class="col-lg-2 text-left"></asp:Label>
-                                        </div>
-                                        <div class="row">
-                                            <asp:Label runat="server" class="col-lg-2 text-left">Language:</asp:Label>
-                                            <asp:Label runat="server" ID="tablecell_language" class="col-lg-2 text-left"></asp:Label>
-                                        </div>
-                                        <div class="row">
-                                            <asp:Label runat="server" class="col-lg-2 text-left">ISBN:</asp:Label>
-                                            <asp:Label runat="server" ID="tablecell_ISBN" class="col-lg-2 text-left"></asp:Label>
-                                        </div>
-                                        <div class="row">
-                                            <asp:Label runat="server" class="col-lg-2 text-left">Availability:</asp:Label>
-                                             <asp:Label runat="server" ID="tablecell_availability" class="col-lg-2 text-left"></asp:Label>
-                                        </div>
-                                        <div class="row">
-                                            <asp:Label runat="server" class="col-lg-2 text-left">Shelf ID:</asp:Label>
-                                            <asp:Label runat="server" ID="tablecell_shelfid" class="col-lg-2 text-left"></asp:Label>
+                                            <asp:Label runat="server" CssClass="title-label">Publish Date:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_publishdate"></asp:Label>
+                                            <br />
+                                            <br />
+
                                         </div>
                                     </div>
-                        
-                                    <!--this is use to store the citingText for copy usage-->
-                                    <textarea id="citingText" runat="server" style="display: none;"></textarea>
+
+                                    <!--info right-->
+                                    <div class="col-6">
+                                        <div class="row">
+                                            <asp:Label runat="server" CssClass="title-label">Rating:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_rating"></asp:Label>
+                                            <br />
+                                            <br />
+
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label runat="server" CssClass="title-label">Language:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_language"></asp:Label>
+                                            <br />
+                                            <br />
+
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label runat="server" CssClass="title-label">ISBN:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_ISBN"></asp:Label>
+                                            <br />
+                                            <br />
+
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label runat="server" CssClass="title-label">Availability:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_availability"></asp:Label>
+                                            <br />
+                                            <br />
+
+                                        </div>
+                                        <div class="row">
+                                            <asp:Label runat="server" CssClass="title-label">Shelf ID:</asp:Label>
+                                            <asp:Label runat="server" ID="tablecell_shelfid"></asp:Label>
+                                            <br />
+                                            <br />
+
+                                        </div>
+
+                                        <!--this is use to store the citingText for copy usage-->
+                                        <textarea id="citingText" runat="server" style="display: none;"></textarea>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-sm-2 sidenav">
                 </div>
             </div>
         </div>

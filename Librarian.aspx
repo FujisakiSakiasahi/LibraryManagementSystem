@@ -393,72 +393,128 @@
                             </div>
                         </div>
                     </asp:View>
+
+
+                    <!--List/Search User-->
                     <asp:View ID="View4" runat="server">
-                        <div class="view-container">
-                            <asp:Panel runat="server" DefaultButton="Button_SearchUser">
-                                <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" CssClass="search-bar" TextMode="Search"></asp:TextBox>
-                                <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" CssClass="search-button" />
-                            </asp:Panel>
-                            <asp:Button ID="Button_AddUser" runat="server" Text="Add New User" OnClick="Button_Click_AddUser"/>
-                            <br />
-                            <asp:GridView ID="GridView_UserList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewUser">
-                                <Columns>
-                                    <asp:TemplateField HeaderText="User ID">
-                                        <ItemTemplate >
-                                            <asp:Label ID="USER_ID" runat="server" Text='<%# Bind("memberId")%>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Username">
-                                        <ItemTemplate >
-                                            <asp:Label ID="USER_NAME" runat="server" Text='<%# Bind("memberName")%>'></asp:Label>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                    <asp:TemplateField HeaderText="Operation">
-                                        <ItemTemplate>
-                                            <asp:Button ID="Button_Edit" runat="server" Text="View" CommandName="View" CommandArgument="<%# Container.DataItemIndex %>"/>
-                                        </ItemTemplate>
-                                    </asp:TemplateField>
-                                </Columns>
-                            </asp:GridView>
+                        <div class=" view-container container">
+
+                            <!--Search Bar and Button-->
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-11">
+                                        <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" Height="33px" CssClass="search-bar" TextMode="Search"></asp:TextBox>
+
+                                    </div>
+                                    <div class="col-1">
+                                        <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" CssClass="search-button" />
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!--Add New User Button-->
+                            <div class="container-fluid">
+                                <asp:Button ID="Button_AddUser" runat="server" Text="Add New User" OnClick="Button_Click_AddUser" />
+                            </div>
+
+                            <!--GridView Section-->
+                            <div class="container-fluid">
+                                <asp:GridView ID="GridView_UserList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewUser" CssClass="grid">
+                                    <Columns>
+                                        <asp:TemplateField HeaderText="User ID">
+                                            <ItemTemplate>
+                                                <asp:Label ID="USER_ID" runat="server" Text='<%# Bind("memberId")%>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Username">
+                                            <ItemTemplate>
+                                                <asp:Label ID="USER_NAME" runat="server" Text='<%# Bind("memberName")%>'></asp:Label>
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                        <asp:TemplateField HeaderText="Operation">
+                                            <ItemTemplate>
+                                                <asp:Button ID="Button_Edit" runat="server" Text="View" CommandName="View" CommandArgument="<%# Container.DataItemIndex %>" />
+                                            </ItemTemplate>
+                                        </asp:TemplateField>
+                                    </Columns>
+                                </asp:GridView>
+                            </div>
+
                         </div>
                     </asp:View>
+
+                    <!--User Information-->
                     <asp:View ID="View5" runat="server">
+
+                        <div class="container">
+                            <div class="container-fluid">
+                                <div class="row">
+                                    <div class="col-4">
+                                        <asp:Label ID="Label_MemberID" runat="server" CssClass="desc-labels" Text="*ID*" Visible="False"></asp:Label>
+                                        <asp:Label ID="Label_MemberName" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
+                                        <br />
+                                        <asp:Label ID="Label_MemberName2" runat="server" CssClass="desc-labels" Text="*Name*"></asp:Label>
+                                    </div>
+                                    <div class="col-4">
+                                        <asp:Label ID="Label_Email" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
+                                        <br />
+                                        <asp:Label ID="Label_Email2" runat="server" CssClass="desc-labels" Text="*Email*"></asp:Label>
+                                    </div>
+                                    <div class="col-4">
+                                        <asp:Label ID="Label_Password" runat="server" CssClass="title-labels" Text="Password:"></asp:Label>
+                                        <br />
+                                        <asp:Label ID="Label_Password2" runat="server" CssClass="desc-labels" Text="*Password*"></asp:Label>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-4">
+                                        <asp:Label ID="Label_PhoneNumber" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
+                                        <br />
+                                        <asp:Label ID="Label_PhoneNumber2" runat="server" CssClass="desc-labels" Text="*Phone Number*"></asp:Label>
+                                    </div>
+                                    <div class="col-4">
+                                        <asp:Label ID="Label_Notification" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
+                                        <br />
+                                        <asp:Label ID="Label_Notification2" runat="server" CssClass="desc-labels" Text="*Notification*"></asp:Label>
+                                    </div>
+                                    <div class="col-4">
+                                        <asp:Label ID="Label_Librarian" runat="server" CssClass="title-labels" Text="Librarian:"></asp:Label>
+                                        <br />
+                                        <asp:Label ID="Label_Librarian2" runat="server" CssClass="desc-labels" Text="*Librarian*"></asp:Label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="container-fluid">
+                                <asp:Button ID="Button_UserBack" runat="server" Text="Back" OnClick="Button_Click_ManageUser" />
+                                <asp:Button ID="Button_DeleteUser" runat="server" Text="Delete User" OnClick="Button_Click_DeleteUser" />
+                                <asp:Button ID="Button_EditUser" runat="server" Text="Edit User" OnClick="Button_Click_EditUser" />
+                            </div>
+                        </div>
+                        <!--
                         <div class="view-container">
                             <div class="left-container">
-                                <asp:Label ID="Label_MemberID" runat="server" CssClass="desc-labels" Text="*ID*" Visible="False"></asp:Label>
-                                <asp:Label ID="Label_MemberName" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
-                                <br />
-                                <asp:Label ID="Label_MemberName2" runat="server" CssClass="desc-labels" Text="*Name*"></asp:Label>
+                                
+
                                 <br />
                                 <br />
-                                <asp:Label ID="Label_Email" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
-                                <br />
-                                <asp:Label ID="Label_Email2" runat="server" CssClass="desc-labels" Text="*Email*"></asp:Label>
+    
                                 <br />
                                 <br />
-                                <asp:Label ID="Label_Password" runat="server" CssClass="title-labels" Text="Password:"></asp:Label>
-                                <br />
-                                <asp:Label ID="Label_Password2" runat="server" CssClass="desc-labels" Text="*Password*"></asp:Label>
+
                                 <br />
                                 <br />
-                                <asp:Label ID="Label_PhoneNumber" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
-                                <br />
-                                <asp:Label ID="Label_PhoneNumber2" runat="server" CssClass="desc-labels" Text="*Phone Number*"></asp:Label>
+
                                 <br />
                                 <br />
-                                <asp:Label ID="Label_Notification" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
-                                <br />
-                                <asp:Label ID="Label_Notification2" runat="server" CssClass="desc-labels" Text="*Notification*"></asp:Label>
+                                
                                 <br />
                                 <br />
-                                <asp:Label ID="Label_Librarian" runat="server" CssClass="title-labels" Text="Librarian:"></asp:Label>
-                                <br />
-                                <asp:Label ID="Label_Librarian2" runat="server" CssClass="desc-labels" Text="*Librarian*"></asp:Label>
+                                
                             </div>
-                            <asp:Button ID="Button_UserBack" runat="server" Text="Back" OnClick="Button_Click_ManageUser"/>
-                            <asp:Button ID="Button_DeleteUser" runat="server" Text="Delete User" OnClick="Button_Click_DeleteUser" />
-                            <asp:Button ID="Button_EditUser" runat="server" Text="Edit User" OnClick="Button_Click_EditUser" />
+                            
                         </div>
+                        -->
                     </asp:View>
                     <asp:View ID="View6" runat="server">
                         <div class="view-container">

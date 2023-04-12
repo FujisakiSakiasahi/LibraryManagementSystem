@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem {
+namespace LibraryManagementSystem
+{
 
 
-    public partial class Description {
+    public partial class Description
+    {
 
         /// <summary>
         /// form1 control.
@@ -94,15 +96,6 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Image Image_BookCover;
 
         /// <summary>
-        /// Label_Description control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Description;
-
-        /// <summary>
         /// Button_Wishlist control.
         /// </summary>
         /// <remarks>
@@ -128,6 +121,42 @@ namespace LibraryManagementSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button_ReserveBook;
+
+        /// <summary>
+        /// Label_Rating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Rating;
+
+        /// <summary>
+        /// DropDownList_Rating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Rating;
+
+        /// <summary>
+        /// Button_SaveRating control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_SaveRating;
+
+        /// <summary>
+        /// Label_Description control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_Description;
 
         /// <summary>
         /// tablecell_author control.
