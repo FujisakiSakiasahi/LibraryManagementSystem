@@ -1,17 +1,4 @@
-﻿.footer-container {
-    background: #252525;
-    height: 500px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.footer-item {
-    width: 1000px;
-    margin: 10px;
-}
-
-/*New Footer*/
+﻿/*New Footer*/
 footer {
     padding: 10px;
     width: 100%;
