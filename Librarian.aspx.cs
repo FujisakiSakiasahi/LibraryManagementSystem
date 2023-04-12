@@ -48,19 +48,18 @@ namespace LibraryManagementSystem {
             if (!this.IsPostBack) {
                 SetInitialLoginState();
 
-                username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
-
                 if (!sessionHandler.GetIsLibrarian()) {
                     Response.Write("<script>alert('Access denied, redirecting to home')</script>");
                     string redirectScript = "<script>window.location.href = 'Home.aspx';</script>";
                     ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
+                } else { 
+                    username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
                 }
 
                 //when the page is loaded the Multiview will be set on View 0 which is manage book page, this line of code is to load the data on the first hand
                 String[] tableColumn = { "bookId", "bookName" };
                 LoadDataIntoGridView(GetAllData(SelectedPage.ManageBook).AsDataView().ToTable(true, tableColumn), GridView_BookList);
             }
-
         }
 
         //--------------------------------------------------------------------------------------------------------------------------------------------------

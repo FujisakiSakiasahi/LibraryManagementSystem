@@ -13,18 +13,17 @@ namespace LibraryManagementSystem
         private SessionHandler sessionHandler = new SessionHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SetInitialLoginState();
+            HeaderUIHandler();
+
             if (!Page.IsPostBack)
             {
-                SetInitialLoginState();
-                HeaderUIHandler();
-
-                username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
-
-                if (!sessionHandler.GetLoginState())
-                {
+                if (!sessionHandler.GetLoginState()) {
                     Response.Write("<script>alert('Access denied, redirecting to home')</script>");
                     string redirectScript = "<script>window.location.href = 'Home.aspx';</script>";
                     ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
+                } else { 
+                    username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
                 }
 
                 DataTable notificationList = sessionHandler.RunQuery($"SELECT notifTitle, msg FROM Notification WHERE memberId={sessionHandler.GetUserId()} OR memberId=0;");

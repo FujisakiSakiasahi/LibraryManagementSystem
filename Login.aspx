@@ -36,19 +36,17 @@
                         <div class="input-container container-fluid justify-content-center text-center">
                             <asp:Panel runat="server" DefaultButton="Button2">
                                 <div class="container-fluid">
-                                    <asp:Label ID="Label1" runat="server" Text="Email Address"></asp:Label>
+                                    <asp:Label ID="Label_Email" runat="server" Text="Email Address"></asp:Label>
 
                                 </div>
                                 <div class="container-fluid">
-                                    <asp:TextBox ID="TextBox1" runat="server" CssClass="textbox"></asp:TextBox>
+                                    <asp:TextBox ID="TextBox_Email" runat="server" CssClass="textbox"></asp:TextBox>
                                 </div>
                                 <div class="container-fluid">
-                                    <asp:Label ID="Label2" runat="server" Text="Password"></asp:Label>
-
+                                    <asp:Label ID="Label_Password" runat="server" Text="Password"></asp:Label>
                                 </div>
                                 <div class="container-fluid">
-                                    <asp:TextBox ID="TextBox2" runat="server" CssClass="textbox" TextMode="Password"></asp:TextBox>
-
+                                    <asp:TextBox ID="TextBox_Password" runat="server" CssClass="textbox" TextMode="Password"></asp:TextBox>
                                 </div>
                             </asp:Panel>
                         </div>
@@ -58,7 +56,7 @@
                             <div class="row">
                                 <div class="col-8 offset-2">
                                     <asp:Button ID="Button1" runat="server" Text="Forgot Password" CssClass="button-forgotpassword" PostBackUrl="~/FAQ.aspx" TabIndex="1" />
-                                    <asp:Button ID="Button2" runat="server" Text="Login" CssClass="button-login" OnClick="Button2_Click" />
+                                    <asp:Button ID="Button2" runat="server" Text="Login" CssClass="button-login" OnClick="Button_Login_Click" />
                                 </div>
                             </div>
                         </div>

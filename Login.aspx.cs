@@ -13,6 +13,10 @@ namespace LibraryManagementSystem
         private SessionHandler sessionHandler = new SessionHandler();
 
         protected void Page_Load(object sender, EventArgs e) {
+            SetInitialLoginState();
+        }
+
+        protected void SetInitialLoginState() {
             if (Session["loginState"] != null) {
                 sessionHandler.CheckLoginState();
             } else { Session["loginState"] = "false"; }
@@ -42,9 +46,9 @@ namespace LibraryManagementSystem
             }
         }
 
-        protected void Button2_Click(object sender, EventArgs e) {
-            String email = TextBox1.Text.ToString();
-            String password = TextBox2.Text.ToString();
+        protected void Button_Login_Click(object sender, EventArgs e) {
+            String email = TextBox_Email.Text.ToString();
+            String password = TextBox_Password.Text.ToString();
 
             if (email == null || email == "" || password == null || password == "") {
                 Response.Write("<script>alert('Empty field')</script>");

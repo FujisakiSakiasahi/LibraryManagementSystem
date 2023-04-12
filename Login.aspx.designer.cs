@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem
-{
+namespace LibraryManagementSystem {
 
 
-    public partial class Login
-    {
+    public partial class Login {
 
         /// <summary>
         /// form1 control.
@@ -42,40 +40,40 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label3;
 
         /// <summary>
-        /// Label1 control.
+        /// Label_Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label1;
+        protected global::System.Web.UI.WebControls.Label Label_Email;
 
         /// <summary>
-        /// TextBox1 control.
+        /// TextBox_Email control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Email;
 
         /// <summary>
-        /// Label2 control.
+        /// Label_Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
+        protected global::System.Web.UI.WebControls.Label Label_Password;
 
         /// <summary>
-        /// TextBox2 control.
+        /// TextBox_Password control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox2;
+        protected global::System.Web.UI.WebControls.TextBox TextBox_Password;
 
         /// <summary>
         /// Button1 control.
