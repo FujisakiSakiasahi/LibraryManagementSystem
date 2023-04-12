@@ -131,7 +131,7 @@
                     </asp:View>
                     <asp:View ID="View1" runat="server">
                         <div class="view-container container-fluid">
-                            <div class="content-container">
+                            <div class="container">
                                 <div class="row">
                                 <div class="col-4">
                                     <asp:Label ID="Label_BookID" runat="server" Text="" Visible="False"></asp:Label>
@@ -231,9 +231,9 @@
 
                     <asp:View ID="View2" runat="server">
                         <div class="view-container container-fluid">
-                            <div class="content-container">
+                            <div class="container">
                                 <div class="row">
-                                    <div class="col-6">
+                                    <div class="col-4">
                                     <asp:Label ID="Label_BookID2" runat="server" Text="" Visible="False"></asp:Label>
                                     <asp:Label ID="Label_TitleText2" runat="server" CssClass="title-labels" Text="Title:"></asp:Label>
 
@@ -258,7 +258,7 @@
                                     <br />
                                 
                                 </div>
-                                <div class="col-5">
+                                <div class="col-4">
                                     <asp:Label ID="Label_AuthorText2" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
 
                                     <br />
@@ -296,7 +296,7 @@
                                     <br />
                                 
                                 </div>
-                                <div class="col-1">
+                                <div class="col-4">
                                     <asp:Label ID="LabelISBNText2" runat="server" CssClass="title-labels" Text="ISBN:"></asp:Label>
 
                                     <br />

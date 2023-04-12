@@ -7,7 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="CSS/Header.css" /> 
     <link rel="stylesheet" href="CSS/Footer.css" /> 
-    <link rel="stylesheet" href="CSS/Description/Content.css" /> 
+    <link rel="stylesheet" href="CSS/description.css" /> 
 
      <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
@@ -119,9 +119,7 @@
                         <!--User Rating-->
                         <div class="row">
                             <div class="col-6">
-                                <div class="rating-label">
-                                    <asp:Label ID="Label_Rating" runat="server" Text="Rating: "></asp:Label>
-                                </div>
+                                    <asp:Label ID="Label_Rating" runat="server" Text="Rating: " CssClass="rating-label"></asp:Label>
 
                             </div>
                             <div class="col-6">
@@ -135,9 +133,8 @@
                             </div>
                         </div>
                         <div class="row">
-                            <div class="save-button">
-                                <asp:Button ID="Button_SaveRating" runat="server" Text="Save Rating" CssClass="" />
-
+                            <div class="text-center align-items-center rating-button-div">
+                                <asp:Button ID="Button_SaveRating" runat="server" Text="Save Rating" CssClass="save-button" />
                             </div>
                         </div>
                     </div>
