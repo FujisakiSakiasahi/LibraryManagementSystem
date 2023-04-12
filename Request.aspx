@@ -85,8 +85,14 @@
 
                 </div>
                 <div class="button-container container-fluid text-center">
-                    <asp:Button ID="Button_Request" runat="server" Text="Request Book" CssClass="request-button" OnClick="Button_Request_Click" />
-
+                    <div class="row">
+                        <p id="system_response_success" runat="server" class="text-success text-center">Requested book has added to the list!</p>
+                    </div>
+                    <div class="row">
+                        <div class="text-center col-12">
+                            <asp:Button ID="Button_Request" runat="server" Text="Request Book" CssClass="request-button" OnClick="Button_Request_Click" />
+                        </div>
+                    </div>
                 </div>
 
             </div>

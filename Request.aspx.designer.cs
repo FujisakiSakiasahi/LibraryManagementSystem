@@ -67,6 +67,15 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.TextBox Textbox_Request;
 
         /// <summary>
+        /// system_response_success control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl system_response_success;
+
+        /// <summary>
         /// Button_Request control.
         /// </summary>
         /// <remarks>
