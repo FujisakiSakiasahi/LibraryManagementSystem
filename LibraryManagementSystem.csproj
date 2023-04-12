@@ -105,16 +105,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="AboutUs.aspx" />
-    <Content Include="CSS\AboutUs\Content.css" />
+    <Content Include="CSS\page-title.css" />
     <Content Include="CSS\description.css" />
-    <Content Include="CSS\FAQ\faq-css.css" />
     <Content Include="CSS\Home\Content.css" />
     <Content Include="CSS\Footer.css" />
     <Content Include="CSS\Header.css" />
     <Content Include="CSS\Home\Text.css" />
-    <Content Include="CSS\Librarian\Content.css" />
+    <Content Include="CSS\librarian.css" />
     <Content Include="CSS\login.css" />
-    <Content Include="CSS\Notification\notification-css.css" />
+    <Content Include="CSS\notification.css" />
     <Content Include="CSS\request.css" />
     <Content Include="CSS\search.css" />
     <Content Include="CSS\setting.css" />

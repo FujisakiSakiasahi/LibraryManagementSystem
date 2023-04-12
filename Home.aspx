@@ -4,12 +4,15 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
-    <title></title>
+
+    <title>Home</title>
+
     <link rel="stylesheet" href="CSS/Header.css"/>
     <link rel="stylesheet" href="CSS/Home/Content.css" />
     <link rel="stylesheet" href="CSS/Footer.css" />
     <link rel="stylesheet" href="CSS/Home/Text.css" />
 
+    <!--Bootstrap 5-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>

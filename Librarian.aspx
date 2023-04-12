@@ -4,50 +4,67 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
+    <title>Librarian</title>
+
     <link rel="stylesheet" href="CSS/Header.css" /> 
     <link rel="stylesheet" href="CSS/Footer.css" /> 
-    <link rel="stylesheet" href="CSS/Librarian/Content.css" />
-     <!-- Latest compiled and minified CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="CSS/librarian.css" />
 
-    <!-- Latest compiled JavaScript -->
+    <!--Bootstrap 5-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1"/>
-    <title></title>
 </head>
+
 <body>
     <form id="form1" runat="server">
-        <div class="header">
-          <div class="header-logo-container">
-              <div class="header-logo">
-                  <asp:Image ID="logo_image" runat="server" ImageUrl="~/images/HamiShu_Blue_BG.png" Width="208px" />
-              </div>
-          </div>
+        <!--Header-->
+        <div class="navigation-bar container-fluid">
+            <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
-          <div class="header-login-container">
-              <div class="header-login">
-                  <div class="d-flex align-items-center justify-content-end">
-                      <div class="dropdown text-end">
-                          <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                              <img src="/images/user.jpg" alt="mdo" width="40" height="40" class="rounded-circle" />
-                          </a>
-                          <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
-                              <li><p id="username" runat="server" class="dropdown-item"></p></li>
+                <!--Logo-->
+                <a href="Home.aspx" class="d-flex align-items-center col-md-3 mb-2 mb-md-0 text-dark text-decoration-none">
+                    <img src="images/HamiShu_Blue_BG.png" alt="Alternate Text" class="img-responsive" width="150" />
+                </a>
+
+                <!--Navigation Links-->
+                <ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+                    <li><a href="Home.aspx" class="nav-link px-2 link-light ">Home</a></li>
+                    <li><a href="Search.aspx" class="nav-link px-2 link-light">Search</a></li>
+                    <li><a href="AboutUs.aspx" class="nav-link px-2 link-light">About Us</a></li>
+                    <li><a href="FAQ.aspx" class="nav-link px-2 link-light">FAQ</a></li>
+                    <li id="librarian_link" runat="server"><a href="Librarian.aspx" class="nav-link px-2 link-light">Librarian</a></li>
+                </ul>
+
+                <!--Login / Profile Dropdown-->
+                <div class="col-md-3 text-end ">
+
+                    <!--Profile Picture & Dropdown after login-->
+                    <div id="profile" runat="server">
+                        <div class="d-flex align-items-center justify-content-end">
+                            <div class="dropdown text-end">
+                                <a href="#" class="d-block link-light text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <img src="/images/user.jpg" alt="mdo" width="40" height="40" class="rounded-circle" />
+                                </a>
+                                <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
+                                    <li><p id="username" runat="server" class="dropdown-item"></p></li>
                                     <li>
                                         <hr class="dropdown-divider" />
                                     </li>
-                              <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
-                              <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
-                              <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
-                              <li>
-                                  <hr class="dropdown-divider" />
-                              </li>
-                              <li><a class="dropdown-item" href="#" id="Logout_Button" runat="server" onserverclick="Logout_Function">Sign out</a></li>
-                          </ul>
-                      </div>
-                  </div>
-              </div>
-          </div>
+                                    <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
+                                    <li><a class="dropdown-item active" href="Request.aspx">Request a book</a></li>
+                                    <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
+                                    <li>
+                                        <hr class="dropdown-divider" />
+                                    </li>
+                                    <li><a class="dropdown-item" href="#" id="Logout_Button" runat="server" onserverclick="Logout_Function">Sign out</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+        </div>
 
 
        </div>

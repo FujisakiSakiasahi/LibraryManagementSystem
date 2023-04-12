@@ -4,24 +4,22 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
     <title>Settings</title>
 
     <link rel="stylesheet" href="CSS/Header.css" />
     <link rel="stylesheet" href="CSS/Footer.css" />
     <link rel="stylesheet" href="CSS/setting.css" />
+    <link rel="stylesheet" href="CSS/page-title.css" />
 
-
-
-
-
-    <!-- Latest compiled and minified CSS -->
+    <!--Bootstrap 5-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
-
-    <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+
 </head>
 <body>
     <form id="form1" runat="server">
+
         <!--Header-->
         <div class="navigation-bar container-fluid">
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
@@ -72,7 +70,6 @@
         </div>
 
         <!--Content-->
-
         <div class="container">
             <div class="contaier-fluid text-center">
                 <h2 class="page-title">Settings</h2>

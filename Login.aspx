@@ -4,12 +4,14 @@
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
+
+    <title>Login</title>
+
     <link rel="stylesheet" href="CSS/login.css" />
 
-        <!--Bootstrap 5-->
+    <!--Bootstrap 5-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <title></title>
 </head>
 <body class="background">
     <form id="form1" runat="server">
@@ -31,7 +33,6 @@
                         </div>
 
                         <!--Email & Password Input-->
-
                         <div class="input-container container-fluid justify-content-center text-center">
                             <asp:Panel runat="server" DefaultButton="Button2">
                                 <div class="container-fluid">
