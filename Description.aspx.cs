@@ -22,22 +22,65 @@ namespace LibraryManagementSystem
             SetInitialLoginState();
             HeaderUIHandler();
 
-            if (sessionHandler.GetLoginState()) {
+            if (sessionHandler.GetLoginState())
+            {
                 username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
             }
 
             DataTable dataTable = new DataTable();
 
-            try {
+            try
+            {
                 bookId = Request.QueryString["bookId"];
-                dataTable = sessionHandler.RunQuery("SELECT * FROM Book WHERE bookId="+bookId+";");
+                dataTable = sessionHandler.RunQuery("SELECT * FROM Book WHERE bookId=" + bookId + ";");
                 LoadBookData(dataTable);
                 SetCitationText(dataTable.Rows[0][1].ToString(), dataTable.Rows[0][6].ToString(), dataTable.Rows[0][2].ToString(), dataTable.Rows[0][5].ToString());
-            } catch {
+            }
+            catch
+            {
                 Response.Write("<script>alert('Book ID not found, redirecting to home')</script>");
                 string redirectScript = "<script>window.location.href = 'Home.aspx';</script>";
                 ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
             }
+
+            //for rating
+            if (sessionHandler.GetLoginState())
+            {
+                String query = $"SELECT * FROM Borrowed WHERE bookId = {bookId} AND memberId = {sessionHandler.GetUserId()}";
+                DataTable hasBorrowed = sessionHandler.RunQuery(query);
+
+                if (hasBorrowed.Rows.Count > 0)
+                {
+                    DropDownList_Rating.Enabled = true;
+                    Button_SaveRating.Enabled = true;
+
+                    if (!IsPostBack)
+                    {
+                        DataTable hasRated = sessionHandler.RunQuery($"SELECT rating FROM Ratings WHERE bookid = {bookId} AND memberId = {sessionHandler.GetUserId()}");
+
+                        if (hasRated.Rows.Count > 0)
+                        {
+                            DropDownList_Rating.SelectedIndex = int.Parse(hasRated.Rows[0]["rating"].ToString()) - 1;
+                        }
+                    }
+                }
+                else
+                {
+                    DropDownList_Rating.ToolTip = "You must have borrowed the book at least once to be able to rate";
+                    Button_SaveRating.ToolTip = "You must have borrowed the book at least once to be able to rate";
+                }
+
+            }
+            else
+            {
+                //no login
+                DropDownList_Rating.ToolTip = "You must have login to be able to rate";
+                Button_SaveRating.ToolTip = "You must have login to be able to rate";
+            }
+
+            
+
+            rating_success.Visible = false;
         }
 
         protected void SetInitialLoginState() {
@@ -45,7 +88,7 @@ namespace LibraryManagementSystem
                 sessionHandler.CheckLoginState();
             } else { Session["loginState"] = "false"; }
         }
-
+            
         protected void HeaderUIHandler() {
             login_link.Visible = false;
             profile.Visible = false;
@@ -146,5 +189,26 @@ namespace LibraryManagementSystem
             Session.Abandon();
             Response.Redirect(link);
         }
+
+        protected void Button_SaveRating_Click(object sender, EventArgs e)
+        {
+            String query = $"SELECT * FROM Ratings WHERE bookid = {bookId} AND memberId = {sessionHandler.GetUserId()}";
+            DataTable hasRated = sessionHandler.RunQuery(query);
+
+            if (hasRated.Rows.Count > 0)
+            {
+                String rating = $"UPDATE Ratings SET rating = {DropDownList_Rating.SelectedValue} WHERE bookId = {bookId} AND memberId = {sessionHandler.GetUserId()}";
+                sessionHandler.RunQuery(rating);
+            }
+            else
+            {
+                String rating = $"INSERT INTO Ratings (bookId, memberId, rating) VALUES ({bookId}, {sessionHandler.GetUserId()}, {DropDownList_Rating.SelectedValue})";
+                sessionHandler.RunQuery(rating); 
+            }
+
+            rating_success.Visible = true;
+
+        }
+
     }
 }

@@ -141,6 +141,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.DropDownList DropDownList_Rating;
 
         /// <summary>
+        /// rating_success control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl rating_success;
+
+        /// <summary>
         /// Button_SaveRating control.
         /// </summary>
         /// <remarks>

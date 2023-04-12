@@ -125,7 +125,7 @@
 
                             </div>
                             <div class="col-6">
-                                <asp:DropDownList ID="DropDownList_Rating" runat="server" CssClass="rating-dropdownlist">
+                                <asp:DropDownList ID="DropDownList_Rating" runat="server" CssClass="rating-dropdownlist" Enabled="False" OnSelectedIndexChanged="DropDownList_Rating_SelectedIndexChanged">
                                     <asp:ListItem>1</asp:ListItem>
                                     <asp:ListItem>2</asp:ListItem>
                                     <asp:ListItem>3</asp:ListItem>
@@ -135,8 +135,11 @@
                             </div>
                         </div>
                         <div class="row">
+                            <p id="rating_success" runat="server" class="text-success text-center">Rating has been saved!</p>
+                        </div>
+                        <div class="row">
                             <div class="save-button">
-                                <asp:Button ID="Button_SaveRating" runat="server" Text="Save Rating" CssClass="" />
+                                <asp:Button ID="Button_SaveRating" runat="server" Text="Save Rating" CssClass="" Enabled="False" OnClick="Button_SaveRating_Click" />
 
                             </div>
                         </div>
