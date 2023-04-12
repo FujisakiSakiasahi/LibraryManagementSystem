@@ -7,7 +7,7 @@
     <title></title>
     <link rel="stylesheet" href="CSS/Header.css" /> 
     <link rel="stylesheet" href="CSS/Footer.css" /> 
-    <link rel="stylesheet" href="CSS/Description/Content.css" /> 
+    <link rel="stylesheet" href="CSS/description.css" /> 
 
      <!-- Latest compiled and minified CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
