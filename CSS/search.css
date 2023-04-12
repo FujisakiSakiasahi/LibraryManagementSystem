@@ -1,46 +1,4 @@
-﻿body {
-}
-
-.content {
-    height: 1000px;
-}
-
-
-.bottom-container {
-    display: flex;
-}
-
-.result-container {
-    background: red;
-    height: 100px;
-    width: 80%;
-}
-
-.filter-container {
-    background: blue;
-    height: 100px;
-    width: 20%;
-    text-align:center;
-}
-
-.filter {
-    background: white;
-}
-
-.results {
-    background: white;
-}
-
-a.item-card {
-    color: black;
-    text-decoration: none;
-}
-
-a.item-card:visited {
-        color: black;
-}
-
-/*New Search*/
+﻿/*New Search*/
 .search-bar {
     border-radius: 10px;
     border: grey solid 1px;
