@@ -84,13 +84,16 @@
                     </h3>
                 </div>
                 <div class="container-fluid">
-                    <asp:CheckBox ID="CheckBox_Notification" runat="server" Text=" Turn On Notification" />
+                    <asp:CheckBox ID="CheckBox_Notification" runat="server" Text=" Turn On Notification"/>
                 </div>
                 <div class="button-container container-fluid">
                     <div class="row">
+                        <p id="system_response" runat="server" class="text-success"></p>
+                    </div>
+                    <div class="row">
                         <div class="col-12">
-                            <asp:Button ID="Button_Save" runat="server" Text="Save Changes" CssClass="button-save" />
-                            <asp:Button ID="Button_Cancel" runat="server" Text="Cancel" CssClass="button-cancel" />
+                            <asp:Button ID="Button_Save" runat="server" Text="Save Changes" CssClass="button-save" OnClick="Button_Save_Click" />
+                            <asp:Button ID="Button_Reset" runat="server" Text="Reset To Default" CssClass="button-reset" OnClick="Button_Reset_Click" />
                         </div>
                     </div>
                 </div>
