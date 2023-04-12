@@ -84,15 +84,26 @@
                         12  : overdue
                         -->
                     <asp:View ID="View0" runat="server">
-                        <asp:Label ID="Label1" runat="server" Text="Manage Books"></asp:Label>
-                        <div class="view-container">
-                            <asp:Panel runat="server" DefaultButton="Button_SearchBook">
-                                <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" CssClass="search-bar" TextMode="Search"></asp:TextBox>
-                                <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" CssClass="search-button" />
-                            </asp:Panel>
-                            <asp:Button ID="Button_AddNewBook0" runat="server" OnClick="Button_Click_AddNewBook" Text="Add New Book" />
-                            <br />
-                            <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewBook">
+                        <div class="view-container container-fluid">
+
+                            <!--Search Bar-->
+                            <div class="view-container container-fluid">
+                                <div class="container">
+                                     <div class="row">
+                                    <div class="col-11">      
+                                            <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" Height="33px" CssClass="search-bar" TextMode="Search"></asp:TextBox>
+                                    </div>
+                                    <div class="col-1">
+                                         <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" CssClass="search-button" />                                        
+                                    </div>             
+                                </div>
+                               </div> 
+                                <div class="container">
+                                    <asp:Button ID="Button_AddNewBook0" runat="server" OnClick="Button_Click_AddNewBook" Text="Add New Book" />
+                                     <br />
+                                </div>
+                                <div class="container">
+                                    <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewBook">
 
                                 <Columns>
                                     <asp:TemplateField HeaderText="Book ID">
@@ -113,12 +124,16 @@
                                 </Columns>
                                 
                             </asp:GridView>
-                        </div> 
+                                </div>
+                            </div>
+                        </div>
+                        
                     </asp:View>
                     <asp:View ID="View1" runat="server">
-                        <div class="view-container">
+                        <div class="view-container container-fluid">
                             <div class="content-container">
-                                <div class="left-container">
+                                <div class="row">
+                                <div class="col-4">
                                     <asp:Label ID="Label_BookID" runat="server" Text="" Visible="False"></asp:Label>
                                     <asp:Label ID="Label_TitleText1" runat="server" CssClass="title-labels" Text="Title:"></asp:Label>
 
@@ -140,7 +155,7 @@
                                     <asp:Image ID="Image_BookCover" runat="server" ImageUrl="~/images/book.jpg" />
                                 
                                 </div>
-                                <div class="center-container">
+                                <div class="col-4">
                                     <asp:Label ID="Label_AuthorText1" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
                                     <br />
                                     <asp:Label ID="Label_Author" runat="server" CssClass="desc-labels" Text="*Author*"></asp:Label>
@@ -171,7 +186,7 @@
                                     <br />
                                 
                                 </div>
-                                <div class="right-container">
+                                <div class="col-4">
                                     <asp:Label ID="Label_ISBNText1" runat="server" CssClass="title-labels" Text="ISBN:"></asp:Label>
 
                                     <br />
@@ -196,20 +211,29 @@
                                     <br />
                                     <asp:Label ID="Label_BorrowedBy2" runat="server" CssClass="desc-labels" Text="*Member Name*"></asp:Label>
                                 </div>
+                              </div>
                             </div>
                             <div class="action-buttons-container">
-                                <asp:Button ID="Button_BackToManageBook" runat="server" OnClick="Button_Click_BackToManageBook" Text="Back" />
-                                <asp:Button ID="Button_DeleteBook" runat="server" OnClick="Button_Click_DeleteBook" Text="Delete Book" />
-                                <asp:Button ID="Button_EditBook" runat="server" Text="Edit Book" OnClick="Button_Click_EditBook" />
-                            </div>
-                            
+                                <div class="row">
+                                    <div class="col-9">
+       
+                                     </div>
+                                        <div class="col-3">
+                                        <asp:Button ID="Button_BackToManageBook" runat="server" OnClick="Button_Click_BackToManageBook" Text="Back" />
+                                        <asp:Button ID="Button_DeleteBook" runat="server" OnClick="Button_Click_DeleteBook" Text="Delete Book" />
+                                        <asp:Button ID="Button_EditBook" runat="server" Text="Edit Book" OnClick="Button_Click_EditBook" />
+                                  </div>
+                                </div>     
+                            </div> 
                         </div>
 
                     </asp:View>
+
                     <asp:View ID="View2" runat="server">
-                        <div class="view-container">
+                        <div class="view-container container-fluid">
                             <div class="content-container">
-                                <div class="left-container">
+                                <div class="row">
+                                    <div class="col-6">
                                     <asp:Label ID="Label_BookID2" runat="server" Text="" Visible="False"></asp:Label>
                                     <asp:Label ID="Label_TitleText2" runat="server" CssClass="title-labels" Text="Title:"></asp:Label>
 
@@ -234,7 +258,7 @@
                                     <br />
                                 
                                 </div>
-                                <div class="center-container">
+                                <div class="col-5">
                                     <asp:Label ID="Label_AuthorText2" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
 
                                     <br />
@@ -272,7 +296,7 @@
                                     <br />
                                 
                                 </div>
-                                <div class="right-container">
+                                <div class="col-1">
                                     <asp:Label ID="LabelISBNText2" runat="server" CssClass="title-labels" Text="ISBN:"></asp:Label>
 
                                     <br />
@@ -291,19 +315,27 @@
                                     <br />
                                     <asp:TextBox ID="TextBox_ShelfID2" runat="server" TextMode="Number"></asp:TextBox>
                                     <br />
-                                
+                                 </div>
                                 </div>
-                            </div>
+                               </div>
                             <div class="action-buttons-container">
+                                <div class="row">
+                                    <div class="col-9">
+       
+                                     </div>
+                                 <div class="col-3">
                                 <asp:Button ID="Button_DiscardChanges_Book" runat="server" Text="Discard Changes" OnClick="Button_Click_DiscardChangesBook" />
                                 <asp:Button ID="Button_SaveChanges_Book" runat="server" Text="Save Changes" OnClick="Button_Click_SaveChangesBook"/>
                             </div>
-                        </div>
+                           </div>
+                         </div>
+                     </div>      
                     </asp:View>
+
                     <asp:View ID="View3" runat="server">
-                        <div class="view-container">
+                        <div class="view-container container-fluid">
                             <div class="content-container">
-                                <div class="left-container">
+                                <div class="col-4">
                                     <asp:Label ID="Label_BookID3" runat="server" Text="" Visible="False"></asp:Label>
                                     <asp:Label ID="Label_Title3" runat="server" CssClass="title-labels" Text="Title:"></asp:Label>
 
@@ -327,7 +359,7 @@
                                     <asp:FileUpload ID="FileUpload_Image2" runat="server" />
                                     <br />
                                 </div>
-                                <div class="center-container">
+                                <div class="col-4">
                                     <asp:Label ID="Label_Author3" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
 
                                     <br />
@@ -365,7 +397,7 @@
                                     <br />
                                 
                                 </div>
-                                <div class="right-container">
+                                <div class="col-4">
                                     <asp:Label ID="Label_ISBN3" runat="server" CssClass="title-labels" Text="ISBN:"></asp:Label>
 
                                     <br />
@@ -388,8 +420,15 @@
                                 </div>
                             </div>
                             <div class="action-buttons-container">
+                                <div class="row">
+                                    <div class="col-9">
+       
+                                     </div>
+                                    <div class="col-3">
                                 <asp:Button ID="Button12" runat="server" Text="Back" OnClick="Button_Click_AbortAddingNewBook" />
                                 <asp:Button ID="Button14" runat="server" Text="Add New Book" OnClick="Button_Click_AddingNewBook" />
+                            </div>
+                           </div>  
                             </div>
                         </div>
                     </asp:View>
