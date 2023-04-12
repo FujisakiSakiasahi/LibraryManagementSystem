@@ -65,7 +65,15 @@ form {
 }
 
 .save-button {
-    float: none;
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #404040;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
     margin: 0 auto;
     text-align: center;
 }
@@ -78,10 +86,17 @@ form {
 .rating-label {
     font-size: larger;
     font-weight: bold;
-    text-align: center;               }
+    text-align: center;
+    float: right;
 }
 
 .rating-dropdownlist {
-    width: 50%;
-    
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    float: left;
+}
+
+.rating-button-div {
+    padding-top: 10px;
 }
