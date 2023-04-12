@@ -139,7 +139,7 @@
                         <div class="contaier-fluid">
                             <div class="row">
                                 <div class="col-12">
-                                    <ul class="list-group" id="search_result" runat="server">
+                                    <ul class="list-group shadow" id="search_result" runat="server">
                                         <!--list item card, result for searching
                                             
                                             

@@ -12,10 +12,10 @@ namespace LibraryManagementSystem
         private SessionHandler sessionHandler = new SessionHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (!Page.IsPostBack) { 
-                SetInitialLoginState();
-                HeaderUIHandler();
+            SetInitialLoginState();
+            HeaderUIHandler();
 
+            if (!Page.IsPostBack) { 
                 username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
 
                 if (!sessionHandler.GetLoginState()) {
@@ -23,6 +23,8 @@ namespace LibraryManagementSystem
                     string redirectScript = "<script>window.location.href = 'Home.aspx';</script>";
                     ScriptManager.RegisterStartupScript(this, GetType(), "RedirectScript", redirectScript, false);
                 }
+
+                system_response_success.Visible = false;
             }
         }
         protected void HeaderUIHandler()
@@ -55,6 +57,8 @@ namespace LibraryManagementSystem
         protected void Button_Request_Click(object sender, EventArgs e) {
             if (!string.IsNullOrEmpty(Textbox_Request.Text)) {
                 sessionHandler.RunQuery($"INSERT INTO Requests (bookName) VALUES ('{Textbox_Request.Text}');");
+
+                system_response_success.Visible = true;
             }
         }
     }
