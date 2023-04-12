@@ -13,7 +13,7 @@ namespace LibraryManagementSystem
     public class SessionHandler
     {
         private MySqlConnection connection;
-        private bool userLoginState;
+        private bool loginState;
         private int loginUserId;
         private bool isLibrarian; 
 
@@ -26,7 +26,7 @@ namespace LibraryManagementSystem
             if (settings != null)
                 connection = new MySqlConnection(settings.ConnectionString);
 
-            userLoginState = false;
+            loginState = false;
             isLibrarian = false;
         }
 
@@ -35,11 +35,11 @@ namespace LibraryManagementSystem
             //load login state
             if (HttpContext.Current.Session["loginState"].ToString() == "true")
             {
-                userLoginState = true;
+                loginState = true;
             }
             else
             {
-                userLoginState = false;
+                loginState = false;
             }
 
             //load member id
@@ -83,7 +83,7 @@ namespace LibraryManagementSystem
 
         public bool GetLoginState()
         {
-            return userLoginState;
+            return loginState;
         }
 
         public bool GetIsLibrarian() {

@@ -14,11 +14,11 @@ namespace LibraryManagementSystem
         private SessionHandler sessionHandler = new SessionHandler();
         protected void Page_Load(object sender, EventArgs e)
         {
+            SetInitialLoginState();
+            HeaderUIHandler();
+
             if (!Page.IsPostBack)
             {
-                SetInitialLoginState();
-                HeaderUIHandler();
-
                 if (!sessionHandler.GetLoginState())
                 {
                     Response.Write("<script>alert('Access denied, redirecting to home')</script>");
@@ -42,8 +42,8 @@ namespace LibraryManagementSystem
                 }
             }
 
-            system_response.Visible = false;
-            Debug.WriteLine(sessionHandler.GetUserId());
+            system_response_success.Visible = false;
+            system_response_fail.Visible = false;
         }
 
         protected void HeaderUIHandler()
@@ -69,36 +69,42 @@ namespace LibraryManagementSystem
         {
             string link = sessionHandler.GetIsLibrarian() && Request.RawUrl.Equals("Librarian.aspx") ? "Home.aspx" : Request.RawUrl;
 
-            Session["userLoginState"] = false;
+            Session["loginState"] = false;
             Session.Abandon();
             Response.Redirect(link);
         }
 
         protected void Button_Save_Click(object sender, EventArgs e) {
-            // somehow the user id save in sessionHandler becomes 0, dun know why, theres one debug write line in the LoadSettings() function, help me check sat why
-
-
-            Debug.WriteLine(sessionHandler.GetUserId());
             int notification_setting = CheckBox_Notification.Checked ? 1 : 0;
-            Debug.WriteLine(sessionHandler.GetUserId());
-            //sessionHandler.RunQuery($"UPDATE SET newsletter={notification_setting} WHERE memberId={sessionHandler.GetUserId()};");
+            try {
+                sessionHandler.RunQuery($"UPDATE Member SET newsletter={notification_setting} WHERE memberId={sessionHandler.GetUserId()};");
 
-            /*
-                        system_response.Visible = true;
-                        system_response.InnerHtml = "The changes has saved successfully!";*/
+                LoadSettings();
+
+                system_response_success.Visible = true;
+                system_response_success.InnerHtml = "The changes has saved successfully!";
+            } catch {
+                LoadSettings();
+
+                system_response_fail.Visible = true;
+                system_response_fail.InnerHtml = "An error occurs when saving setting!";
+            }
         }
 
         protected void Button_Reset_Click(object sender, EventArgs e) {
             CheckBox_Notification.Checked = false;
             try { 
-                sessionHandler.RunQuery($"UPDATE SET newsletter=0 WHERE memberId={sessionHandler.GetUserId()};");
-                
-                system_response.Visible = true;
-                system_response.InnerHtml = "The settings has reset to default!";
+                sessionHandler.RunQuery($"UPDATE Member SET newsletter=0 WHERE memberId={sessionHandler.GetUserId()};");
+
+                LoadSettings();
+
+                system_response_success.Visible = true;
+                system_response_success.InnerHtml = "The settings has reset to default!";
             } catch {
-                system_response.Visible = true;
-                system_response.Style.Add("color","red");
-                system_response.InnerHtml = "The settings already at default state!";
+                LoadSettings();
+
+                system_response_fail.Visible = true;
+                system_response_fail.InnerHtml = "An error occurs when resetting setting to default state!";
             }
         }
     }

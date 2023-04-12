@@ -67,13 +67,22 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.CheckBox CheckBox_Notification;
 
         /// <summary>
-        /// system_response control.
+        /// system_response_success control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl system_response;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl system_response_success;
+
+        /// <summary>
+        /// system_response_fail control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl system_response_fail;
 
         /// <summary>
         /// Button_Save control.
