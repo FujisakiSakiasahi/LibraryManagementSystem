@@ -139,6 +139,10 @@
 }
 
 /*Universal Elements*/
+.checkboxlist {
+    width: 100%;
+}
+
 .panel {
     height: 100%;
 }

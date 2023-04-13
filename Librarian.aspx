@@ -704,8 +704,7 @@
                                             <!--Left Col-->
                                             <div class="col-6">
 
-                                                <h2>
-                                                    User
+                                                <h2>User
                                                 </h2>
                                                 <hr />
 
@@ -735,8 +734,7 @@
                                             <!--Right Col-->
                                             <div class="col-6">
 
-                                                <h2>
-                                                    Book
+                                                <h2>Book
                                                 </h2>
                                                 <hr />
 
@@ -776,7 +774,7 @@
                                         </div>
                                     </div>
 
-                                    
+
 
                                 </div>
 
@@ -840,7 +838,7 @@
 
                                                 <!--Member ID Input-->
                                                 <div class="container-fluid">
-             
+
                                                     <div class="row">
                                                         <asp:Label ID="Label_NotifSelectMember" runat="server" Text="Member ID:" CssClass="title-labels" Visible="False"></asp:Label>
                                                     </div>
@@ -868,29 +866,29 @@
                                             <asp:View ID="View12" runat="server">
                                                 <div class="container gridview-container">
                                                     <asp:GridView ID="GridView_Notifications" runat="server" ForeColor="Black" OnRowCommand="Button_Click_RemoveNotif" AutoGenerateColumns="False" CssClass="grid">
-                                                    <Columns>
-                                                        <asp:TemplateField HeaderText="Notification ID">
-                                                            <ItemTemplate>
-                                                                <asp:Label ID="NOTIF_ID" runat="server" Text='<%# Bind("notifId")%>'></asp:Label>
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="Notification Title">
-                                                            <ItemTemplate>
-                                                                <asp:Label ID="NOTIF_TITLE" runat="server" Text='<%# Bind("notifTitle")%>'></asp:Label>
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="Receivers">
-                                                            <ItemTemplate>
-                                                                <asp:Label ID="RECEIVERS" runat="server" Text='<%# Bind("memberId")%>'></asp:Label>
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                        <asp:TemplateField HeaderText="Operation">
-                                                            <ItemTemplate>
-                                                                <asp:Button ID="Button_Remove_Notif" runat="server" Text="Remove" CommandName="Remove" CommandArgument="<%# Container.DataItemIndex %>" />
-                                                            </ItemTemplate>
-                                                        </asp:TemplateField>
-                                                    </Columns>
-                                                </asp:GridView>
+                                                        <Columns>
+                                                            <asp:TemplateField HeaderText="Notification ID">
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="NOTIF_ID" runat="server" Text='<%# Bind("notifId")%>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Notification Title">
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="NOTIF_TITLE" runat="server" Text='<%# Bind("notifTitle")%>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Receivers">
+                                                                <ItemTemplate>
+                                                                    <asp:Label ID="RECEIVERS" runat="server" Text='<%# Bind("memberId")%>'></asp:Label>
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                            <asp:TemplateField HeaderText="Operation">
+                                                                <ItemTemplate>
+                                                                    <asp:Button ID="Button_Remove_Notif" runat="server" Text="Remove" CommandName="Remove" CommandArgument="<%# Container.DataItemIndex %>" />
+                                                                </ItemTemplate>
+                                                            </asp:TemplateField>
+                                                        </Columns>
+                                                    </asp:GridView>
                                                 </div>
                                             </asp:View>
                                         </asp:MultiView>
@@ -900,17 +898,15 @@
 
                             <!--Requests-->
                             <asp:View ID="View13" runat="server">
-                                <div class="view-container container">
-                                    `<div class="row">
-                                        <div class="col-12">
-                                            <div style="text-align: left; margin: 0 auto; display: block">
-                                                <%--can we center this somehow--%>
-                                                <asp:CheckBoxList ID="CheckBoxList_RequestedBooks" ForeColor="Black" runat="server" />
-                                            </div>
-                                            <asp:Label ID="Label_AddedRequestedBooks" ForeColor="Green" runat="server" Text="Removed Books" Visible="False"></asp:Label>
+                                <div class="container">
+                                    <h2>Requests
+                                    </h2>
+                                    <hr />
+                                </div>
+                                <div class="container gridview-container">
+                                    <asp:CheckBoxList ID="CheckBoxList_RequestedBooks" ForeColor="Black" runat="server" CssClass="checkboxlist" />
+                                    <asp:Label ID="Label_AddedRequestedBooks" ForeColor="Green" runat="server" Text="Removed Books" Visible="False"></asp:Label>
 
-                                        </div>
-                                    </div>
                                     <div class="row">
                                         <div class="col-11">
                                         </div>
@@ -923,7 +919,13 @@
 
                             <!--Overdue-->
                             <asp:View ID="View14" runat="server">
-                                <div class="view-container container">
+                                <div class="container">
+                                    <h2>
+                                        Overdue Fees
+                                    </h2>
+                                    <hr />
+                                </div>
+                                <div class="container gridview-container">
                                     <div class="row">
                                         <asp:GridView ID="GridView_Overdue" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ClaimOverdue">
                                             <Columns>
@@ -977,8 +979,8 @@
                         </asp:MultiView>
 
                     </div>
-                </div>
             </div>
+        </div>
         </div>
 
         <!--Footer-->
