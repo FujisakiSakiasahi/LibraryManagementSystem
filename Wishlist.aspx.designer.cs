@@ -7,12 +7,10 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem
-{
+namespace LibraryManagementSystem {
 
 
-    public partial class Wishlist
-    {
+    public partial class Wishlist {
 
         /// <summary>
         /// form1 control.
@@ -60,12 +58,12 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.HtmlControls.HtmlAnchor Logout_Button;
 
         /// <summary>
-        /// notification_list control.
+        /// wishlist control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl notification_list;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl wishlist;
     }
 }
