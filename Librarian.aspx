@@ -215,11 +215,6 @@
 
                                                 <br />
                                                 <br />
-                                                <asp:Label ID="Label_RatingText1" runat="server" Text="Rating:" CssClass="title-labels"></asp:Label>
-                                                <br />
-                                                <asp:Label ID="Label_Rating" runat="server" CssClass="desc-labels" Text="*Rating*"></asp:Label>
-                                                <br />
-                                                <br />
                                                 <asp:Label ID="Label_LanguageText1" runat="server" CssClass="title-labels" Text="Language:"></asp:Label>
                                                 <br />
                                                 <asp:Label ID="Label_Language" runat="server" CssClass="desc-labels" Text="*Language*"></asp:Label>
@@ -321,20 +316,10 @@
 
                                                 <br />
                                                 <br />
-                                                <asp:Label ID="Label_RatingText2" runat="server" Text="Rating:" CssClass="title-labels"></asp:Label>
-                                                <br />
-                                                <asp:DropDownList ID="DropDownList_Rating2" runat="server">
-                                                    <asp:ListItem>1</asp:ListItem>
-                                                    <asp:ListItem>2</asp:ListItem>
-                                                    <asp:ListItem>3</asp:ListItem>
-                                                    <asp:ListItem>4</asp:ListItem>
-                                                    <asp:ListItem>5</asp:ListItem>
-                                                </asp:DropDownList>
-                                                <br />
-                                                <br />
                                                 <asp:Label ID="Label_LanguageText2" runat="server" CssClass="title-labels" Text="Language:"></asp:Label>
                                                 <br />
                                                 <asp:TextBox ID="TextBox_Language2" runat="server" MaxLength="10"></asp:TextBox>
+                                                <br />
                                                 <br />
 
                                             </div>
@@ -421,21 +406,11 @@
                                             <asp:Calendar ID="Calendar_PublishDate3" runat="server"></asp:Calendar>
                                             <br />
                                             <br />
-                                            <asp:Label ID="Label_Rating3" runat="server" CssClass="title-labels" Text="Rating:"></asp:Label>
-                                            <br />
-                                            <asp:DropDownList ID="DropDownList_Rating3" runat="server">
-                                                <asp:ListItem>1</asp:ListItem>
-                                                <asp:ListItem>2</asp:ListItem>
-                                                <asp:ListItem>3</asp:ListItem>
-                                                <asp:ListItem>4</asp:ListItem>
-                                                <asp:ListItem>5</asp:ListItem>
-                                            </asp:DropDownList>
-                                            <br />
-                                            <br />
                                             <asp:Label ID="Label_Language3" runat="server" CssClass="title-labels" Text="Language:"></asp:Label>
                                             <br />
                                             <asp:TextBox ID="TextBox_Language3" runat="server" MaxLength="10"></asp:TextBox>
 
+                                            <br />
                                             <br />
 
                                         </div>
@@ -693,6 +668,7 @@
                                                         <%--can we center this somehow--%>
                                                         <asp:CheckBoxList ID="CheckBoxList_CheckIn" ForeColor="Black" runat="server" CssClass="checkin-checkboxlist" />
                                                         <asp:Label ID="Label_StoreUser" runat="server" Text="Label" Visible="False"></asp:Label>
+                                                        <asp:Label ID="Label_ErrorNoBooks" ForeColor="Red" runat="server" Text="User has no borrowed books." Visible="False"></asp:Label>
                                                     </div>
                                                 </div>
                                             </div>
