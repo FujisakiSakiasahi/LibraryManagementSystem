@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Web;
+using System.Web.DynamicData;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
@@ -29,19 +30,27 @@ namespace LibraryManagementSystem
                     username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
                 }
 
-                DataTable notificationList = sessionHandler.RunQuery($"SELECT notifTitle, msg FROM Notification WHERE memberId={sessionHandler.GetUserId()} OR memberId=0;");
+                DataTable wishlistList = sessionHandler.RunQuery($"SELECT bookId, bookImage, bookName, bookDescription FROM Book INNER JOIN Wishlist USING (bookId) WHERE Wishlist.memberId = {sessionHandler.GetUserId()};");
                 string content = "";
-                for (int i = 0; i < notificationList.Rows.Count; i++)
+                for (int i = 0; i < wishlistList.Rows.Count; i++)
                 {
-                    content += $@" <li class=""list-group-item"">
-                                        <h3>{notificationList.Rows[i][0]}</h3>
-                                        <hr/>
-                                        <p>{notificationList.Rows[i][1]}</p>
-                                    </li>";
+                    content += $@"<li class=""list-group-item"">
+                                    <a href=""Description.aspx?bookId={wishlistList.Rows[i][0]}"">
+                                        <div class=""row"">
+                                            <div class=""col-lg-3"">
+                                                <img src=""{wishlistList.Rows[i][1].ToString().TrimStart('~')}"" class=""book-cover-size""/>
+                                            </div>
+                                            <div class=""col-lg-9"">
+                                                <h4 class=""text-dark"">{wishlistList.Rows[i][2]}</h4>
+                                                <p class=""text-dark"">{wishlistList.Rows[i][3]}</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </li>";
                 }
 
-                notification_list.InnerHtml = "";
-                notification_list.InnerHtml = content;
+                wishlist.InnerHtml = "";
+                wishlist.InnerHtml = content;
             }
         }
 

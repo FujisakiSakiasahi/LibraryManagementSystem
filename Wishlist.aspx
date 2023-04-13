@@ -76,13 +76,8 @@
                 <h2 class="page-title">Wishlist</h2>
             </div>
             <div class="contaier-fluid">
-                <ul class="list-group mb-3 shadow" id="notification_list" runat="server">
-                    <!--list item card, result for searching              
-                    <li class="list-group-item">
-                        <h3>{title}</h3>
-                        <hr/>
-                        <p>{message}</p>
-                    </li>
+                <ul class="list-group mb-3 shadow" id="wishlist" runat="server">
+                    <!--list item card, list of wishlist
                     -->
                 </ul>
             </div>
