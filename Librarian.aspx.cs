@@ -84,7 +84,7 @@ namespace LibraryManagementSystem {
 
             LoadBookData(SelectedPage.ViewBook, returned);
 
-            DataTable borrowed = sessionHandler.RunQuery($"SELECT Member.memberId, Member.memberName FROM Borrowed INNER JOIN Member USING (memberId) WHERE bookId = {Label_BookID.Text};");
+            DataTable borrowed = sessionHandler.RunQuery($"SELECT Member.memberId, Member.memberName FROM Borrowed INNER JOIN Member USING (memberId) WHERE bookId = {Label_BookID.Text} AND returnDate IS NULL;");
 
             if (borrowed.Rows.Count == 0) {
                 Label_BorrowedBy2.Text = "N/A";
@@ -117,10 +117,17 @@ namespace LibraryManagementSystem {
             Image_Book2.ImageUrl = Image_BookCover.ImageUrl;
             TextBox_Publisher2.Text = Label_Publisher.Text;
             Calendar_PublishDate2.SelectedDate = Convert.ToDateTime(Label_PublishDate.Text);
-            DropDownList_Rating2.SelectedValue = Label_Rating.Text;
             TextBox_Language2.Text = Label_Language.Text;
             TextBox_ISBN2.Text = Label_ISBN.Text;
-            CheckBox_Availability2.Checked = Convert.ToBoolean(Label_Availability.Text);
+
+            if (Label_Availability.Text.Equals("Available"))
+            {
+                CheckBox_Availability2.Checked = true;
+            }
+            else
+            {
+                CheckBox_Availability2.Checked = false;
+            }
             TextBox_ShelfID2.Text = Label_ShelfID.Text;
 
         }
@@ -144,7 +151,7 @@ namespace LibraryManagementSystem {
                 image = "~/images/books/" + Label_BookID2.Text + ".jpg";
             }
 
-            String query = $"UPDATE Book SET bookName = '{TextBox_Title2.Text}', bookDescription = '{TextBox_Description2.Text}', authorName = '{TextBox_Author2.Text}', bookImage = '{image}', publisherName = '{TextBox_Publisher2.Text}', pubDate = '{date}', rating = {DropDownList_Rating2.SelectedValue}, lang = '{TextBox_Language2.Text}', isbn = {TextBox_ISBN2.Text}, available = b'{(CheckBox_Availability2.Checked ? 1 : 0)}', shelfid = '{TextBox_ShelfID2.Text}' WHERE Book.bookId = {Label_BookID2.Text};";
+            String query = $"UPDATE Book SET bookName = '{TextBox_Title2.Text}', bookDescription = '{TextBox_Description2.Text}', authorName = '{TextBox_Author2.Text}', bookImage = '{image}', publisherName = '{TextBox_Publisher2.Text}', pubDate = '{date}', lang = '{TextBox_Language2.Text}', isbn = {TextBox_ISBN2.Text}, available = b'{(CheckBox_Availability2.Checked ? 1 : 0)}', shelfid = '{TextBox_ShelfID2.Text}' WHERE Book.bookId = {Label_BookID2.Text};";
 
             sessionHandler.RunQuery(query);
 
@@ -174,7 +181,7 @@ namespace LibraryManagementSystem {
                 image = "~/images/books/" + (highest + 1).ToString() + ".jpg";
             }
 
-            String query = $"INSERT INTO `Book` (`bookId`, `bookName`, `authorName`, `bookImage`, `bookDescription`, `publisherName`, `pubDate`, `rating`, `lang`, `isbn`, `available`, `shelfid`) VALUES ('{highest += 1}', '{TextBox_Title3.Text}', '{TextBox_Author3.Text}', '{(string.IsNullOrEmpty(image) ? "~/images/book.jpg" : image)}', '{TextBox_Description3.Text}', '{TextBox_Publisher3.Text}', '{date}', '{DropDownList_Rating3.SelectedValue}', '{TextBox_Language3.Text}', '{TextBox_ISBN3.Text}', b'{(CheckBox_Availability3.Checked ? 1 : 0)}', '{TextBox_ShelfID3.Text}');";
+            String query = $"INSERT INTO `Book` (`bookId`, `bookName`, `authorName`, `bookImage`, `bookDescription`, `publisherName`, `pubDate`, `lang`, `isbn`, `available`, `shelfid`) VALUES ('{highest += 1}', '{TextBox_Title3.Text}', '{TextBox_Author3.Text}', '{(string.IsNullOrEmpty(image) ? "~/images/book.jpg" : image)}', '{TextBox_Description3.Text}', '{TextBox_Publisher3.Text}', '{date}', '{TextBox_Language3.Text}', '{TextBox_ISBN3.Text}', b'{(CheckBox_Availability3.Checked ? 1 : 0)}', '{TextBox_ShelfID3.Text}');";
 
             sessionHandler.RunQuery(query);
 
@@ -192,14 +199,13 @@ namespace LibraryManagementSystem {
                 Label_Description.Text = returnedData.Rows[0][4].ToString();
                 Label_Publisher.Text = returnedData.Rows[0][5].ToString();
                 Label_PublishDate.Text = returnedData.Rows[0][6].ToString();
-                Label_Rating.Text = returnedData.Rows[0][7].ToString();
                 Label_Language.Text = returnedData.Rows[0][8].ToString();
                 Label_ISBN.Text = returnedData.Rows[0][9].ToString();
                 Label_ShelfID.Text = returnedData.Rows[0][10].ToString();
                 if (returnedData.Rows[0][10].ToString().Equals("1")) {
-                    Label_Availability.Text = "True";
+                    Label_Availability.Text = "Available";
                 } else if (returnedData.Rows[0][10].ToString().Equals("0")) {
-                    Label_Availability.Text = "False";
+                    Label_Availability.Text = "Not Available";
                 } else {
                     Label_Availability.Text = "N/A";
 
@@ -360,9 +366,13 @@ namespace LibraryManagementSystem {
             DataTable BorrowedBooks = sessionHandler.RunQuery($"SELECT bookId, bookName, memberId FROM Borrowed INNER JOIN Book USING (bookId) WHERE memberId = {ListBox_CheckIn.SelectedValue} AND returnDate IS NULL");
 
             if (BorrowedBooks.Rows.Count == 0) {
-                Response.Write("<script>alert('This user has no borrowed books.')</script>"); //needs improvement on the alerts
+                CheckBoxList_CheckIn.DataSource = null;
+                CheckBoxList_CheckIn.Items.Clear();
+                Label_ErrorNoBooks.Visible = true;
                 return;
             }
+
+            Label_ErrorNoBooks.Visible = false;
 
             Label_StoreUser.Text = BorrowedBooks.Rows[0]["memberId"].ToString();
 
@@ -395,8 +405,11 @@ namespace LibraryManagementSystem {
 
             String nowDate = DateTime.Now.ToString("yyyy-MM-dd");
 
-            String query = $"UPDATE Borrowed SET returnDate = '{nowDate}' WHERE memberId = {Label_StoreUser.Text} AND bookId IN ({bookQuery})";
-            sessionHandler.RunQuery(query);
+            String addBorrowed = $"UPDATE Borrowed SET returnDate = '{nowDate}' WHERE memberId = {Label_StoreUser.Text} AND bookId IN ({bookQuery})";
+            sessionHandler.RunQuery(addBorrowed);
+
+            String updateBook = $"UPDATE Book SET available = TRUE WHERE memberId = {Label_StoreUser.Text} AND bookId IN ({bookQuery})";
+            sessionHandler.RunQuery(updateBook);
 
             DataTable BorrowedBooks = sessionHandler.RunQuery($"SELECT bookId, bookName FROM Borrowed INNER JOIN Book USING (bookId) WHERE memberId = {Label_StoreUser.Text} AND returnDate IS NULL;");
 

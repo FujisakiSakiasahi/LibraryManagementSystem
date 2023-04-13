@@ -303,24 +303,6 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_PublishDate;
 
         /// <summary>
-        /// Label_RatingText1 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_RatingText1;
-
-        /// <summary>
-        /// Label_Rating control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Rating;
-
-        /// <summary>
         /// Label_LanguageText1 control.
         /// </summary>
         /// <remarks>
@@ -573,24 +555,6 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Calendar Calendar_PublishDate2;
 
         /// <summary>
-        /// Label_RatingText2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_RatingText2;
-
-        /// <summary>
-        /// DropDownList_Rating2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Rating2;
-
-        /// <summary>
         /// Label_LanguageText2 control.
         /// </summary>
         /// <remarks>
@@ -814,24 +778,6 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Calendar Calendar_PublishDate3;
-
-        /// <summary>
-        /// Label_Rating3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_Rating3;
-
-        /// <summary>
-        /// DropDownList_Rating3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList DropDownList_Rating3;
 
         /// <summary>
         /// Label_Language3 control.
@@ -1471,6 +1417,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_StoreUser;
+
+        /// <summary>
+        /// Label_ErrorNoBooks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_ErrorNoBooks;
 
         /// <summary>
         /// Button_CheckInBooks control.
