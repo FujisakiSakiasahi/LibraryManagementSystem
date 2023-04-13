@@ -156,6 +156,8 @@ namespace LibraryManagementSystem
             tablecell_ISBN.Text = dataTable.Rows[0][9].ToString();
             tablecell_availability.Text = dataTable.Rows[0][10].ToString();
             tablecell_shelfid.Text = dataTable.Rows[0][11].ToString();
+
+            Image_BookCover.ImageUrl = dataTable.Rows[0][3].ToString();
         }
 
         protected void SetCitationText(string title, string publishDate, string author, string publisher) {
