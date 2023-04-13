@@ -86,8 +86,8 @@
                 </div>
 
                 <!--Multiview Panel-->
-                <div class="col-11">
-                    <div class="container-fluid">
+                <div class="col-11 gx-0">
+                    <div class="container-fluid gx-0">
                         <asp:MultiView ID="MultiView1" runat="server" ActiveViewIndex="0">
                             <!--
                                 0 - 3: manage book
@@ -122,7 +122,9 @@
                                         <div class="container search-container">
                                             <div class="row">
                                                 <div class="col-11">
-                                                    <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" CssClass="search-bar" TextMode="Search"></asp:TextBox>
+                                                    <asp:Panel ID="Panel1" runat="server" DefaultButton="Button_SearchBook" CssClass="panel">
+                                                        <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" CssClass="search-bar" TextMode="Search"></asp:TextBox>
+                                                    </asp:Panel>
                                                 </div>
                                                 <div class="col-1">
                                                     <asp:Button ID="Button_SearchBook" runat="server" OnClick="Button_Click_SearchBook" Text="Search" CssClass="search-button" />
@@ -483,7 +485,9 @@
                                     <div class="container-fluid search-container">
                                         <div class="row">
                                             <div class="col-11">
-                                                <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" CssClass="search-bar" TextMode="Search"></asp:TextBox>
+                                                <asp:Panel ID="Panel2" runat="server" CssClass="panel" DefaultButton="Button_SearchUser">
+                                                    <asp:TextBox ID="Textbox_SearchUser" runat="server" Wrap="False" CssClass="search-bar" TextMode="Search"></asp:TextBox>
+                                                </asp:Panel>
                                             </div>
                                             <div class="col-1">
                                                 <asp:Button ID="Button_SearchUser" runat="server" OnClick="Button_Click_SearchUser" Text="Search" CssClass="search-button" />
@@ -665,10 +669,12 @@
                                     <div class="container search-container">
                                         <div class="row">
                                             <div class="col-11">
-                                                <asp:TextBox ID="Textbox_SearchBorrowedBookBasedOnUser" runat="server" CssClass="search-bar" TextMode="Search"></asp:TextBox>
+                                                <asp:Panel ID="Panel3" runat="server" CssClass="panel" DefaultButton="Button_SearchBorrowedBookBasedOnUser">
+                                                    <asp:TextBox ID="Textbox_SearchBorrowedBookBasedOnUser" runat="server" CssClass="search-bar" TextMode="Search"></asp:TextBox>
+                                                </asp:Panel>
                                             </div>
                                             <div class="col-1">
-                                                <asp:Button ID="Button_SearchBorrowedBookBasedOnUser" runat="server" Text="Button" CssClass="search-button" OnClick="Button_CLick_SearchForBorrowedBooks" />
+                                                <asp:Button ID="Button_SearchBorrowedBookBasedOnUser" runat="server" Text="Search" CssClass="search-button" OnClick="Button_CLick_SearchForBorrowedBooks" />
                                             </div>
                                         </div>
                                     </div>
@@ -731,7 +737,9 @@
                                                 <div class="container-fluid search-container">
                                                     <div class="row">
                                                         <div class="col-10">
-                                                            <asp:TextBox ID="TextBox_SearchUserCheckOut" runat="server" CssClass="search-bar"></asp:TextBox>
+                                                            <asp:Panel ID="Panel4" runat="server" CssClass="panel" DefaultButton="Button_SearchUserCheckOut">
+                                                                <asp:TextBox ID="TextBox_SearchUserCheckOut" runat="server" CssClass="search-bar"></asp:TextBox>
+                                                            </asp:Panel>
 
                                                         </div>
                                                         <div class="col-2">
@@ -760,7 +768,9 @@
                                                 <div class="container-fluid search-container">
                                                     <div class="row">
                                                         <div class="col-10">
-                                                            <asp:TextBox ID="TextBox_SearchBookCheckOut" runat="server" CssClass="search-bar"></asp:TextBox>
+                                                            <asp:Panel ID="Panel5" runat="server" CssClass="panel" DefaultButton="Button_SearchBookCheckOut">
+                                                                <asp:TextBox ID="TextBox_SearchBookCheckOut" runat="server" CssClass="search-bar"></asp:TextBox>
+                                                            </asp:Panel>
                                                         </div>
                                                         <div class="col-2">
                                                             <asp:Button ID="Button_SearchBookCheckOut" runat="server" Text="Search" OnClick="Button_Click_SearchBookCheckOut" CssClass="search-button" />
@@ -800,10 +810,19 @@
                             <asp:View ID="View10" runat="server">
 
                                 <!--Notif Nav Buttons-->
-                                    <div class="container-fluid notification-navigation gx-0">
-                                        <asp:Button ID="Button_CreateNotification" runat="server" Text="Create Notification" OnClick="Button_Click_CreateNotif" Enabled="False" />
-                                        <asp:Button ID="Button_ManageNotification" runat="server" Text="Manage Notification" OnClick="Button_Click_ManageNotif" />
+                                <div class="container-fluid notification-navigation">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <asp:Button ID="Button_CreateNotification" runat="server" Text="Create Notification" OnClick="Button_Click_CreateNotif" Enabled="False" CssClass="notification-nav-buttons" />
+
+                                        </div>
+                                        <div class="col-2">
+                                            <asp:Button ID="Button_ManageNotification" runat="server" Text="Manage Notification" OnClick="Button_Click_ManageNotif" CssClass="notification-nav-buttons" />
+
+                                        </div>
                                     </div>
+
+                                </div>
 
 
                                 <div class="container">
@@ -814,45 +833,65 @@
                                             <!--Create Notification-->
                                             <asp:View ID="View11" runat="server">
                                                 <div class="container-fluid">
-                                                    <h2>Create Notification
-                                                    </h2>
-                                                </div>
-                                                <div class="container-fluid">
                                                     <asp:Label ID="Label_NotifMsgTitle" runat="server" CssClass="title-labels" Text="Message Title"></asp:Label>
-
                                                 </div>
                                                 <div class="container-fluid">
-                                                    <asp:TextBox ID="TextBox_NotifMsgTitle" runat="server" TextMode="MultiLine" MaxLength="500" CssClass="search-bar"></asp:TextBox>
+                                                    <div class="row">
+                                                        <div class="col-12">
+                                                            <asp:TextBox ID="TextBox_NotifMsgTitle" runat="server" TextMode="MultiLine" MaxLength="500" CssClass="notification-textbox"></asp:TextBox>
+                                                        </div>
+                                                    </div>
                                                 </div>
-                                                
-                                                <asp:Label ID="Label_NotifMsgContent" runat="server" CssClass="title-labels" Text="Message Content"></asp:Label>
-                                                <br />
-                                                <asp:TextBox ID="TextBox_NotifMsgContent" runat="server" Height="307px" TextMode="MultiLine" Width="1154px" MaxLength="1024"></asp:TextBox>
-                                                <br />
-                                                <br />
-                                                <br />
-                                                <asp:RadioButtonList ID="RadioButtonList_NotifUserSelect" runat="server" ForeColor="Black" OnSelectedIndexChanged="RadioButtonList_NotifUserSelect_SelectedIndexChanged" AutoPostBack="True">
-                                                    <%--center this pls @jhunkit--%>
-                                                    <asp:ListItem Selected="True" Value="0" ForeColor="Black">All Users</asp:ListItem>
-                                                    <%--id = 0--%>
-                                                    <asp:ListItem Value="1" ForeColor="Black">Specified User</asp:ListItem>
-                                                </asp:RadioButtonList>
-                                                <asp:Label ID="Label_NotifSelectMember" runat="server" Text="Member ID:" CssClass="title-labels" Visible="False"></asp:Label>
-                                                <br />
-                                                <asp:TextBox ID="TextBox_NotifSelectMember" runat="server" TextMode="Number" Visible="False"></asp:TextBox>
-                                                <br />
-                                                <br />
-                                                <asp:Label ID="Label_ConfirmSendNotification" ForeColor="Green" Visible="false" runat="server" Text="Notification Sent!"></asp:Label>
-                                                <br />
-                                                <asp:Button ID="Button_SendNotification" runat="server" Text="Send Notification" OnClick="Button_SendNotification_Click" />
-                                                <br />
-                                            </asp:View>
-                                            <asp:View ID="View12" runat="server">
+                                                <div class="container-fluid">
+                                                    <asp:Label ID="Label_NotifMsgContent" runat="server" CssClass="title-labels" Text="Message Content"></asp:Label>
+                                                </div>
+                                                <div class="container-fluid">
+                                                    <asp:TextBox ID="TextBox_NotifMsgContent" runat="server" Height="300px" TextMode="MultiLine" MaxLength="1024" CssClass="notification-textbox"></asp:TextBox>
+                                                </div>
 
-                                                <asp:Label ID="Label44" runat="server" CssClass="labels" Text="Manage Notif"></asp:Label>
-                                                <br />
-                                                <br />
-                                                <asp:GridView ID="GridView_Notifications" runat="server" ForeColor="Black" OnRowCommand="Button_Click_RemoveNotif" AutoGenerateColumns="False">
+                                                <!--Radio Button-->
+                                                <div class="container-fluid">
+                                                    <div class="row">
+                                                        <asp:Label ID="Label_TargetMember" runat="server" Text="Target Audience: " CssClass="title-labels"></asp:Label>
+                                                    </div>
+                                                    <asp:RadioButtonList ID="RadioButtonList_NotifUserSelect" runat="server" ForeColor="Black" OnSelectedIndexChanged="RadioButtonList_NotifUserSelect_SelectedIndexChanged" AutoPostBack="True">
+                                                        <%--center this pls @jhunkit--%>
+                                                        <asp:ListItem Selected="True" Value="0" ForeColor="Black">All Users</asp:ListItem>
+                                                        <%--id = 0--%>
+                                                        <asp:ListItem Value="1" ForeColor="Black">Specified User</asp:ListItem>
+                                                    </asp:RadioButtonList>
+                                                </div>
+
+                                                <!--Member ID Input-->
+                                                <div class="container-fluid">
+             
+                                                    <div class="row">
+                                                        <asp:Label ID="Label_NotifSelectMember" runat="server" Text="Member ID:" CssClass="title-labels" Visible="False"></asp:Label>
+                                                    </div>
+                                                    <div class="row">
+                                                        <div class="col-3">
+                                                            <asp:TextBox ID="TextBox_NotifSelectMember" runat="server" TextMode="Number" Visible="False"></asp:TextBox>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!--Button-->
+                                                <div class="container-fluid button-container">
+                                                    <div class="row">
+                                                        <div class="col-2 offset-10">
+                                                            <asp:Label ID="Label_ConfirmSendNotification" ForeColor="Green" Visible="false" runat="server" Text="Notification Sent!"></asp:Label>
+                                                            <asp:Button ID="Button_SendNotification" runat="server" Text="Send Notification" OnClick="Button_SendNotification_Click" CssClass="accept-button" />
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </asp:View>
+
+                                            <!--Manage Notifications-->
+                                            <asp:View ID="View12" runat="server">
+                                                <div class="container gridview-container">
+                                                    <asp:GridView ID="GridView_Notifications" runat="server" ForeColor="Black" OnRowCommand="Button_Click_RemoveNotif" AutoGenerateColumns="False" CssClass="grid">
                                                     <Columns>
                                                         <asp:TemplateField HeaderText="Notification ID">
                                                             <ItemTemplate>
@@ -876,6 +915,7 @@
                                                         </asp:TemplateField>
                                                     </Columns>
                                                 </asp:GridView>
+                                                </div>
                                             </asp:View>
                                         </asp:MultiView>
                                     </div>

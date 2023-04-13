@@ -1,50 +1,4 @@
-﻿.content {
-    display: flex;
-}
-
-
-
-
-
-.view-container {
-    background: white;
-    width: 100%;
-    align-content: center;
-    align-items: center;
-}
-
-
-.content-container {
-    margin: 25px;
-    display: flex;
-    justify-content:space-between;
-}
-
-.left-container {
-    width: 30%;
-    text-align:left;
-}
-
-.center-container {
-    text-align:left;
-    width: 30%;
-}
-
-.right-container {
-    text-align:left;
-    width: 30%;
-}
-
-/*Check Out*/
-.checkout-search-bar {
-
-}
-
-.checkout-search-button {
-
-}
-
-.user-container {
+﻿.user-container {
     width: 40%;
     background: red;
 }
@@ -163,10 +117,32 @@
 
 /*Notification*/
 .notification-navigation {
-    background: black;
+    background: #233c59;
+    padding: 10px;
+}
+
+.notification-nav-buttons {
+    width:100%;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    background: white;
+    border-radius: 10px;
+}
+
+.notification-textbox {
+    border-radius: 10px;
+    border: grey solid 1px;
+    width: 100%;
+    height: 100%;
 }
 
 /*Universal Elements*/
+.panel {
+    height: 100%;
+}
+
 .button-container {
     margin: 20px;
     padding: 10px;
@@ -208,7 +184,7 @@ th {
     color: white
 }
 
-tr:nth-child(even) {
+tr:nth-child(odd) {
     background: whitesmoke
 }
 

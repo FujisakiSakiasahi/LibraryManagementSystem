@@ -141,6 +141,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View0;
 
         /// <summary>
+        /// Panel1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel1;
+
+        /// <summary>
         /// Textbox_SearchBook control.
         /// </summary>
         /// <remarks>
@@ -933,6 +942,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View4;
 
         /// <summary>
+        /// Panel2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel2;
+
+        /// <summary>
         /// Textbox_SearchUser control.
         /// </summary>
         /// <remarks>
@@ -1419,6 +1437,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View8;
 
         /// <summary>
+        /// Panel3 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel3;
+
+        /// <summary>
         /// Textbox_SearchBorrowedBookBasedOnUser control.
         /// </summary>
         /// <remarks>
@@ -1491,6 +1518,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View9;
 
         /// <summary>
+        /// Panel4 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel4;
+
+        /// <summary>
         /// TextBox_SearchUserCheckOut control.
         /// </summary>
         /// <remarks>
@@ -1516,6 +1552,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListBox ListBox_SearchedUserCheckOut;
+
+        /// <summary>
+        /// Panel5 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Panel Panel5;
 
         /// <summary>
         /// TextBox_SearchBookCheckOut control.
@@ -1644,6 +1689,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.TextBox TextBox_NotifMsgContent;
 
         /// <summary>
+        /// Label_TargetMember control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_TargetMember;
+
+        /// <summary>
         /// RadioButtonList_NotifUserSelect control.
         /// </summary>
         /// <remarks>
@@ -1696,15 +1750,6 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View12;
-
-        /// <summary>
-        /// Label44 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label44;
 
         /// <summary>
         /// GridView_Notifications control.

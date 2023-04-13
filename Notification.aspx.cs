@@ -26,7 +26,7 @@ namespace LibraryManagementSystem
                     username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
                 }
 
-                DataTable notificationList = sessionHandler.RunQuery($"SELECT notifTitle, msg FROM Notification WHERE memberId={sessionHandler.GetUserId()} OR memberId=0;");
+                DataTable notificationList = sessionHandler.RunQuery($"SELECT notifTitle, msg FROM Notification WHERE memberId={sessionHandler.GetUserId()} OR memberId=0 ORDER BY notifId DESC;");
                 string content = "";
                 for (int i = 0; i < notificationList.Rows.Count; i++) { 
                     content += $@" <li class=""list-group-item"">
