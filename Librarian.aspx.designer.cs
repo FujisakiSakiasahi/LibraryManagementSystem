@@ -1446,15 +1446,6 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View9;
 
         /// <summary>
-        /// Label21 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label21;
-
-        /// <summary>
         /// TextBox_SearchUserCheckOut control.
         /// </summary>
         /// <remarks>
@@ -1536,15 +1527,6 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View10;
 
         /// <summary>
-        /// Label22 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label22;
-
-        /// <summary>
         /// Button_CreateNotification control.
         /// </summary>
         /// <remarks>
@@ -1579,15 +1561,6 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.View View11;
-
-        /// <summary>
-        /// Label_CreateNotif control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label_CreateNotif;
 
         /// <summary>
         /// Label_NotifMsgTitle control.

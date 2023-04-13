@@ -1,26 +1,25 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Setting.aspx.cs" Inherits="LibraryManagementSystem.Setting" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Wishlist.aspx.cs" Inherits="LibraryManagementSystem.Wishlist" %>
 
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head runat="server">
 
-    <title>Settings</title>
+    <title>Notification</title>
 
     <link rel="stylesheet" href="CSS/Header.css" />
     <link rel="stylesheet" href="CSS/Footer.css" />
-    <link rel="stylesheet" href="CSS/setting.css" />
+    <link rel="stylesheet" href="CSS/notification.css" />
     <link rel="stylesheet" href="CSS/page-title.css" />
 
     <!--Bootstrap 5-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-
 </head>
 <body>
     <form id="form1" runat="server">
 
-        <!--Header-->
+       <!--Header-->
         <div class="navigation-bar container-fluid">
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
@@ -55,9 +54,9 @@
                                         <hr class="dropdown-divider" />
                                     </li>
                                     <li><a class="dropdown-item" href="Notification.aspx">Notification</a></li>
-                                    <li><a class="dropdown-item" href="Wishlist.aspx">Wishlist</a></li>
+                                    <li><a class="dropdown-item active" href="Wishlist.aspx">Wishlist</a></li>
                                     <li><a class="dropdown-item" href="Request.aspx">Request a book</a></li>
-                                    <li><a class="dropdown-item active" href="Setting.aspx">Setting</a></li>
+                                    <li><a class="dropdown-item" href="Setting.aspx">Setting</a></li>
                                     <li>
                                         <hr class="dropdown-divider" />
                                     </li>
@@ -70,32 +69,22 @@
             </header>
         </div>
 
-        <!--Content-->
+
+        <!--content-->
         <div class="container">
             <div class="contaier-fluid text-center">
-                <h2 class="page-title">Settings</h2>
+                <h2 class="page-title">Wishlist</h2>
             </div>
-            <div class="container-fluid">
-                <div class="container-fluid">
-                    <h3>
-                        Notification
-                    </h3>
-                </div>
-                <div class="container-fluid">
-                    <asp:CheckBox ID="CheckBox_Notification" runat="server" Text=" Turn On Notification"/>
-                </div>
-                <div class="button-container container-fluid">
-                    <div class="row">
-                        <p id="system_response_success" runat="server" class="text-success text-end"></p>
-                        <p id="system_response_fail" runat="server" class="text-danger text-end"></p>
-                    </div>
-                    <div class="row">
-                        <div class="col-12">
-                            <asp:Button ID="Button_Save" runat="server" Text="Save Changes" CssClass="button-save" OnClick="Button_Save_Click" />
-                            <asp:Button ID="Button_Reset" runat="server" Text="Reset To Default" CssClass="button-reset" OnClick="Button_Reset_Click" />
-                        </div>
-                    </div>
-                </div>
+            <div class="contaier-fluid">
+                <ul class="list-group mb-3 shadow" id="notification_list" runat="server">
+                    <!--list item card, result for searching              
+                    <li class="list-group-item">
+                        <h3>{title}</h3>
+                        <hr/>
+                        <p>{message}</p>
+                    </li>
+                    -->
+                </ul>
             </div>
         </div>
 

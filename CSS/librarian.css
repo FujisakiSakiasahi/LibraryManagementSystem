@@ -151,6 +151,7 @@
     width: 100%;
     min-height:200px;
 }
+
 .checkin-checkboxlist {
     width: 100%;
     border: grey 1px solid;
@@ -160,8 +161,22 @@
     min-height: 200px;
 }
 
+/*Notification*/
+.notification-navigation {
+    background: black;
+}
 
 /*Universal Elements*/
+.button-container {
+    margin: 20px;
+    padding: 10px;
+}
+
+.listbox {
+    width: 100%;
+    min-height: 200px;
+}
+
 .grid {
     width: 100%;
 }
