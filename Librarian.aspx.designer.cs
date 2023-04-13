@@ -1419,15 +1419,6 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View8;
 
         /// <summary>
-        /// Label20 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label20;
-
-        /// <summary>
         /// Textbox_SearchBorrowedBookBasedOnUser control.
         /// </summary>
         /// <remarks>
