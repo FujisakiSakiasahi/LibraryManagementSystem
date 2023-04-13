@@ -7,10 +7,12 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace LibraryManagementSystem {
+namespace LibraryManagementSystem
+{
 
 
-    public partial class Home {
+    public partial class Home
+    {
 
         /// <summary>
         /// form1 control.
@@ -85,15 +87,6 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Image banner_image;
 
         /// <summary>
-        /// banner_label control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label banner_label;
-
-        /// <summary>
         /// Textbox_Search control.
         /// </summary>
         /// <remarks>
@@ -101,15 +94,6 @@ namespace LibraryManagementSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox Textbox_Search;
-
-        /// <summary>
-        /// test control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText test;
 
         /// <summary>
         /// search_button control.
@@ -121,15 +105,6 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.WebControls.Button search_button;
 
         /// <summary>
-        /// Label2 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label2;
-
-        /// <summary>
         /// popular_book_content control.
         /// </summary>
         /// <remarks>
@@ -139,15 +114,6 @@ namespace LibraryManagementSystem {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl popular_book_content;
 
         /// <summary>
-        /// Label3 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label3;
-
-        /// <summary>
         /// newest_book_content control.
         /// </summary>
         /// <remarks>
@@ -155,15 +121,6 @@ namespace LibraryManagementSystem {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl newest_book_content;
-
-        /// <summary>
-        /// Label4 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label Label4;
 
         /// <summary>
         /// recommended_book_content control.

@@ -72,7 +72,7 @@ namespace LibraryManagementSystem
                     DropDownList_Rating.ToolTip = "You must have borrowed the book at least once to be able to rate";
                     Button_SaveRating.ToolTip = "You must have borrowed the book at least once to be able to rate";
                     rating_error.Visible = true;
-                    rating_error.InnerHtml = "You have no borrowed the book before.";
+                    rating_error.InnerHtml = "You must have borrowed the book at least once to be able to rate.";
                 }
 
             }

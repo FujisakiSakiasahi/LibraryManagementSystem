@@ -7,19 +7,18 @@
 
     <title>Home</title>
 
-    <link rel="stylesheet" href="CSS/Header.css"/>
-    <link rel="stylesheet" href="CSS/Home/Content.css" />
+    <link rel="stylesheet" href="CSS/Header.css" />
     <link rel="stylesheet" href="CSS/Footer.css" />
-    <link rel="stylesheet" href="CSS/Home/Text.css" />
+    <link rel="stylesheet" href="CSS/home.css" />
 
     <!--Bootstrap 5-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-     
+
     <form id="form1" runat="server">
-      <!--Header-->
+        <!--Header-->
         <div class="navigation-bar container-fluid">
             <header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-between py-3 mb-4 border-bottom">
 
@@ -56,7 +55,9 @@
                                     <img src="/images/user.jpg" alt="mdo" width="40" height="40" class="rounded-circle" />
                                 </a>
                                 <ul class="dropdown-menu text-small" aria-labelledby="dropdownUser1" style="">
-                                    <li><p id="username" runat="server" class="dropdown-item"></p></li>
+                                    <li>
+                                        <p id="username" runat="server" class="dropdown-item"></p>
+                                    </li>
                                     <li>
                                         <hr class="dropdown-divider" />
                                     </li>
@@ -75,51 +76,81 @@
             </header>
         </div>
 
-        <div class="content">
-            <div class="banner-container">
-                <div class="banner">
-
-                    <asp:Image ID="banner_image" runat="server" Height="100px" ImageUrl="~/images/HamiShu_Blue_BG.png" />
-                    <asp:Label ID="banner_label" runat="server" Text="Sample banner here"></asp:Label>
-
-                </div>
+        <!--Banner-->
+        <div class="container">
+            <div class="row banner gx-0">
+                <a href="Home.aspx">
+                    <asp:Image ID="banner_image" runat="server" ImageUrl="~/images/Banner_1.png" />
+                </a>
             </div>
-            <div class="search-bar-container">
-                <div class="search-bar">
-                    <asp:TextBox runat="server" ID="Textbox_Search" class="search-bar-textbox"> </asp:TextBox>
-                    <!--<input id="test" type="text" placeholder="Search for books here..." class="search-bar-textbox" runat="server"/>-->
-                    <br />
-                    <asp:Button ID="search_button" runat="server" CssClass="advanced-search-button" Height="50px" OnClick="Button_Search_Click" Text="Search" />
-                </div>
-                </div>
-            <div class="list-container">
-                <div class="list">
-                    <div class="list-item list-item-1">
-                        <asp:Label ID="Label2" runat="server" Text="Popular Books" CssClass="labels" ForeColor="White"></asp:Label>
-                        <div class="list-item-content list-item-content-1">
-                            <div id="popular_book_content" runat="server" class="row">
-                                <!--for popular book item carrd-->
-                            </div>
-                        </div>
+
+            <!--Search Bar-->
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-11">
+                        <asp:TextBox runat="server" ID="Textbox_Search" CssClass="search-bar"> </asp:TextBox>
+
                     </div>
-                    <div class="list-item list-item-2">
-                        <asp:Label ID="Label3" runat="server" Text="Newly Acquired" CssClass="labels" ForeColor="White"></asp:Label>
-                        <div class="list-item-content list-item-content-2">
-                            <div id="newest_book_content" runat="server" class="row">
-                                <!--for newest book item carrd-->
-                            </div>
-                        </div>
-                    </div>
-                    <div class="list-item list-item-3">
-                        <asp:Label ID="Label4" runat="server" Text="Recommended to you" CssClass="labels" ForeColor="White"></asp:Label>
-                        <div class="list-item-content list-item-content-3">
-                            <div id="recommended_book_content" runat="server" class="row">
-                                <!--for newest book item carrd-->
-                            </div>
-                        </div>
+                    <div class="col-1">
+                        <asp:Button ID="search_button" runat="server" CssClass="search-button" OnClick="Button_Search_Click" Text="Search" />
+
                     </div>
                 </div>
             </div>
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-10 offset-1">
+
+                        <!--Popular-->
+                        <div class="container-fluid">
+                            <div class="container list-container">
+                                <div class="container ">
+                                    <h2 class="list-heading">Popular
+                                    </h2>
+                                </div>
+                                <div class="container book-container">
+                                    <div id="popular_book_content" runat="server" class="row">
+                                        <!--for popular book item carrd-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--newest-->
+                        <div class="container-fluid">
+                            <div class="container list-container">
+                                <div class="container">
+                                    <h2 class="list-heading">Newly Acquired
+                                    </h2>
+                                </div>
+                                <div class="container book-container">
+                                    <div id="newest_book_content" runat="server" class="row">
+                                        <!--for newest book item carrd-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!--Recommended-->
+                        <div class="container-fluid">
+                            <div class="container list-container">
+                                <div class="container">
+                                    <h2 class="list-heading">Recommended For You
+                                    </h2>
+                                </div>
+                                <div class="container book-container">
+                                    <div id="recommended_book_content" runat="server" class="row">
+                                        <!--for recommended book item carrd-->
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
 
         <!--Footer-->
