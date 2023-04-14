@@ -107,7 +107,7 @@
                         <div class="container-fluid">
                             <div class="container list-container">
                                 <div class="container ">
-                                    <h2 class="list-heading">Popular
+                                    <h2 class="list-heading">Top Rated
                                     </h2>
                                 </div>
                                 <div class="container book-container">
@@ -137,7 +137,7 @@
                         <div class="container-fluid">
                             <div class="container list-container">
                                 <div class="container">
-                                    <h2 class="list-heading">Recommended For You
+                                    <h2 class="list-heading">Try something new
                                     </h2>
                                 </div>
                                 <div class="container book-container">

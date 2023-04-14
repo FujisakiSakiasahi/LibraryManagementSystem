@@ -63,6 +63,7 @@ a.item-card:visited {
     height: 100%;
     max-width: 150px !important;
     max-height: 150px !important;
+    min-height: 150px !important;
     object-fit: contain;
 }
 
