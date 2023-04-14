@@ -856,11 +856,11 @@
                                 <div class="container-fluid notification-navigation">
                                     <div class="row">
                                         <div class="col-2">
-                                            <asp:Button ID="Button_CreateNotification" runat="server" Text="Create Notification" OnClick="Button_Click_CreateNotif" Enabled="False" CssClass="notification-nav-buttons" />
+                                            <asp:Button ID="Button_CreateNotification" runat="server" Text="Create Notification" OnClick="Button_Click_CreateNotif" Enabled="False" CssClass="notification-nav-buttons" CausesValidation="False" />
 
                                         </div>
                                         <div class="col-2">
-                                            <asp:Button ID="Button_ManageNotification" runat="server" Text="Manage Notification" OnClick="Button_Click_ManageNotif" CssClass="notification-nav-buttons" />
+                                            <asp:Button ID="Button_ManageNotification" runat="server" Text="Manage Notification" OnClick="Button_Click_ManageNotif" CssClass="notification-nav-buttons" CausesValidation="False" />
 
                                         </div>
                                     </div>
