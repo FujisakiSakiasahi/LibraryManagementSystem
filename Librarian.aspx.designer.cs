@@ -456,6 +456,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_TitleText2;
 
         /// <summary>
+        /// RequiredFieldValidator_Title1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Title1;
+
+        /// <summary>
         /// TextBox_Title2 control.
         /// </summary>
         /// <remarks>
@@ -472,6 +481,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_Description2;
+
+        /// <summary>
+        /// RequiredFieldValidator_Description1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Description1;
 
         /// <summary>
         /// TextBox_Description2 control.
@@ -519,6 +537,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_AuthorText2;
 
         /// <summary>
+        /// RequiredFieldValidator_Author1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Author1;
+
+        /// <summary>
         /// TextBox_Author2 control.
         /// </summary>
         /// <remarks>
@@ -535,6 +562,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_Publisher2;
+
+        /// <summary>
+        /// RequiredFieldValidator_Publisher1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Publisher1;
 
         /// <summary>
         /// TextBox_Publisher2 control.
@@ -573,6 +609,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_LanguageText2;
 
         /// <summary>
+        /// RequiredFieldValidator_Language1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Language1;
+
+        /// <summary>
         /// TextBox_Language2 control.
         /// </summary>
         /// <remarks>
@@ -589,6 +634,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label LabelISBNText2;
+
+        /// <summary>
+        /// RequiredFieldValidator_ISBN1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_ISBN1;
 
         /// <summary>
         /// TextBox_ISBN2 control.
@@ -625,6 +679,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_ShelfIDText2;
+
+        /// <summary>
+        /// RequiredFieldValidator_ShelfID1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_ShelfID1;
 
         /// <summary>
         /// TextBox_ShelfID2 control.
@@ -681,6 +744,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Title3;
 
         /// <summary>
+        /// RequiredFieldValidator_Title2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Title2;
+
+        /// <summary>
         /// TextBox_Title3 control.
         /// </summary>
         /// <remarks>
@@ -697,6 +769,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_Description3;
+
+        /// <summary>
+        /// RequiredFieldValidator_Description2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Description2;
 
         /// <summary>
         /// TextBox_Description3 control.
@@ -744,6 +825,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Author3;
 
         /// <summary>
+        /// RequiredFieldValidator_Author2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Author2;
+
+        /// <summary>
         /// TextBox_Author3 control.
         /// </summary>
         /// <remarks>
@@ -760,6 +850,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_Publisher3;
+
+        /// <summary>
+        /// RequiredFieldValidator_Publisher2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Publisher2;
 
         /// <summary>
         /// TextBox_Publisher3 control.
@@ -798,6 +897,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Language3;
 
         /// <summary>
+        /// RequiredFieldValidator_Language2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Language2;
+
+        /// <summary>
         /// TextBox_Language3 control.
         /// </summary>
         /// <remarks>
@@ -814,6 +922,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_ISBN3;
+
+        /// <summary>
+        /// RequiredFieldValidator_ISBN2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_ISBN2;
 
         /// <summary>
         /// TextBox_ISBN3 control.
@@ -850,6 +967,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_ShelfID3;
+
+        /// <summary>
+        /// RequiredFieldValidator_ShelfID2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_ShelfID2;
 
         /// <summary>
         /// TextBox_ShelfID3 control.
@@ -1113,6 +1239,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_MemberName3;
 
         /// <summary>
+        /// RequiredFieldValidator_MemberName control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_MemberName;
+
+        /// <summary>
         /// TextBox_MemberName control.
         /// </summary>
         /// <remarks>
@@ -1129,6 +1264,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_Email3;
+
+        /// <summary>
+        /// RequiredFieldValidator_Email control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Email;
 
         /// <summary>
         /// TextBox_Email control.
@@ -1149,6 +1293,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Password3;
 
         /// <summary>
+        /// RequiredFieldValidator_Password control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Password;
+
+        /// <summary>
         /// TextBox_Password control.
         /// </summary>
         /// <remarks>
@@ -1165,6 +1318,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_PhoneNumber3;
+
+        /// <summary>
+        /// RequiredFieldValidator_PhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_PhoneNumber;
 
         /// <summary>
         /// TextBox_PhoneNumber control.
@@ -1257,6 +1419,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_MemberName4;
 
         /// <summary>
+        /// RequiredFieldValidator_MemberName2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_MemberName2;
+
+        /// <summary>
         /// TextBox_MemberName3 control.
         /// </summary>
         /// <remarks>
@@ -1273,6 +1444,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_Email4;
+
+        /// <summary>
+        /// RequiredFieldValidator_Email2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Email2;
 
         /// <summary>
         /// TextBox_Email3 control.
@@ -1293,6 +1473,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_Password4;
 
         /// <summary>
+        /// RequiredFieldValidator_Password2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_Password2;
+
+        /// <summary>
         /// TextBox_Password3 control.
         /// </summary>
         /// <remarks>
@@ -1309,6 +1498,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label Label_PhoneNumber4;
+
+        /// <summary>
+        /// RequiredFieldValidator_PhoneNumber2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_PhoneNumber2;
 
         /// <summary>
         /// TextBox_PhoneNumber3 control.
