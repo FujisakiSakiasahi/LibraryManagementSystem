@@ -771,7 +771,7 @@
                                     <!--Check In Button-->
                                     <div class="container button-container">
                                         <div class="row">
-                                            <div class="col-1 offset-11">
+                                            <div class="col-2 offset-10">
                                                 <asp:Label ID="Label_CheckInSuccess" runat="server" ForeColor="Green" Text="Book Have Been Successfully Checked In" Visible="False"></asp:Label>
                                                 <asp:Button ID="Button_CheckInBooks" runat="server" Text="Check In" OnClick="Button_Click_CheckInBooks" Visible="False" CssClass="accept-button" />
                                             </div>
@@ -925,11 +925,11 @@
                                                     </asp:RadioButtonList>
                                                 </div>
 
-                                                <!--Member ID Input-->
+                                                <!--User ID Input-->
                                                 <div class="container-fluid">
 
                                                     <div class="row">
-                                                        <asp:Label ID="Label_NotifSelectMember" runat="server" Text="Member ID:" CssClass="title-labels" Visible="False"></asp:Label>
+                                                        <asp:Label ID="Label_NotifSelectMember" runat="server" Text="User ID:" CssClass="title-labels" Visible="False"></asp:Label>
                                                     </div>
                                                     <div class="row">
                                                         <div class="col-3">
