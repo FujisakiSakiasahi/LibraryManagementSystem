@@ -95,7 +95,7 @@ namespace LibraryManagementSystem {
         }
 
         protected void Button_Click_BackToManageBook(object sender, EventArgs e) {
-            MultiView1.ActiveViewIndex = (int)SelectedPage.ManageBook;
+            Button_Click_ManageBook(sender, e);
         }
 
         protected void Button_Click_DeleteBook(object sender, EventArgs e) {
@@ -134,6 +134,17 @@ namespace LibraryManagementSystem {
 
         protected void Button_Click_AddNewBook(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = (int)SelectedPage.AddNewBook;
+            TextBox_Title3.Text = "";
+            TextBox_Description3.Text = "";
+            Image3.ImageUrl = "~/images/book.jpg";
+            TextBox_Author3.Text = "";
+            TextBox_Publisher3.Text = "";
+            Calendar_PublishDate3.SelectedDate = DateTime.Now;
+            TextBox_Language3.Text = "";
+            TextBox_ISBN3.Text = "";
+            TextBox_ShelfID3.Text = "";
+            CheckBox_Availability3.Checked = false;
+
         }
 
         protected void Button_Click_DiscardChangesBook(object sender, EventArgs e) {
@@ -408,8 +419,10 @@ namespace LibraryManagementSystem {
             String addBorrowed = $"UPDATE Borrowed SET returnDate = '{nowDate}' WHERE memberId = {Label_StoreUser.Text} AND bookId IN ({bookQuery})";
             sessionHandler.RunQuery(addBorrowed);
 
-            String updateBook = $"UPDATE Book SET available = TRUE WHERE memberId = {Label_StoreUser.Text} AND bookId IN ({bookQuery})";
+            String updateBook = $"UPDATE Book SET available = TRUE WHERE bookId IN ({bookQuery})";
             sessionHandler.RunQuery(updateBook);
+
+            Label_CheckInSuccess.Visible = true;
 
             DataTable BorrowedBooks = sessionHandler.RunQuery($"SELECT bookId, bookName FROM Borrowed INNER JOIN Book USING (bookId) WHERE memberId = {Label_StoreUser.Text} AND returnDate IS NULL;");
 
