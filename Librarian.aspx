@@ -118,12 +118,20 @@
                                 <div class="container-fluid">
                                     <div class="container-fluid">
 
+                                        <!--Add Button-->
+                                        <div class="container add-new-button-container">
+                                            <asp:Button ID="Button_AddNewBook0" runat="server" OnClick="Button_Click_AddNewBook" Text="Add New Book" CssClass="add-new-button" />
+                                            <hr />
+                                        </div>
+
                                         <!--Search bar-->
                                         <div class="container search-container">
+                                            <p>Search by BookID, Book Name, or ISBN</p>
+
                                             <div class="row">
                                                 <div class="col-11">
                                                     <asp:Panel ID="Panel1" runat="server" DefaultButton="Button_SearchBook" CssClass="panel">
-                                                        <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" CssClass="search-bar" TextMode="Search"></asp:TextBox>
+                                                        <asp:TextBox ID="Textbox_SearchBook" runat="server" Wrap="False" CssClass="search-bar"  TextMode="Search"></asp:TextBox>
                                                     </asp:Panel>
                                                 </div>
                                                 <div class="col-1">
@@ -132,12 +140,15 @@
                                             </div>
                                         </div>
 
-                                        <!--Add Button-->
-                                        <div class="container add-new-button-container">
-                                            <asp:Button ID="Button_AddNewBook0" runat="server" OnClick="Button_Click_AddNewBook" Text="Add New Book" CssClass="add-new-button" />
-                                        </div>
+                                        
 
                                         <!--GridView-->
+                                        <div class="container">
+                                            <h2>
+                                                Search Results
+                                            </h2>
+                                            <hr />
+                                        </div>
                                         <div class="container gridview-container">
                                             <asp:GridView ID="GridView_BookList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewBook" CssClass="grid">
 
@@ -477,8 +488,15 @@
                             <asp:View ID="View4" runat="server">
                                 <div class="container">
 
+                                    <!--Add New User Button-->
+                                    <div class="container-fluid add-new-button-container">
+                                        <asp:Button ID="Button_AddUser" runat="server" Text="Add New User" OnClick="Button_Click_AddUser" CssClass="add-new-button" />
+                                        <hr />
+                                    </div>
+
                                     <!--Search Bar and Button-->
                                     <div class="container-fluid search-container">
+                                        <p>Search by Username or User ID</p>
                                         <div class="row">
                                             <div class="col-11">
                                                 <asp:Panel ID="Panel2" runat="server" CssClass="panel" DefaultButton="Button_SearchUser">
@@ -492,13 +510,15 @@
                                         </div>
                                     </div>
 
-                                    <!--Add New User Button-->
-                                    <div class="container-fluid add-new-button-container">
-                                        <asp:Button ID="Button_AddUser" runat="server" Text="Add New User" OnClick="Button_Click_AddUser" CssClass="add-new-button" />
-                                    </div>
+
 
                                     <!--GridView Section-->
-                                    <div class="container-fluid">
+                                    <div class="container-fluid gridview-container">
+                                        <h2>
+                                            Search Results
+                                        </h2>
+                                        <hr />
+
                                         <asp:GridView ID="GridView_UserList" runat="server" ForeColor="Black" AutoGenerateColumns="False" OnRowCommand="Button_Click_ViewUser" CssClass="grid">
                                             <Columns>
                                                 <asp:TemplateField HeaderText="User ID">
@@ -951,8 +971,12 @@
                             <asp:View ID="View13" runat="server">
                                 <div class="container-fluid headspace">
                                     <div class="container">
-                                        <h2>Requests
+                                        <h2>
+                                            Requests
                                         </h2>
+                                        <p>
+                                            User requested books. Remove upon acquiring the book.
+                                        </p>
                                         <hr />
                                     </div>
                                     <div class="container gridview-container">
@@ -975,8 +999,12 @@
                             <asp:View ID="View14" runat="server">
                                 <div class="container-fluid headspace">
                                     <div class="container">
-                                        <h2>Overdue Fees
+                                        <h2>
+                                            Overdue Fees
                                         </h2>
+                                        <p>
+                                            Overdue charges. Claim when member pays the overdue charges.
+                                        </p>
                                         <hr />
                                     </div>
                                     <div class="container gridview-container">
