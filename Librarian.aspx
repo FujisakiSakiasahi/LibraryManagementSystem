@@ -252,6 +252,8 @@
                                             </div>
                                         </div>
                                     </div>
+
+                                    <!--Buttons-->
                                     <div class="container button-container">
                                         <div class="row">
                                             <div class="col-9">
@@ -269,26 +271,28 @@
 
                             <!--Edit Book Information-->
                             <asp:View ID="View2" runat="server">
-                                <div class="view-container container-fluid">
+                                <div class="container-fluid">
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-4">
+
+                                            <!--Left Col-->
+                                            <div class="col-4 book-info-container">
                                                 <asp:Label ID="Label_BookID2" runat="server" Text="" Visible="False"></asp:Label>
                                                 <asp:Label ID="Label_TitleText2" runat="server" CssClass="title-labels" Text="Title:"></asp:Label>
 
                                                 <br />
 
-                                                <asp:TextBox ID="TextBox_Title2" runat="server" MaxLength="50"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox_Title2" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
                                                 <asp:Label ID="Label_Description2" runat="server" Text="Description:" CssClass="title-labels"></asp:Label>
 
                                                 <br />
-                                                <asp:TextBox ID="TextBox_Description2" runat="server" Height="208px" Width="417px" TextMode="MultiLine" MaxLength="1000"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox_Description2" runat="server" Height="208px" TextMode="MultiLine" MaxLength="1000" CssClass="textbox"></asp:TextBox>
 
                                                 <br />
                                                 <br />
-                                                <asp:Label ID="Label_Image2" runat="server" Text="Image" CssClass="title-labels"></asp:Label>
+                                                <asp:Label ID="Label_Image2" runat="server" Text="Image:" CssClass="title-labels"></asp:Label>
                                                 <br />
                                                 <asp:Image ID="Image_Book2" runat="server" ImageUrl="~/images/book.jpg" />
 
@@ -297,18 +301,20 @@
                                                 <br />
 
                                             </div>
-                                            <div class="col-4">
+
+                                            <!--Middle Col-->
+                                            <div class="col-4 book-info-container">
                                                 <asp:Label ID="Label_AuthorText2" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
 
                                                 <br />
-                                                <asp:TextBox ID="TextBox_Author2" runat="server" MaxLength="50"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox_Author2" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
                                                 <asp:Label ID="Label_Publisher2" runat="server" CssClass="title-labels" Text="Publisher:"></asp:Label>
 
                                                 <br />
 
-                                                <asp:TextBox ID="TextBox_Publisher2" runat="server" MaxLength="50"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox_Publisher2" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
                                                 <asp:Label ID="Label_PublishDateText2" runat="server" Text="Publish Date:" CssClass="title-labels"></asp:Label>
@@ -320,17 +326,19 @@
                                                 <br />
                                                 <asp:Label ID="Label_LanguageText2" runat="server" CssClass="title-labels" Text="Language:"></asp:Label>
                                                 <br />
-                                                <asp:TextBox ID="TextBox_Language2" runat="server" MaxLength="10"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox_Language2" runat="server" MaxLength="10" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
 
                                             </div>
-                                            <div class="col-4">
+
+                                            <!--Right Col-->
+                                            <div class="col-4 book-info-container">
                                                 <asp:Label ID="LabelISBNText2" runat="server" CssClass="title-labels" Text="ISBN:"></asp:Label>
 
                                                 <br />
 
-                                                <asp:TextBox ID="TextBox_ISBN2" runat="server" TextMode="Number"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox_ISBN2" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
                                                 <asp:Label ID="Label_AvailabilityText2" runat="server" Text="Availability:" CssClass="title-labels"></asp:Label>
@@ -342,18 +350,20 @@
                                                 <br />
                                                 <asp:Label ID="Label_ShelfIDText2" runat="server" Text="Shelf ID:" CssClass="title-labels"></asp:Label>
                                                 <br />
-                                                <asp:TextBox ID="TextBox_ShelfID2" runat="server" TextMode="Number"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox_ShelfID2" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="action-buttons-container">
+
+                                    <!--Buttons-->
+                                    <div class="container button-container">
                                         <div class="row">
                                             <div class="col-9">
                                             </div>
                                             <div class="col-3">
-                                                <asp:Button ID="Button_DiscardChanges_Book" runat="server" Text="Discard Changes" OnClick="Button_Click_DiscardChangesBook" />
-                                                <asp:Button ID="Button_SaveChanges_Book" runat="server" Text="Save Changes" OnClick="Button_Click_SaveChangesBook" />
+                                                <asp:Button ID="Button_DiscardChanges_Book" runat="server" Text="Discard Changes" OnClick="Button_Click_DiscardChangesBook" CssClass="cancel-button" />
+                                                <asp:Button ID="Button_SaveChanges_Book" runat="server" Text="Save Changes" OnClick="Button_Click_SaveChangesBook" CssClass="accept-button" />
                                             </div>
                                         </div>
                                     </div>
@@ -362,89 +372,100 @@
 
                             <!--Add New Book-->
                             <asp:View ID="View3" runat="server">
-                                <div class="view-container container-fluid">
-                                    <div class="content-container">
-                                        <div class="col-4">
-                                            <asp:Label ID="Label_BookID3" runat="server" Text="" Visible="False"></asp:Label>
-                                            <asp:Label ID="Label_Title3" runat="server" CssClass="title-labels" Text="Title:"></asp:Label>
+                                <div class="container-fluid">
+                                    <div class="container">
+                                        <div class="row">
 
-                                            <br />
+                                            <!--Left Col-->
+                                            <div class="col-4 book-info-container">
+                                                <asp:Label ID="Label_BookID3" runat="server" Text="" Visible="False"></asp:Label>
+                                                <asp:Label ID="Label_Title3" runat="server" CssClass="title-labels" Text="Title:"></asp:Label>
 
-                                            <asp:TextBox ID="TextBox_Title3" runat="server" MaxLength="50"></asp:TextBox>
-                                            <br />
-                                            <br />
-                                            <asp:Label ID="Label_Description3" runat="server" Text="Description:" CssClass="title-labels"></asp:Label>
+                                                <br />
 
-                                            <br />
-                                            <asp:TextBox ID="TextBox_Description3" runat="server" Height="208px" Width="417px" TextMode="MultiLine" MaxLength="1000"></asp:TextBox>
+                                                <asp:TextBox ID="TextBox_Title3" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
+                                                <br />
+                                                <br />
+                                                <asp:Label ID="Label_Description3" runat="server" Text="Description:" CssClass="title-labels"></asp:Label>
 
-                                            <br />
-                                            <br />
-                                            <asp:Label ID="Label_Image3" runat="server" Text="Image" CssClass="title-labels"></asp:Label>
-                                            <br />
-                                            <asp:Image ID="Image3" runat="server" ImageUrl="~/images/book.jpg" />
+                                                <br />
+                                                <asp:TextBox ID="TextBox_Description3" runat="server" Height="208px" TextMode="MultiLine" MaxLength="1000" CssClass="textbox"></asp:TextBox>
 
-                                            <br />
-                                            <asp:FileUpload ID="FileUpload_Image2" runat="server" />
-                                            <br />
-                                        </div>
-                                        <div class="col-4">
-                                            <asp:Label ID="Label_Author3" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
+                                                <br />
+                                                <br />
+                                                <asp:Label ID="Label_Image3" runat="server" Text="Image:" CssClass="title-labels"></asp:Label>
+                                                <br />
+                                                <asp:Image ID="Image3" runat="server" ImageUrl="~/images/book.jpg" />
 
-                                            <br />
-                                            <asp:TextBox ID="TextBox_Author3" runat="server" MaxLength="50"></asp:TextBox>
-                                            <br />
-                                            <br />
-                                            <asp:Label ID="Label_Publisher3" runat="server" CssClass="title-labels" Text="Publisher:"></asp:Label>
+                                                <br />
+                                                <asp:FileUpload ID="FileUpload_Image2" runat="server" />
+                                                <br />
+                                            </div>
 
-                                            <br />
+                                            <!--Middle Col-->
+                                            <div class="col-4 book-info-container">
+                                                <asp:Label ID="Label_Author3" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
 
-                                            <asp:TextBox ID="TextBox_Publisher3" runat="server" MaxLength="50"></asp:TextBox>
-                                            <br />
-                                            <br />
-                                            <asp:Label ID="Label_PublishDate3" runat="server" Text="Publish Date:" CssClass="title-labels"></asp:Label>
+                                                <br />
+                                                <asp:TextBox ID="TextBox_Author3" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
+                                                <br />
+                                                <br />
+                                                <asp:Label ID="Label_Publisher3" runat="server" CssClass="title-labels" Text="Publisher:"></asp:Label>
 
-                                            <br />
-                                            <asp:Calendar ID="Calendar_PublishDate3" runat="server"></asp:Calendar>
-                                            <br />
-                                            <br />
-                                            <asp:Label ID="Label_Language3" runat="server" CssClass="title-labels" Text="Language:"></asp:Label>
-                                            <br />
-                                            <asp:TextBox ID="TextBox_Language3" runat="server" MaxLength="10"></asp:TextBox>
+                                                <br />
 
-                                            <br />
-                                            <br />
+                                                <asp:TextBox ID="TextBox_Publisher3" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
+                                                <br />
+                                                <br />
+                                                <asp:Label ID="Label_PublishDate3" runat="server" Text="Publish Date:" CssClass="title-labels"></asp:Label>
 
-                                        </div>
-                                        <div class="col-4">
-                                            <asp:Label ID="Label_ISBN3" runat="server" CssClass="title-labels" Text="ISBN:"></asp:Label>
+                                                <br />
+                                                <asp:Calendar ID="Calendar_PublishDate3" runat="server"></asp:Calendar>
+                                                <br />
+                                                <br />
+                                                <asp:Label ID="Label_Language3" runat="server" CssClass="title-labels" Text="Language:"></asp:Label>
+                                                <br />
+                                                <asp:TextBox ID="TextBox_Language3" runat="server" MaxLength="10" CssClass="textbox"></asp:TextBox>
 
-                                            <br />
+                                                <br />
+                                                <br />
 
-                                            <asp:TextBox ID="TextBox_ISBN3" runat="server" TextMode="Number"></asp:TextBox>
-                                            <br />
-                                            <br />
-                                            <asp:Label ID="Label_Availability3" runat="server" Text="Availability:" CssClass="title-labels"></asp:Label>
+                                            </div>
 
-                                            <br />
-                                            <asp:CheckBox ID="CheckBox_Availability3" runat="server" />
+                                            <!--Right Col-->
+                                            <div class="col-4 book-info-container">
+                                                <asp:Label ID="Label_ISBN3" runat="server" CssClass="title-labels" Text="ISBN:"></asp:Label>
 
-                                            <br />
-                                            <br />
-                                            <asp:Label ID="Label_ShelfID3" runat="server" Text="Shelf ID:" CssClass="title-labels"></asp:Label>
-                                            <br />
-                                            <asp:TextBox ID="TextBox_ShelfID3" runat="server" TextMode="Number"></asp:TextBox>
-                                            <br />
+                                                <br />
 
+                                                <asp:TextBox ID="TextBox_ISBN3" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
+                                                <br />
+                                                <br />
+                                                <asp:Label ID="Label_Availability3" runat="server" Text="Availability:" CssClass="title-labels"></asp:Label>
+
+                                                <br />
+                                                <asp:CheckBox ID="CheckBox_Availability3" runat="server" />
+
+                                                <br />
+                                                <br />
+                                                <asp:Label ID="Label_ShelfID3" runat="server" Text="Shelf ID:" CssClass="title-labels"></asp:Label>
+                                                <br />
+                                                <asp:TextBox ID="TextBox_ShelfID3" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
+                                                <br />
+
+                                            </div>
                                         </div>
                                     </div>
-                                    <div class="action-buttons-container">
+
+
+                                    <!--Buttons-->
+                                    <div class="container button-container">
                                         <div class="row">
                                             <div class="col-9">
                                             </div>
                                             <div class="col-3">
-                                                <asp:Button ID="Button12" runat="server" Text="Back" OnClick="Button_Click_AbortAddingNewBook" />
-                                                <asp:Button ID="Button14" runat="server" Text="Add New Book" OnClick="Button_Click_AddingNewBook" />
+                                                <asp:Button ID="Button12" runat="server" Text="Back" OnClick="Button_Click_AbortAddingNewBook" CssClass="cancel-button" />
+                                                <asp:Button ID="Button14" runat="server" Text="Add New Book" OnClick="Button_Click_AddingNewBook" CssClass="accept-button" />
                                             </div>
                                         </div>
                                     </div>
@@ -558,81 +579,111 @@
 
                             <!--Edit User Information-->
                             <asp:View ID="View6" runat="server">
-                                <div class="view-container">
-                                    <div class="left-container">
-                                        <asp:Label ID="Label_MemberID2" runat="server" CssClass="desc-labels" Text="*ID*" Visible="False"></asp:Label>
-                                        <asp:Label ID="Label_MemberName3" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
-                                        <br />
-                                        <asp:TextBox ID="TextBox_MemberName" runat="server" MaxLength="50"></asp:TextBox>
-                                        <br />
-                                        <br />
-                                        <asp:Label ID="Label_Email3" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
-                                        <br />
-                                        <asp:TextBox ID="TextBox_Email" runat="server" TextMode="Email" MaxLength="30"></asp:TextBox>
-                                        <br />
-                                        <br />
-                                        <asp:Label ID="Label_Password3" runat="server" CssClass="title-labels" Text="Password:"></asp:Label>
-                                        <br />
-                                        <asp:TextBox ID="TextBox_Password" runat="server" MaxLength="50"></asp:TextBox>
-                                        <br />
-                                        <br />
-                                        <asp:Label ID="Label_PhoneNumber3" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
-                                        <br />
-                                        <asp:TextBox ID="TextBox_PhoneNumber" runat="server" TextMode="Number"></asp:TextBox>
-                                        <br />
-                                        <br />
-                                        <asp:Label ID="Label_Notification3" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
-                                        <br />
-                                        <asp:Label ID="Label_Notification4" runat="server" CssClass="desc-labels" Text="*Notification*"></asp:Label>
-                                        <br />
-                                        <br />
-                                        <asp:Label ID="Label_Librarian3" runat="server" CssClass="title-labels" Text="Librarian:"></asp:Label>
-                                        <br />
-                                        <asp:CheckBox ID="CheckBox_Librarian" runat="server" />
-                                    </div>
-                                    <asp:Button ID="Button1" runat="server" Text="Discard Changes" OnClick="Button_Click_DiscardChangesUser" />
-                                    <asp:Button ID="Button_UserSave" runat="server" Text="Save Changes" OnClick="Button_Click_SaveChangesUser" />
 
+                                <div class="container">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_MemberID2" runat="server" CssClass="desc-labels" Text="*ID*" Visible="False"></asp:Label>
+                                                <asp:Label ID="Label_MemberName3" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
+                                                <br />
+                                                <asp:TextBox ID="TextBox_MemberName" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
+                                            </div>
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_Email3" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
+                                                <br />
+                                                <asp:TextBox ID="TextBox_Email" runat="server" TextMode="Email" MaxLength="30" CssClass="textbox"></asp:TextBox>
+                                            </div>
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_Password3" runat="server" CssClass="title-labels" Text="Password:"></asp:Label>
+                                                <br />
+                                                <asp:TextBox ID="TextBox_Password" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_PhoneNumber3" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
+                                                <br />
+                                                <asp:TextBox ID="TextBox_PhoneNumber" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
+                                            </div>
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_Notification3" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
+                                                <br />
+                                                <asp:Label ID="Label_Notification4" runat="server" CssClass="desc-labels" Text="*Notification*"></asp:Label>
+
+                                            </div>
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_Librarian3" runat="server" CssClass="title-labels" Text="Librarian:"></asp:Label>
+                                                <br />
+                                                <asp:CheckBox ID="CheckBox_Librarian" runat="server" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Buttons-->
+                                    <div class="container-fluid button-container">
+                                        <div class="row">
+                                            <div class="col-3 offset-9">
+                                                <asp:Button ID="Button1_DiscardChangesUser" runat="server" Text="Discard Changes" OnClick="Button_Click_DiscardChangesUser" CssClass="cancel-button" />
+                                                <asp:Button ID="Button_UserSave" runat="server" Text="Save Changes" OnClick="Button_Click_SaveChangesUser" CssClass="accept-button" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </asp:View>
 
                             <!--Add New User-->
                             <asp:View ID="View7" runat="server">
-                                <div class="view-container">
-                                    <div class="left-container">
-                                        <asp:Label ID="Label_MemberID3" runat="server" Text="Label" Visible="False"></asp:Label>
-                                        <asp:Label ID="Label_MemberName4" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
-                                        <br />
-                                        <asp:TextBox ID="TextBox_MemberName3" runat="server" MaxLength="50"></asp:TextBox>
-                                        <br />
-                                        <br />
-                                        <asp:Label ID="Label_Email4" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
-                                        <br />
-                                        <asp:TextBox ID="TextBox_Email3" runat="server" Width="190px" TextMode="Email" MaxLength="30"></asp:TextBox>
-                                        <br />
-                                        <br />
-                                        <asp:Label ID="Label_Password4" runat="server" CssClass="title-labels" Text="Password:"></asp:Label>
-                                        <br />
-                                        <asp:TextBox ID="TextBox_Password3" runat="server" MaxLength="50"></asp:TextBox>
-                                        <br />
-                                        <br />
-                                        <asp:Label ID="Label_PhoneNumber4" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
-                                        <br />
-                                        <asp:TextBox ID="TextBox_PhoneNumber3" runat="server" TextMode="Number"></asp:TextBox>
-                                        <br />
-                                        <br />
-                                        <asp:Label ID="Label_Notification5" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
-                                        <br />
-                                        <asp:CheckBox ID="CheckBox_Notification2" runat="server" />
-                                        <br />
-                                        <br />
-                                        <asp:Label ID="Label_Librarian4" runat="server" CssClass="title-labels" Text="Librarian:"></asp:Label>
-                                        <br />
-                                        <asp:CheckBox ID="CheckBox_Librarian2" runat="server" />
-                                    </div>
-                                    <asp:Button ID="Button3" runat="server" Text="Back" OnClick="Button_Click_AbortNewUser" />
-                                    <asp:Button ID="Button4" runat="server" Text="Create New User" OnClick="Button_Click_AddingNewUser" />
 
+                                <div class="container">
+                                    <div class="container-fluid">
+                                        <div class="row">
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_MemberID3" runat="server" Text="Label" Visible="False"></asp:Label>
+                                                <asp:Label ID="Label_MemberName4" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
+                                                <br />
+                                                <asp:TextBox ID="TextBox_MemberName3" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
+                                            </div>
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_Email4" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
+                                                <br />
+                                                <asp:TextBox ID="TextBox_Email3" runat="server" Width="190px" TextMode="Email" MaxLength="30" CssClass="textbox"></asp:TextBox>
+                                            </div>
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_Password4" runat="server" CssClass="title-labels" Text="Password:"></asp:Label>
+                                                <br />
+                                                <asp:TextBox ID="TextBox_Password3" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
+                                            </div>
+                                        </div>
+                                        <div class="row">
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_PhoneNumber4" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
+                                                <br />
+                                                <asp:TextBox ID="TextBox_PhoneNumber3" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
+                                            </div>
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_Notification5" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>
+                                                <br />
+                                                <asp:CheckBox ID="CheckBox_Notification2" runat="server" />
+
+                                            </div>
+                                            <div class="col-4 user-info-container">
+                                                <asp:Label ID="Label_Librarian4" runat="server" CssClass="title-labels" Text="Librarian:"></asp:Label>
+                                                <br />
+                                                <asp:CheckBox ID="CheckBox_Librarian2" runat="server" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <!--Buttons-->
+                                    <div class="container-fluid button-container">
+                                        <div class="row">
+                                            <div class="col-3 offset-9">
+                                                <asp:Button ID="Button3" runat="server" Text="Back" OnClick="Button_Click_AbortNewUser" CssClass="cancel-button" />
+                                                <asp:Button ID="Button4" runat="server" Text="Create New User" OnClick="Button_Click_AddingNewUser" CssClass="accept-button" />
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </asp:View>
 

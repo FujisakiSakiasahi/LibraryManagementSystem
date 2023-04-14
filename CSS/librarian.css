@@ -89,6 +89,10 @@
     object-fit: contain;
 }
 
+.book-info-container {
+    padding: 25px;
+}
+
 /*User*/
 
 .user-info-container {
@@ -96,9 +100,7 @@
     padding: 25px;
 }
 
-.book-info-container {
-    padding: 25px;
-}
+
 
 /*Check In*/
 .checkin-listbox {
@@ -139,6 +141,11 @@
 }
 
 /*Universal Elements*/
+
+.textbox{
+    width: 100%;
+}
+
 .checkboxlist {
     width: 100%;
 }
