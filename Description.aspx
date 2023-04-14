@@ -27,7 +27,6 @@
             document.execCommand("copy");
             textarea.style.display = "none";
         }
-
     </script>
 </head>
 <body>

@@ -259,7 +259,8 @@ namespace LibraryManagementSystem
         }
 
         protected void LoadBookDataIntoList(DataTable dataTable) {
-            if (dataTable.Rows.Count == 0 || dataTable.Rows.Count < page * 10-10) { search_result.InnerHtml = "<li class=\"list-group-item\">No book was found...</li>"; return; }
+            if (dataTable.Rows.Count == 0 || dataTable.Rows.Count < page * 10-10) { 
+                search_result.InnerHtml = "<li class=\"list-group-item\">No book was found...</li>"; return; }
             if (dataTable.Rows.Count > page * 10) {
                 string content = "";
                 for (int i = 0; i < 10; i++) {
