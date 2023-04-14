@@ -75,13 +75,13 @@
 
                 <!--Side Nav Buttons-->
                 <div class="col-1 navigation-buttons-container">
-                    <asp:Button ID="Button_ManageBook" runat="server" Text="Books" CssClass="side-nav-buttons" OnClick="Button_Click_ManageBook" />
-                    <asp:Button ID="Button_ManageUser" runat="server" Text="User" CssClass="side-nav-buttons" OnClick="Button_Click_ManageUser" />
-                    <asp:Button ID="Button_CheckIn" runat="server" Text="Check In" CssClass="side-nav-buttons" OnClick="Button_Click_CheckIn" />
-                    <asp:Button ID="Button_CheckOut" runat="server" Text="Check Out" CssClass="side-nav-buttons" OnClick="Button_Click_CheckOut" />
-                    <asp:Button ID="Button_Notification" runat="server" Text="Notification" CssClass="side-nav-buttons" OnClick="Button_Click_Notification" />
-                    <asp:Button ID="Button2" runat="server" Text="Requests" CssClass="side-nav-buttons" OnClick="Button_Click_RequestedBooks" />
-                    <asp:Button ID="Button_Overdue" runat="server" Text="Overdue" CssClass="side-nav-buttons" OnClick="Button_Click_ManageOverdue" />
+                    <asp:Button ID="Button_ManageBook" runat="server" Text="Books" CssClass="side-nav-buttons" OnClick="Button_Click_ManageBook" CausesValidation="False" />
+                    <asp:Button ID="Button_ManageUser" runat="server" Text="User" CssClass="side-nav-buttons" OnClick="Button_Click_ManageUser" CausesValidation="False" />
+                    <asp:Button ID="Button_CheckIn" runat="server" Text="Check In" CssClass="side-nav-buttons" OnClick="Button_Click_CheckIn" CausesValidation="False" />
+                    <asp:Button ID="Button_CheckOut" runat="server" Text="Check Out" CssClass="side-nav-buttons" OnClick="Button_Click_CheckOut" CausesValidation="False" />
+                    <asp:Button ID="Button_Notification" runat="server" Text="Notification" CssClass="side-nav-buttons" OnClick="Button_Click_Notification" CausesValidation="False" />
+                    <asp:Button ID="Button2" runat="server" Text="Requests" CssClass="side-nav-buttons" OnClick="Button_Click_RequestedBooks" CausesValidation="False" />
+                    <asp:Button ID="Button_Overdue" runat="server" Text="Overdue" CssClass="side-nav-buttons" OnClick="Button_Click_ManageOverdue" CausesValidation="False" />
 
                 </div>
 
@@ -292,13 +292,15 @@
                                                 <asp:Label ID="Label_TitleText2" runat="server" CssClass="title-labels" Text="Title:"></asp:Label>
 
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Title1" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Title2" ForeColor="Red"></asp:RequiredFieldValidator>
 
                                                 <asp:TextBox ID="TextBox_Title2" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
-                                                <asp:Label ID="Label_Description2" runat="server" Text="Description:" CssClass="title-labels"></asp:Label>
+                                                 <asp:Label ID="Label_Description2" runat="server" Text="Description:" CssClass="title-labels"></asp:Label>
 
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description1" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Description2" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Description2" runat="server" Height="208px" TextMode="MultiLine" MaxLength="1000" CssClass="textbox"></asp:TextBox>
 
                                                 <br />
@@ -318,13 +320,14 @@
                                                 <asp:Label ID="Label_AuthorText2" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
 
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Author1" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Author2" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Author2" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
                                                 <asp:Label ID="Label_Publisher2" runat="server" CssClass="title-labels" Text="Publisher:"></asp:Label>
 
                                                 <br />
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Publisher1" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Publisher2" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Publisher2" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
@@ -337,6 +340,7 @@
                                                 <br />
                                                 <asp:Label ID="Label_LanguageText2" runat="server" CssClass="title-labels" Text="Language:"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Language1" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Language2" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Language2" runat="server" MaxLength="10" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
@@ -348,7 +352,7 @@
                                                 <asp:Label ID="LabelISBNText2" runat="server" CssClass="title-labels" Text="ISBN:"></asp:Label>
 
                                                 <br />
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_ISBN1" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ISBN2" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_ISBN2" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
@@ -361,6 +365,7 @@
                                                 <br />
                                                 <asp:Label ID="Label_ShelfIDText2" runat="server" Text="Shelf ID:" CssClass="title-labels"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_ShelfID1" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ShelfID2" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_ShelfID2" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                             </div>
@@ -373,7 +378,7 @@
                                             <div class="col-9">
                                             </div>
                                             <div class="col-3">
-                                                <asp:Button ID="Button_DiscardChanges_Book" runat="server" Text="Discard Changes" OnClick="Button_Click_DiscardChangesBook" CssClass="cancel-button" />
+                                                <asp:Button ID="Button_DiscardChanges_Book" runat="server" Text="Discard Changes" OnClick="Button_Click_DiscardChangesBook" CssClass="cancel-button" CausesValidation="false" />
                                                 <asp:Button ID="Button_SaveChanges_Book" runat="server" Text="Save Changes" OnClick="Button_Click_SaveChangesBook" CssClass="accept-button" />
                                             </div>
                                         </div>
@@ -393,13 +398,14 @@
                                                 <asp:Label ID="Label_Title3" runat="server" CssClass="title-labels" Text="Title:"></asp:Label>
 
                                                 <br />
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Title2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Title3" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Title3" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
                                                 <asp:Label ID="Label_Description3" runat="server" Text="Description:" CssClass="title-labels"></asp:Label>
 
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Description2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Description3" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Description3" runat="server" Height="208px" TextMode="MultiLine" MaxLength="1000" CssClass="textbox"></asp:TextBox>
 
                                                 <br />
@@ -418,13 +424,14 @@
                                                 <asp:Label ID="Label_Author3" runat="server" CssClass="title-labels" Text="Author:"></asp:Label>
 
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Author2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Author3" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Author3" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
                                                 <asp:Label ID="Label_Publisher3" runat="server" CssClass="title-labels" Text="Publisher:"></asp:Label>
 
                                                 <br />
-
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Publisher2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Publisher3" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Publisher3" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
@@ -436,6 +443,7 @@
                                                 <br />
                                                 <asp:Label ID="Label_Language3" runat="server" CssClass="title-labels" Text="Language:"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Language2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Language3" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Language3" runat="server" MaxLength="10" CssClass="textbox"></asp:TextBox>
 
                                                 <br />
@@ -445,10 +453,11 @@
 
                                             <!--Right Col-->
                                             <div class="col-4 book-info-container">
+                                                
                                                 <asp:Label ID="Label_ISBN3" runat="server" CssClass="title-labels" Text="ISBN:"></asp:Label>
 
                                                 <br />
-
+<asp:RequiredFieldValidator ID="RequiredFieldValidator_ISBN2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ISBN3" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_ISBN3" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
@@ -461,6 +470,7 @@
                                                 <br />
                                                 <asp:Label ID="Label_ShelfID3" runat="server" Text="Shelf ID:" CssClass="title-labels"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_ShelfID2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ShelfID3" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_ShelfID3" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
 
@@ -475,7 +485,7 @@
                                             <div class="col-9">
                                             </div>
                                             <div class="col-3">
-                                                <asp:Button ID="Button12" runat="server" Text="Back" OnClick="Button_Click_AbortAddingNewBook" CssClass="cancel-button" />
+                                                <asp:Button ID="Button12" runat="server" Text="Back" OnClick="Button_Click_AbortAddingNewBook" CssClass="cancel-button" CausesValidation="False" />
                                                 <asp:Button ID="Button14" runat="server" Text="Add New Book" OnClick="Button_Click_AddingNewBook" CssClass="accept-button" />
                                             </div>
                                         </div>
@@ -607,16 +617,19 @@
                                                 <asp:Label ID="Label_MemberID2" runat="server" CssClass="desc-labels" Text="*ID*" Visible="False"></asp:Label>
                                                 <asp:Label ID="Label_MemberName3" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_MemberName" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_MemberName" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_MemberName" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                             </div>
                                             <div class="col-4 user-info-container">
                                                 <asp:Label ID="Label_Email3" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Email" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Email" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Email" runat="server" TextMode="Email" MaxLength="30" CssClass="textbox"></asp:TextBox>
                                             </div>
                                             <div class="col-4 user-info-container">
                                                 <asp:Label ID="Label_Password3" runat="server" CssClass="title-labels" Text="Password:"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Password" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Password" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Password" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                             </div>
                                         </div>
@@ -624,6 +637,7 @@
                                             <div class="col-4 user-info-container">
                                                 <asp:Label ID="Label_PhoneNumber3" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_PhoneNumber" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_PhoneNumber" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_PhoneNumber" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                             </div>
                                             <div class="col-4 user-info-container">
@@ -644,7 +658,7 @@
                                     <div class="container-fluid button-container">
                                         <div class="row">
                                             <div class="col-3 offset-9">
-                                                <asp:Button ID="Button1_DiscardChangesUser" runat="server" Text="Discard Changes" OnClick="Button_Click_DiscardChangesUser" CssClass="cancel-button" />
+                                                <asp:Button ID="Button1_DiscardChangesUser" runat="server" Text="Discard Changes" OnClick="Button_Click_DiscardChangesUser" CssClass="cancel-button" CausesValidation="False" />
                                                 <asp:Button ID="Button_UserSave" runat="server" Text="Save Changes" OnClick="Button_Click_SaveChangesUser" CssClass="accept-button" />
                                             </div>
                                         </div>
@@ -662,16 +676,19 @@
                                                 <asp:Label ID="Label_MemberID3" runat="server" Text="Label" Visible="False"></asp:Label>
                                                 <asp:Label ID="Label_MemberName4" runat="server" CssClass="title-labels" Text="Name:"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_MemberName2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_MemberName3" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_MemberName3" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                             </div>
                                             <div class="col-4 user-info-container">
                                                 <asp:Label ID="Label_Email4" runat="server" CssClass="title-labels" Text="Email:"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Email2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Email3" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Email3" runat="server" Width="190px" TextMode="Email" MaxLength="30" CssClass="textbox"></asp:TextBox>
                                             </div>
                                             <div class="col-4 user-info-container">
                                                 <asp:Label ID="Label_Password4" runat="server" CssClass="title-labels" Text="Password:"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_Password2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_Password3" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_Password3" runat="server" MaxLength="50" CssClass="textbox"></asp:TextBox>
                                             </div>
                                         </div>
@@ -679,6 +696,7 @@
                                             <div class="col-4 user-info-container">
                                                 <asp:Label ID="Label_PhoneNumber4" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
                                                 <br />
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_PhoneNumber2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_PhoneNumber3" ForeColor="Red"></asp:RequiredFieldValidator>
                                                 <asp:TextBox ID="TextBox_PhoneNumber3" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                             </div>
                                             <div class="col-4 user-info-container">
@@ -699,7 +717,7 @@
                                     <div class="container-fluid button-container">
                                         <div class="row">
                                             <div class="col-3 offset-9">
-                                                <asp:Button ID="Button3" runat="server" Text="Back" OnClick="Button_Click_AbortNewUser" CssClass="cancel-button" />
+                                                <asp:Button ID="Button3" runat="server" Text="Back" OnClick="Button_Click_AbortNewUser" CssClass="cancel-button" CausesValidation="False" />
                                                 <asp:Button ID="Button4" runat="server" Text="Create New User" OnClick="Button_Click_AddingNewUser" CssClass="accept-button" />
                                             </div>
                                         </div>
@@ -883,6 +901,7 @@
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-12">
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator_NotifTitle" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_NotifMsgTitle" ForeColor="Red"></asp:RequiredFieldValidator>
                                                             <asp:TextBox ID="TextBox_NotifMsgTitle" runat="server" TextMode="MultiLine" MaxLength="500" CssClass="notification-textbox"></asp:TextBox>
                                                         </div>
                                                     </div>
