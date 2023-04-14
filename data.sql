@@ -109,7 +109,6 @@ CREATE
         DECLARE CONTINUE HANDLER FOR NOT FOUND SET v_done=1;
 
         OPEN overdue_cursor;
-        FETCH overdue_cursor INTO v_memberId, v_bookName, v_remain;
         LP:LOOP
             FETCH overdue_cursor INTO v_memberId, v_bookName, v_remain;
             IF v_done = 1 THEN
@@ -125,11 +124,35 @@ CREATE
         CLOSE overdue_cursor;
     END;$$
 
+CREATE
+    PROCEDURE Remove_Reserved()
+    BEGIN
+        DECLARE r_memberID INT;
+        DECLARE r_bookId INT;
+        DECLARE r_done INT DEFAULT 0;
+        
+        DECLARE reserved_cursor CURSOR FOR SELECT memberId, bookId FROM Reserved WHERE DATEDIFF(reservedUntil, CURDATE()) < 0;
+        DECLARE CONTINUE HANDLER FOR NOT FOUND SET r_done = 1;
+
+        OPEN reserved_cursor;
+        LP:LOOP
+            FETCH reserved_cursor INTO r_memberId, r_bookId;
+            IF r_done = 1 THEN 
+                LEAVE LP;
+            END IF;
+
+            DELETE FROM Reserved WHERE DATEDIFF(reservedUntil, CURDATE()) <= 0;
+
+            END LOOP LP;
+        CLOSE reserved_cursor;
+    END;$$
+
 CREATE 
     EVENT Send_Notification
     ON SCHEDULE EVERY 1 DAY STARTS CONCAT(DATE(DATE_ADD(NOW(), INTERVAL 1 DAY)), ' 00:00:00')
     DO BEGIN
         CALL Send_Notification();
+        CALL Remove_Reserved();
     END;$$
 
 DELIMITER ;

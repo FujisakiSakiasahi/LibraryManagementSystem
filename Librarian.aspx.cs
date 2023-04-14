@@ -454,6 +454,7 @@ namespace LibraryManagementSystem {
             ListBox_SearchedBookCheckOut.DataBind();
 
             Label_ConfirmCheckOut.Visible = false;
+            Label_ErrorReserved.Visible = false;
         }
 
         protected void Button_Click_SearchUserCheckOut(object sender, EventArgs e) {
@@ -511,9 +512,15 @@ namespace LibraryManagementSystem {
             } else {
                 String memberId = ListBox_SearchedUserCheckOut.SelectedItem.Value;
                 String bookId = ListBox_SearchedBookCheckOut.SelectedItem.Value;
+
+                if (sessionHandler.RunQuery($"SELECT * FROM Reserved WHERE bookId = {bookId};").Rows.Count > 0)
+                {
+                    Label_ErrorReserved.Visible = true;
+                    return;
+                }
+                Label_ErrorReserved.Visible = false;
+
                 int highest = int.Parse(sessionHandler.RunQuery("SELECT MAX(borrowId) FROM Borrowed").Rows[0][0].ToString());
-
-
 
                 String query = $"INSERT INTO Borrowed (borrowId, bookId, memberId, dateBorrowed, expectDate, returnDate) VALUES ({highest + 1}, {bookId}, {memberId}, '{DateTime.Now.ToString("yyyy-MM-dd")}', '{DateTime.Now.AddDays(7).ToString("yyyy-MM-dd")}', NULL);";
                 sessionHandler.RunQuery(query);
@@ -657,7 +664,7 @@ namespace LibraryManagementSystem {
         protected void Button_Click_ManageOverdue(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = 12;
 
-            DataTable overdues = sessionHandler.RunQuery("SELECT Borrowed.borrowId, Book.bookName, Member.memberName, Borrowed.dateBorrowed, Borrowed.expectDate, Borrowed.returnDate, DATEDIFF(CURRENT_DATE,\r\nBorrowed.expectDate) AS daysLate, FORMAT(DATEDIFF(CURRENT_DATE, Borrowed.expectDate)*0.1, 2) AS moneyOwed FROM Borrowed INNER JOIN Book\r\nUSING (bookId) INNER JOIN Member USING (memberId) WHERE expectDate < CURRENT_DATE AND returnDate IS NULL;");
+            DataTable overdues = sessionHandler.RunQuery("SELECT Borrowed.borrowId, Book.bookName, Member.memberName, Borrowed.dateBorrowed, Borrowed.expectDate, Borrowed.returnDate, DATEDIFF(CURRENT_DATE,\r\nBorrowed.expectDate) AS daysLate, FORMAT(DATEDIFF(CURRENT_DATE, Borrowed.expectDate)*0.5, 2) AS moneyOwed FROM Borrowed INNER JOIN Book\r\nUSING (bookId) INNER JOIN Member USING (memberId) WHERE expectDate < CURRENT_DATE AND returnDate IS NULL;");
 
             GridView_Overdue.DataSource = overdues;
             GridView_Overdue.DataBind();
