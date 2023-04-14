@@ -10,51 +10,40 @@ using MySql.Data.MySqlClient;
 
 namespace LibraryManagementSystem
 {
-    public class SessionHandler
-    {
+    public class SessionHandler {
         private MySqlConnection connection;
         private bool loginState;
         private int loginUserId;
         private bool isLibrarian; 
 
-        public SessionHandler()
-        {
-            //connection = new SqlConnection("Server=localhost\\SQLEXPRESS ; Database=LibraryDb ; Integrated Security = TRUE");
-
+        public SessionHandler() {
             ConnectionStringSettings settings = ConfigurationManager.ConnectionStrings["myCon"];
 
-            if (settings != null)
-                connection = new MySqlConnection(settings.ConnectionString);
+            if (settings != null) connection = new MySqlConnection(settings.ConnectionString);
 
             loginState = false;
             isLibrarian = false;
-        }
+        }//end of SessionHandler constructor
 
-        public void CheckLoginState()
-        {
+        public void CheckLoginState() {
             //load login state
-            if (HttpContext.Current.Session["loginState"].ToString() == "true")
-            {
+            if (HttpContext.Current.Session["loginState"].ToString() == "true") {
                 loginState = true;
-            }
-            else
-            {
+            } else {
                 loginState = false;
             }
 
             //load member id
-            if (HttpContext.Current.Session["memberId"] != null)
-            {
+            if (HttpContext.Current.Session["memberId"] != null) {
                 loginUserId = int.Parse(HttpContext.Current.Session["memberId"].ToString());
-            }
-            else
-            {
+            } else {
                 loginUserId = -1;
             }
 
             //load isLibrarian
             if (HttpContext.Current.Session["memberId"] != null) {
-                if (HttpContext.Current.Session["isLibrarian"].ToString() == "1" || HttpContext.Current.Session["isLibrarian"].ToString() == "true") {
+                if (HttpContext.Current.Session["isLibrarian"].ToString() == "1" 
+                    || HttpContext.Current.Session["isLibrarian"].ToString() == "true") {
                     isLibrarian = true;
                 } else { 
                     isLibrarian= false;
@@ -63,19 +52,16 @@ namespace LibraryManagementSystem
             } else {
                 isLibrarian = false;
             }
-        }
+        }//end of CheckLoginState
 
-        public DataTable RunQuery(String query)
-        {
+        public DataTable RunQuery(String query) {
             DataTable returningData = new DataTable();
 
-
-            //SqlDataAdapter da = new SqlDataAdapter(new SqlCommand(query, connection));
             MySqlDataAdapter da = new MySqlDataAdapter(new MySqlCommand(query, connection));
             da.Fill(returningData);
 
             return returningData;
-        }
+        }//end of RunQuery
 
         public int GetUserId() { 
             return loginUserId;

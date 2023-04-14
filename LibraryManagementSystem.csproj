@@ -122,6 +122,7 @@
     <Content Include="images\book.jpg" />
     <Content Include="images\HamiShu_Blue_BG.png" />
     <Content Include="images\HamiShu_Logo_WhiteBG.png" />
+    <Content Include="images\R.jpg" />
     <Content Include="images\unknown.png" />
     <Content Include="Librarian.aspx" />
     <Content Include="Login.aspx" />

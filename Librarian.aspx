@@ -483,7 +483,7 @@
                                             <div class="col-9">
                                             </div>
                                             <div class="col-3">
-                                                <asp:Button ID="Button12" runat="server" Text="Back" OnClick="Button_Click_AbortAddingNewBook" CssClass="cancel-button" CausesValidation="False" />
+                                                <asp:Button ID="Button12" runat="server" Text="Cancel" OnClick="Button_Click_AbortAddingNewBook" CssClass="cancel-button" CausesValidation="False" />
                                                 <asp:Button ID="Button14" runat="server" Text="Add New Book" OnClick="Button_Click_AddingNewBook" CssClass="accept-button" />
                                             </div>
                                         </div>
@@ -715,7 +715,7 @@
                                     <div class="container-fluid button-container">
                                         <div class="row">
                                             <div class="col-3 offset-9">
-                                                <asp:Button ID="Button3" runat="server" Text="Back" OnClick="Button_Click_AbortNewUser" CssClass="cancel-button" CausesValidation="False" />
+                                                <asp:Button ID="Button3" runat="server" Text="Cancel" OnClick="Button_Click_AbortNewUser" CssClass="cancel-button" CausesValidation="False" />
                                                 <asp:Button ID="Button4" runat="server" Text="Create New User" OnClick="Button_Click_AddingNewUser" CssClass="accept-button" />
                                             </div>
                                         </div>
