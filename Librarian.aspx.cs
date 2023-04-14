@@ -156,9 +156,9 @@ namespace LibraryManagementSystem {
 
             String image = Image_Book2.ImageUrl;
 
-            if (FileUpload_Image2.HasFile)
+            if (FileUpload_Image.HasFile)
             {
-                Upload_Book_Image(FileUpload_Image, Label_BookID2 + ".jpg");
+                Upload_Book_Image(FileUpload_Image, Label_BookID2.Text + ".jpg");
                 image = "~/images/books/" + Label_BookID2.Text + ".jpg";
             }
 

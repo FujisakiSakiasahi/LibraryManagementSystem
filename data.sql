@@ -129,7 +129,7 @@ CREATE
     EVENT Send_Notification
     ON SCHEDULE EVERY 1 DAY STARTS CONCAT(DATE(DATE_ADD(NOW(), INTERVAL 1 DAY)), ' 00:00:00')
     DO BEGIN
-      CALL Send_Notification();
+        CALL Send_Notification();
     END;$$
 
 DELIMITER ;
