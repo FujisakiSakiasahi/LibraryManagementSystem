@@ -141,6 +141,9 @@
 }
 
 /*Universal Elements*/
+.headspace {
+    padding: 25px;
+}
 
 .textbox{
     width: 100%;
