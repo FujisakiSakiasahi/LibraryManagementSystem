@@ -863,6 +863,7 @@
                                                 <div class="container-fluid">
                                                     <div class="row">
                                                         <div class="col-12">
+                                                            <asp:RequiredFieldValidator ID="RequiredFieldValidator_NotifTitle" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_NotifMsgTitle" ForeColor="Red"></asp:RequiredFieldValidator>
                                                             <asp:TextBox ID="TextBox_NotifMsgTitle" runat="server" TextMode="MultiLine" MaxLength="500" CssClass="notification-textbox"></asp:TextBox>
                                                         </div>
                                                     </div>

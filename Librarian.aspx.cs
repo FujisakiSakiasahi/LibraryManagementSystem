@@ -532,7 +532,7 @@ namespace LibraryManagementSystem {
         protected void Button_Click_ManageNotif(object sender, EventArgs e) {
             MultiView2.ActiveViewIndex = 1;
 
-            DataTable notifications = sessionHandler.RunQuery("SELECT * FROM Notification;");
+            DataTable notifications = sessionHandler.RunQuery("SELECT * FROM Notification ORDER BY notifId DESC;");
 
             GridView_Notifications.DataSource = notifications;
             GridView_Notifications.DataBind();
@@ -542,8 +542,13 @@ namespace LibraryManagementSystem {
         }
 
         protected void Button_SendNotification_Click(object sender, EventArgs e) {
-            String title = TextBox_NotifMsgTitle.Text; //add error handling for length
-            String content = TextBox_NotifMsgContent.Text; //see above
+            String title = TextBox_NotifMsgTitle.Text; 
+            String content = TextBox_NotifMsgContent.Text; 
+
+            if (string.IsNullOrEmpty(content))
+            {
+                content = "NULL";
+            }
 
             int user = 0;
 
