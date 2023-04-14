@@ -24,7 +24,7 @@ namespace LibraryManagementSystem
 
         protected void UserLogin(String email, String password) {
             String query;
-            query = "SELECT memberId,librarian FROM Member WHERE memberEmail='" + email + "' AND memberPasswd='" + password + "' ;";
+            query = $@"SELECT memberId,librarian FROM Member WHERE memberEmail='{email}' AND memberPasswd='{password}';";
             DataTable returnedData = sessionHandler.RunQuery(query);
 
             if (returnedData == null || returnedData.Rows.Count != 1) {
@@ -42,7 +42,6 @@ namespace LibraryManagementSystem
                 } else {
                     Response.Write("<script>alert('Login data returning error occurs')</script>");
                 }
-
             }
         }
 

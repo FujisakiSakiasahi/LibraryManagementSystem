@@ -772,6 +772,7 @@
                                     <div class="container button-container">
                                         <div class="row">
                                             <div class="col-1 offset-11">
+                                                <asp:Label ID="Label_CheckInSuccess" runat="server" ForeColor="Green" Text="Book Have Been Successfully Checked In" Visible="False"></asp:Label>
                                                 <asp:Button ID="Button_CheckInBooks" runat="server" Text="Check In" OnClick="Button_Click_CheckInBooks" Visible="False" CssClass="accept-button" />
                                             </div>
                                         </div>
