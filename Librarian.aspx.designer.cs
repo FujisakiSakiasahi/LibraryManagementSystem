@@ -141,6 +141,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View0;
 
         /// <summary>
+        /// Button_AddNewBook0 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_AddNewBook0;
+
+        /// <summary>
         /// Panel1 control.
         /// </summary>
         /// <remarks>
@@ -166,15 +175,6 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button_SearchBook;
-
-        /// <summary>
-        /// Button_AddNewBook0 control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_AddNewBook0;
 
         /// <summary>
         /// GridView_BookList control.
@@ -1014,6 +1014,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.View View4;
 
         /// <summary>
+        /// Button_AddUser control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button Button_AddUser;
+
+        /// <summary>
         /// Panel2 control.
         /// </summary>
         /// <remarks>
@@ -1039,15 +1048,6 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button Button_SearchUser;
-
-        /// <summary>
-        /// Button_AddUser control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button Button_AddUser;
 
         /// <summary>
         /// GridView_UserList control.
