@@ -855,6 +855,7 @@
                                                 <div class="row">
                                                     <div class="col-2 offset-10">
                                                         <asp:Label ID="Label_ConfirmCheckOut" runat="server" ForeColor="Green" Text="Books Have Been Successfully Checked Out" Visible="False"></asp:Label>
+                                                        <asp:Label ID="Label_ErrorReserved" runat="server" ForeColor="Red" Text="Book has been reserved and unable to be borrowed" Visible="False"></asp:Label>
                                                         <asp:Button ID="Button_ConfirmCheckOut" runat="server" Text="Confirm Checkout" OnClick="Button_Click_ConfirmCheckOut" CssClass="accept-button" />
                                                     </div>
                                                 </div>

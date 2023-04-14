@@ -1761,6 +1761,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.Label Label_ConfirmCheckOut;
 
         /// <summary>
+        /// Label_ErrorReserved control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label Label_ErrorReserved;
+
+        /// <summary>
         /// Button_ConfirmCheckOut control.
         /// </summary>
         /// <remarks>
