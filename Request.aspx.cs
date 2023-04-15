@@ -25,6 +25,7 @@ namespace LibraryManagementSystem
                 }
 
                 system_response_success.Visible = false;
+                system_response_fail.Visible = false;
             }
         }
         protected void HeaderUIHandler()
@@ -58,15 +59,18 @@ namespace LibraryManagementSystem
             if (!string.IsNullOrEmpty(Textbox_Request.Text)) {
                 if (Textbox_Request.Text.Count<char>() > 50) {
                     system_response_success.Visible = false;
+                    system_response_fail.Visible = true;
                     return;
                 }
 
                 sessionHandler.RunQuery($"INSERT INTO Requests (bookName) VALUES ('{Textbox_Request.Text}');");
 
                 system_response_success.Visible = true;
+                system_response_fail.Visible = false;
                 return;
             }
             system_response_success.Visible = false;
+            system_response_fail.Visible = true;
         }
     }
 }

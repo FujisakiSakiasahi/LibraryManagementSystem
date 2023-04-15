@@ -84,6 +84,8 @@
                 <div class="button-container container-fluid text-center">
                     <div class="row">
                         <p id="system_response_success" runat="server" class="text-success text-center">Requested book has added to the list!</p>
+                        <p id="system_response_fail" runat="server" class="text-danger text-center">This field cannot be empty!</p>
+
                     </div>
                     <div class="row">
                         <div class="text-center col-12">
