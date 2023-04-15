@@ -749,7 +749,7 @@ namespace LibraryManagementSystem {
                     query += "SELECT * FROM Book WHERE ";
 
                     if (int.TryParse(searchString, out int bookId)) {
-                        query += "SELECT * FROM bookId = " + bookId + ";";
+                        query += "bookId = " + bookId + " OR isbn = " + bookId + ";";
                     } else {
                         query += "bookName LIKE '%" + searchString + "%';";
                     }
