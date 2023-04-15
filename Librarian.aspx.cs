@@ -788,6 +788,13 @@ namespace LibraryManagementSystem {
         protected void Button_Borrow_Click(object sender, EventArgs e)
         {
             MultiView1.ActiveViewIndex = 13;
+            DataTable borrowed = sessionHandler.RunQuery($"SELECT borrowId, bookName, memberName, dateBorrowed, expectDate FROM Borrowed INNER JOIN Book USING (bookId) INNER JOIN Member USING (memberId) ORDER BY borrowId DESC;");
+
+            GridView_Borrowed.DataSource = borrowed;
+            Debug.WriteLine("Bound");
+            GridView_Borrowed.DataBind();
+
+
         }
     }
 }

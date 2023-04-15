@@ -1115,7 +1115,15 @@
                                         <hr />
                                     </div>
                                     <div class="container gridview-container">
-                                        <asp:GridView ID="GridView1" runat="server" CssClass="grid"></asp:GridView>
+                                        <asp:GridView ID="GridView_Borrowed" runat="server" CssClass="grid" AutoGenerateColumns="False">
+                                            <Columns>
+                                                <asp:BoundField DataField="borrowId" HeaderText="Employee ID" />
+                                                <asp:BoundField DataField="bookName" HeaderText="Book Title" />
+                                                <asp:BoundField DataField="memberName" HeaderText="Member Name" />
+                                                <asp:BoundField DataField="dateBorrowed" HeaderText="Date Borrowed" />
+                                                <asp:BoundField DataField="expectDate" HeaderText="Expected Return Date" />
+                                            </Columns>
+                                        </asp:GridView>
                                     </div>
 
                                 </div>
