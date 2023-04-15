@@ -1115,13 +1115,15 @@
                                         <hr />
                                     </div>
                                     <div class="container gridview-container">
+                                        <asp:Label ID="Label_ErrorNoBorrowed" runat="server" Text="No Borrow Records Found" ForeColor="Red" Visible="false"> </asp:Label>
                                         <asp:GridView ID="GridView_Borrowed" runat="server" CssClass="grid" AutoGenerateColumns="False">
                                             <Columns>
-                                                <asp:BoundField DataField="borrowId" HeaderText="Employee ID" />
+                                                <asp:BoundField DataField="borrowId" HeaderText="Borrow ID" />
                                                 <asp:BoundField DataField="bookName" HeaderText="Book Title" />
                                                 <asp:BoundField DataField="memberName" HeaderText="Member Name" />
                                                 <asp:BoundField DataField="dateBorrowed" HeaderText="Date Borrowed" />
                                                 <asp:BoundField DataField="expectDate" HeaderText="Expected Return Date" />
+                                                <asp:BoundField DataField="returnDate" HeaderText="Actual Return Date" />
                                             </Columns>
                                         </asp:GridView>
                                     </div>
