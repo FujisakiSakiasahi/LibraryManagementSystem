@@ -78,7 +78,7 @@
                     <p>Request a book and we'll try to add it our library</p>
                 </div>
                 <div class="container-fluid">
-                    <asp:TextBox ID="Textbox_Request" runat="server" CssClass="request-bar"></asp:TextBox>
+                    <asp:TextBox ID="Textbox_Request" runat="server" CssClass="request-bar" MaxLength="50"></asp:TextBox>
 
                 </div>
                 <div class="button-container container-fluid text-center">
