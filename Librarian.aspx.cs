@@ -245,6 +245,12 @@ namespace LibraryManagementSystem {
 
         protected void Button_Click_AddUser(object sender, EventArgs e) {
             MultiView1.ActiveViewIndex = (int)SelectedPage.AddNewUser;
+            TextBox_MemberName3.Text = "";
+            TextBox_Email3.Text = "";
+            TextBox_Password3.Text = "";
+            TextBox_PhoneNumber3.Text = "";
+            CheckBox_Notification2.Checked = false;
+            CheckBox_Librarian2.Checked = false;
         }
 
         protected void Button_Click_AddingNewUser(object sender, EventArgs e) {
