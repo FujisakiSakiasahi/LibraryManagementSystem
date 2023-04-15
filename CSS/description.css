@@ -1,0 +1,101 @@
+﻿/*New Description*/
+form {
+    background: white;
+}
+
+.content {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 15px;
+    
+}
+.foreground {
+    border-radius: 10px;
+    background: #ebebebff;
+    padding: 10px;
+}
+
+.description {
+    min-height: 300px;
+}
+
+.more-information {
+    min-height: 300px;
+}
+
+.book-image {
+    max-height: 100%;
+}
+
+.buttons {
+    padding: 10px;
+    align-items: center;
+}
+
+.wishlist-button {
+    padding: 5px;
+    background: #ff9999;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.copy-citation-button {
+    padding: 5px;
+    background: #2F557F;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.reserve-button {
+    padding: 5px;
+    background: #404040;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+}
+
+.save-button {
+    padding: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    background: #404040;
+    border: none;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: white;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.title-label {
+    font-size: larger;
+    font-weight: bold;
+}
+
+.rating-label {
+    font-size: larger;
+    font-weight: bold;
+    text-align: center;
+    float: right;
+}
+
+.rating-dropdownlist {
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+    float: left;
+}
+
+.rating-button-div {
+    padding-top: 10px;
+}

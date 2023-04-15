@@ -1,0 +1,59 @@
+﻿/*New Login*/
+body {
+    background: whitesmoke;
+}
+
+.background {
+    background: whitesmoke;
+    height: 100%;
+}
+
+.login {
+    background: white;
+    border-radius: 20px;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+}
+
+.textbox {
+    padding: 10px;
+    margin: 10px;
+    border: solid grey 1px;
+    border-radius: 10px;
+    width:90%;
+}
+
+.button-forgotpassword {
+    background-color: #404040;
+    color: white;
+    border: 0;
+    padding: 10px;
+    float: left;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.button-login {
+    background-color: #2F557F;
+    color: white;
+    border: 0;
+    padding: 10px;
+    float: right;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.intro-container {
+    padding: 25px;
+}
+
+.input-container {
+    margin: 25px;
+}
+
+.button-container {
+    padding-bottom: 25px;
+}

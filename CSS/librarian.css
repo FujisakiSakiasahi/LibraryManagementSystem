@@ -1,0 +1,239 @@
+﻿.user-container {
+    width: 40%;
+    background: red;
+}
+
+.book-container {
+    width: 40%;
+    background: green;
+}
+
+
+.top-container {
+
+}
+
+.bottom-container {
+
+}
+
+/*Labels*/
+.title-labels {
+    color: black;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 21px;
+}
+
+
+.desc-labels {
+    color: black;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+}
+
+
+/*New Librarian Page*/
+
+/*Side Navigation*/
+
+.navigation-buttons-container {
+    background: #264364;
+}
+
+.side-nav-buttons {
+    width: 100%;
+    padding: 7px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    background: white;
+    border-radius: 10px;
+}
+
+.side-nav-buttons:hover {
+    transition: 0.2s;
+    background: #d4d4d4;
+}
+
+/*Search Bar*/
+
+.search-container {
+    margin: 25px;
+}
+
+.search-bar {
+    border-radius: 10px;
+    border: grey solid 1px;
+    width: 100%;
+    height: 100%;
+}
+
+.search-button {
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #404040;
+    color: white;
+    font-weight: bolder;
+}
+
+/*Books*/
+
+.book-cover-size {
+    width: 100%;
+    height: 100%;
+    max-width: 200px !important;
+    max-height: 200px !important;
+    object-fit: contain;
+}
+
+.book-info-container {
+    padding: 25px;
+}
+
+/*User*/
+
+.user-info-container {
+    min-height: 100px;
+    padding: 25px;
+}
+
+
+
+/*Check In*/
+.checkin-listbox {
+    width: 100%;
+    min-height:200px;
+}
+
+.checkin-checkboxlist {
+    width: 100%;
+    border: grey 1px solid;
+}
+
+.checkin-function-container {
+    min-height: 200px;
+}
+
+/*Notification*/
+.notification-navigation {
+    background: #233c59;
+    padding: 10px;
+}
+
+.notification-nav-buttons {
+    width:100%;
+    padding: 5px;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bolder;
+    background: white;
+    border-radius: 10px;
+}
+
+.notification-textbox {
+    border-radius: 10px;
+    border: grey solid 1px;
+    width: 100%;
+    height: 100%;
+}
+
+/*Universal Elements*/
+.headspace {
+    padding: 25px;
+}
+
+.textbox{
+    width: 100%;
+}
+
+.checkboxlist {
+    width: 100%;
+}
+
+.panel {
+    height: 100%;
+}
+
+.button-container {
+    margin: 20px;
+    padding: 10px;
+}
+
+.listbox {
+    width: 100%;
+    min-height: 200px;
+}
+
+.grid {
+    width: 100%;
+}
+
+.add-new-button {
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    background: #2F557F;
+    color: white;
+    font-weight: bolder;
+}
+
+.add-new-button-container {
+    margin: 10px;
+}
+
+.gridview-container {
+    margin: 20px;
+}
+
+.view-button {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+th {
+    background: #2F557F;
+    color: white
+}
+
+tr:nth-child(odd) {
+    background: whitesmoke
+}
+
+.cancel-button {
+    background: #A30000;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bolder;
+}
+
+.accept-button {
+    background: #309161;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bolder;
+}
+
+.neutral-button {
+    background: #ffa500;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bolder;
+}
+
+.dark-neutral-button {
+    background: #404040;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    font-weight: bolder;
+}

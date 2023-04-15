@@ -1,0 +1,13 @@
+﻿/*New Header*/
+.navigation-bar {
+    background: #2F557F;
+    font-weight: bold;
+}
+
+.login-text{
+    text-decoration: none;
+    color: white;
+    padding: 10px;
+}
+
+
