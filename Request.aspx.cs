@@ -56,10 +56,17 @@ namespace LibraryManagementSystem
 
         protected void Button_Request_Click(object sender, EventArgs e) {
             if (!string.IsNullOrEmpty(Textbox_Request.Text)) {
+                if (Textbox_Request.Text.Count<char>() > 50) {
+                    system_response_success.Visible = false;
+                    return;
+                }
+
                 sessionHandler.RunQuery($"INSERT INTO Requests (bookName) VALUES ('{Textbox_Request.Text}');");
 
                 system_response_success.Visible = true;
+                return;
             }
+            system_response_success.Visible = false;
         }
     }
 }
