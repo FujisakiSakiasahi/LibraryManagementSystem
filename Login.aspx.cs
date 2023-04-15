@@ -27,7 +27,7 @@ namespace LibraryManagementSystem
             query = $@"SELECT memberId,librarian FROM Member WHERE memberEmail='{email}' AND memberPasswd='{password}';";
             DataTable returnedData = sessionHandler.RunQuery(query);
 
-            if (returnedData == null || returnedData.Rows.Count != 1) {
+            if (returnedData.Rows.Count != 1) {
                 Response.Write("<script>alert('No matched account')</script>");
             } else {
                 Session["loginState"] = "true";
@@ -49,7 +49,7 @@ namespace LibraryManagementSystem
             String email = TextBox_Email.Text.ToString();
             String password = TextBox_Password.Text.ToString();
 
-            if (email == null || email == "" || password == null || password == "") {
+            if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(password)) {
                 Response.Write("<script>alert('Empty field')</script>");
             } else {
                 UserLogin(email, password);
