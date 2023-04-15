@@ -89,7 +89,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-11">
-                        <asp:TextBox runat="server" ID="Textbox_Search" CssClass="search-bar"> </asp:TextBox>
+                        <asp:TextBox runat="server" ID="Textbox_Search" CssClass="search-bar" MaxLength="50"></asp:TextBox>
 
                     </div>
                     <div class="col-1">

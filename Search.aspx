@@ -91,7 +91,7 @@
             <div class="search-container container-fluid">
                 <div class="row">
                     <div class="col-11">
-                        <asp:TextBox ID="Textbox_Search" runat="server" CssClass="search-bar" TextMode="Search"></asp:TextBox>
+                        <asp:TextBox ID="Textbox_Search" runat="server" CssClass="search-bar" TextMode="Search" MaxLength="50"></asp:TextBox>
                     </div>
                     <div class="col-1">
                         <asp:Button ID="Button_Search" runat="server" Text="Search" CssClass="search-button" OnClick="Button_Search_Click" />
