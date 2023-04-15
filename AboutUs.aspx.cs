@@ -21,24 +21,19 @@ namespace LibraryManagementSystem
             }
         }
 
-        protected void HeaderUIHandler()
-        {
+        protected void HeaderUIHandler() {
             login_link.Visible = false;
             profile.Visible = false;
 
             librarian_link.Visible = false;
 
-            if (sessionHandler.GetLoginState() == false)
-            {
+            if (sessionHandler.GetLoginState() == false){
                 login_link.Visible = true;
-            }
-            else
-            {
+            } else {
                 profile.Visible = true;
             }
 
-            if (sessionHandler.GetIsLibrarian())
-            {
+            if (sessionHandler.GetIsLibrarian()){
                 librarian_link.Visible = true;
             }
         }

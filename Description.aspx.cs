@@ -27,10 +27,9 @@ namespace LibraryManagementSystem
                 username.InnerHtml = sessionHandler.RunQuery($"SELECT memberName FROM Member WHERE memberId={sessionHandler.GetUserId()}").Rows[0][0].ToString();
             }
 
-            DataTable dataTable = new DataTable();
-
             try
             {
+                DataTable dataTable = new DataTable();
                 bookId = Request.QueryString["bookId"];
                 dataTable = sessionHandler.RunQuery("SELECT * FROM Book WHERE bookId=" + bookId + ";");
                 LoadBookData(dataTable);
@@ -213,8 +212,6 @@ namespace LibraryManagementSystem
             }
 
             rating_success.Visible = true;
-
         }
-
     }
 }
