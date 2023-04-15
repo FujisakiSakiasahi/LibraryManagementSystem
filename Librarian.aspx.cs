@@ -515,18 +515,21 @@ namespace LibraryManagementSystem {
         }
 
         protected void Button_Click_ConfirmCheckOut(object sender, EventArgs e) {
+            Label_ConfirmCheckOut.Visible = false;
             if (ListBox_SearchedBookCheckOut.SelectedItem == null || ListBox_SearchedUserCheckOut.SelectedItem == null) {
                 Response.Write("<script>alert('Must have a user and a book selected.')</script>"); //needs improvement on the alerts
             } else {
                 String memberId = ListBox_SearchedUserCheckOut.SelectedItem.Value;
                 String bookId = ListBox_SearchedBookCheckOut.SelectedItem.Value;
 
-                if (sessionHandler.RunQuery($"SELECT * FROM Reserved WHERE bookId = {bookId};").Rows.Count > 0)
+                if (sessionHandler.RunQuery($"SELECT * FROM Reserved WHERE bookId = {bookId} AND memberId != {memberId};").Rows.Count > 0)
                 {
                     Label_ErrorReserved.Visible = true;
                     return;
                 }
                 Label_ErrorReserved.Visible = false;
+                //removing reserved
+                sessionHandler.RunQuery($"DELETE FROM Reserved WHERE bookId = {bookId} AND memberId = {memberId};");
 
                 int highest = int.Parse(sessionHandler.RunQuery("SELECT MAX(borrowId) FROM Borrowed").Rows[0][0].ToString());
 
