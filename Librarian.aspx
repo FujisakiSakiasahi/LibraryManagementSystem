@@ -351,7 +351,7 @@
 
                                                 <br />
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_ISBN1" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ISBN2" ForeColor="Red"></asp:RequiredFieldValidator>
-                                                <asp:RangeValidator ID="RangeValidator_ISBN1" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ISBN2" ForeColor="Red" Type="Integer" MaximumValue="9223372036854775807" MinimumValue="1"></asp:RangeValidator>                                                
+                                                <asp:RangeValidator ID="RangeValidator_ISBN1" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ISBN2" ForeColor="Red" Type="Double" MaximumValue="9223372036854775807" MinimumValue="1"></asp:RangeValidator>                                                
                                                 <asp:TextBox ID="TextBox_ISBN2" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
@@ -458,7 +458,7 @@
 
                                                 <br />
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_ISBN2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ISBN3" ForeColor="Red"></asp:RequiredFieldValidator>
-                                                <asp:RangeValidator ID="RangeValidator_ISBN2" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ISBN3" ForeColor="Red" Type="Integer" MaximumValue="9223372036854775807" MinimumValue="1"></asp:RangeValidator>
+                                                <asp:RangeValidator ID="RangeValidator_ISBN2" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ISBN3" ForeColor="Red" Type="Double" MaximumValue="9223372036854775807" MinimumValue="1"></asp:RangeValidator>
                                                 <asp:TextBox ID="TextBox_ISBN3" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
