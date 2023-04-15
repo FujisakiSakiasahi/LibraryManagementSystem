@@ -130,6 +130,9 @@
     <Content Include="Request.aspx" />
     <Content Include="Search.aspx" />
     <Content Include="Setting.aspx" />
+    <Content Include="SQL\data.sql" />
+    <Content Include="SQL\sample_data.sql" />
+    <Content Include="SQL\setup.sql" />
     <Content Include="Web.config" />
     <Content Include="Home.aspx" />
     <Content Include="Wishlist.aspx" />

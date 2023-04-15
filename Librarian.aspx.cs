@@ -266,7 +266,7 @@ namespace LibraryManagementSystem {
 
             MultiView1.ActiveViewIndex = (int)SelectedPage.ViewUser;
 
-            LoadUserData(SelectedPage.ViewUser, sessionHandler.RunQuery($"SELECT * FROM Member WHERE memberId = {highest}"));
+            LoadUserData(sessionHandler.RunQuery($"SELECT * FROM Member WHERE memberId = {highest}"));
         }
 
         protected void Button_Click_AbortNewUser(object sender, EventArgs e) {
@@ -280,7 +280,7 @@ namespace LibraryManagementSystem {
 
             DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Member WHERE memberId = {(gridViewRow.FindControl("USER_ID") as Label).Text}");
 
-            LoadUserData(SelectedPage.ViewUser, returned);
+            LoadUserData(returned);
         }
 
         protected void Button_Click_EditUser(object sender, EventArgs e) {
@@ -308,7 +308,7 @@ namespace LibraryManagementSystem {
 
             DataTable returned = sessionHandler.RunQuery($"SELECT * FROM Member WHERE memberId = {Label_MemberID.Text}");
 
-            LoadUserData(SelectedPage.ViewUser, returned);
+            LoadUserData(returned);
         }
 
         protected void Button_Click_DiscardChangesUser(object sender, EventArgs e) {
@@ -324,23 +324,21 @@ namespace LibraryManagementSystem {
 
         }
 
-        protected void LoadUserData(SelectedPage page, DataTable returnedData) {
-            if (page == SelectedPage.ViewUser) {
-                Label_MemberID.Text = returnedData.Rows[0][0].ToString();
-                Label_MemberName2.Text = returnedData.Rows[0][1].ToString();
-                Label_PhoneNumber2.Text = returnedData.Rows[0][2].ToString();
-                Label_Email2.Text = returnedData.Rows[0][3].ToString();
-                Label_Password2.Text = returnedData.Rows[0]["memberPasswd"].ToString();
-                if (returnedData.Rows[0][5].ToString().Equals("0")) {
-                    Label_Notification2.Text = "False";
-                } else {
-                    Label_Notification2.Text = "True";
-                }
-                if (returnedData.Rows[0][6].ToString().Equals("0")) {
-                    Label_Librarian2.Text = "False";
-                } else {
-                    Label_Librarian2.Text = "True";
-                }
+        protected void LoadUserData(DataTable returnedData) {
+            Label_MemberID.Text = returnedData.Rows[0][0].ToString();
+            Label_MemberName2.Text = returnedData.Rows[0][1].ToString();
+            Label_PhoneNumber2.Text = returnedData.Rows[0][2].ToString();
+            Label_Email2.Text = returnedData.Rows[0][3].ToString();
+            Label_Password2.Text = returnedData.Rows[0]["memberPasswd"].ToString();
+            if (returnedData.Rows[0][5].ToString().Equals("0")) {
+                Label_Notification2.Text = "False";
+            } else {
+                Label_Notification2.Text = "True";
+            }
+            if (returnedData.Rows[0][6].ToString().Equals("0")) {
+                Label_Librarian2.Text = "False";
+            } else {
+                Label_Librarian2.Text = "True";
             }
         }
 
