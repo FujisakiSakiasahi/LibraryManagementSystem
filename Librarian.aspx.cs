@@ -5,6 +5,7 @@ using System.Data;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.DynamicData;
 using System.Web.UI;
@@ -252,6 +253,7 @@ namespace LibraryManagementSystem {
             CheckBox_Notification2.Checked = false;
             CheckBox_Librarian2.Checked = false;
         }
+
 
         protected void Button_Click_AddingNewUser(object sender, EventArgs e) {
 

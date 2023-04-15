@@ -351,6 +351,7 @@
 
                                                 <br />
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_ISBN1" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ISBN2" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                <asp:RangeValidator ID="RangeValidator_ISBN1" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ISBN2" ForeColor="Red" Type="Integer" MaximumValue="2147483647" MinimumValue="1"></asp:RangeValidator>                                                
                                                 <asp:TextBox ID="TextBox_ISBN2" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
@@ -364,6 +365,7 @@
                                                 <asp:Label ID="Label_ShelfIDText2" runat="server" Text="Shelf ID:" CssClass="title-labels"></asp:Label>
                                                 <br />
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_ShelfID1" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ShelfID2" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                <asp:RangeValidator ID="RangeValidator_SheldID1" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ShelfID2" ForeColor="Red" Type="Integer" MaximumValue="2147483647" MinimumValue="1"></asp:RangeValidator>                                                
                                                 <asp:TextBox ID="TextBox_ShelfID2" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                             </div>
@@ -455,7 +457,8 @@
                                                 <asp:Label ID="Label_ISBN3" runat="server" CssClass="title-labels" Text="ISBN:"></asp:Label>
 
                                                 <br />
-<asp:RequiredFieldValidator ID="RequiredFieldValidator_ISBN2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ISBN3" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                <asp:RequiredFieldValidator ID="RequiredFieldValidator_ISBN2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ISBN3" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                <asp:RangeValidator ID="RangeValidator_ISBN2" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ISBN3" ForeColor="Red" Type="Integer" MaximumValue="2147483647" MinimumValue="1"></asp:RangeValidator>
                                                 <asp:TextBox ID="TextBox_ISBN3" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
@@ -469,6 +472,7 @@
                                                 <asp:Label ID="Label_ShelfID3" runat="server" Text="Shelf ID:" CssClass="title-labels"></asp:Label>
                                                 <br />
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_ShelfID2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ShelfID3" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                <asp:RangeValidator ID="RangeValidator_ShelfId2" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ShelfID3" ForeColor="Red" Type="Integer" MaximumValue="2147483647" MinimumValue="1"></asp:RangeValidator>
                                                 <asp:TextBox ID="TextBox_ShelfID3" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
 
@@ -636,6 +640,7 @@
                                                 <asp:Label ID="Label_PhoneNumber3" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
                                                 <br />
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_PhoneNumber" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_PhoneNumber" ForeColor="Red"></asp:RequiredFieldValidator>
+                                                <asp:RangeValidator ID="RangeValidator_PhoneNumber" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_PhoneNumber" ForeColor="Red" Type="Integer" MaximumValue="2147483647" MinimumValue="1"></asp:RangeValidator>
                                                 <asp:TextBox ID="TextBox_PhoneNumber" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                             </div>
                                             <div class="col-4 user-info-container">
@@ -695,7 +700,8 @@
                                                 <asp:Label ID="Label_PhoneNumber4" runat="server" CssClass="title-labels" Text="Phone Number:"></asp:Label>
                                                 <br />
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_PhoneNumber2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_PhoneNumber3" ForeColor="Red"></asp:RequiredFieldValidator>
-                                                <asp:TextBox ID="TextBox_PhoneNumber3" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
+                                                <asp:RangeValidator ID="RangeValidator_PhoneNumber2" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_PhoneNumber3" ForeColor="Red" Type="Integer" MaximumValue="2147483647" MinimumValue="1"></asp:RangeValidator>
+                                                <asp:TextBox ID="TextBox_PhoneNumber3" runat="server" TextMode="Number" CssClass="textbox" Height="28px"></asp:TextBox>
                                             </div>
                                             <div class="col-4 user-info-container">
                                                 <asp:Label ID="Label_Notification5" runat="server" CssClass="title-labels" Text="Notification:"></asp:Label>

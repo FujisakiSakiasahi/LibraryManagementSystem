@@ -645,6 +645,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_ISBN1;
 
         /// <summary>
+        /// RangeValidator_ISBN1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator_ISBN1;
+
+        /// <summary>
         /// TextBox_ISBN2 control.
         /// </summary>
         /// <remarks>
@@ -688,6 +697,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_ShelfID1;
+
+        /// <summary>
+        /// RangeValidator_SheldID1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator_SheldID1;
 
         /// <summary>
         /// TextBox_ShelfID2 control.
@@ -933,6 +951,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_ISBN2;
 
         /// <summary>
+        /// RangeValidator_ISBN2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator_ISBN2;
+
+        /// <summary>
         /// TextBox_ISBN3 control.
         /// </summary>
         /// <remarks>
@@ -976,6 +1003,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_ShelfID2;
+
+        /// <summary>
+        /// RangeValidator_ShelfId2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator_ShelfId2;
 
         /// <summary>
         /// TextBox_ShelfID3 control.
@@ -1329,6 +1365,15 @@ namespace LibraryManagementSystem
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_PhoneNumber;
 
         /// <summary>
+        /// RangeValidator_PhoneNumber control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator_PhoneNumber;
+
+        /// <summary>
         /// TextBox_PhoneNumber control.
         /// </summary>
         /// <remarks>
@@ -1507,6 +1552,15 @@ namespace LibraryManagementSystem
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.RequiredFieldValidator RequiredFieldValidator_PhoneNumber2;
+
+        /// <summary>
+        /// RangeValidator_PhoneNumber2 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.RangeValidator RangeValidator_PhoneNumber2;
 
         /// <summary>
         /// TextBox_PhoneNumber3 control.
