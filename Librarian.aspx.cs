@@ -747,7 +747,7 @@ namespace LibraryManagementSystem {
                     query += "SELECT * FROM Book WHERE ";
 
                     if (int.TryParse(searchString, out int bookId)) {
-                        query += "SELECT * FROM bookId = " + bookId + ";";
+                        query += "bookId = " + bookId + " OR isbn = " + bookId + ";";
                     } else {
                         query += "bookName LIKE '%" + searchString + "%';";
                     }
@@ -781,6 +781,18 @@ namespace LibraryManagementSystem {
             Session["loginState"] = false;
             Session.Abandon();
             Response.Redirect(link);
+        }
+
+        protected void Button_Borrow_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 13;
+            DataTable borrowed = sessionHandler.RunQuery($"SELECT borrowId, bookName, memberName, dateBorrowed, expectDate FROM Borrowed INNER JOIN Book USING (bookId) INNER JOIN Member USING (memberId) ORDER BY borrowId DESC;");
+
+            GridView_Borrowed.DataSource = borrowed;
+            Debug.WriteLine("Bound");
+            GridView_Borrowed.DataBind();
+
+
         }
     }
 }

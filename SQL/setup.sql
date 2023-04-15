@@ -26,14 +26,14 @@ create table Member (
     PRIMARY KEY (memberId)
 );
 
+INSERT INTO Member (memberName, memberEmail, memberPasswd, newsletter, librarian) VALUES ('admin', 'admin@admin.com', 'admin', 1, 1);
+
 create table Genre (
     bookId INT NOT NULL,
     genre VARCHAR(15) NOT NULL, 
 
     PRIMARY KEY (bookId,genre)
 );
-
-INSERT INTO Member (memberName, memberEmail, memberPasswd, newsletter, librarian) VALUES ('admin', 'admin@admin.com', 'admin', 1, 1);
 
 create table Borrowed (
     borrowId INT NOT NULL AUTO_INCREMENT,
@@ -44,8 +44,8 @@ create table Borrowed (
     returnDate DATE,
 
     PRIMARY KEY (borrowId),
-    FOREIGN KEY (bookId) REFERENCES Book (bookId),
-    FOREIGN KEY (memberId) REFERENCES Member (memberId)
+    FOREIGN KEY (bookId) REFERENCES Book (bookId) ON DELETE CASCADE,
+    FOREIGN KEY (memberId) REFERENCES Member (memberId) ON DELETE CASCADE
 );
 
 create table Ratings (
@@ -55,8 +55,8 @@ create table Ratings (
     rating INT NOT NULL,
 
     PRIMARY KEY (bookId,memberId),
-    FOREIGN KEY (bookId) REFERENCES Book (bookId),
-    FOREIGN KEY (memberId) REFERENCES Member (memberId)
+    FOREIGN KEY (bookId) REFERENCES Book (bookId) ON DELETE CASCADE,
+    FOREIGN KEY (memberId) REFERENCES Member (memberId) ON DELETE CASCADE
 );
 
 create table Notification (
@@ -66,7 +66,7 @@ create table Notification (
     msg VARCHAR(1024),
 
     PRIMARY KEY (notifId),
-    FOREIGN KEY (memberId) REFERENCES Member (memberId)
+    FOREIGN KEY (memberId) REFERENCES Member (memberId) ON DELETE CASCADE
 );
 
 create table Reserved (
@@ -75,8 +75,8 @@ create table Reserved (
     reservedUntil DATE NOT NULL,
 
     PRIMARY KEY (bookId, memberId),
-    FOREIGN KEY (bookId) REFERENCES Book (bookId),
-    FOREIGN KEY (memberId) REFERENCES Member (memberId)
+    FOREIGN KEY (bookId) REFERENCES Book (bookId) ON DELETE CASCADE,
+    FOREIGN KEY (memberId) REFERENCES Member (memberId) ON DELETE CASCADE
 );
 
 create table Wishlist (
@@ -84,8 +84,8 @@ create table Wishlist (
     memberId INT NOT NULL,
 
     PRIMARY KEY (bookId, memberId),
-    FOREIGN KEY (bookId) REFERENCES Book (bookId),
-    FOREIGN KEY (memberId) REFERENCES Member (memberId)
+    FOREIGN KEY (bookId) REFERENCES Book (bookId) ON DELETE CASCADE,
+    FOREIGN KEY (memberId) REFERENCES Member (memberId) ON DELETE CASCADE
 );
 
 create table Requests(

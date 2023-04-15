@@ -82,7 +82,7 @@
                     <asp:Button ID="Button_Notification" runat="server" Text="Notification" CssClass="side-nav-buttons" OnClick="Button_Click_Notification" CausesValidation="False" />
                     <asp:Button ID="Button2" runat="server" Text="Requests" CssClass="side-nav-buttons" OnClick="Button_Click_RequestedBooks" CausesValidation="False" />
                     <asp:Button ID="Button_Overdue" runat="server" Text="Overdue" CssClass="side-nav-buttons" OnClick="Button_Click_ManageOverdue" CausesValidation="False" />
-
+                    <asp:Button ID="Button_Borrow" runat="server" Text="Borrow" CssClass="side-nav-buttons" OnClick="Button_Borrow_Click" />
                 </div>
 
                 <!--Multiview Panel-->
@@ -111,6 +111,8 @@
                                    11: requests
 
                                    12: overdue
+
+                                   13: borrow
                             -->
 
                             <!--List / Search Books-->
@@ -351,7 +353,7 @@
 
                                                 <br />
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_ISBN1" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ISBN2" ForeColor="Red"></asp:RequiredFieldValidator>
-                                                <asp:RangeValidator ID="RangeValidator_ISBN1" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ISBN2" ForeColor="Red" Type="Integer" MaximumValue="2147483647" MinimumValue="1"></asp:RangeValidator>                                                
+                                                <asp:RangeValidator ID="RangeValidator_ISBN1" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ISBN2" ForeColor="Red" Type="Double" MaximumValue="9223372036854775807" MinimumValue="1"></asp:RangeValidator>                                                
                                                 <asp:TextBox ID="TextBox_ISBN2" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
@@ -458,7 +460,7 @@
 
                                                 <br />
                                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator_ISBN2" Display="Dynamic" runat="server" ErrorMessage="This field is required!" ControlToValidate="TextBox_ISBN3" ForeColor="Red"></asp:RequiredFieldValidator>
-                                                <asp:RangeValidator ID="RangeValidator_ISBN2" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ISBN3" ForeColor="Red" Type="Integer" MaximumValue="2147483647" MinimumValue="1"></asp:RangeValidator>
+                                                <asp:RangeValidator ID="RangeValidator_ISBN2" runat="server" Display="Dynamic" ErrorMessage="Number is out of range." ControlToValidate="TextBox_ISBN3" ForeColor="Red" Type="Double" MaximumValue="9223372036854775807" MinimumValue="1"></asp:RangeValidator>
                                                 <asp:TextBox ID="TextBox_ISBN3" runat="server" TextMode="Number" CssClass="textbox"></asp:TextBox>
                                                 <br />
                                                 <br />
@@ -1082,6 +1084,48 @@
                                             <asp:Label ID="Label_ClaimedBooks" runat="server" ForeColor="Green" Text="Claimed Book" Visible="False"></asp:Label>
                                         </div>
                                     </div>
+                                </div>
+                            </asp:View>
+
+                            <!--Borrow-->
+                            <asp:View ID="View15" runat="server">
+                                <div class="container">
+
+                                    <!--Search bar-->
+                                    <div class="container search-container">
+                                        <p>Search by BookID, Book Name, or UserName, Supposed Date Return</p>
+
+                                        <div class="row">
+                                            <div class="col-11">
+                                                <asp:Panel ID="Panel6" runat="server" DefaultButton="Button_BorrowSearch" CssClass="panel">
+                                                    <asp:TextBox ID="Textbox_BorrowSearch" runat="server" Wrap="False" CssClass="search-bar" TextMode="Search"></asp:TextBox>
+                                                </asp:Panel>
+                                            </div>
+                                            <div class="col-1">
+                                                <asp:Button ID="Button_BorrowSearch" runat="server" Text="Search" CssClass="search-button" />
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <!--Gridview-->
+                                    <div class="container">
+                                        <h2>Search Results
+                                        </h2>
+                                        <hr />
+                                    </div>
+                                    <div class="container gridview-container">
+                                        <asp:GridView ID="GridView_Borrowed" runat="server" CssClass="grid" AutoGenerateColumns="False">
+                                            <Columns>
+                                                <asp:BoundField DataField="borrowId" HeaderText="Employee ID" />
+                                                <asp:BoundField DataField="bookName" HeaderText="Book Title" />
+                                                <asp:BoundField DataField="memberName" HeaderText="Member Name" />
+                                                <asp:BoundField DataField="dateBorrowed" HeaderText="Date Borrowed" />
+                                                <asp:BoundField DataField="expectDate" HeaderText="Expected Return Date" />
+                                            </Columns>
+                                        </asp:GridView>
+                                    </div>
+
                                 </div>
                             </asp:View>
                         </asp:MultiView>
