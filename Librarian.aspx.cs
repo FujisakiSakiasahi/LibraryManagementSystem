@@ -784,5 +784,10 @@ namespace LibraryManagementSystem {
             Session.Abandon();
             Response.Redirect(link);
         }
+
+        protected void Button_Borrow_Click(object sender, EventArgs e)
+        {
+            MultiView1.ActiveViewIndex = 13;
+        }
     }
 }
