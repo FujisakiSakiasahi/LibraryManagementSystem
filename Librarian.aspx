@@ -1097,7 +1097,7 @@
 
                                         <div class="row">
                                             <div class="col-11">
-                                                <asp:Panel ID="Panel6" runat="server" DefaultButton="Button_SearchBook" CssClass="panel">
+                                                <asp:Panel ID="Panel6" runat="server" DefaultButton="Button_BorrowSearch" CssClass="panel">
                                                     <asp:TextBox ID="Textbox_BorrowSearch" runat="server" Wrap="False" CssClass="search-bar" TextMode="Search"></asp:TextBox>
                                                 </asp:Panel>
                                             </div>
