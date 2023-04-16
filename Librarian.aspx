@@ -914,7 +914,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="container-fluid">
+                                                <div class="container-fluid mt-5">
                                                     <asp:Label ID="Label_NotifMsgContent" runat="server" CssClass="title-labels" Text="Message Content"></asp:Label>
                                                 </div>
                                                 <div class="container-fluid">
@@ -1102,7 +1102,7 @@
                                                 </asp:Panel>
                                             </div>
                                             <div class="col-1">
-                                                <asp:Button ID="Button_BorrowSearch" runat="server" Text="Search" CssClass="search-button" />
+                                                <asp:Button ID="Button_BorrowSearch" runat="server" Text="Search" CssClass="search-button" OnClick="Button_BorrowSearch_Click" />
                                             </div>
                                         </div>
                                     </div>

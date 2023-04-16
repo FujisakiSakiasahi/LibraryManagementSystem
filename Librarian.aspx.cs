@@ -801,5 +801,24 @@ namespace LibraryManagementSystem {
 
 
         }
+        protected void Button_BorrowSearch_Click(object sender, EventArgs e) {
+            Label_ErrorNoBorrowed.Visible = false;
+            string condition;
+            if (int.TryParse(Textbox_BorrowSearch.Text, out int bookId)) {
+                condition = $"bookId={bookId}";
+            } else {
+                condition = $"bookName LIKE '%{Textbox_BorrowSearch.Text}%' OR memberName LIKE '%{Textbox_BorrowSearch.Text}%'";
+            }
+
+            DataTable borrowed = sessionHandler.RunQuery($"SELECT borrowId, bookName, memberName, dateBorrowed, expectDate, returnDate FROM Borrowed INNER JOIN Book USING (bookId) INNER JOIN Member USING (memberId) WHERE {condition} ORDER BY borrowId DESC;");
+
+            if (borrowed.Rows.Count > 0) {
+                GridView_Borrowed.DataSource = borrowed;
+                GridView_Borrowed.DataBind();
+            } else {
+                GridView_Borrowed.Visible = false;
+                Label_ErrorNoBorrowed.Visible = true;
+            }
+        }
     }
 }
