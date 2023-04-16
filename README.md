@@ -19,7 +19,7 @@ Feel free to use it if u find it useful .w.
 11. The database has been setup
 
 ## Setup Connection to database
-1. Create a file named "connectionString.config"
+1. Create a file named "connectionString.config" in the project folder
 2. In the file paste the code below in it
 ```
 <?xml version="1.0"?>
