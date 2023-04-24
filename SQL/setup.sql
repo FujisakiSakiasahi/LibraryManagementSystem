@@ -26,6 +26,7 @@ create table Member (
     PRIMARY KEY (memberId)
 );
 
+INSERT INTO Member (memberId, memberName, memberEmail, memberPasswd, newsletter, librarian) VALUES ('0', 'all', 'all', 'all', 0, 0);
 INSERT INTO Member (memberName, memberEmail, memberPasswd, newsletter, librarian) VALUES ('admin', 'admin@admin.com', 'admin', 1, 1);
 
 create table Genre (
